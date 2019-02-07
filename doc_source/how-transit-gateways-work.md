@@ -1,4 +1,4 @@
-# How Transit Gateways Work<a name="how-transit-gateways-work"></a>
+# Como funciona um Gateway de Transito<a name="how-transit-gateways-work"></a>
 
 A *transit gateway* acts as a regional virtual router for traffic flowing between your virtual private clouds \(VPC\) and VPN connections\. A transit gateway scales elastically based on the volume of network traffic\. Routing through a transit gateway operates at layer 3, where the packets are sent to a specific next\-hop attachment, based on their destination IP addresses\.
 
