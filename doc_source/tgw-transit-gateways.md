@@ -1,6 +1,6 @@
 # Transit Gateways<a name="tgw-transit-gateways"></a>
 
-A transit gateway enables you attach VPCs and VPN connections in the same Region and route traffic between them\. A transit gateway works across AWS accounts, and you can use AWS Resource Access Manager to share your transit gateway with other accounts\. After you share a transit gateway with another AWS account, the account owner can attach their VPCs to your transit gateway\. A user from either account can delete the attachment at any time\.
+A transit gateway enables you to attach VPCs and VPN connections in the same Region and route traffic between them\. A transit gateway works across AWS accounts, and you can use AWS Resource Access Manager to share your transit gateway with other accounts\. After you share a transit gateway with another AWS account, the account owner can attach their VPCs to your transit gateway\. A user from either account can delete the attachment at any time\.
 
 Each VPC or VPN attachment is associated with a single route table\. That route table decides the next hop for the traffic coming from that resource attachment\. A route table inside the transit gateway allows for both IPv4 or IPv6 CIDRs and targets\. The targets are VPCs and VPN connections\. When you attach a VPC or create a VPN connection on a transit gateway, the attachment is associated with the default route table of the transit gateway\.
 
@@ -11,6 +11,8 @@ Transit gateways support dynamic and static routing between attached VPCs and VP
 ## Create a Transit Gateway<a name="create-tgw"></a>
 
 When you create a transit gateway, we create a default transit gateway route table and use it as the default association route table and the default propagation route table\.
+
+You must enable resource sharing from the master account for your organization\. For information about enabling resource sharing, see [Enable Sharing with AWS Organizations](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs) in the *AWS RAM User Guide*\.
 
 **To create a transit gateway using the console**
 
@@ -32,7 +34,7 @@ When you create a transit gateway, we create a default transit gateway route tab
 
 1. For **DNS support**, choose **enable** if you need the VPC to resolve public IPv4 DNS host names to private IPv4 addresses when queried from instances in another VPC attached to the transit gateway\.
 
-1. For **VPN ECMP support**, choose **enable** if you need Equal Cost Multipath Protocol \(ECMP\) support between VPN connections\. If connections advertise the same CIDRs, the traffic is distributed equally between them\.
+1. For **VPN ECMP support**, choose **enable** if you need Equal Cost Multipath \(ECMP\) routing support between VPN connections\. If connections advertise the same CIDRs, the traffic is distributed equally between them\.
 
 1. For **Default route table association**, choose **enable** to automatically associate transit gateway attachments with the default route table for the transit gateway\.
 

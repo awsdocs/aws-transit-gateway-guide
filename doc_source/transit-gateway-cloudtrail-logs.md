@@ -27,7 +27,7 @@ For more information, see the [CloudTrail userIdentity Element](https://docs.aws
 
 A trail is a configuration that enables delivery of events as log files to an Amazon S3 bucket that you specify\. CloudTrail log files contain one or more log entries\. An event represents a single request from any source and includes information about the requested action, the date and time of the action, request parameters, and so on\. CloudTrail log files aren't an ordered stack trace of the public API calls, so they don't appear in any specific order\.
 
-The log files include events for all AWS API calls for your AWS account, not just transit gateway API calls\. You can locate calls to the transit gateway API by checking for `eventSource` elements with the value `TBD.amazonaws.com`\. To view a record for a specific action, such as `CreateTransitGateway`, check for `eventName` elements with the action name\.
+The log files include events for all AWS API calls for your AWS account, not just transit gateway API calls\. You can locate calls to the transit gateway API by checking for `eventSource` elements with the value `ec2.amazonaws.com`\. To view a record for a specific action, such as `CreateTransitGateway`, check for `eventName` elements with the action name\.
 
 The following are example CloudTrail log records for the transit gateway API for a user who created a transit gateway using the console\. You can identify the console using the `userAgent` element\. You can identify the requested API call using the `eventName` elements\. Information about the user \(`Alice`\) can be found in the `userIdentity` element\.
 

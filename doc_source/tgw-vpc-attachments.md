@@ -2,7 +2,9 @@
 
 When you attach a VPC to a transit gateway, you must specify one subnet from each Availability Zone to be used by the transit gateway to route traffic\. Specifying one subnet from an Availability Zone enables traffic to reach resources in every subnet in that Availability Zone\.
 
-**Limit**  
+**Limits**  
+The resources in a VPC attached to a transit gateway and that have the transit gateway in a subnet route table can only forward traffic to the transit gateway, when the transit gateway has an attachment in any subnet in that VPC in the same Availability Zone\. 
+
 The resources in a VPC attached to a transit gateway cannot access the security groups of a different VPC that is also attached to the same transit gateway\.
 
 ## Create a Transit Gateway Attachment to a VPC<a name="create-vpc-attachment"></a>
