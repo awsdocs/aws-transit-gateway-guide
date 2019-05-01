@@ -22,7 +22,7 @@ You must enable resource sharing from the master account for your organization\.
 
 1. Choose **Create Transit Gateway**\.
 
-1. For **Name tag**, optionally enter a name for the transit gateway\. A name tag can make it easier to identify a specific gateway from the list of gateways\. Also, when you add a **Name tag**, a tag is created with a with a key of **Name** with a value equal to the value you enter\.
+1. For **Name tag**, optionally enter a name for the transit gateway\. A name tag can make it easier to identify a specific gateway from the list of gateways\. When you add a **Name tag**, a tag is created with a key of **Name** and with a value equal to the value you enter\.
 
 1. For **Description**, optionally enter a description for the transit gateway\.
 

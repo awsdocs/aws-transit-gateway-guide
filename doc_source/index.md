@@ -20,6 +20,7 @@ Amazon's trademarks and trade dress may not be used in
 + [Working with Transit Gateways](working-with-transit-gateways.md)
    + [Transit Gateways](tgw-transit-gateways.md)
    + [Transit Gateway Attachments to a VPC](tgw-vpc-attachments.md)
+   + [Transit Gateway Attachments to a Direct Connect Gateway](tgw-dcg-attachments.md)
    + [Transit Gateway VPN Attachments](tgw-vpn-attachments.md)
    + [Transit Gateway Route Tables](tgw-route-tables.md)
 + [Monitor Your Transit Gateways](transit-gateway-monitoring.md)
