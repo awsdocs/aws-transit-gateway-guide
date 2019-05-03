@@ -14,4 +14,4 @@ The solution involves the following components:
 + An association between the Direct Connect gateway and the transit gateway\.
 + A transit virtual interface that is attached to the Direct Connect gateway\.
 
-For information about configuring Direct Connect gateways with transit gateways, see [Transit Gateway Associations](https://docs.aws.amazon.com/directconnect/latest/UserGuide/tgw-dcg-attachments.html) in the *AWS Direct Connect User Guide*\.
+For information about configuring Direct Connect gateways with transit gateways, see [Transit Gateway Associations](https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-transit-gateways.html) in the *AWS Direct Connect User Guide*\.
