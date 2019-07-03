@@ -48,7 +48,7 @@ When you create a transit gateway, we create a default transit gateway route tab
 
 ## Step 2: Attach Your VPCs to Your Transit Gateways<a name="step-attach-vpcs"></a>
 
-Wait until the transit gateway you created in the previous section shows as available before proceeding with creating an attachment\.
+Wait until the transit gateway you created in the previous section shows as available before proceeding with creating an attachment\. Create an attachment for each VPC\.
 
 Confirm that you have created two VPCs and launched an EC2 instance in each, as described in [Prerequisites](#tgw-prerequisites)\.
 

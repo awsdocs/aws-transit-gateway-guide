@@ -36,6 +36,8 @@ You must enable resource sharing from the master account for your organization\.
 
 1. For **VPN ECMP support**, choose **enable** if you need Equal Cost Multipath \(ECMP\) routing support between VPN connections\. If connections advertise the same CIDRs, the traffic is distributed equally between them\.
 
+   When you select this option, the advertised BGP ASN, the BGP attributes such as the AS\-path and the communities for preference must be the same\.
+
 1. For **Default route table association**, choose **enable** to automatically associate transit gateway attachments with the default route table for the transit gateway\.
 
 1. For **Default route table propagation**, choose **enable** to automatically propagate transit gateway attachments to the default route table for the transit gateway\.

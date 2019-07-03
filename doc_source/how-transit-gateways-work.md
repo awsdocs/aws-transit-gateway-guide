@@ -7,6 +7,7 @@ A *transit gateway* acts as a regional virtual router for traffic flowing betwee
 A transit gateway attachment is both a source and a destination of packets\. You can attach the following resources to your transit gateway, if they are in the same Region as the transit gateway:
 + One or more VPCs
 + One or more VPN connections
++ One or more AWS Direct Connect gateways
 
 ## Availability Zones<a name="tgw-az-overview"></a>
 
@@ -22,7 +23,7 @@ Your transit gateway routes IPv4 and IPv6 packets between attachments using tran
 
 Your transit gateway automatically comes with a default route table\. By default, this route table is the default association route table and the default propagation route table\. Alternatively, if you disable route propagation, we do not create a default route table for the transit gateway
 
-You can create additional route tables for your transit gateway\. This enables you to isolate subnets of attachments\. Each attachment can be related to one or more route tables through route table association and route table propagation\.
+You can create additional route tables for your transit gateway\. This enables you to isolate subnets of attachments\. Each attachment can be associated with one route table\. An attachment can propagate their routes to one or more route tables\.
 
 ### Route Table Association<a name="tgw-route-table-association-overview"></a>
 
@@ -32,18 +33,31 @@ You can associate a transit gateway attachment with a single route table\. Each 
 
 Each attachment comes with routes that can be installed to one or more transit gateway route tables\. For a VPC attachment, these are the CIDR blocks of the VPC\. For a VPN connection attachment, these are the prefixes that are advertised over the BGP session established with the VPN connection\. When an attachment is propagated to a transit gateway route table, these routes are installed in the route table\.
 
-## Scenarios<a name="transit-gateway-scenarios"></a>
+### Route Evaluation Order<a name="tgw-route-evaluation-overview"></a>
 
-The following are common use cases for transit gateways\. Your transit gateways are not limited to these use cases\.
+Transit gateway routes are evaluated in the following order:
++ The longest prefix route for the destination address\.
++ If routes are the same with different targets:
+  + Static routes have a higher precedence than propagated routes\.
+  + Among propagated routes, VPCs CIDRs have a higher precedence than Direct Connect gateways than Client VPN\.
 
-### Centralized Router<a name="tgw-centralized-router"></a>
+Consider the following VPC route table\. The VPC local roue has the highest priority, followed by the routes that are the most specific\. When a static and propagated route have the destination, the static route has a higher priority\.
 
-You can configure your transit gateway as a centralized router that connects all of your VPCs and VPN connections\. In this scenario, all attachments are associated with the transit gateway route table and propagate to the transit gateway route table\. Therefore, all attachments can route packets to each other, with the transit gateway serving as a simple layer 3 IP hub\.
 
-### Isolated Routers<a name="tgw-isolated-routers"></a>
+| Destination | Target | Priority | 
+| --- | --- | --- | 
+| 10\.0\.0\.0/6 |  local  | 1 | 
+| 192\.168\.0\.0/16 | pcx\-12345 | 2 | 
+| 172\.31\.0\.0/16 | vgw\-12345 \(static\) ortgw\-12345 \(static\) | 2 | 
+| 172\.31\.0\.0/16 | vgw\-12345 \(propagated\) | 3 | 
+| 0\.0\.0\.0/0 | igw\-12345 | 4 | 
 
-You can configure your transit gateway as multiple isolated routers\. This is similar to using multiple transit gateways, but provides more flexibility in cases where the routes and attachments might change\. In this scenario, each isolated router has a single route table\. All attachments associated with an isolated router propagate and associate with its route table\. Attachments associated with one isolated router can route packets to each other, but cannot route packets to or receive packets from the attachments for another isolated router\.
+Consider the following transit gateway route table\. When a static and propagated route have the destination, the static route has a higher priority\. If you want to use the AWS Direct Connect gateway attachment over the VPN attachment, then use a BGP VPN connection and propagate the routes in the transit gateway route table\.
 
-### Edge Consolidator<a name="tgw-edge-consolidator"></a>
 
-You can configure your transit gateway such that your VPCs can route packets to one or more VPN connections but your VPCs cannot route packets to each other\. In this scenario, you create a route table for the VPCs and a route table for the VPN connections\.
+| Destination | Attachment \(Target\) | Resource type | Route type | Priority | 
+| --- | --- | --- | --- | --- | 
+| 10\.0\.0\.0/6 | tgw\-attach\-123 \| vpc\-1234 | VPC | Static or propagated | 1 | 
+| 192\.168\.0\.0/16 | tgw\-attach\-789 \| vpn\-5678 | VPN | Static | 2 | 
+| 172\.31\.0\.0/16 | tgw\-attach\-456 \| dxgw\_id | AWS Direct Connect gateway | Propagated | 3 | 
+| 172\.31\.0\.0/16 | tgw\-attach\-789 \| vpn\-5678 | VPN | Propagated | 4 | 
