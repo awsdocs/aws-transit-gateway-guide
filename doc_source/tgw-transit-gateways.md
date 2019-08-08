@@ -31,6 +31,10 @@ You must enable resource sharing from the master account for your organization\.
    The range is 64512 to 65534 for 16\-bit ASNs\.
 
    The range is 4200000000 to 4294967294 for 32\-bit ASNs\.
+   
+   **Important**
+   
+   While the AWS Transit gateway does not support cross-region peering today, customers with multi-region deployments should use different ASN for their Transit gateway in each AWS region, in order to future-proof their design.
 
 1. For **DNS support**, choose **enable** if you need the VPC to resolve public IPv4 DNS host names to private IPv4 addresses when queried from instances in another VPC attached to the transit gateway\.
 
