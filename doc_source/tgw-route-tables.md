@@ -137,6 +137,64 @@ Use the [disable\-transit\-gateway\-route\-table\-propagation](https://docs.aws.
 **To view route propagations using the AWS CLI**  
 Use the [get\-transit\-gateway\-route\-table\-propagations](https://docs.aws.amazon.com/cli/latest/reference/ec2/get-transit-gateway-route-table-propagations.html) command\.
 
+## Create a Static Route<a name="tgw-create-static-route"></a>
+
+You can create a static route for an attached VPC or VPN connection, or you can create a blackhole route that drops traffic that matches the route\.
+
+**To create a static route using the console**
+
+1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
+
+1. On the navigation pane, choose **Transit Gateway Route Tables**\.
+
+1. Select the route table for which to create a route\.
+
+1. Choose **Actions**, **Create route**\.
+
+1. On the **Create route** page, enter the CIDR block for which to create the route\.
+
+1. Choose the attachment for the route\.
+
+1. Choose **Create route**\.
+
+**To create a blackhole route using the console**
+
+1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
+
+1. On the navigation pane, choose **Transit Gateway Route Tables**\.
+
+1. Select the route table for which to create a route\.
+
+1. Choose **Actions**, **Create route**\.
+
+1. On the **Create route** page, enter the CIDR block for which to create the route, and then choose **Blackhole**\.
+
+1. Choose **Create route**\.
+
+**To create a static route or blackhole route using the AWS CLI**  
+Use the [create\-transit\-gateway\-route](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-route.html) command\.
+
+## Delete a Static Route<a name="tgw-delete-static-route"></a>
+
+You can create a static route for an attached VPC or VPN connection, or you can create a blackhole route that drops traffic that matches the route\.
+
+**To delete a static route using the console**
+
+1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
+
+1. On the navigation pane, choose **Transit Gateway Route Tables**\.
+
+1. Select the route table for which to delete the route, and choose **Routes**\.
+
+1. Choose the route to delete\.
+
+1. Choose **Delete route**\.
+
+1. In the confirmation box, choose **Delete route**\.
+
+**To delete a static route using the AWS CLI**  
+Use the [delete\-transit\-gateway\-route](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-transit-gateway-route.html) command\.
+
 ## Export Route Tables to Amazon S3<a name="tgw-export-route-tables"></a>
 
 You can export your route tables to an Amazon S3 bucket for backup or accessing them to import to another transit gateway\.

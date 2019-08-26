@@ -92,9 +92,9 @@ A route table includes dynamic and static routes that determine the next hop for
 
 1. Choose **Add route**\.
 
-1. In the **Destination** column, enter an IP address range that includes the transit gateway you used to create the transit gateway attachment\.
+1. In the **Destination** column, enter the destination IP address range\. For **Target**, choose the transit gateway that you used to create the transit gateway attachment\.
 
-1. Choose **Close**\.
+1. Choose **Save routes**, then choose **Close**\.
 
 ## Step 4: Testing the Transit Gateway<a name="step-test-tgw"></a>
 

@@ -11,9 +11,9 @@ A transit gateway attachment is both a source and a destination of packets\. You
 
 ## Availability Zones<a name="tgw-az-overview"></a>
 
-When you attach a VPC to a transit gateway, you must enable one or more Availability Zones to be used by the transit gateway to route traffic to resources in the VPC subnets\. To enable each Availability Zone, you specify exactly one subnet\. The transit gateway places a network interface in that subnet using one IP address from the subnet\. After you enable an Availability Zone, traffic can be routed to all subnets in that Availability Zone, not just the specified subnet\.
+When you attach a VPC to a transit gateway, you must enable one or more Availability Zones to be used by the transit gateway to route traffic to resources in the VPC subnets\. To enable each Availability Zone, you specify exactly one subnet\. The transit gateway places a network interface in that subnet using one IP address from the subnet\. After you enable an Availability Zone, traffic can be routed to all subnets in that Availability Zone, not just the specified subnet\. Resources that reside in Availability Zones where there is no transit gateway attachment will not be able to reach the transit gateway\.
 
-We recommend that you enable multiple Availability Zones to ensure availability\. If one Availability Zone becomes unavailable or has no healthy attachments, the transit gateway can route traffic to your VPC using a healthy attachment in a different Availability Zone\.
+We recommend that you enable multiple Availability Zones to ensure availability\.
 
 ## Routing<a name="tgw-routing-overview"></a>
 
@@ -39,25 +39,25 @@ Transit gateway routes are evaluated in the following order:
 + The longest prefix route for the destination address\.
 + If routes are the same with different targets:
   + Static routes have a higher precedence than propagated routes\.
-  + Among propagated routes, VPCs CIDRs have a higher precedence than Direct Connect gateways than Client VPN\.
+  + Among propagated routes, VPC CIDRs have a higher precedence than Direct Connect gateways than Client VPN\.
 
-Consider the following VPC route table\. The VPC local roue has the highest priority, followed by the routes that are the most specific\. When a static and propagated route have the destination, the static route has a higher priority\.
+Consider the following VPC route table\. The VPC local route has the highest priority, followed by the routes that are the most specific\. When a static and propagated route have the same destination, the static route has a higher priority\.
 
 
 | Destination | Target | Priority | 
 | --- | --- | --- | 
-| 10\.0\.0\.0/6 |  local  | 1 | 
+| 10\.0\.0\.0/16 |  local  | 1 | 
 | 192\.168\.0\.0/16 | pcx\-12345 | 2 | 
 | 172\.31\.0\.0/16 | vgw\-12345 \(static\) ortgw\-12345 \(static\) | 2 | 
 | 172\.31\.0\.0/16 | vgw\-12345 \(propagated\) | 3 | 
 | 0\.0\.0\.0/0 | igw\-12345 | 4 | 
 
-Consider the following transit gateway route table\. When a static and propagated route have the destination, the static route has a higher priority\. If you want to use the AWS Direct Connect gateway attachment over the VPN attachment, then use a BGP VPN connection and propagate the routes in the transit gateway route table\.
+Consider the following transit gateway route table\. When a static and propagated route have the same destination, the static route has a higher priority\. If you want to use the AWS Direct Connect gateway attachment over the VPN attachment, then use a BGP VPN connection and propagate the routes in the transit gateway route table\.
 
 
 | Destination | Attachment \(Target\) | Resource type | Route type | Priority | 
 | --- | --- | --- | --- | --- | 
-| 10\.0\.0\.0/6 | tgw\-attach\-123 \| vpc\-1234 | VPC | Static or propagated | 1 | 
+| 10\.0\.0\.0/16 | tgw\-attach\-123 \| vpc\-1234 | VPC | Static or propagated | 1 | 
 | 192\.168\.0\.0/16 | tgw\-attach\-789 \| vpn\-5678 | VPN | Static | 2 | 
 | 172\.31\.0\.0/16 | tgw\-attach\-456 \| dxgw\_id | AWS Direct Connect gateway | Propagated | 3 | 
 | 172\.31\.0\.0/16 | tgw\-attach\-789 \| vpn\-5678 | VPN | Propagated | 4 | 

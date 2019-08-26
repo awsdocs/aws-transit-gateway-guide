@@ -14,7 +14,7 @@ For static VPNs, add the static routes to the transit gateway route table\.
 
 1. Choose **Create Transit Gateway Attachment**\.
 
-1. For **Transit Gateway ID**, choose the transit gateway for the attachment\. You can choose a transit gateway that you own or a transit gateway that was shared with you\.
+1. For **Transit Gateway ID**, choose the transit gateway for the attachment\. You can choose a transit gateway that you own\.
 
 1. For **Attachment type**, choose **VPN**\.
 

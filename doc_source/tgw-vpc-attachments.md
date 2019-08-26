@@ -36,6 +36,43 @@ The resources in a VPC attached to a transit gateway cannot access the security 
 **To create a VPC attachment using the AWS CLI**  
 Use the [create\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-vpc-attachment.html) command\.
 
+## Modify Your VPC Attachment<a name="modify-vpc-attachment"></a>
+
+**To modify your VPC attachments using the console**
+
+1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
+
+1. On the navigation pane, choose **Transit Gateway Attachments**\.
+
+1. Select the VPC attachment, and then choose **Actions**, **Modify**\.
+
+1. To enable DNS support, select **DNS support**\.
+
+1. To add a subnet to the attachment, next to the subnet, select the box\. 
+
+1. Choose **Modify attachment**\. 
+
+**To modify your VPC attachments using the AWS CLI**  
+Use the [modify\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-transit-gateway-vpc-attachment.html) command\.
+
+## Modify Your VPC Attachment Tags<a name="modify-vpc-attachment-tag"></a>
+
+**To modify your VPC attachment tags using the console**
+
+1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
+
+1. On the navigation pane, choose **Transit Gateway Attachments**\.
+
+1. Select the VPC attachment, and then choose **Actions**, **Add/Edit tags**\.
+
+1. \[Add a tag\] Choose **Add tag** and do the following:
+   + For **Key**, enter the key name\.
+   + For **Value**, enter the key value\.
+
+1. \[Remove a tag\] Next to the tag, choose Delete \("X"\)\.
+
+1. Choose **Modify attachment**\. 
+
 ## View Your VPC Attachments<a name="view-vpc-attachment"></a>
 
 **To view your VPC attachments using the console**
@@ -46,7 +83,7 @@ Use the [create\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/
 
 1. Choose the search bar, select **Resource type** from the menu, and then select **VPC**\.
 
-1. The VPC attachments are displayed\. Choose an attachment to view its details or to add tags\.
+1. The VPC attachments are displayed\. Choose an attachment to view its details\.
 
 **To view your VPC attachments using the AWS CLI**  
 Use the [describe\-transit\-gateway\-vpc\-attachments](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-transit-gateway-vpc-attachments.html) command\.
