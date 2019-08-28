@@ -40,6 +40,8 @@ When you create a transit gateway, we create a default transit gateway route tab
 
    The range is 4200000000 to 4294967294 for 32\-bit ASNs\.
 
+   If you have a multi\-region deployment, we recommend that you use a unique ASN for each of your transit gateways\.
+
 1. \(Optional\) You can modify the default settings if you need to disable DNS support, or if you don't want the default association route table or default propagation route table\.
 
 1. Choose **Create Transit Gateway**\.
