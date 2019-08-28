@@ -32,6 +32,8 @@ You must enable resource sharing from the master account for your organization\.
 
    The range is 4200000000 to 4294967294 for 32\-bit ASNs\.
 
+   If you have a multi\-region deployment, we recommend that you use a unique ASN for each of your transit gateways\.
+
 1. For **DNS support**, choose **enable** if you need the VPC to resolve public IPv4 DNS host names to private IPv4 addresses when queried from instances in another VPC attached to the transit gateway\.
 
 1. For **VPN ECMP support**, choose **enable** if you need Equal Cost Multipath \(ECMP\) routing support between VPN connections\. If connections advertise the same CIDRs, the traffic is distributed equally between them\.
@@ -62,7 +64,7 @@ Use the [create\-transit\-gateway](https://docs.aws.amazon.com/cli/latest/refere
 **To view your transit gateways using the AWS CLI**  
 Use the [describe\-transit\-gateways](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-transit-gateways.html) command\.
 
-## Add or edit tags for a transit gateway<a name="tgw-tagging"></a>
+## Add or edit tags for a Transit Gateway<a name="tgw-tagging"></a>
 
 Add tags to your resources to help organize and identify them, such as by purpose, owner, or environment\. You can add multiple tags to each transit gateway\. Tag keys must be unique for each transit gateway\. If you add a tag with a key that is already associated with the transit gateway, it updates the value of that tag\. For more information, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.
 
