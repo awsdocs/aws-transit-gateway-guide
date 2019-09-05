@@ -33,7 +33,7 @@ Each VPC has a route table with 2 entries\. The first entry is the default entry
 | Destination | Target | 
 | --- | --- | 
 |  10\.1\.0\.0/16  |  local  | 
-|  10\.0\.0\.0/8  |  *tgw\-id*  | 
+|  0\.0\.0\.0/0  |  *tgw\-id*  | 
 
 ### Transit Gateway Route Table<a name="transit-gateway-centralized-router-tgw-route-table"></a>
 

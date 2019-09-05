@@ -9,7 +9,7 @@ Your AWS account has the following limits related to transit gateways\. To reque
   For VPC route table limits, see [Amazon VPC Limits](https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html) in the *Amazon VPC User Guide*\.
 + Total number of transit gateway attachments per Region per account: 5,000
 + Maximum number of incoming prefixes for a BGP session on an IPSec VPN attachment: 100
-+ Maximum bandwidth \(burst\) per VPC connection: 50 Gbps
++ Maximum bandwidth \(burst\) per Availability Zone per VPC connection: 50 Gbps
 + Maximum bandwidth per VPN connection: 1\.25 Gbps
 
   This is a hard limit\. You can use ECMP to get higher VPN bandwidth by aggregating multiple VPN connections\.

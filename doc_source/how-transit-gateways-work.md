@@ -25,6 +25,8 @@ Your transit gateway automatically comes with a default route table\. By default
 
 You can create additional route tables for your transit gateway\. This enables you to isolate subnets of attachments\. Each attachment can be associated with one route table\. An attachment can propagate their routes to one or more route tables\.
 
+You can create a blackhole route in your transit gateway route table that drops traffic that matches the route\.
+
 ### Route Table Association<a name="tgw-route-table-association-overview"></a>
 
 You can associate a transit gateway attachment with a single route table\. Each route table can be associated with zero to many attachments and forward packets to attachments or other route tables\.
