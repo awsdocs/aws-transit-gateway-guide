@@ -29,6 +29,8 @@ The resources in a VPC attached to a transit gateway cannot access the security 
 
    This VPC must have at least one subnet associated with it\.
 
+   The VPC can be in the same Region as the transit gateway, or a different Region\.
+
 1. For **Subnet IDs**, select one subnet for each Availability Zone to be used by the transit gateway to route traffic\. You must select at least one subnet\. You can select only one subnet per Availability Zone\.
 
 1. Choose **Create attachment**\.

@@ -1,6 +1,6 @@
 # Transit Gateway VPN Attachments<a name="tgw-vpn-attachments"></a>
 
-To attach a VPN connection to your transit gateway, you must specify the customer gateway\.
+To attach a VPN connection to your transit gateway, you must specify the customer gateway\. For more information about the requirements for a customer gateway, see [Requirements for Your Customer Gateway](https://docs.aws.amazon.com/vpc/latest/adminguide/Introduction.html#CGRequirements) in the *Amazon VPC Network Administrator Guide*\.
 
 For static VPNs, add the static routes to the transit gateway route table\.
 

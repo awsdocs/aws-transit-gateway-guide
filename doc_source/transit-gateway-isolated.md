@@ -16,7 +16,7 @@ In this scenario, you create the following entities:
 + Three VPCs\. For information about creating a VPC, see [Creating a VPC](https://docs.aws.amazon.com/vpc/latest/userguide//working-with-vpcs.html#Create-VPC) in the *Amazon Virtual Private Cloud User Guide*\.
 + A transit gateway\. For more information, see [Create a Transit Gateway](tgw-transit-gateways.md#create-tgw)\.
 + Three attachments on the transit gateway for the three VPCs\. For more information, see [Create a Transit Gateway Attachment to a VPC](tgw-vpc-attachments.md#create-vpc-attachment)\.
-+ A Site\-to\-Site VPN\. For more information about creating a VPN, see [Create a Site\-to\-Site VPN Connection and Configure the Customer Gateway](https://docs.aws.amazon.com/vpn/latest/s2svpn//SetUpVPNConnections.html#vpn-create-vpn-connection) in the *AWS Site\-to\-Site VPN User Guide*\.
++ A Site\-to\-Site VPN\. For more information about creating a VPN, see [Create a Site\-to\-Site VPN Connection and Configure the Customer Gateway](https://docs.aws.amazon.com/vpn/latest/s2svpn//SetUpVPNConnections.html#vpn-create-vpn-connection) in the *AWS Site\-to\-Site VPN User Guide* and [Requirements for Your Customer Gateway](https://docs.aws.amazon.com/vpc/latest/adminguide/Introduction.html#CGRequirements) in the *Amazon VPC Network Administrator Guide*\.
 + A VPN attachment on the transit gateway\. For more information, see [Create a Transit Gateway Attachment to a VPN](tgw-vpn-attachments.md#create-vpn-attachment)\.
 
 When the VPN is up, the BGP session is established and the VPN CIDR propagates to the transit gateway route table and the VPC CIDRs are added to the gateway BGP table\.
