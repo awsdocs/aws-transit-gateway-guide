@@ -1,6 +1,6 @@
 # Transit Gateway VPN Attachments<a name="tgw-vpn-attachments"></a>
 
-To attach a VPN connection to your transit gateway, you must specify the customer gateway\. For more information about the requirements for a customer gateway, see [Requirements for Your Customer Gateway](https://docs.aws.amazon.com/vpc/latest/adminguide/Introduction.html#CGRequirements) in the *Amazon VPC Network Administrator Guide*\.
+To attach a VPN connection to your transit gateway, you must specify the customer gateway\. For more information about the requirements for a customer gateway, see [Requirements for Your Customer Gateway](https://docs.aws.amazon.com/vpc/latest/adminguide/Introduction.html#CGRequirements) in the *AWS Site\-to\-Site VPN Network Administrator Guide*\.
 
 For static VPNs, add the static routes to the transit gateway route table\.
 
@@ -24,11 +24,9 @@ For static VPNs, add the static routes to the transit gateway route table\.
      If your customer gateway is behind a network address translation \(NAT\) device that's enabled for NAT traversal \(NAT\-T\), use the public IP address of your NAT device, and adjust your firewall rules to unblock UDP port 4500\.
    + To create a customer gateway, choose **New**, then for **IP Address**, type a static public IP address and **BGP ASN**\.
 
-     For **Routing options**, choose whether to use **Dynamic** or **Static**\.
+     For **Routing options**, choose whether to use **Dynamic** or **Static**\. For more information, see [Site\-to\-Site VPN Routing Options](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNRoutingTypes.html) in the *AWS Site\-to\-Site VPN User Guide*\.
 
-1. For **Tunnel Options**, see [Site\-to\-Site VPN Routing Options](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNRoutingTypes.html) in the *AWS Site\-to\-Site VPN User Guide*\.
-
-1. For **Inside IP CIDR**, For more information about VPN tunnels, see [Configuring the VPN Tunnels for Your Site\-to\-Site VPN Connection](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html), and [Overview of Setting Up a Site\-to\-Site VPN Connection](https://docs.aws.amazon.com/vpc/latest/adminguide/Introduction.html#Summary) in the *AWS Site\-to\-Site VPN User Guide*\.
+1. For **Tunnel Options**, see [Site\-to\-Site VPN Tunnel Options for Your Site\-to\-Site VPN Connection](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html) in the *AWS Site\-to\-Site VPN User Guide*\.
 
 1. Choose **Create attachment**\.
 

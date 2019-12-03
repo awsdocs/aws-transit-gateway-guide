@@ -11,3 +11,91 @@ To work with a transit gateway, one of the following AWS managed policies might 
 + **AmazonEC2ReadOnlyAccess**
 
 For more information, see [IAM Policies for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html) in the *Amazon EC2 User Guide*\.
+
+## Example Policies to Manage Transit Gateways<a name="tgw-example-iam-policies"></a>
+
+The following are example IAM policies for working with transit gateways\.
+
+**Creating a Tagged Transit Gateway**  
+The following example enables users to create transit gateways\. The `aws:RequestTag` condition key requires users to tag the transit gateway with the tag `stack=prod`\. The `aws:TagKeys` condition key uses the `ForAllValues` modifier to indicate that only the key `stack` is allowed in the request \(no other tags can be specified\)\. If users don't pass this specific tag when they create the transit gateway, or if they don't specify tags at all, the request fails\. 
+
+The second statement uses the `ec2:CreateAction` condition key to allow users to create tags only in the context of `CreateTransitGateway`\. 
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowCreateTaggedTGWs",
+            "Effect": "Allow",
+            "Action": "ec2:CreateTransitGateway",
+            "Resource": "arn:aws:ec2:region:account-id:transit-gateway/*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestTag/stack": "prod"
+                },
+                "ForAllValues:StringEquals": {
+                    "aws:TagKeys": [
+                        "stack"
+                    ]
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateTags"
+            ],
+            "Resource": "arn:aws:ec2:region:account-id:transit-gateway/*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:CreateAction": "CreateTransitGateway"
+                }
+            }
+        }
+    ]
+}
+```
+
+**Working with Transit Gateway Route Tables**  
+The following example enables users to create and delete transit gateway route tables for a specific transit gateway only \(`tgw-11223344556677889`\)\. Users can also create and replace routes in any transit gateway route table, but only for attachments that have the tag `network=new-york-office`\.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DeleteTransitGatewayRouteTable",
+                "ec2:CreateTransitGatewayRouteTable"
+            ],
+            "Resource": [
+                "arn:aws:ec2:region:account-id:transit-gateway/tgw-11223344556677889",
+                "arn:aws:ec2:*:*:transit-gateway-route-table/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateTransitGatewayRoute",
+                "ec2:ReplaceTransitGatewayRoute"
+            ],
+            "Resource": "arn:aws:ec2:*:*:transit-gateway-attachment/*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/network": "new-york-office"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateTransitGatewayRoute",
+                "ec2:ReplaceTransitGatewayRoute"
+            ],
+            "Resource": "arn:aws:ec2:*:*:transit-gateway-route-table/*"
+        }
+    ]
+}
+```

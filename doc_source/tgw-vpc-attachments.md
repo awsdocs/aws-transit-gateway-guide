@@ -7,6 +7,8 @@ When you attach a VPC to a transit gateway, resources in Availability Zones wher
 
 The resources in a VPC attached to a transit gateway cannot access the security groups of a different VPC that is also attached to the same transit gateway\.
 
+A transit gateway does not support DNS resolution for custom DNS names of attached VPCs set up using private hosted zones in Amazon Route 53\. To configure the name resolution for private hosted zones for all VPCs attached to a transit gateway, see [Centralized DNS management of hybrid cloud with Amazon Route 53 and AWS Transit Gateway](https://aws.amazon.com/blogs/networking-and-content-delivery/centralized-dns-management-of-hybrid-cloud-with-amazon-route-53-and-aws-transit-gateway/)\.
+
 ## Create a Transit Gateway Attachment to a VPC<a name="create-vpc-attachment"></a>
 
 **To create a VPC attachment using the console**
@@ -28,8 +30,6 @@ The resources in a VPC attached to a transit gateway cannot access the security 
 1. For **VPC ID**, choose the VPC to attach to the transit gateway\.
 
    This VPC must have at least one subnet associated with it\.
-
-   The VPC can be in the same Region as the transit gateway, or a different Region\.
 
 1. For **Subnet IDs**, select one subnet for each Availability Zone to be used by the transit gateway to route traffic\. You must select at least one subnet\. You can select only one subnet per Availability Zone\.
 

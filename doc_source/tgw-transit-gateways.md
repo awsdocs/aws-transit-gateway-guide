@@ -2,11 +2,24 @@
 
 A transit gateway enables you to attach VPCs and VPN connections in the same Region and route traffic between them\. A transit gateway works across AWS accounts, and you can use AWS Resource Access Manager to share your transit gateway with other accounts\. After you share a transit gateway with another AWS account, the account owner can attach their VPCs to your transit gateway\. A user from either account can delete the attachment at any time\.
 
+You can enable multicast on a transit gateway, and then create a transit gateway multicast domain that allows multicast traffic to be sent from your multicast source to multicast group members over VPC attachments that you associate with the domain\.
+
+You can also create a peering connection attachment between transit gateways in different AWS Regions\. This enables you to route traffic between the transit gateways' attachments across different Regions\.
+
 Each VPC or VPN attachment is associated with a single route table\. That route table decides the next hop for the traffic coming from that resource attachment\. A route table inside the transit gateway allows for both IPv4 or IPv6 CIDRs and targets\. The targets are VPCs and VPN connections\. When you attach a VPC or create a VPN connection on a transit gateway, the attachment is associated with the default route table of the transit gateway\.
 
 You can create additional route tables inside the transit gateway, and change the VPC or VPN association to these route tables\. This enables you to segment your network\. For example, you can associate development VPCs with one route table and production VPCs with a different route table\. This enables you to create isolated networks inside a transit gateway similar to virtual routing and forwarding \(VRFs\) in traditional networks\.
 
-Transit gateways support dynamic and static routing between attached VPCs and VPN connections\. You can enable or disable route propagation for each attachment\.
+Transit gateways support dynamic and static routing between attached VPCs and VPN connections\. You can enable or disable route propagation for each attachment\. Transit gateway peering attachments support static routing only\.
+
+**Topics**
++ [Create a Transit Gateway](#create-tgw)
++ [View Your Transit Gateways](#view-tgws)
++ [Add or edit tags for a Transit Gateway](#tgw-tagging)
++ [Sharing a Transit Gateway](#tgw-sharing)
++ [Accepting a Resource Share](#tgw-share-accept)
++ [Accepting a Shared Attachment](#tgw-accept-shared-attachment)
++ [Delete a Transit Gateway](#delete-tgw)
 
 ## Create a Transit Gateway<a name="create-tgw"></a>
 
@@ -43,6 +56,8 @@ You must enable resource sharing from the master account for your organization\.
 1. For **Default route table association**, choose **enable** to automatically associate transit gateway attachments with the default route table for the transit gateway\.
 
 1. For **Default route table propagation**, choose **enable** to automatically propagate transit gateway attachments to the default route table for the transit gateway\.
+
+1. \(Optional\) To use the transit gateway as a router for multicast traffic, select **Multicast support**\.
 
 1. For **Auto accept shared attachments**, choose **enable** to automatically accept cross\-account attachments\.
 
@@ -123,6 +138,23 @@ If you were added to a resource share, you receive an invitation to join the res
 1. Choose **Accept resource share**\.
 
 1. To view the shared transit gateway, open the **Transit Gateways** page in the Amazon VPC console\.
+
+## Accepting a Shared Attachment<a name="tgw-accept-shared-attachment"></a>
+
+If you didn't enable the **Auto accept shared attachments** functionality when you created your transit gateway, you must manually accept cross\-account \(shared\) attachments\.
+
+**To manually accept a shared attachment**
+
+1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
+
+1. On the navigation pane, choose **Transit Gateway Attachments**\.
+
+1. Select the transit gateway attachment that's pending acceptance\.
+
+1. Choose **Actions**, **Accept**\.
+
+**To accept a shared attachment using the AWS CLI**  
+Use the [accept\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/accept-transit-gateway-vpc-attachment.html) command\.
 
 ## Delete a Transit Gateway<a name="delete-tgw"></a>
 

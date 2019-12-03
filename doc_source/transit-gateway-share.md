@@ -2,7 +2,7 @@
 
 You can use AWS Resource Access Manager \(RAM\) to share a transit gateway for VPC attachments across accounts or across your organization in AWS Organizations\. Take the following into account when you want to share a transit gateway\.
 
-An AWS Site\-to\-Site VPN attachment must be in the same AWS account\.
+An AWS Site\-to\-Site VPN attachment must be created in the same AWS account that owns the transit gateway\.
 
 An attachment to a Direct Connect gateway uses a transit gateway association and can be in the same AWS account as the Direct Connect gateway, or a different one from the Direct Connect gateway\.
 

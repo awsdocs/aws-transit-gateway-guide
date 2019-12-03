@@ -1,13 +1,16 @@
 # How Transit Gateways Work<a name="how-transit-gateways-work"></a>
 
-A *transit gateway* acts as a regional virtual router for traffic flowing between your virtual private clouds \(VPC\) and VPN connections\. A transit gateway scales elastically based on the volume of network traffic\. Routing through a transit gateway operates at layer 3, where the packets are sent to a specific next\-hop attachment, based on their destination IP addresses\.
+A *transit gateway* acts as a Regional virtual router for traffic flowing between your virtual private clouds \(VPC\) and VPN connections\. A transit gateway scales elastically based on the volume of network traffic\. Routing through a transit gateway operates at layer 3, where the packets are sent to a specific next\-hop attachment, based on their destination IP addresses\.
 
 ## Resource Attachments<a name="tgw-attachments-overview"></a>
 
-A transit gateway attachment is both a source and a destination of packets\. You can attach the following resources to your transit gateway, if they are in the same Region as the transit gateway:
+A transit gateway attachment is both a source and a destination of packets\. You can attach the following resources to your transit gateway:
 + One or more VPCs
 + One or more VPN connections
 + One or more AWS Direct Connect gateways
++ One or more transit gateway peering connections
+
+If you attach a VPC, VPN connection, or an AWS Direct Connect gateway, it must be in the same Region as the transit gateway\. If you attach a transit gateway peering connection, the transit gateway must be in a different Region\.
 
 ## Availability Zones<a name="tgw-az-overview"></a>
 
@@ -19,9 +22,11 @@ We recommend that you enable multiple Availability Zones to ensure availability\
 
 Your transit gateway routes IPv4 and IPv6 packets between attachments using transit gateway route tables\. You can configure these route tables to propagate routes from the route tables for the attached VPCs and VPN connections\. You can also add static routes to the transit gateway route tables\. When a packet comes from one attachment, it is routed to another attachment using the route table that matches the destination IP address\.
 
+For transit gateway peering attachments, only static routes are supported\.
+
 ### Route Tables<a name="tgw-route-tables-overview"></a>
 
-Your transit gateway automatically comes with a default route table\. By default, this route table is the default association route table and the default propagation route table\. Alternatively, if you disable route propagation, we do not create a default route table for the transit gateway
+Your transit gateway automatically comes with a default route table\. By default, this route table is the default association route table and the default propagation route table\. Alternatively, if you disable route propagation, we do not create a default route table for the transit gateway\.
 
 You can create additional route tables for your transit gateway\. This enables you to isolate subnets of attachments\. Each attachment can be associated with one route table\. An attachment can propagate their routes to one or more route tables\.
 
@@ -29,11 +34,19 @@ You can create a blackhole route in your transit gateway route table that drops 
 
 ### Route Table Association<a name="tgw-route-table-association-overview"></a>
 
-You can associate a transit gateway attachment with a single route table\. Each route table can be associated with zero to many attachments and forward packets to attachments or other route tables\.
+You can associate a transit gateway attachment with a single route table\. Each route table can be associated with zero to many attachments and forward packets to other attachments\.
 
 ### Route Propagation<a name="tgw-route-propagation-overview"></a>
 
-Each attachment comes with routes that can be installed to one or more transit gateway route tables\. For a VPC attachment, these are the CIDR blocks of the VPC\. For a VPN connection attachment, these are the prefixes that are advertised over the BGP session established with the VPN connection\. When an attachment is propagated to a transit gateway route table, these routes are installed in the route table\.
+Each attachment comes with routes that can be installed to one or more transit gateway route tables\. When an attachment is propagated to a transit gateway route table, these routes are installed in the route table\. 
+
+For a VPC attachment, the CIDR blocks of the VPC are propagated to the transit gateway route table\. 
+
+For a VPN connection attachment, routes propagate to and from the transit gateway and your on\-premises router using Border Gateway Protocol \(BGP\)\. The prefixes that are advertised over the BGP session are propagated to the transit gateway route table\.
+
+### Routes for Peering Attachments<a name="tgw-route-table-peering"></a>
+
+You can peer two transit gateways and route traffic between them\. To do this, you create a peering attachment on your transit gateway, and specify the peer transit gateway with which to create the peering connection\. You then create a static route in your transit gateway route table to route traffic to the transit gateway peering attachment\. Traffic that's routed to the peer transit gateway can then be routed to the VPC and VPN attachments for the peer transit gateway\.
 
 ### Route Evaluation Order<a name="tgw-route-evaluation-overview"></a>
 
@@ -43,7 +56,7 @@ Transit gateway routes are evaluated in the following order:
   + Static routes have a higher precedence than propagated routes\.
   + Among propagated routes, VPC CIDRs have a higher precedence than Direct Connect gateways than Client VPN\.
 
-Consider the following VPC route table\. The VPC local route has the highest priority, followed by the routes that are the most specific\. When a static and propagated route have the same destination, the static route has a higher priority\.
+Consider the following VPC route table\. The VPC local route has the highest priority, followed by the routes that are the most specific\. When a static route and a propagated route have the same destination, the static route has a higher priority\.
 
 
 | Destination | Target | Priority | 
@@ -54,7 +67,7 @@ Consider the following VPC route table\. The VPC local route has the highest pri
 | 172\.31\.0\.0/16 | vgw\-12345 \(propagated\) | 3 | 
 | 0\.0\.0\.0/0 | igw\-12345 | 4 | 
 
-Consider the following transit gateway route table\. When a static and propagated route have the same destination, the static route has a higher priority\. If you want to use the AWS Direct Connect gateway attachment over the VPN attachment, then use a BGP VPN connection and propagate the routes in the transit gateway route table\.
+Consider the following transit gateway route table\. When a static route and a propagated route have the same destination, the static route has a higher priority\. If you want to use the AWS Direct Connect gateway attachment over the VPN attachment, then use a BGP VPN connection and propagate the routes in the transit gateway route table\.
 
 
 | Destination | Attachment \(Target\) | Resource type | Route type | Priority | 
