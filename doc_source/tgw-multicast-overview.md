@@ -16,4 +16,5 @@ The following are the key concepts for multicast:
 + Multicast group membership is managed using Amazon VPC Console or the AWS CLI\. 
 +   [Internet Group Management Protocol \(IGMP\)](https://en.wikipedia.org/wiki/Internet_Group_Management_Protocol) \(IGMP\) support for managing group membership will come in the future\.
 + A subnet can only be in one multicast domain\. 
-+ If you use a non\-Nitro instance, you must disable the **Source/Dest** check\. For information about disabling the check, see [Changing the Source or Destination Checking](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#change_source_dest_check) in the *Amazon EC2 User Guide for Linux Instances*\.
++ For **Multicast source** - currently only Nitro instances are supported.
++ For **Multicast group members** If you use a non\-Nitro instance, you must disable the **Source/Dest** check\. For information about disabling the check, see [Changing the Source or Destination Checking](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#change_source_dest_check) in the *Amazon EC2 User Guide for Linux Instances*\.
