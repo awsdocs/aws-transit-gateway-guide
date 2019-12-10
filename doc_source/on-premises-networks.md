@@ -450,4 +450,4 @@ You can disassociate a customer gateway from a device or link in one of the foll
 You can work with customer gateway associations using the following commands\.
 + To associate a customer gateway with a device and link: [associate\-customer\-gateway](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/associate-customer-gateway.html)
 + To view your customer gateway associations: [get\-customer\-gateway\-associations](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/get-customer-gateway-associations.html)
-+ To disassociate a customer gateway from a device and link:[disassociate\-customer\-gateway](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/disassociate-customer-gateway.html)
++ To disassociate a customer gateway from a device and link: [disassociate\-customer\-gateway](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/disassociate-customer-gateway.html)

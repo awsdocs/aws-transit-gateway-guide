@@ -4,8 +4,6 @@ Attach a transit gateway to a Direct Connect gateway using a transit virtual int
 + Manage a single connection for multiple VPCs or VPNs that are in the same Region\.
 + Advertise prefixes from on\-premises to AWS and from AWS to on\-premises\.
 
-For information about the Regions that support transit gateway associations, see [Use AWS Transit Gateway & Direct Connect to Centralize and Streamline Your Network Connectivity](https://aws.amazon.com/blogs/aws/use-aws-transit-gateway-direct-connect-to-centralize-and-streamline-your-network-connectivity/) at the AWS News Blog website\. 
-
 The following diagram illustrates how the Direct Connect gateway enables you to create a single connection to your Direct Connect connection that all of your VPCs can use\.
 
 ![\[Direct Connect Gateway Connected to Transit Gateway\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/direct-connect-tgw.png)
