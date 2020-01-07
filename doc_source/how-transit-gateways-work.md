@@ -10,7 +10,7 @@ A transit gateway attachment is both a source and a destination of packets\. You
 + One or more AWS Direct Connect gateways
 + One or more transit gateway peering connections
 
-If you attach a VPC, VPN connection, or an AWS Direct Connect gateway, it must be in the same Region as the transit gateway\. If you attach a transit gateway peering connection, the transit gateway must be in a different Region\.
+If you attach a transit gateway peering connection, the transit gateway must be in a different Region\.
 
 ## Availability Zones<a name="tgw-az-overview"></a>
 
@@ -32,6 +32,8 @@ You can create additional route tables for your transit gateway\. This enables y
 
 You can create a blackhole route in your transit gateway route table that drops traffic that matches the route\.
 
+For additional information about transit gateway routing, see [Routing for a Transit Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/route-table-options.html#route-tables-tgw) in the *Amazon VPC User Guide*\.
+
 ### Route Table Association<a name="tgw-route-table-association-overview"></a>
 
 You can associate a transit gateway attachment with a single route table\. Each route table can be associated with zero to many attachments and forward packets to other attachments\.
@@ -42,7 +44,7 @@ Each attachment comes with routes that can be installed to one or more transit g
 
 For a VPC attachment, the CIDR blocks of the VPC are propagated to the transit gateway route table\. 
 
-For a VPN connection attachment, routes propagate to and from the transit gateway and your on\-premises router using Border Gateway Protocol \(BGP\)\. The prefixes that are advertised over the BGP session are propagated to the transit gateway route table\.
+For a VPN connection attachment, routes in the transit gateway route table propagate to and from the transit gateway and your on\-premises router using Border Gateway Protocol \(BGP\)\. The prefixes that are advertised over the BGP session are propagated to the transit gateway route table\.
 
 ### Routes for Peering Attachments<a name="tgw-route-table-peering"></a>
 
@@ -54,7 +56,7 @@ Transit gateway routes are evaluated in the following order:
 + The longest prefix route for the destination address\.
 + If routes are the same with different targets:
   + Static routes have a higher precedence than propagated routes\.
-  + Among propagated routes, VPC CIDRs have a higher precedence than Direct Connect gateways than Client VPN\.
+  + Among propagated routes, VPC CIDRs have a higher precedence than Direct Connect gateways than Site\-to\-Site VPN\.
 
 Consider the following VPC route table\. The VPC local route has the highest priority, followed by the routes that are the most specific\. When a static route and a propagated route have the same destination, the static route has a higher priority\.
 

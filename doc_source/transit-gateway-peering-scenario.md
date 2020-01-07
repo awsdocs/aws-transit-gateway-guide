@@ -16,8 +16,7 @@ You create the following entities for this scenario:
 + Two VPCs\. For information about creating a VPC, see [Creating a VPC](https://docs.aws.amazon.com/vpc/latest/userguide//working-with-vpcs.html#Create-VPC) in the *Amazon Virtual Private Cloud User Guide*\.
 + Two transit gateways in different Regions\. For more information, see [Create a Transit Gateway](tgw-transit-gateways.md#create-tgw)\.
 + Two VPC attachments on the first transit gateway\. For more information, see [Create a Transit Gateway Attachment to a VPC](tgw-vpc-attachments.md#create-vpc-attachment)\.
-+ A Site\-to\-Site VPN\. For more information about creating a VPN, see [Create a Site\-to\-Site VPN Connection and Configure the Customer Gateway](https://docs.aws.amazon.com/vpn/latest/s2svpn//SetUpVPNConnections.html#vpn-create-vpn-connection) in the *AWS Site\-to\-Site VPN User Guide* and [Requirements for Your Customer Gateway](https://docs.aws.amazon.com/vpc/latest/adminguide/Introduction.html#CGRequirements) in the *AWS Site\-to\-Site VPN Network Administrator Guide*\.
-+ A VPN attachment on the second transit gateway\. For more information, see [Create a Transit Gateway Attachment to a VPN](tgw-vpn-attachments.md#create-vpn-attachment)\.
++ A Site\-to\-Site VPN attachment on the second transit gateway\. For more information, see [Create a Transit Gateway Attachment to a VPN](tgw-vpn-attachments.md#create-vpn-attachment) and [Requirements for Your Customer Gateway](https://docs.aws.amazon.com/vpc/latest/adminguide/Introduction.html#CGRequirements) in the *AWS Site\-to\-Site VPN Network Administrator Guide*\.
 + A transit gateway peering attachment between the two transit gateways\. For more information, see [Transit Gateway Peering Attachments](tgw-peering.md)\.
 
 When you create the VPC attachments, the CIDRs for each VPC propagate to the route table for transit gateway 1\. When the VPN is up, the following actions occur:
@@ -56,7 +55,8 @@ The following is an example of the default route table for transit gateway 2, wi
 | Destination | Target | Route type | 
 | --- | --- | --- | 
 |  172\.31\.0\.0/16  | Attachment ID for VPN connection  |  propagated  | 
-|  0\.0\.0\.0/0  |  *Attachment ID for peering connection *  |  static  | 
+|  10\.0\.0\.0/16  |  *Attachment ID for peering connection *  |  static  | 
+|  10\.2\.0\.0/16  | Attachment ID for peering connection  | static | 
 
 ### Customer Gateway BGP Table<a name="transit-gateway-centralized-router-vpn-route-table"></a>
 

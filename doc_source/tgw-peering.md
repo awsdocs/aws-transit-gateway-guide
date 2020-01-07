@@ -57,6 +57,8 @@ Alternatively, you can reject any peering connection request that you've receive
 
 1. Choose **Actions**, **Accept**\.
 
+1. Add the static route to the transit gateway route table\. For more information, see [Create a Static Route](tgw-route-tables.md#tgw-create-static-route)\.
+
 **To reject a peering attachment request using the console**
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.

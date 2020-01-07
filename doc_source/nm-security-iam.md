@@ -15,7 +15,9 @@ When you attach a policy to a user or group of users, it allows or denies the us
 
 ## How Network Manager Works with IAM<a name="nm-with-iam"></a>
 
-With IAM identity\-based policies, you can specify allowed or denied actions and resources, and specify the conditions under which actions are allowed or denied\. Network Manager supports specific actions, resources, and condition keys\. To learn about all of the elements that you use in a JSON policy, see [IAM JSON Policy Elements Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html) in the *IAM User Guide*\.
+With IAM identity\-based policies, you can specify allowed or denied actions and resources, and specify the conditions under which actions are allowed or denied\. Network Manager supports specific actions, resources, and condition keys\. For a complete list, see [Actions, Resources, and Condition Keys for Network Manager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_networkmanager.html) in the *IAM User Guide*\.
+
+To learn about all of the elements that you use in a JSON policy, see [IAM JSON Policy Elements Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html) in the *IAM User Guide*\.
 
 ### Actions<a name="nm-iam-actions"></a>
 
@@ -137,6 +139,19 @@ The following IAM policy grants read\-only access to the Amazon EC2, Network Man
         {
             "Effect": "Allow",
             "Action": [
+                "logs:Describe*",
+                "logs:Get*",
+                "logs:List*",
+                "logs:StartQuery",
+                "logs:StopQuery",
+                "logs:TestMetricFilter",
+                "logs:FilterLogEvents"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
                 "events:List*",
                 "events:TestEventPattern",
                 "events:Describe*"
@@ -182,7 +197,7 @@ The policy uses the `networkmanager:tgwArn` and `networkmanager:cgwArn` conditio
                 "*"
             ],
             "Condition": {
-                "ArnEquals": {
+                "StringEquals": {
                     "networkmanager:tgwArn": "arn:aws:ec2:<region>:<account-id>:transit-gateway/tgw-aabbccdd112233445"
                 }
             }
@@ -197,7 +212,7 @@ The policy uses the `networkmanager:tgwArn` and `networkmanager:cgwArn` conditio
                 "*"
             ],
             "Condition": {
-                "ArnEquals": {
+                "StringEquals": {
                     "networkmanager:cgwArn": "arn:aws:ec2:<region>:<account-id>:customer-gateway/cgw-11223344556677abc"
                 }
             }

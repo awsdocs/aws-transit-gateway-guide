@@ -1,7 +1,7 @@
 # Amazon Virtual Private Cloud Transit Gateways
 
 -----
-*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -37,7 +37,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Logging API Calls for Your Transit Gateway Using AWS CloudTrail](transit-gateway-cloudtrail-logs.md)
 + [Authentication and Access Control for Your Transit Gateways](transit-gateway-authentication-access-control.md)
    + [Transit Gateway Service-Linked Role](tgw-service-linked-roles.md)
-+ [Limits for Your Transit Gateways](transit-gateway-limits.md)
++ [Quotas for Your Transit Gateways](transit-gateway-limits.md)
 + [Transit Gateway Sharing Considerations](transit-gateway-share.md)
 + [Transit Gateway Network Manager](what-is-network-manager.md)
    + [How Transit Gateway Network Manager Works](how-network-manager-works.md)
