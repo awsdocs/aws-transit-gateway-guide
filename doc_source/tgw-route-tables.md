@@ -139,7 +139,7 @@ Use the [get\-transit\-gateway\-route\-table\-propagations](https://docs.aws.ama
 
 ## Create a Static Route<a name="tgw-create-static-route"></a>
 
-You can create a static route for an attached VPC or VPN connection, or you can create a blackhole route that drops traffic that matches the route\.
+You can create a static route for a VPC, VPN, or transit gateway peering attachment, or you can create a blackhole route that drops traffic that matches the route\.
 
 **To create a static route using the console**
 
@@ -197,7 +197,7 @@ Use the [delete\-transit\-gateway\-route](https://docs.aws.amazon.com/cli/latest
 
 ## Export Route Tables to Amazon S3<a name="tgw-export-route-tables"></a>
 
-You can export your route tables to an Amazon S3 bucket for backup or accessing them to import to another transit gateway\.
+You can export the routes in your transit gateway route tables to an Amazon S3 bucket\. The routes are saved to the specified Amazon S3 bucket in a JSON file\.
 
 **To export transit gateway route tables using the console**
 
@@ -214,6 +214,48 @@ You can export your route tables to an Amazon S3 bucket for backup or accessing 
 1. To filter the routes exported, specify filter parameters in the **Filters** section of the page\.
 
 1. Choose **Export routes**\.
+
+To access the exported routes, open the Amazon S3 console at [https://console\.aws\.amazon\.com/s3/](https://console.aws.amazon.com/s3/), and navigate to the bucket that you specified\. The file name includes the AWS account ID, AWS Region, route table ID, and a timestamp\. Select the file and choose **Download**\. The following is an example of a JSON file that contains information about two propagated routes for VPC attachments\.
+
+```
+{
+  "filter": [
+    {
+      "name": "route-search.subnet-of-match",
+      "values": [
+        "0.0.0.0/0",
+        "::/0"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "destinationCidrBlock": "10.0.0.0/16",
+      "transitGatewayAttachments": [
+        {
+          "resourceId": "vpc-0123456abcd123456",
+          "transitGatewayAttachmentId": "tgw-attach-1122334455aabbcc1",
+          "resourceType": "vpc"
+        }
+      ],
+      "type": "propagated",
+      "state": "active"
+    },
+    {
+      "destinationCidrBlock": "10.2.0.0/16",
+      "transitGatewayAttachments": [
+        {
+          "resourceId": "vpc-abcabc123123abca",
+          "transitGatewayAttachmentId": "tgw-attach-6677889900aabbcc7",
+          "resourceType": "vpc"
+        }
+      ],
+      "type": "propagated",
+      "state": "active"
+    }
+  ]
+}
+```
 
 ## Delete a Transit Gateway Route Table<a name="delete-tgw-route-table"></a>
 

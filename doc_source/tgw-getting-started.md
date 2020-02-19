@@ -11,7 +11,7 @@ The following tasks help you become familiar with transit gateways\. You will cr
 + [Step 5: Delete the Transit Gateway](#step-delete-tgw)
 
 ## Prerequisites<a name="tgw-prerequisites"></a>
-+ To demonstrate a simple example of using a transit gateway, create two VPCs in the same Region\. The VPCs cannot have overlapping CIDRs\. Launch one EC2 instance in each VPC\. For more information, see [Working with VPCs and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html) in the *[Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)*\.
++ To demonstrate a simple example of using a transit gateway, create two VPCs in the same Region\. The VPCs cannot have overlapping CIDRs\. Launch one EC2 instance in each VPC\. For more information, see [Getting Started with IPv4 for Amazon VPC](https://docs.aws.amazon.com/vpc/latest/userguide/getting-started-ipv4.html) in the *[Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)*\.
 + You must enable resource sharing from the master account for your organization\. For information about enabling resource sharing, see [Enable Sharing with AWS Organizations](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs) in the *AWS RAM User Guide*\.
 + You cannot have identical routes pointing to two different VPCs\. A transit gateway does not propagate the CIDRs of a newly attached VPC if an identical route exists in the transit gateway route tables\.
 + Verify that you have the permissions required to work with transit gateways\. For more information, see [Authentication and Access Control for Your Transit Gateways](transit-gateway-authentication-access-control.md)\.
@@ -76,7 +76,7 @@ Confirm that you have created two VPCs and launched an EC2 instance in each, as 
 
 1. Choose **Create attachment**\.
 
-Each attachment is always associated with exactly one route table\. Route tables can be associated with zero to many attachments\.
+Each attachment is always associated with exactly one route table\. Route tables can be associated with zero to many attachments\. To determine the routes to configure, decide on the use case for your transit gateway, and then configure the routes\. For more information, see [Examples](TGW_Scenarios.md)\.
 
 ## Step 3: Add Routes between the Transit Gateway and your VPCs<a name="step-add-routes"></a>
 

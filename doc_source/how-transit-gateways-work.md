@@ -26,13 +26,13 @@ For transit gateway peering attachments, only static routes are supported\.
 
 ### Route Tables<a name="tgw-route-tables-overview"></a>
 
-Your transit gateway automatically comes with a default route table\. By default, this route table is the default association route table and the default propagation route table\. Alternatively, if you disable route propagation, we do not create a default route table for the transit gateway\.
+Your transit gateway automatically comes with a default route table\. By default, this route table is the default association route table and the default propagation route table\. Alternatively, if you disable route propagation and route table association, we do not create a default route table for the transit gateway\.
 
 You can create additional route tables for your transit gateway\. This enables you to isolate subnets of attachments\. Each attachment can be associated with one route table\. An attachment can propagate their routes to one or more route tables\.
 
 You can create a blackhole route in your transit gateway route table that drops traffic that matches the route\.
 
-For additional information about transit gateway routing, see [Routing for a Transit Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/route-table-options.html#route-tables-tgw) in the *Amazon VPC User Guide*\.
+When you attach a VPC to a transit gateway, you must add a route to your subnet route table for traffic to route through the transit gateway\. For more information, see [Routing for a Transit Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/route-table-options.html#route-tables-tgw) in the *Amazon VPC User Guide*\.
 
 ### Route Table Association<a name="tgw-route-table-association-overview"></a>
 
@@ -49,6 +49,8 @@ For a VPN connection attachment, routes in the transit gateway route table propa
 ### Routes for Peering Attachments<a name="tgw-route-table-peering"></a>
 
 You can peer two transit gateways and route traffic between them\. To do this, you create a peering attachment on your transit gateway, and specify the peer transit gateway with which to create the peering connection\. You then create a static route in your transit gateway route table to route traffic to the transit gateway peering attachment\. Traffic that's routed to the peer transit gateway can then be routed to the VPC and VPN attachments for the peer transit gateway\.
+
+For more information, see [Transit Gateway Example: Peering](transit-gateway-peering-scenario.md)\.
 
 ### Route Evaluation Order<a name="tgw-route-evaluation-overview"></a>
 

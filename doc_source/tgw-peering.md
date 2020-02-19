@@ -2,7 +2,7 @@
 
 You can peer two transit gateways and route traffic between them, which includes IPv4 and IPv6 traffic\. To do this, create a peering attachment on your transit gateway, and specify a transit gateway in another AWS Region\. The peer transit gateway can be in your account or a different AWS account\. 
 
-After you create a peering attachment request, the owner of the peer transit gateway \(also referred to as the *accepter transit gateway*\) must accept the request\.
+After you create a peering attachment request, the owner of the peer transit gateway \(also referred to as the *accepter transit gateway*\) must accept the request\. To route traffic between the transit gateways, add a static route to the transit gateway route table that points to the transit gateway peering attachment\.
 
 We recommend using unique ASNs for the peered transit gateways to take advantage of future route propagation capabilities\.
 
@@ -71,6 +71,29 @@ Alternatively, you can reject any peering connection request that you've receive
 
 **To accept or reject a peering attachment using the AWS CLI**  
 Use the [accept\-transit\-gateway\-peering\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/accept-transit-gateway-peering-attachment.html) and [reject\-transit\-gateway\-peering\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/reject-transit-gateway-peering-attachment.html) commands\.
+
+## Add a Route to the Transit Gateway Route Table<a name="tgw-peering-add-route"></a>
+
+To route traffic between the peered transit gateways, you must add a static route to the transit gateway route table that points to the transit gateway peering attachment\. The owner of the accepter transit gateway must also add a static route to their transit gateway's route table\.
+
+**To create a static route using the console**
+
+1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
+
+1. On the navigation pane, choose **Transit Gateway Route Tables**\.
+
+1. Select the route table for which to create a route\.
+
+1. Choose **Actions**, **Create route**\.
+
+1. On the **Create route** page, enter the CIDR block for which to create the route\. For example, specify the CIDR block of a VPC that's attached to the peer transit gateway\.
+
+1. Choose the peering attachment for the route\.
+
+1. Choose **Create route**\.
+
+**To create a static route using the AWS CLI**  
+Use the [create\-transit\-gateway\-route](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-route.html) command\.
 
 ## View Your Transit Gateway Peering Connection Attachments<a name="tgw-peering-view-attachments"></a>
 

@@ -2,12 +2,47 @@
 
 CloudWatch Events delivers a near\-real\-time stream of system events that describe changes in your resources\. Using simple rules that you can quickly set up, you can match events and route them to one or more target functions or streams\. For more information, see the [Amazon CloudWatch Events User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/)\.
 
-To view events for your global network in the Network Manager console, choose the ID of your global network, and choose **Events**\.
-
 Transit Gateway Network Manager sends the following types of events to CloudWatch Events:
 + Topology changes
 + Routing updates
 + Status updates
+
+## Getting Started<a name="monitoring-events-onboarding"></a>
+
+Before you can view events for your global network, you must onboard to CloudWatch Logs Insights\. In the Network Manager console, choose the ID of your global network\. In the **Network events summary** section, choose **Onboard to CloudWatch Log Insights**\.
+
+An IAM principal in your account, such as an IAM user, must have sufficient permissions to onboard to CloudWatch Logs Insights\. Ensure that the IAM policy contains the following permissions\.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "events:PutTargets",
+                "events:DescribeRule",
+                "logs:PutResourcePolicy",
+                "logs:DescribeLogGroups",
+                "logs:DescribeResourcePolicies",
+                "events:PutRule",
+                "logs:CreateLogGroup"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+The preceding policy does not grant permission to create, modify, or delete Network Manager resources\. For more information about IAM policies for working with Network Manager, see [Identity and Access Management for Transit Gateway Network Manager](nm-security-iam.md)\.
+
+When you onboard to CloudWatch Logs Insights, the following occurs:
++ A CloudWatch event rule with the name `DON_NOT_DELETE_networkmanager_rule` is created in the US West \(Oregon\) Region\.
++ A CloudWatch Logs log group with the name `/aws/events/networkmanagerloggroup` is created in the US West \(Oregon\) Region\.
++ The CloudWatch event rule is configured with the CloudWatch Logs log group as a target\.
++ A CloudWatch resource policy with the name `DON_NOT_DELETE_networkmanager_TrustEventsToStoreLogEvents` is created in the US West \(Oregon\) Region\. To view this policy, use the following AWS CLI command: `aws logs describe-resource-policies --region us-west-2`
+
+To view events for your global network in the Network Manager console, choose the ID of your global network, and choose **Events**\. 
 
 ## Topology Change Events<a name="network-topology-events"></a>
 

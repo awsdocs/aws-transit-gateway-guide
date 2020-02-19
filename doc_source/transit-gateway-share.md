@@ -8,7 +8,7 @@ An attachment to a Direct Connect gateway uses a transit gateway association and
 
 By default, IAM users do not have permission to create or modify AWS RAM resources\. To allow IAM users to create or modify resources and perform tasks, you must create IAM policies that grant permission to use specific resources and API actions\. You then attach those policies to the IAM users or groups that require those permissions\. 
 
-A resource owner can perform the following operations:
+Only the resource owner can perform the following operations:
 + Create a resource share\.
 + Update a resource share\.
 + View a resource share\.
