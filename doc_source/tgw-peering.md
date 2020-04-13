@@ -6,7 +6,7 @@ After you create a peering attachment request, the owner of the peer transit gat
 
 We recommend using unique ASNs for the peered transit gateways to take advantage of future route propagation capabilities\.
 
-You can create a transit gateway peering attachment between transit gateways in the following AWS Regions: US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), Europe \(Frankfurt\), and Europe \(Ireland\)\.
+You can create a transit gateway peering attachment between transit gateways in the following AWS Regions: US East \(N. Virginia\), US East \(Ohio\), US West \(Oregon\), US West \(N. California\), Canada \(Central\), EU \(Ireland\), EU \(Frankfurt\), EU \(Paris\), EU \(London\), EU \(Stockholm\), Asia Pacific \(Mumbai\), Asia Pacific \(Tokyo\), Asia Pacific \(Seoul\), Asia Pacific \(Singapore\), Asia Pacific \(Sydney), and South America \(Sao Paulo\).
 
 ## Create a Peering Attachment<a name="tgw-peering-create"></a>
 
