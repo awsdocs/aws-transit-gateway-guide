@@ -1,4 +1,4 @@
-# Monitoring Your Global Network with CloudWatch Events<a name="monitoring-events"></a>
+# Monitoring your global network with CloudWatch Events<a name="monitoring-events"></a>
 
 CloudWatch Events delivers a near\-real\-time stream of system events that describe changes in your resources\. Using simple rules that you can quickly set up, you can match events and route them to one or more target functions or streams\. For more information, see the [Amazon CloudWatch Events User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/)\.
 
@@ -7,7 +7,7 @@ Transit Gateway Network Manager sends the following types of events to CloudWatc
 + Routing updates
 + Status updates
 
-## Getting Started<a name="monitoring-events-onboarding"></a>
+## Getting started<a name="monitoring-events-onboarding"></a>
 
 Before you can view events for your global network, you must onboard to CloudWatch Logs Insights\. In the Network Manager console, choose the ID of your global network\. In the **Network events summary** section, choose **Onboard to CloudWatch Log Insights**\.
 
@@ -34,7 +34,7 @@ An IAM principal in your account, such as an IAM user, must have sufficient perm
 }
 ```
 
-The preceding policy does not grant permission to create, modify, or delete Network Manager resources\. For more information about IAM policies for working with Network Manager, see [Identity and Access Management for Transit Gateway Network Manager](nm-security-iam.md)\.
+The preceding policy does not grant permission to create, modify, or delete Network Manager resources\. For more information about IAM policies for working with Network Manager, see [Identity and access management for Transit Gateway Network Manager](nm-security-iam.md)\.
 
 When you onboard to CloudWatch Logs Insights, the following occurs:
 + A CloudWatch event rule with the name `DON_NOT_DELETE_networkmanager_rule` is created in the US West \(Oregon\) Region\.
@@ -44,7 +44,7 @@ When you onboard to CloudWatch Logs Insights, the following occurs:
 
 To view events for your global network in the Network Manager console, choose the ID of your global network, and choose **Events**\. 
 
-## Topology Change Events<a name="network-topology-events"></a>
+## Topology change events<a name="network-topology-events"></a>
 
 Topology change events occur when there have been changes to the resources in your global network\. These events include the following:
 + A transit gateway was registered in the global network
@@ -87,7 +87,7 @@ The following is an example of an event where a transit gateway VPC attachment w
 }
 ```
 
-## Routing Update Events<a name="routing-changes-events"></a>
+## Routing update events<a name="routing-changes-events"></a>
 
 Routing update events occur when there have been changes to the transit gateway route tables in your global network\. These events include the following:
 + A transit gateway attachment's route table association changed
@@ -120,7 +120,7 @@ The following is an example of an event where a transit gateway route table was 
 }
 ```
 
-## Status Update Events<a name="network-status-events"></a>
+## Status update events<a name="network-status-events"></a>
 
 Status update events occur when there have been changes to the status of the connectivity of your VPN connections in the global network\. These events include the following:
 + A VPN tunnel's IPsec session went down

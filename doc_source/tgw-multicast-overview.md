@@ -1,8 +1,8 @@
-# Multicast on Transit Gateways<a name="tgw-multicast-overview"></a>
+# Multicast on transit gateways<a name="tgw-multicast-overview"></a>
 
 Multicast is a communication protocol used for delivering a single stream of data to multiple receiving computers simultaneously\. Transit Gateway supports routing multicast traffic between subnets of attached VPCs and serves as a multicast router for instances sending traffic destined for multiple receiving instances\. 
 
-## Multicast Concepts<a name="concepts"></a>
+## Multicast concepts<a name="concepts"></a>
 
 The following are the key concepts for multicast:
 + **Multicast domain** — A Multicast domain allows segmentation of a multicast network into different domains and makes the transit gateway act as multiple multicast routers\. You define multicast domain membership at the subnet level\. 
@@ -15,7 +15,6 @@ The following are the key concepts for multicast:
 + You cannot share multicast\-enabled transit gateways with other accounts \(using AWS Resource Access Manager\)\.
 + Multicast group membership is managed using Amazon VPC Console or the AWS CLI\. 
 +   [Internet Group Management Protocol \(IGMP\)](https://en.wikipedia.org/wiki/Internet_Group_Management_Protocol) \(IGMP\) support for managing group membership will come in the future\.
-+ We support Multicast Listener Discovery \(MLD\) on IPv4 and IPv6 for managing group membership\.
 + A subnet can only be in one multicast domain\. 
-+ If you use a non\-Nitro instance, you must disable the **Source/Dest** check\. For information about disabling the check, see [Changing the Source or Destination Checking](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#change_source_dest_check) in the *Amazon EC2 User Guide for Linux Instances*\.
++ If you use a non\-Nitro instance, you must disable the **Source/Dest** check\. For information about disabling the check, see [Changing the source or destination checking](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#change_source_dest_check) in the *Amazon EC2 User Guide for Linux Instances*\.
 + A non\-Nitro instance cannot be a multicast sender\.

@@ -1,8 +1,8 @@
-# How Transit Gateways Work<a name="how-transit-gateways-work"></a>
+# How transit gateways work<a name="how-transit-gateways-work"></a>
 
 A *transit gateway* acts as a Regional virtual router for traffic flowing between your virtual private clouds \(VPC\) and VPN connections\. A transit gateway scales elastically based on the volume of network traffic\. Routing through a transit gateway operates at layer 3, where the packets are sent to a specific next\-hop attachment, based on their destination IP addresses\.
 
-## Resource Attachments<a name="tgw-attachments-overview"></a>
+## Resource attachments<a name="tgw-attachments-overview"></a>
 
 A transit gateway attachment is both a source and a destination of packets\. You can attach the following resources to your transit gateway:
 + One or more VPCs
@@ -24,7 +24,7 @@ Your transit gateway routes IPv4 and IPv6 packets between attachments using tran
 
 For transit gateway peering attachments, only static routes are supported\.
 
-### Route Tables<a name="tgw-route-tables-overview"></a>
+### Route tables<a name="tgw-route-tables-overview"></a>
 
 Your transit gateway automatically comes with a default route table\. By default, this route table is the default association route table and the default propagation route table\. Alternatively, if you disable route propagation and route table association, we do not create a default route table for the transit gateway\.
 
@@ -34,11 +34,11 @@ You can create a blackhole route in your transit gateway route table that drops 
 
 When you attach a VPC to a transit gateway, you must add a route to your subnet route table for traffic to route through the transit gateway\. For more information, see [Routing for a Transit Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/route-table-options.html#route-tables-tgw) in the *Amazon VPC User Guide*\.
 
-### Route Table Association<a name="tgw-route-table-association-overview"></a>
+### Route table association<a name="tgw-route-table-association-overview"></a>
 
 You can associate a transit gateway attachment with a single route table\. Each route table can be associated with zero to many attachments and forward packets to other attachments\.
 
-### Route Propagation<a name="tgw-route-propagation-overview"></a>
+### Route propagation<a name="tgw-route-propagation-overview"></a>
 
 Each attachment comes with routes that can be installed to one or more transit gateway route tables\. When an attachment is propagated to a transit gateway route table, these routes are installed in the route table\. 
 
@@ -46,13 +46,13 @@ For a VPC attachment, the CIDR blocks of the VPC are propagated to the transit g
 
 For a VPN connection attachment, routes in the transit gateway route table propagate to and from the transit gateway and your on\-premises router using Border Gateway Protocol \(BGP\)\. The prefixes that are advertised over the BGP session are propagated to the transit gateway route table\.
 
-### Routes for Peering Attachments<a name="tgw-route-table-peering"></a>
+### Routes for peering attachments<a name="tgw-route-table-peering"></a>
 
 You can peer two transit gateways and route traffic between them\. To do this, you create a peering attachment on your transit gateway, and specify the peer transit gateway with which to create the peering connection\. You then create a static route in your transit gateway route table to route traffic to the transit gateway peering attachment\. Traffic that's routed to the peer transit gateway can then be routed to the VPC and VPN attachments for the peer transit gateway\.
 
-For more information, see [Transit Gateway Example: Peering](transit-gateway-peering-scenario.md)\.
+For more information, see [Example: Peered transit gateways](transit-gateway-peering-scenario.md)\.
 
-### Route Evaluation Order<a name="tgw-route-evaluation-overview"></a>
+### Route evaluation order<a name="tgw-route-evaluation-overview"></a>
 
 Transit gateway routes are evaluated in the following order:
 + The longest prefix route for the destination address\.

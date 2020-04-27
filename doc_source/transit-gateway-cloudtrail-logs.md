@@ -1,10 +1,12 @@
-# Logging API Calls for Your Transit Gateway Using AWS CloudTrail<a name="transit-gateway-cloudtrail-logs"></a>
+# Logging API calls for your transit gateway using AWS CloudTrail<a name="transit-gateway-cloudtrail-logs"></a>
 
 AWS CloudTrail is a service that provides a record of actions taken by a user, role, or an AWS service\. CloudTrail captures all transit gateway API calls as events\. The calls captured include calls from the AWS Management Console and code calls to the transit gateway API operations\. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for transit gateways\. If you don't configure a trail, you can still view the most recent events in the CloudTrail console in **Event history**\. Using the information collected by CloudTrail, you can determine the request that was made to the transit gateway API, the IP address from which the request was made, who made the request, when it was made, and additional details\.
 
+For more information about transit gateway APIs, see the [Transit Gateways](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/OperationList-query-vpc.html) section in the *Amazon EC2 API Reference*\.
+
 For more information about CloudTrail, see the [AWS CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
 
-## Transit Gateway Information in CloudTrail<a name="tgw-info-in-cloudtrail"></a>
+## Transit gateway information in CloudTrail<a name="tgw-info-in-cloudtrail"></a>
 
 CloudTrail is enabled on your AWS account when you create the account\. When activity occurs through the transit gateway API, that activity is recorded in a CloudTrail event along with other AWS service events in **Event history**\. You can view, search, and download recent events in your AWS account\. For more information, see [Viewing Events with CloudTrail Event History](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html)\.
 
@@ -23,7 +25,7 @@ Every event or log entry contains information about who generated the request\. 
 
 For more information, see the [CloudTrail userIdentity Element](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html)\.
 
-## Understanding Transit Gateway Log File Entries<a name="understanding-tgw-entries"></a>
+## Understanding transit gateway log file entries<a name="understanding-tgw-entries"></a>
 
 A trail is a configuration that enables delivery of events as log files to an Amazon S3 bucket that you specify\. CloudTrail log files contain one or more log entries\. An event represents a single request from any source and includes information about the requested action, the date and time of the action, request parameters, and so on\. CloudTrail log files aren't an ordered stack trace of the public API calls, so they don't appear in any specific order\.
 

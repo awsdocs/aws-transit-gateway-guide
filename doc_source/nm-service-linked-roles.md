@@ -1,8 +1,8 @@
-# Transit Gateway Network Manager Service\-Linked Role<a name="nm-service-linked-roles"></a>
+# Transit Gateway Network Manager service\-linked role<a name="nm-service-linked-roles"></a>
 
 Network Manager uses service\-linked roles for the permissions that it requires to call other AWS services on your behalf\. For more information about service\-linked roles, see [Using Service\-Linked Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html) in the *IAM User Guide*\.
 
-## Permissions Granted by the Service\-Linked Role<a name="service-linked-role-permissions"></a>
+## Permissions granted by the service\-linked role<a name="service-linked-role-permissions"></a>
 
 Network Manager uses the service\-linked role named **AWSServiceRoleForNetworkManager** to call the actions on your behalf when you work with global networks\. The following IAM policy is attached to the role\.
 
@@ -31,17 +31,17 @@ Network Manager uses the service\-linked role named **AWSServiceRoleForNetworkMa
 }
 ```
 
-## Create the Service\-Linked Role<a name="create-service-linked-role"></a>
+## Create the service\-linked role<a name="create-service-linked-role"></a>
 
 You don't need to manually create the **AWSServiceRoleForNetworkManager** role\. Network Manager creates this role for you when you create your first global network\.
 
 For Network Manager to create a service\-linked role on your behalf, you must have the required permissions\. For more information, see [Service\-Linked Role Permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#service-linked-role-permissions) in the *IAM User Guide*\.
 
-## Edit the Service\-Linked Role<a name="edit-service-linked-role"></a>
+## Edit the service\-linked role<a name="edit-service-linked-role"></a>
 
 You can edit the description of **AWSServiceRoleForNetworkManager** using IAM\. For more information, see [Editing a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#edit-service-linked-role) in the *IAM User Guide*\.
 
-## Delete the Service\-Linked Role<a name="delete-service-linked-role"></a>
+## Delete the service\-linked role<a name="delete-service-linked-role"></a>
 
 If you no longer need to use Network Manager, we recommend that you delete the **AWSServiceRoleForNetworkManager** role\.
 

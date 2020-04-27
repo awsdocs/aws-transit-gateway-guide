@@ -1,4 +1,4 @@
-# Getting Started with Transit Gateway Network Manager<a name="network-manager-getting-started"></a>
+# Getting started with Transit Gateway Network Manager<a name="network-manager-getting-started"></a>
 
 The following tasks help you become familiar with Transit Gateway Network Manager \(Network Manager\)\.
 
@@ -6,10 +6,10 @@ In this example, you create a global network and register your transit gateway w
 
 **Topics**
 + [Prerequisites](#network-manager-prerequisites)
-+ [Step 1: Create a Global Network](#getting-started-create-global-network)
-+ [Step 2: Register Your Transit Gateway](#getting-started-register-tgw)
-+ [Step 3: \(Optional\) Define and Associate Your On\-Premises Network Resources](#getting-started-define-wan)
-+ [Step 4: View and Monitor Your Global Network](#getting-started-view-global-network)
++ [Step 1: Create a global network](#getting-started-create-global-network)
++ [Step 2: Register your transit gateway](#getting-started-register-tgw)
++ [Step 3: \(Optional\) Define and associate your on\-premises network resources](#getting-started-define-wan)
++ [Step 4: View and monitor your global network](#getting-started-view-global-network)
 
 ## Prerequisites<a name="network-manager-prerequisites"></a>
 
@@ -17,7 +17,7 @@ Before you begin, ensure that you have a transit gateway with attachments in you
 
 The transit gateway must be in the same AWS account as the global network\.
 
-## Step 1: Create a Global Network<a name="getting-started-create-global-network"></a>
+## Step 1: Create a global network<a name="getting-started-create-global-network"></a>
 
 Create a global network as a container for your transit gateway\.
 
@@ -31,7 +31,7 @@ Create a global network as a container for your transit gateway\.
 
 1. Enter a name and description for the global network, and choose **Create global network**\.
 
-## Step 2: Register Your Transit Gateway<a name="getting-started-register-tgw"></a>
+## Step 2: Register your transit gateway<a name="getting-started-register-tgw"></a>
 
 Register your transit gateway in your global network\.
 
@@ -47,20 +47,20 @@ Register your transit gateway in your global network\.
 
 1. Select the transit gateway in the list, and choose **Register transit gateway**\.
 
-## Step 3: \(Optional\) Define and Associate Your On\-Premises Network Resources<a name="getting-started-define-wan"></a>
+## Step 3: \(Optional\) Define and associate your on\-premises network resources<a name="getting-started-define-wan"></a>
 
 You can define your on\-premises network by creating sites, links, and devices to represent objects in your network\. For more information, see the following procedures:
-+ [Creating a Site](on-premises-networks.md#creating-a-site)
-+ [Creating a Link](on-premises-networks.md#creating-a-link)
-+ [Creating a Device](on-premises-networks.md#creating-a-device)
++ [Creating a site](on-premises-networks.md#creating-a-site)
++ [Creating a link](on-premises-networks.md#creating-a-link)
++ [Creating a device](on-premises-networks.md#creating-a-device)
 
-You associate the device with a specific site, and with one or more links\. For more information, see [Device Associations](on-premises-networks.md#device-associations)\.
+You associate the device with a specific site, and with one or more links\. For more information, see [Device associations](on-premises-networks.md#device-associations)\.
 
-Finally, create a Site\-to\-Site VPN connection attachment on your transit gateway, and associate the customer gateway with the device\. For more information, see [Customer Gateway Associations](on-premises-networks.md#cgw-association)\.
+Finally, create a Site\-to\-Site VPN connection attachment on your transit gateway, and associate the customer gateway with the device\. For more information, see [Customer gateway associations](on-premises-networks.md#cgw-association)\.
 
 You can also work with one of our Partners in the AWS Partner Network \(APN\) to provision and connect your on\-premises network\. For more information, see [Transit Gateway Network Manager](https://aws.amazon.com/transit-gateway/network-manager)\.
 
-## Step 4: View and Monitor Your Global Network<a name="getting-started-view-global-network"></a>
+## Step 4: View and monitor your global network<a name="getting-started-view-global-network"></a>
 
 The Network Manager console provides a dashboard for you to view and monitor the network objects in your global network\.
 
@@ -72,4 +72,4 @@ The Network Manager console provides a dashboard for you to view and monitor the
 
 1. Choose the ID of your global network\.
 
-1. The **Overview** page provides an inventory of the objects in your global network\. For more information about the pages in the dashboard, see [Visualizing and Monitoring Your Global Network Using the Network Manager Console](network-manager-monitor-console.md)\.
+1. The **Overview** page provides an inventory of the objects in your global network\. For more information about the pages in the dashboard, see [Visualizing and monitoring your global network using the Network Manager console](network-manager-monitor-console.md)\.

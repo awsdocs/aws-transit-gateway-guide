@@ -1,4 +1,4 @@
-# Transit Gateway Attachments to a VPC<a name="tgw-vpc-attachments"></a>
+# Transit gateway attachments to a VPC<a name="tgw-vpc-attachments"></a>
 
 When you attach a VPC to a transit gateway, you must specify one subnet from each Availability Zone to be used by the transit gateway to route traffic\. Specifying one subnet from an Availability Zone enables traffic to reach resources in every subnet in that Availability Zone\.
 
@@ -9,7 +9,7 @@ The resources in a VPC attached to a transit gateway cannot access the security 
 
 A transit gateway does not support DNS resolution for custom DNS names of attached VPCs set up using private hosted zones in Amazon Route 53\. To configure the name resolution for private hosted zones for all VPCs attached to a transit gateway, see [Centralized DNS management of hybrid cloud with Amazon Route 53 and AWS Transit Gateway](https://aws.amazon.com/blogs/networking-and-content-delivery/centralized-dns-management-of-hybrid-cloud-with-amazon-route-53-and-aws-transit-gateway/)\.
 
-## Create a Transit Gateway Attachment to a VPC<a name="create-vpc-attachment"></a>
+## Create a transit gateway attachment to a VPC<a name="create-vpc-attachment"></a>
 
 **To create a VPC attachment using the console**
 
@@ -38,7 +38,7 @@ A transit gateway does not support DNS resolution for custom DNS names of attach
 **To create a VPC attachment using the AWS CLI**  
 Use the [create\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-vpc-attachment.html) command\.
 
-## Modify Your VPC Attachment<a name="modify-vpc-attachment"></a>
+## Modify your VPC attachment<a name="modify-vpc-attachment"></a>
 
 **To modify your VPC attachments using the console**
 
@@ -57,7 +57,7 @@ Use the [create\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/
 **To modify your VPC attachments using the AWS CLI**  
 Use the [modify\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-transit-gateway-vpc-attachment.html) command\.
 
-## Modify Your VPC Attachment Tags<a name="modify-vpc-attachment-tag"></a>
+## Modify your VPC attachment tags<a name="modify-vpc-attachment-tag"></a>
 
 **To modify your VPC attachment tags using the console**
 
@@ -75,7 +75,7 @@ Use the [modify\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/
 
 1. Choose **Modify attachment**\. 
 
-## View Your VPC Attachments<a name="view-vpc-attachment"></a>
+## View your VPC attachments<a name="view-vpc-attachment"></a>
 
 **To view your VPC attachments using the console**
 
@@ -90,7 +90,7 @@ Use the [modify\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/
 **To view your VPC attachments using the AWS CLI**  
 Use the [describe\-transit\-gateway\-vpc\-attachments](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-transit-gateway-vpc-attachments.html) command\.
 
-## Delete a VPC Attachment<a name="delete-vpc-attachment"></a>
+## Delete a VPC attachment<a name="delete-vpc-attachment"></a>
 
 **To delete a VPC attachment using the console**
 

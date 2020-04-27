@@ -1,10 +1,10 @@
-# Logging Transit Gateway Network Manager API Calls with AWS CloudTrail<a name="nm-logging-using-cloudtrail"></a>
+# Logging Transit Gateway Network Manager API calls with AWS CloudTrail<a name="nm-logging-using-cloudtrail"></a>
 
 Transit Gateway Network Manager \(Network Manager\) works together with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or an AWS service in Network Manager\. CloudTrail captures all API calls for Network Manager as events\. The calls that are captured include calls from the Network Manager console and code calls to the Network Manager API operations\. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for Network Manager\. If you don't configure a trail, you can still view the most recent events in the CloudTrail console in **Event history**\. Using the information collected by CloudTrail, you can determine the request that was made to Network Manager, the IP address from which the request was made, who made the request, when it was made, and additional details\. 
 
 To learn more about CloudTrail, see the [AWS CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
 
-## Network Manager Information in CloudTrail<a name="service-name-info-in-cloudtrail"></a>
+## Network Manager information in CloudTrail<a name="service-name-info-in-cloudtrail"></a>
 
 CloudTrail is enabled on your AWS account when you create the account\. When activity occurs in Network Manager, that activity is recorded in a CloudTrail event along with other AWS service events in **Event history**\. You can view, search, and download recent events in your AWS account\. For more information, see [Viewing Events with CloudTrail Event History](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html)\. 
 

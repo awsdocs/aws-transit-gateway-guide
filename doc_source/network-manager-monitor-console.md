@@ -1,4 +1,4 @@
-# Visualizing and Monitoring Your Global Network Using the Network Manager Console<a name="network-manager-monitor-console"></a>
+# Visualizing and monitoring your global network using the Network Manager console<a name="network-manager-monitor-console"></a>
 
 The Network Manager console provides a dashboard that enables you to visualize and monitor your global network\. It includes information about the resources in your global network, their geographic location, the network topology, and Amazon CloudWatch metrics and events\.
 
@@ -48,8 +48,8 @@ On the **Topology** page, you can view the network tree for your global network\
 
 ## Events<a name="network-manager-events"></a>
 
-On the **Events** page, you can view the system events that describe changes in your global network\. For more information, see [Monitoring Your Global Network with CloudWatch Events](monitoring-events.md)\.
+On the **Events** page, you can view the system events that describe changes in your global network\. For more information, see [Monitoring your global network with CloudWatch Events](monitoring-events.md)\.
 
 ## Monitoring<a name="network-manager-monitoring"></a>
 
-On the **Monitoring** page, you can view CloudWatch metrics for the transit gateways, VPN connections, and on\-premises resources in your global network\. For more information, see [Monitoring Your Global Network with Amazon CloudWatch Metrics](monitoring-cloudwatch-metrics.md)\.
+On the **Monitoring** page, you can view CloudWatch metrics for the transit gateways, VPN connections, and on\-premises resources in your global network\. For more information, see [Monitoring your global network with Amazon CloudWatch metrics](monitoring-cloudwatch-metrics.md)\.

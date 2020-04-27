@@ -1,6 +1,9 @@
 # Examples<a name="TGW_Scenarios"></a>
 
 The following are common use cases for transit gateways\. Your transit gateways are not limited to these use cases\.
-+ [Transit Gateway Example: Centralized Router](transit-gateway-centralized-router.md)
-+ [Transit Gateway Example: Isolated VPCs](transit-gateway-isolated.md)
-+ [Transit Gateway Example: Isolated VPCs with Shared Services](transit-gateway-isolated-shared.md)
+
+**Topics**
++ [Example: Centralized router](transit-gateway-centralized-router.md)
++ [Example: Isolated VPCs](transit-gateway-isolated.md)
++ [Example: Isolated VPCs with shared services](transit-gateway-isolated-shared.md)
++ [Example: Peered transit gateways](transit-gateway-peering-scenario.md)

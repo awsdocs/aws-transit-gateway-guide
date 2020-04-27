@@ -2,7 +2,7 @@
 
 Transit Gateway Network Manager \(Network Manager\) enables you to centrally manage your networks that are built around transit gateways\. You can visualize and monitor your global network across AWS Regions and on\-premises locations\.
 
-## Network Manager Concepts<a name="concepts"></a>
+## Network Manager concepts<a name="concepts"></a>
 
 The following are the key concepts for Network Manager:
 + ****global network**** — A single, private network that acts as the high\-level container for your network objects\.

@@ -1,4 +1,4 @@
-# Identity and Access Management for Transit Gateway Network Manager<a name="nm-security-iam"></a>
+# Identity and access management for Transit Gateway Network Manager<a name="nm-security-iam"></a>
 
 AWS Identity and Access Management \(IAM\) is an AWS service that helps an administrator securely control access to AWS resources\. IAM administrators control who can be *authenticated* \(signed in\) and *authorized* \(have permissions\) to use Transit Gateway Network Manager \(Network Manager\) resources\. IAM is an AWS service that you can use with no additional charge\. You can use features of IAM to allow other users, services, and applications to use your AWS resources fully or in a limited way, without sharing your security credentials\.
 
@@ -9,11 +9,11 @@ By default, IAM users don't have permission to create, view, or modify AWS resou
 When you attach a policy to a user or group of users, it allows or denies the user permissions to perform the specified tasks on the specified resources\.
 
 **Topics**
-+ [How Network Manager Works with IAM](#nm-with-iam)
-+ [Example Policies to Manage Transit Gateway Network Manager](#nm-example-iam-policies)
-+ [Transit Gateway Network Manager Service\-Linked Role](nm-service-linked-roles.md)
++ [How Network Manager works with IAM](#nm-with-iam)
++ [Example policies to manage Transit Gateway Network Manager](#nm-example-iam-policies)
++ [Transit Gateway Network Manager service\-linked role](nm-service-linked-roles.md)
 
-## How Network Manager Works with IAM<a name="nm-with-iam"></a>
+## How Network Manager works with IAM<a name="nm-with-iam"></a>
 
 With IAM identity\-based policies, you can specify allowed or denied actions and resources, and specify the conditions under which actions are allowed or denied\. Network Manager supports specific actions, resources, and condition keys\. For a complete list, see [Actions, Resources, and Condition Keys for Network Manager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_networkmanager.html) in the *IAM User Guide*\.
 
@@ -43,7 +43,7 @@ For example, to specify the `global-network-1122334455aabbccd` global network in
 
 For more information about the format of ARNs, see [Amazon Resource Names \(ARNs\) and AWS Service Namespaces](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\.
 
-### Condition Keys<a name="nm-iam-condition-keys"></a>
+### Condition keys<a name="nm-iam-condition-keys"></a>
 
 The `Condition` element \(or `Condition` *block*\) lets you specify conditions in which a statement is in effect\. The `Condition` element is optional\. You can build conditional expressions that use [condition operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html), such as equals or less than, to match the condition in the policy with values in the request\. 
 
@@ -59,11 +59,11 @@ Network Manager also supports the following condition keys:
 + `networkmanager:tgwArn`—Controls which transit gateways can be registered or deregistered in your global network\.
 + `networkmanager:cgwArn`—Controls which customer gateways can be associated or disassociated from devices and links in your global network\.
 
-## Example Policies to Manage Transit Gateway Network Manager<a name="nm-example-iam-policies"></a>
+## Example policies to manage Transit Gateway Network Manager<a name="nm-example-iam-policies"></a>
 
 The following are example IAM policies for working with Network Manager\.
 
-**Administrator Access**  
+**Administrator access**  
 The following IAM policy grants full access to the Amazon EC2, Network Manager, AWS Direct Connect, and CloudWatch APIs\. This enables administrators to create and manage transit gateways and their attachments \(such as VPCs and AWS Direct Connect gateways\), create and manage Network Manager resources, and monitor global networks using CloudWatch metrics and events\. The policy also grants user permissions to create any required service\-linked roles\.
 
 ```
@@ -104,7 +104,7 @@ The following IAM policy grants full access to the Amazon EC2, Network Manager, 
 }
 ```
 
-**Read\-Only Access**  
+**Read\-only access**  
 The following IAM policy grants read\-only access to the Amazon EC2, Network Manager, AWS Direct Connect, CloudWatch, and CloudWatch Events APIs\. This enables users to use the Network Manager console to view and monitor global networks and their associated resources, and view metrics and events for the resources\. Users cannot create or modify any resources\. 
 
 ```
@@ -167,7 +167,7 @@ The following IAM policy grants read\-only access to the Amazon EC2, Network Man
 }
 ```
 
-**Controlling the Use of Transit Gateways and Customer Gateways**  
+**Controlling the use of transit gateways and customer gateways**  
 The following IAM policy enables users to work with Network Manager resources, but they are explicitly denied permission to do the following:
 + Register or deregister a specific transit gateway \(`tgw-aabbccdd112233445`\) in the global network\.
 + Associate or disassociate a specific customer gateway \(`cgw-11223344556677abc`\) in the global network\.

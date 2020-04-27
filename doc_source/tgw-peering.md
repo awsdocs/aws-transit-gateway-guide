@@ -1,4 +1,4 @@
-# Transit Gateway Peering Attachments<a name="tgw-peering"></a>
+# Transit gateway peering attachments<a name="tgw-peering"></a>
 
 You can peer two transit gateways and route traffic between them, which includes IPv4 and IPv6 traffic\. To do this, create a peering attachment on your transit gateway, and specify a transit gateway in another AWS Region\. The peer transit gateway can be in your account or a different AWS account\. 
 
@@ -6,9 +6,9 @@ After you create a peering attachment request, the owner of the peer transit gat
 
 We recommend using unique ASNs for the peered transit gateways to take advantage of future route propagation capabilities\.
 
-You can create a transit gateway peering attachment between transit gateways in the following AWS Regions: US East \(N. Virginia\), US East \(Ohio\), US West \(Oregon\), US West \(N. California\), Canada \(Central\), EU \(Ireland\), EU \(Frankfurt\), EU \(Paris\), EU \(London\), EU \(Stockholm\), Asia Pacific \(Mumbai\), Asia Pacific \(Tokyo\), Asia Pacific \(Seoul\), Asia Pacific \(Singapore\), Asia Pacific \(Sydney), and South America \(Sao Paulo\).
+Transit gateway peering attachments are not supported in the following AWS Regions: Asia Pacific \(Hong Kong\), Asia Pacific \(Osaka\-Local\), and Middle East \(Bahrain\)\.
 
-## Create a Peering Attachment<a name="tgw-peering-create"></a>
+## Create a peering attachment<a name="tgw-peering-create"></a>
 
 Before you begin, ensure that you have the ID of the transit gateway that you want to attach\. If the transit gateway is in another AWS account, ensure that you have the AWS account ID of the owner of the transit gateway\.
 
@@ -41,7 +41,7 @@ After you create the peering attachment, the owner of the accepter transit gatew
 **To create a peering attachment using the AWS CLI**  
 Use the [create\-transit\-gateway\-peering\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-peering-attachment.html) command\.
 
-## Accept or Reject a Peering Attachment Request<a name="tgw-peering-accept-reject"></a>
+## Accept or reject a peering attachment request<a name="tgw-peering-accept-reject"></a>
 
 To activate the peering attachment, the owner of the accepter transit gateway must accept the peering attachment request\. This is required even if both transit gateways are in the same account\. The peering attachment must be in the `pendingAcceptance` state\. Accept the peering attachment request from the Region that the accepter transit gateway is located in\.
 
@@ -57,7 +57,7 @@ Alternatively, you can reject any peering connection request that you've receive
 
 1. Choose **Actions**, **Accept**\.
 
-1. Add the static route to the transit gateway route table\. For more information, see [Create a Static Route](tgw-route-tables.md#tgw-create-static-route)\.
+1. Add the static route to the transit gateway route table\. For more information, see [Create a static route](tgw-route-tables.md#tgw-create-static-route)\.
 
 **To reject a peering attachment request using the console**
 
@@ -72,7 +72,7 @@ Alternatively, you can reject any peering connection request that you've receive
 **To accept or reject a peering attachment using the AWS CLI**  
 Use the [accept\-transit\-gateway\-peering\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/accept-transit-gateway-peering-attachment.html) and [reject\-transit\-gateway\-peering\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/reject-transit-gateway-peering-attachment.html) commands\.
 
-## Add a Route to the Transit Gateway Route Table<a name="tgw-peering-add-route"></a>
+## Add a route to the transit gateway route table<a name="tgw-peering-add-route"></a>
 
 To route traffic between the peered transit gateways, you must add a static route to the transit gateway route table that points to the transit gateway peering attachment\. The owner of the accepter transit gateway must also add a static route to their transit gateway's route table\.
 
@@ -95,7 +95,7 @@ To route traffic between the peered transit gateways, you must add a static rout
 **To create a static route using the AWS CLI**  
 Use the [create\-transit\-gateway\-route](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-route.html) command\.
 
-## View Your Transit Gateway Peering Connection Attachments<a name="tgw-peering-view-attachments"></a>
+## View your transit gateway peering connection attachments<a name="tgw-peering-view-attachments"></a>
 
 You can view your transit gateway peering attachments and information about them\.
 
@@ -112,7 +112,7 @@ You can view your transit gateway peering attachments and information about them
 **To view your transit gateway peering attachments using the AWS CLI**  
 Use the [describe\-transit\-gateway\-peering\-attachments](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-transit-gateway-peering-attachments.html) command\.
 
-## Delete a Peering Attachment<a name="tgw-peering-delete"></a>
+## Delete a peering attachment<a name="tgw-peering-delete"></a>
 
 You can delete a transit gateway peering attachment\. The owner of either of the transit gateways can delete the attachment\.
 

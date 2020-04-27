@@ -1,8 +1,8 @@
-# Transit Gateway Route Tables<a name="tgw-route-tables"></a>
+# Transit gateway route tables<a name="tgw-route-tables"></a>
 
 Use transit gateway route tables to configure routing for your transit gateway attachments\.
 
-## Create a Transit Gateway Route Table<a name="create-tgw-route-table"></a>
+## Create a transit gateway route table<a name="create-tgw-route-table"></a>
 
 **To create a transit gateway route table using the console**
 
@@ -21,7 +21,7 @@ Use transit gateway route tables to configure routing for your transit gateway a
 **To create a transit gateway route table using the AWS CLI**  
 Use the [create\-transit\-gateway\-route\-table](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-route-table.html) command\.
 
-## Associate a Transit Gateway Route Table<a name="associate-tgw-route-table"></a>
+## Associate a transit gateway route table<a name="associate-tgw-route-table"></a>
 
 You can associate a transit gateway route table with a transit gateway attachment\.
 
@@ -42,7 +42,7 @@ You can associate a transit gateway route table with a transit gateway attachmen
 **To associate a transit gateway route table using the AWS CLI**  
 Use the [associate\-transit\-gateway\-route\-table](https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-transit-gateway-route-table.html) command\.
 
-## Delete an Association for a Transit Gateway Route Table<a name="disassociate-tgw-route-table"></a>
+## Delete an association for a transit gateway route table<a name="disassociate-tgw-route-table"></a>
 
 You can disassociate a transit gateway route table from a transit gateway attachment\.
 
@@ -63,7 +63,7 @@ You can disassociate a transit gateway route table from a transit gateway attach
 **To disassociate a transit gateway route table using the AWS CLI**  
 Use the [disassociate\-transit\-gateway\-route\-table](https://docs.aws.amazon.com/cli/latest/reference/ec2/disassociate-transit-gateway-route-table.html) command\.
 
-## View Transit Gateway Route Tables<a name="view-tgw-route-tables"></a>
+## View transit gateway route tables<a name="view-tgw-route-tables"></a>
 
 **To view transit gateway route tables using the console**
 
@@ -78,7 +78,7 @@ Choose a route table to display the settings for it\.
 **To view transit gateway route tables using the AWS CLI**  
 Use the [describe\-transit\-gateway\-route\-tables](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-transit-gateway-route-tables.html) command\.
 
-## Propagate a Route to a Transit Gateway Route Table<a name="enable-tgw-route-propagation"></a>
+## Propagate a route to a transit gateway route table<a name="enable-tgw-route-propagation"></a>
 
 Use route propagation to add a route from a route table to an attachment\.
 
@@ -101,7 +101,7 @@ Use route propagation to add a route from a route table to an attachment\.
 **To enable route propagation using the AWS CLI**  
 Use the [enable\-transit\-gateway\-route\-table\-propagation](https://docs.aws.amazon.com/cli/latest/reference/ec2/enable-transit-gateway-route-table-propagation.html) command\.
 
-## Disable Route Propagation<a name="disable-tgw-route-propagation"></a>
+## Disable route propagation<a name="disable-tgw-route-propagation"></a>
 
 Remove a propagated route from a route table attachment\.
 
@@ -122,7 +122,7 @@ Remove a propagated route from a route table attachment\.
 **To disable route propagation using the AWS CLI**  
 Use the [disable\-transit\-gateway\-route\-table\-propagation](https://docs.aws.amazon.com/cli/latest/reference/ec2/disable-transit-gateway-route-table-propagation.html) command\.
 
-## View Route Table Propagations<a name="view-tgw-route-propagations"></a>
+## View route table propagations<a name="view-tgw-route-propagations"></a>
 
 **To view route propagations using the console**
 
@@ -137,7 +137,7 @@ Use the [disable\-transit\-gateway\-route\-table\-propagation](https://docs.aws.
 **To view route propagations using the AWS CLI**  
 Use the [get\-transit\-gateway\-route\-table\-propagations](https://docs.aws.amazon.com/cli/latest/reference/ec2/get-transit-gateway-route-table-propagations.html) command\.
 
-## Create a Static Route<a name="tgw-create-static-route"></a>
+## Create a static route<a name="tgw-create-static-route"></a>
 
 You can create a static route for a VPC, VPN, or transit gateway peering attachment, or you can create a blackhole route that drops traffic that matches the route\.
 
@@ -174,7 +174,7 @@ You can create a static route for a VPC, VPN, or transit gateway peering attachm
 **To create a static route or blackhole route using the AWS CLI**  
 Use the [create\-transit\-gateway\-route](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-route.html) command\.
 
-## Delete a Static Route<a name="tgw-delete-static-route"></a>
+## Delete a static route<a name="tgw-delete-static-route"></a>
 
 You can create a static route for an attached VPC or VPN connection, or you can create a blackhole route that drops traffic that matches the route\.
 
@@ -195,7 +195,7 @@ You can create a static route for an attached VPC or VPN connection, or you can 
 **To delete a static route using the AWS CLI**  
 Use the [delete\-transit\-gateway\-route](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-transit-gateway-route.html) command\.
 
-## Export Route Tables to Amazon S3<a name="tgw-export-route-tables"></a>
+## Export route tables to Amazon S3<a name="tgw-export-route-tables"></a>
 
 You can export the routes in your transit gateway route tables to an Amazon S3 bucket\. The routes are saved to the specified Amazon S3 bucket in a JSON file\.
 
@@ -257,7 +257,7 @@ To access the exported routes, open the Amazon S3 console at [https://console\.a
 }
 ```
 
-## Delete a Transit Gateway Route Table<a name="delete-tgw-route-table"></a>
+## Delete a transit gateway route table<a name="delete-tgw-route-table"></a>
 
 **To delete a transit gateway route table using the console**
 

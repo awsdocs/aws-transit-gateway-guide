@@ -1,4 +1,4 @@
-# Transit Gateway Sharing Considerations<a name="transit-gateway-share"></a>
+# Transit gateway sharing considerations<a name="transit-gateway-share"></a>
 
 You can use AWS Resource Access Manager \(RAM\) to share a transit gateway for VPC attachments across accounts or across your organization in AWS Organizations\. Take the following into account when you want to share a transit gateway\.
 
@@ -30,7 +30,7 @@ A resource owner cannot create, modify, or delete the transit gateway route tabl
 
 When you create a transit gateway, the transit gateway, is created in the Availability Zone that is mapped to your account and is independent from other accounts\. When the transit gateway and the attachment entities are in different accounts, use the Availability Zone ID to uniquely and consistently identify the interface endpoint Availability Zone\. For example, use1\-az1 is an AZ ID for the us\-east\-1 Region and maps to the same location in every AWS account\. 
 
-## Unshare a Transit Gateway<a name="transit-gateway-unshare"></a>
+## Unshare a transit gateway<a name="transit-gateway-unshare"></a>
 
 When the share owner unshares the transit gateway, the following rules apply:
 + The transit gateway attachment remains functional\.

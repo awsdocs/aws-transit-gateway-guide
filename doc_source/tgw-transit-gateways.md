@@ -1,4 +1,4 @@
-# Transit Gateways<a name="tgw-transit-gateways"></a>
+# Transit gateways<a name="tgw-transit-gateways"></a>
 
 A transit gateway enables you to attach VPCs and VPN connections in the same Region and route traffic between them\. A transit gateway works across AWS accounts, and you can use AWS Resource Access Manager to share your transit gateway with other accounts\. After you share a transit gateway with another AWS account, the account owner can attach their VPCs to your transit gateway\. A user from either account can delete the attachment at any time\.
 
@@ -13,15 +13,15 @@ You can create additional route tables inside the transit gateway, and change th
 Transit gateways support dynamic and static routing between attached VPCs and VPN connections\. You can enable or disable route propagation for each attachment\. Transit gateway peering attachments support static routing only\.
 
 **Topics**
-+ [Create a Transit Gateway](#create-tgw)
-+ [View Your Transit Gateways](#view-tgws)
-+ [Add or edit tags for a Transit Gateway](#tgw-tagging)
-+ [Sharing a Transit Gateway](#tgw-sharing)
-+ [Accepting a Resource Share](#tgw-share-accept)
-+ [Accepting a Shared Attachment](#tgw-accept-shared-attachment)
-+ [Delete a Transit Gateway](#delete-tgw)
++ [Create a transit gateway](#create-tgw)
++ [View your transit gateways](#view-tgws)
++ [Add or edit tags for a transit gateway](#tgw-tagging)
++ [Sharing a transit gateway](#tgw-sharing)
++ [Accepting a resource share](#tgw-share-accept)
++ [Accepting a shared attachment](#tgw-accept-shared-attachment)
++ [Delete a transit gateway](#delete-tgw)
 
-## Create a Transit Gateway<a name="create-tgw"></a>
+## Create a transit gateway<a name="create-tgw"></a>
 
 When you create a transit gateway, we create a default transit gateway route table and use it as the default association route table and the default propagation route table\.
 
@@ -68,7 +68,7 @@ You must enable resource sharing from the master account for your organization\.
 **To create a transit gateway using the AWS CLI**  
 Use the [create\-transit\-gateway](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway.html) command\.
 
-## View Your Transit Gateways<a name="view-tgws"></a>
+## View your transit gateways<a name="view-tgws"></a>
 
 **To view your transit gateways using the console**
 
@@ -79,9 +79,9 @@ Use the [create\-transit\-gateway](https://docs.aws.amazon.com/cli/latest/refere
 **To view your transit gateways using the AWS CLI**  
 Use the [describe\-transit\-gateways](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-transit-gateways.html) command\.
 
-## Add or edit tags for a Transit Gateway<a name="tgw-tagging"></a>
+## Add or edit tags for a transit gateway<a name="tgw-tagging"></a>
 
-Add tags to your resources to help organize and identify them, such as by purpose, owner, or environment\. You can add multiple tags to each transit gateway\. Tag keys must be unique for each transit gateway\. If you add a tag with a key that is already associated with the transit gateway, it updates the value of that tag\. For more information, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.
+Add tags to your resources to help organize and identify them, such as by purpose, owner, or environment\. You can add multiple tags to each transit gateway\. Tag keys must be unique for each transit gateway\. If you add a tag with a key that is already associated with the transit gateway, it updates the value of that tag\. For more information, see [Tagging your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.
 
 **Add tags to a transit gateway using the console**
 
@@ -101,7 +101,7 @@ Add tags to your resources to help organize and identify them, such as by purpos
 
 1. Choose **Save**\.
 
-## Sharing a Transit Gateway<a name="tgw-sharing"></a>
+## Sharing a transit gateway<a name="tgw-sharing"></a>
 
 You can use AWS Resource Access Manager \(RAM\) to share a transit gateway across accounts or across your organization in AWS Organizations\. Use the following procedure to share a transit gateway that you own\.
 
@@ -123,7 +123,7 @@ You can use AWS Resource Access Manager \(RAM\) to share a transit gateway acros
 
 1. Choose **Create resource share**\.
 
-## Accepting a Resource Share<a name="tgw-share-accept"></a>
+## Accepting a resource share<a name="tgw-share-accept"></a>
 
 If you were added to a resource share, you receive an invitation to join the resource share\. You must accept the resource share before you can access the shared resources\.
 
@@ -139,7 +139,7 @@ If you were added to a resource share, you receive an invitation to join the res
 
 1. To view the shared transit gateway, open the **Transit Gateways** page in the Amazon VPC console\.
 
-## Accepting a Shared Attachment<a name="tgw-accept-shared-attachment"></a>
+## Accepting a shared attachment<a name="tgw-accept-shared-attachment"></a>
 
 If you didn't enable the **Auto accept shared attachments** functionality when you created your transit gateway, you must manually accept cross\-account \(shared\) attachments\.
 
@@ -156,7 +156,7 @@ If you didn't enable the **Auto accept shared attachments** functionality when y
 **To accept a shared attachment using the AWS CLI**  
 Use the [accept\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/accept-transit-gateway-vpc-attachment.html) command\.
 
-## Delete a Transit Gateway<a name="delete-tgw"></a>
+## Delete a transit gateway<a name="delete-tgw"></a>
 
 You can't delete a transit gateway with existing attachments\. You need to delete all attachments before you can delete a transit gateway\.
 

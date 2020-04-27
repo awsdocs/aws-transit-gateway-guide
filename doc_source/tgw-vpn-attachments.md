@@ -1,10 +1,10 @@
-# Transit Gateway VPN Attachments<a name="tgw-vpn-attachments"></a>
+# Transit gateway VPN attachments<a name="tgw-vpn-attachments"></a>
 
-To attach a VPN connection to your transit gateway, you must specify the customer gateway\. For more information about the requirements for a customer gateway, see [Requirements for Your Customer Gateway](https://docs.aws.amazon.com/vpc/latest/adminguide/Introduction.html#CGRequirements) in the *AWS Site\-to\-Site VPN Network Administrator Guide*\.
+To attach a VPN connection to your transit gateway, you must specify the customer gateway\. For more information about the requirements for a customer gateway device, see [Requirements for your customer gateway device](https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html#CGRequirements) in the *AWS Site\-to\-Site VPN User Guide*\.
 
 For static VPNs, add the static routes to the transit gateway route table\.
 
-## Create a Transit Gateway Attachment to a VPN<a name="create-vpn-attachment"></a>
+## Create a transit gateway attachment to a VPN<a name="create-vpn-attachment"></a>
 
 **To create a VPN attachment using the console**
 
@@ -26,14 +26,14 @@ For static VPNs, add the static routes to the transit gateway route table\.
 
      For **Routing options**, choose whether to use **Dynamic** or **Static**\. For more information, see [Site\-to\-Site VPN Routing Options](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNRoutingTypes.html) in the *AWS Site\-to\-Site VPN User Guide*\.
 
-1. For **Tunnel Options**, see [Site\-to\-Site VPN Tunnel Options for Your Site\-to\-Site VPN Connection](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html) in the *AWS Site\-to\-Site VPN User Guide*\.
+1. For **Tunnel Options**, see [Site\-to\-Site VPN Tunnel Options for your Site\-to\-Site VPN Connection](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html) in the *AWS Site\-to\-Site VPN User Guide*\.
 
 1. Choose **Create attachment**\.
 
 **To create a VPN attachment using the AWS CLI**  
 Use the [create\-vpn\-connection](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-vpn-connection.html) command\.
 
-## View Your VPN Attachments<a name="view-vpn-attachment"></a>
+## View your VPN attachments<a name="view-vpn-attachment"></a>
 
 **To view your VPN attachments using the console**
 

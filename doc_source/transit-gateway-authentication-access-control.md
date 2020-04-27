@@ -1,4 +1,4 @@
-# Authentication and Access Control for Your Transit Gateways<a name="transit-gateway-authentication-access-control"></a>
+# Authentication and access control for your transit gateways<a name="transit-gateway-authentication-access-control"></a>
 
 AWS uses security credentials to identify you and to grant you access to your AWS resources\. You can use features of AWS Identity and Access Management \(IAM\) to allow other users, services, and applications to use your AWS resources fully or in a limited way, without sharing your security credentials\.
 
@@ -10,13 +10,13 @@ To work with a transit gateway, one of the following AWS managed policies might 
 + **AmazonEC2FullAccess**
 + **AmazonEC2ReadOnlyAccess**
 
-For more information, see [IAM Policies for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html) in the *Amazon EC2 User Guide*\.
+For more information, see [IAM policies for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html) in the *Amazon EC2 User Guide*\.
 
-## Example Policies to Manage Transit Gateways<a name="tgw-example-iam-policies"></a>
+## Example policies to manage transit gateways<a name="tgw-example-iam-policies"></a>
 
 The following are example IAM policies for working with transit gateways\.
 
-**Creating a Tagged Transit Gateway**  
+**Creating a tagged transit gateway**  
 The following example enables users to create transit gateways\. The `aws:RequestTag` condition key requires users to tag the transit gateway with the tag `stack=prod`\. The `aws:TagKeys` condition key uses the `ForAllValues` modifier to indicate that only the key `stack` is allowed in the request \(no other tags can be specified\)\. If users don't pass this specific tag when they create the transit gateway, or if they don't specify tags at all, the request fails\. 
 
 The second statement uses the `ec2:CreateAction` condition key to allow users to create tags only in the context of `CreateTransitGateway`\. 
@@ -57,7 +57,7 @@ The second statement uses the `ec2:CreateAction` condition key to allow users to
 }
 ```
 
-**Working with Transit Gateway Route Tables**  
+**Working with transit gateway route tables**  
 The following example enables users to create and delete transit gateway route tables for a specific transit gateway only \(`tgw-11223344556677889`\)\. Users can also create and replace routes in any transit gateway route table, but only for attachments that have the tag `network=new-york-office`\.
 
 ```

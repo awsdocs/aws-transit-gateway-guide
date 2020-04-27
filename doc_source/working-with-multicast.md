@@ -1,25 +1,25 @@
-# Working with Multicast<a name="working-with-multicast"></a>
+# Working with multicast<a name="working-with-multicast"></a>
 
 You can configure multicast on transit gateways using the Amazon VPC console or the AWS CLI\.
 
 **Topics**
-+ [Create a Transit Gateway Multicast Domain](#create-tgw-domain)
-+ [Associate VPC Attachments and Subnets with a Transit Gateway Multicast Domain](#associate-attachment-to-domain)
-+ [Register Sources with a Multicast Group](#add-source-multicast-group)
-+ [Register Members with a Multicast Group](#add-members-multicast-group)
-+ [Deregister Sources from a Multicast Group](#remove-source-multicast-group)
-+ [Deregister Members from a Multicast Group](#remove-members-multicast-group)
-+ [Disassociate Subnets from a Transit Gateway Multicast Domain](#remove-subnet-association)
-+ [View Your Multicast Groups](#view-multicast-group)
-+ [View Your Transit Gateway Multicast Domain Associations](#view-tgw-domain-association)
-+ [Add or Remove Tags for a Transit Gateway Multicast Domain](#tgw-domain-tagging)
-+ [Delete a Transit Gateway Multicast Domain](#delete-tgw-domain)
++ [Create a transit gateway multicast domain](#create-tgw-domain)
++ [Associate VPC attachments and subnets with a transit gateway multicast domain](#associate-attachment-to-domain)
++ [Register sources with a multicast group](#add-source-multicast-group)
++ [Register members with a multicast group](#add-members-multicast-group)
++ [Deregister sources from a multicast group](#remove-source-multicast-group)
++ [Deregister members from a multicast group](#remove-members-multicast-group)
++ [Disassociate subnets from a transit gateway multicast domain](#remove-subnet-association)
++ [View your multicast groups](#view-multicast-group)
++ [View your transit gateway multicast domain associations](#view-tgw-domain-association)
++ [Add or remove tags for a transit gateway multicast domain](#tgw-domain-tagging)
++ [Delete a transit gateway multicast domain](#delete-tgw-domain)
 
-## Create a Transit Gateway Multicast Domain<a name="create-tgw-domain"></a>
+## Create a transit gateway multicast domain<a name="create-tgw-domain"></a>
 
 To begin using multicast on a transit gateway, create a transit gateway multicast domain\.
 
-Before you create a multicast domain, create a new transit gateway that has multicast enabled\. For more information, see [Create a Transit Gateway](tgw-transit-gateways.md#create-tgw)\.
+Before you create a multicast domain, create a new transit gateway that has multicast enabled\. For more information, see [Create a transit gateway](tgw-transit-gateways.md#create-tgw)\.
 
 **To create a transit gateway multicast domain using the console**
 
@@ -38,7 +38,7 @@ Before you create a multicast domain, create a new transit gateway that has mult
 **To create a transit gateway multicast domain using the AWS CLI**  
 Use the [create\-transit\-gateway\-multicast\-domain](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-multicast-domain.html) command\.
 
-## Associate VPC Attachments and Subnets with a Transit Gateway Multicast Domain<a name="associate-attachment-to-domain"></a>
+## Associate VPC attachments and subnets with a transit gateway multicast domain<a name="associate-attachment-to-domain"></a>
 
 Use the following procedure to associate a VPC attachment with a multicast domain\. When you create an association, you can then select the subnets to include in the multicast domain\. 
 
@@ -59,7 +59,7 @@ Use the following procedure to associate a VPC attachment with a multicast domai
 **To associate VPC attachments with a transit gateway multicast domain using the AWS CLI**  
 Use the [associate\-transit\-gateway\-multicast\-domain](https://docs.aws.amazon.com/cli/latest/reference/ec2/associate-transit-gateway-multicast-domain.html) command\.
 
-## Register Sources with a Multicast Group<a name="add-source-multicast-group"></a>
+## Register sources with a multicast group<a name="add-source-multicast-group"></a>
 
 Use the following procedure to register sources with a multicast group\. The source is the network interface that sends multicast traffic\.
 
@@ -85,7 +85,7 @@ You need the following information before you add a source:
 **To register sources using the AWS CLI**  
 Use the [register\-transit\-gateway\-multicast\-group\-sources](https://docs.aws.amazon.com/cli/latest/reference/ec2/register-transit-gateway-multicast-group-sources.html) command\.
 
-## Register Members with a Multicast Group<a name="add-members-multicast-group"></a>
+## Register members with a multicast group<a name="add-members-multicast-group"></a>
 
 Use the following procedure to register group members with a multicast group\. The members are the network interfaces that receive multicast traffic\.
 
@@ -111,7 +111,7 @@ You need the following information before you add members:
 **To register members using the AWS CLI**  
 Use the [register\-transit\-gateway\-multicast\-group\-sources](https://docs.aws.amazon.com/cli/latest/reference/ec2/register-transit-gateway-multicast-group-sources.html) command\.
 
-## Deregister Sources from a Multicast Group<a name="remove-source-multicast-group"></a>
+## Deregister sources from a multicast group<a name="remove-source-multicast-group"></a>
 
 Use the following procedure to remove a source from a multicast group\.
 
@@ -130,7 +130,7 @@ Use the following procedure to remove a source from a multicast group\.
 **To remove a source using the AWS CLI**  
 Use the [deregister\-transit\-gateway\-multicast\-group\-sources](https://docs.aws.amazon.com/cli/latest/reference/ec2/deregister-transit-gateway-multicast-group-sources.html) command\.
 
-## Deregister Members from a Multicast Group<a name="remove-members-multicast-group"></a>
+## Deregister members from a multicast group<a name="remove-members-multicast-group"></a>
 
 Use the following procedure to deregister members from a multicast group\. 
 
@@ -149,7 +149,7 @@ Use the following procedure to deregister members from a multicast group\.
 **To deregister members using the AWS CLI**  
 Use the [deregister\-transit\-gateway\-multicast\-group\-members](https://docs.aws.amazon.com/cli/latest/reference/ec2/deregister-transit-gateway-multicast-group-members.html) command\.
 
-## Disassociate Subnets from a Transit Gateway Multicast Domain<a name="remove-subnet-association"></a>
+## Disassociate subnets from a transit gateway multicast domain<a name="remove-subnet-association"></a>
 
 Use the following procedure to disassociate subnets from a transit gateway multicast domain\.
 
@@ -168,7 +168,7 @@ Use the following procedure to disassociate subnets from a transit gateway multi
 **To disassociate subnets using the AWS CLI**  
 Use the [disassociate\-transit\-gateway\-multicast\-domain](https://docs.aws.amazon.com/cli/latest/reference/ec2/API_DisassociateTransitGatewayMulticastDomain.html) command\.
 
-## View Your Multicast Groups<a name="view-multicast-group"></a>
+## View your multicast groups<a name="view-multicast-group"></a>
 
 Use the following procedure to view your multicast groups\.
 
@@ -185,7 +185,7 @@ Use the following procedure to view your multicast groups\.
 **To view multicast groups using the AWS CLI**  
 Use the [view multicast groups ](https://docs.aws.amazon.com/cli/latest/reference/ec2/view multicast groups .html) command\.
 
-## View Your Transit Gateway Multicast Domain Associations<a name="view-tgw-domain-association"></a>
+## View your transit gateway multicast domain associations<a name="view-tgw-domain-association"></a>
 
 You can view your transit gateway multicast domains to verify that they are available, and that they contain the appropriate subnets and attachments\.
 
@@ -200,9 +200,9 @@ You can view your transit gateway multicast domains to verify that they are avai
 **To view a transit gateway multicast domain using the AWS CLI**  
 Use the [describe\-transit\-gateway\-multicast\-domains](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-transit-gateway-multicast-domains.html) command\.
 
-## Add or Remove Tags for a Transit Gateway Multicast Domain<a name="tgw-domain-tagging"></a>
+## Add or remove tags for a transit gateway multicast domain<a name="tgw-domain-tagging"></a>
 
-Add tags to your resources to help organize and identify them, such as by purpose, owner, or environment\. You can add multiple tags to each transit gateway multicast domain\. Tag keys must be unique for each transit gateway multicast domain\. If you add a tag with a key that is already associated with the transit gateway multicast domain, it updates the value of that tag\. For more information, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.
+Add tags to your resources to help organize and identify them, such as by purpose, owner, or environment\. You can add multiple tags to each transit gateway multicast domain\. Tag keys must be unique for each transit gateway multicast domain\. If you add a tag with a key that is already associated with the transit gateway multicast domain, it updates the value of that tag\. For more information, see [Tagging your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.
 
 **Add tags to a transit gateway using the console**
 
@@ -222,7 +222,7 @@ Add tags to your resources to help organize and identify them, such as by purpos
 
 1. Choose **Save**\.
 
-## Delete a Transit Gateway Multicast Domain<a name="delete-tgw-domain"></a>
+## Delete a transit gateway multicast domain<a name="delete-tgw-domain"></a>
 
 Use the following procedure to delete a transit gateway multicast domain\.
 
