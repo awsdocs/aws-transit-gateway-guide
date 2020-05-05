@@ -55,6 +55,7 @@ Amazon's trademarks and trade dress may not be used in
          + [CloudWatch metrics for on-premises resources](cw-metrics-on-premises.md)
          + [Viewing global network CloudWatch metrics](viewing-metrics.md)
       + [Monitoring your global network with CloudWatch Events](monitoring-events.md)
+   + [Route Analyzer](route-analyzer.md)
    + [Identity and access management for Transit Gateway Network Manager](nm-security-iam.md)
       + [Transit Gateway Network Manager service-linked role](nm-service-linked-roles.md)
    + [Tagging your Network Manager resources](network-manager-tagging.md)

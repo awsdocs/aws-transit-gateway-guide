@@ -1,6 +1,6 @@
 # Visualizing and monitoring your global network using the Network Manager console<a name="network-manager-monitor-console"></a>
 
-The Network Manager console provides a dashboard that enables you to visualize and monitor your global network\. It includes information about the resources in your global network, their geographic location, the network topology, and Amazon CloudWatch metrics and events\.
+The Network Manager console provides a dashboard that enables you to visualize and monitor your global network\. It includes information about the resources in your global network, their geographic location, the network topology, Amazon CloudWatch metrics and events, and enables you to perform route analysis\.
 
 **To access the dashboard for your global network**
 
@@ -15,6 +15,7 @@ The Network Manager console provides a dashboard that enables you to visualize a
 + [Topology](#network-manager-topology)
 + [Events](#network-manager-events)
 + [Monitoring](#network-manager-monitoring)
++ [Route Analyzer](#network-manager-route-analyzer)
 
 ## Overview<a name="network-manager-main-dashboard"></a>
 
@@ -53,3 +54,7 @@ On the **Events** page, you can view the system events that describe changes in 
 ## Monitoring<a name="network-manager-monitoring"></a>
 
 On the **Monitoring** page, you can view CloudWatch metrics for the transit gateways, VPN connections, and on\-premises resources in your global network\. For more information, see [Monitoring your global network with Amazon CloudWatch metrics](monitoring-cloudwatch-metrics.md)\.
+
+## Route Analyzer<a name="network-manager-route-analyzer"></a>
+
+On the **Route Analyzer** page, you can perform an analysis of the routes in your transit gateway route tables\. This enables to you visualize routing paths and troubleshoot route\-related connectivity issues\. For more information, see [Route Analyzer](route-analyzer.md)\.
