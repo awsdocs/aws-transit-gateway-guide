@@ -21,7 +21,7 @@ In this scenario, you create the following entities for this scenario::
   + [Requirements for your customer gateway device](https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html#CGRequirements)
 + A VPN attachment on the transit gateway\. For more information, see [Create a transit gateway attachment to a VPN](tgw-vpn-attachments.md#create-vpn-attachment)\.
 
-When you create the VPC attachments, the CIDRs for each VPC propagate to the transit gateway route table\. When the VPN is up, the BGP session is established and the Site\-to\-Site VPN CIDR propagates to the transit gateway route table and the VPC CIDRs are added to the gateway BGP table\.
+When you create the VPC attachments, the CIDRs for each VPC propagate to the transit gateway route table\. When the VPN is up, the BGP session is established and the Site\-to\-Site VPN CIDR propagates to the transit gateway route table and the VPC CIDRs are added to the customer gateway BGP table\.
 
 ## Routing<a name="transit-gateway-centralized-router-routing"></a>
 
