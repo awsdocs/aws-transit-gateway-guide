@@ -1,15 +1,15 @@
-# Quotas for your transit gateways<a name="transit-gateway-limits"></a>
+# Quotas for your transit gateways<a name="transit-gateway-quotas"></a>
 
-Your AWS account has the following service quotas related to transit gateways\. Unless indicated otherwise, you can request an increase using the [Limits form](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=vpc)\. For more information about service quotas, see [AWS Service Quotas](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) in the *Amazon Web Services General Reference*\.
+Your AWS account has the following service quotas \(previously referred to as *limits*\) related to transit gateways\. Unless indicated otherwise, you can [request an increase](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=vpc) for a quota\. For more information about service quotas, see [AWS Service Quotas](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) in the *Amazon Web Services General Reference*\.
 
 ## General<a name="general-quota"></a>
 + Number of transit gateways per Region per account: 5
 
 ## Routing<a name="general-quota"></a>
 + Number of transit gateway route tables per transit gateway: 20
-+ Number of static routes per transit gateway: 10,000
++ Number of routes per transit gateway: 10,000
 
-  For VPC route table quotas, see [Amazon VPC Limits](https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html) in the *Amazon VPC User Guide*\.
+  For VPC route table quotas, see [Amazon VPC quotas](https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html) in the *Amazon VPC User Guide*\.
 
 ## Transit gateway attachments<a name="attachments-quota"></a>
 + Total number of transit gateway attachments per transit gateway: 5,000
@@ -23,7 +23,7 @@ Your AWS account has the following service quotas related to transit gateways\. 
 + Maximum bandwidth \(burst\) per VPC connection: 50 Gbps
 + Maximum bandwidth per VPN connection: 1\.25 Gbps
 
-  This is a hard value\. You can use ECMP to get higher VPN bandwidth by aggregating multiple VPN connections\.
+  This is a hard value\. You can use ECMP to get higher VPN bandwidth by aggregating multiple VPN tunnels\.
 
 ## AWS Direct Connect gateways<a name="direct-connect-quota"></a>
 + Number of AWS Direct Connect gateways per transit gateway: 20

@@ -39,7 +39,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Transit gateway service-linked role](tgw-service-linked-roles.md)
 + [Transit gateway design best practices](tgw-best-design-practices.md)
 + [How Network ACLs work with transit gateways](tgw-nacls.md)
-+ [Quotas for your transit gateways](transit-gateway-limits.md)
++ [Quotas for your transit gateways](transit-gateway-quotas.md)
 + [Transit gateway sharing considerations](transit-gateway-share.md)
 + [Transit Gateway Network Manager](what-is-network-manager.md)
    + [How Transit Gateway Network Manager works](how-network-manager-works.md)
