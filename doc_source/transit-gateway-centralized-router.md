@@ -8,7 +8,7 @@ You can configure your transit gateway as a centralized router that connects all
 
 ## Overview<a name="transit-gateway-centralized-router-overview"></a>
 
-The following diagram shows the key components of the configuration for this scenario\. In this scenario, there are three VPC attachments and one Site\-to\-Site VPN attachment to the transit gateway\. Packets from the subnets in VPC, A, VPC B, and VPC C that have the internet as a destination, route first through the transit gateway and then route to the VPN\. Packets from one VPC that have a destination of a subnet in another VPC, for example from 10\.1\.0\.0 to 10\.2\.0\.0, route through the transit gateway\.
+The following diagram shows the key components of the configuration for this scenario\. In this scenario, there are three VPC attachments and one Site\-to\-Site VPN attachment to the transit gateway\. Packets from the subnets in VPC A, VPC B, and VPC C that have the internet as a destination, route first through the transit gateway and then route to the VPN\. Packets from one VPC that have a destination of a subnet in another VPC, for example from 10\.1\.0\.0 to 10\.2\.0\.0, route through the transit gateway\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/transit-gateway-centralized.png)
 
