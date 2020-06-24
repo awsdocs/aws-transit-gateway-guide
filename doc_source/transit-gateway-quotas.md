@@ -21,7 +21,7 @@ Your AWS account has the following service quotas \(previously referred to as *l
 
 ## Bandwidth<a name="bandwidth-quota"></a>
 + Maximum bandwidth \(burst\) per VPC connection: 50 Gbps
-+ Maximum bandwidth per VPN connection: 1\.25 Gbps
++ Maximum bandwidth per VPN tunnel: 1\.25 Gbps
 
   This is a hard value\. You can use ECMP to get higher VPN bandwidth by aggregating multiple VPN tunnels\.
 
