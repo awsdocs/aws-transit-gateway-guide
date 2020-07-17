@@ -16,9 +16,9 @@ Transit gateways support dynamic and static routing between attached VPCs and VP
 + [Create a transit gateway](#create-tgw)
 + [View your transit gateways](#view-tgws)
 + [Add or edit tags for a transit gateway](#tgw-tagging)
-+ [Sharing a transit gateway](#tgw-sharing)
-+ [Accepting a resource share](#tgw-share-accept)
-+ [Accepting a shared attachment](#tgw-accept-shared-attachment)
++ [Share a transit gateway](#tgw-sharing)
++ [Accept a resource share](#tgw-share-accept)
++ [Accept a shared attachment](#tgw-accept-shared-attachment)
 + [Delete a transit gateway](#delete-tgw)
 
 ## Create a transit gateway<a name="create-tgw"></a>
@@ -49,7 +49,7 @@ You must enable resource sharing from the master account for your organization\.
 
 1. For **DNS support**, choose **enable** if you need the VPC to resolve public IPv4 DNS host names to private IPv4 addresses when queried from instances in another VPC attached to the transit gateway\.
 
-1. For **VPN ECMP support**, choose **enable** if you need Equal Cost Multipath \(ECMP\) routing support between VPN connections\. If connections advertise the same CIDRs, the traffic is distributed equally between them\.
+1. For **VPN ECMP support**, choose **enable** if you need Equal Cost Multipath \(ECMP\) routing support between VPN tunnels\. If connections advertise the same CIDRs, the traffic is distributed equally between them\.
 
    When you select this option, the advertised BGP ASN, the BGP attributes such as the AS\-path and the communities for preference must be the same\.
 
@@ -101,7 +101,7 @@ Add tags to your resources to help organize and identify them, such as by purpos
 
 1. Choose **Save**\.
 
-## Sharing a transit gateway<a name="tgw-sharing"></a>
+## Share a transit gateway<a name="tgw-sharing"></a>
 
 You can use AWS Resource Access Manager \(RAM\) to share a transit gateway across accounts or across your organization in AWS Organizations\. Use the following procedure to share a transit gateway that you own\.
 
@@ -123,7 +123,7 @@ You can use AWS Resource Access Manager \(RAM\) to share a transit gateway acros
 
 1. Choose **Create resource share**\.
 
-## Accepting a resource share<a name="tgw-share-accept"></a>
+## Accept a resource share<a name="tgw-share-accept"></a>
 
 If you were added to a resource share, you receive an invitation to join the resource share\. You must accept the resource share before you can access the shared resources\.
 
@@ -139,7 +139,7 @@ If you were added to a resource share, you receive an invitation to join the res
 
 1. To view the shared transit gateway, open the **Transit Gateways** page in the Amazon VPC console\.
 
-## Accepting a shared attachment<a name="tgw-accept-shared-attachment"></a>
+## Accept a shared attachment<a name="tgw-accept-shared-attachment"></a>
 
 If you didn't enable the **Auto accept shared attachments** functionality when you created your transit gateway, you must manually accept cross\-account \(shared\) attachments\.
 

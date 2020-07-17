@@ -26,7 +26,7 @@ You can perform the following operations on resources that are shared with you:
 + Run the APIs that create and describe attachments, for example `CreateTransitGatewayVpcAttachment` and `DescribeTransitGatewayVpcAttachments`, in their VPCs\.
 + Leave a resource share\.
 
-A resource owner cannot create, modify, or delete the transit gateway route tables, or the transit gateway route table propagations and associations\.
+ When a transit gateway is shared with you, you cannot create, modify, or delete the transit gateway route tables, or the transit gateway route table propagations and associations\. The account that accepts the shared transit gateway cannot create, modify, or delete the transit gateway route tables, or the transit gateway route table propagations and associations\.
 
 When you create a transit gateway, the transit gateway, is created in the Availability Zone that is mapped to your account and is independent from other accounts\. When the transit gateway and the attachment entities are in different accounts, use the Availability Zone ID to uniquely and consistently identify the interface endpoint Availability Zone\. For example, use1\-az1 is an AZ ID for the us\-east\-1 Region and maps to the same location in every AWS account\. 
 

@@ -2,9 +2,7 @@
 
 Learn how route tables, network ACLs, and security groups handle multicast traffic\.
 
-## Route tables<a name="multicast-route-tables-overview"></a>
-
-Route tables are not used to handle multicast traffic\. Instead, we send all multicast traffic to the transit gateway that is associated with a multicast domain, when you add a subnet to that multicast domain\.
+When you enable multicast on a transit gateway, it acts as a multicast router\. We send all multicast traffic to the transit gateway that is associated with a multicast domain, when you add a subnet to that multicast domain\.
 
 ## Network ACLs<a name="multicast-nacl"></a>
 

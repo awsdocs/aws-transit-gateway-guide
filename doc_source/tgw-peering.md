@@ -6,7 +6,7 @@ After you create a peering attachment request, the owner of the peer transit gat
 
 We recommend using unique ASNs for the peered transit gateways to take advantage of future route propagation capabilities\.
 
-Note: Transit gateway cross-region peering does not support resolving public IPv4 DNS hostnames to private IPv4 addresses across VPCs on either side of the transit gateway peering attachment. 
+Transit gateway cross\-region peering does not support resolving public IPv4 DNS host names to private IPv4 addresses across VPCs on either side of the transit gateway peering attachment\.
 
 Transit gateway peering attachments are not supported in the following AWS Regions: Asia Pacific \(Hong Kong\), Asia Pacific \(Osaka\-Local\), and Middle East \(Bahrain\)\.
 

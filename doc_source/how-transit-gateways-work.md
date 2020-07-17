@@ -20,7 +20,7 @@ We recommend that you enable multiple Availability Zones to ensure availability\
 
 ## Routing<a name="tgw-routing-overview"></a>
 
-Your transit gateway routes IPv4 and IPv6 packets between attachments using transit gateway route tables\. You can configure these route tables to propagate routes from the route tables for the attached VPCs and VPN connections\. You can also add static routes to the transit gateway route tables\. When a packet comes from one attachment, it is routed to another attachment using the route table that matches the destination IP address\.
+Your transit gateway routes IPv4 and IPv6 packets between attachments using transit gateway route tables\. You can configure these route tables to propagate routes from the route tables for the attached VPCs and VPN connections\. You can also add static routes to the transit gateway route tables\. When a packet comes from one attachment, it is routed to another attachment using the route that matches the destination IP address\.
 
 For transit gateway peering attachments, only static routes are supported\.
 
