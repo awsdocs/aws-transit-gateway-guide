@@ -12,7 +12,6 @@ The following tasks help you become familiar with transit gateways\. You will cr
 
 ## Prerequisites<a name="tgw-prerequisites"></a>
 + To demonstrate a simple example of using a transit gateway, create two VPCs in the same Region\. The VPCs cannot have overlapping CIDRs\. Launch one EC2 instance in each VPC\. For more information, see [Getting started with IPv4 for Amazon VPC](https://docs.aws.amazon.com/vpc/latest/userguide/getting-started-ipv4.html) in the *[Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)*\.
-+ You must enable resource sharing from the master account for your organization\. For information about enabling resource sharing, see [Enable sharing with AWS organizations](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs) in the *AWS RAM User Guide*\.
 + You cannot have identical routes pointing to two different VPCs\. A transit gateway does not propagate the CIDRs of a newly attached VPC if an identical route exists in the transit gateway route tables\.
 + Verify that you have the permissions required to work with transit gateways\. For more information, see [Authentication and access control for your transit gateways](transit-gateway-authentication-access-control.md)\.
 

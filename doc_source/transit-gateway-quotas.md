@@ -36,8 +36,8 @@ Your AWS account has the following service quotas \(previously referred to as *l
 ## MTU<a name="mtu-quota"></a>
 +  The maximum transmission unit \(MTU\) of a network connection is the size, in bytes, of the largest permissible packet that can be passed over the connection\. The larger the MTU of a connection, the more data can be passed in a single packet\. A transit gateway supports an MTU of 8500 bytes for traffic between VPCs, Direct Connect and peering attachments\. Traffic over VPN connections can have an MTU of 1500 bytes\. 
 + Packets with a size larger than 8500 bytes which arrive at the transit gateway are dropped\.
-+ The transit gateway does not generate the FRAG\_NEEDEDICMP packet, so Path MTU Discovery (PMTUD) is not supported\.
-+ The transit gateway enforces MSS clamping for all packets\.
++ The transit gateway does not generate the FRAG\_NEEDEDICMP packet, so Path MTU Discovery \(PMTUD\) is not supported\.
++ The transit gateway enforces Maximum Segment Size \(MSS\) clamping for all packets\. For more information, see [RFC879](https://tools.ietf.org/html/rfc879)\.
 
 ## Multicast<a name="multicast-quota"></a>
 + Number of multicast domains per transit gateway: 20

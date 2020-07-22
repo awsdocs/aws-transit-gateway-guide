@@ -25,8 +25,6 @@ Transit gateways support dynamic and static routing between attached VPCs and VP
 
 When you create a transit gateway, we create a default transit gateway route table and use it as the default association route table and the default propagation route table\.
 
-You must enable resource sharing from the master account for your organization\. For information about enabling resource sharing, see [Enable Sharing with AWS Organizations](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs) in the *AWS RAM User Guide*\.
-
 **To create a transit gateway using the console**
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
@@ -103,7 +101,9 @@ Add tags to your resources to help organize and identify them, such as by purpos
 
 ## Share a transit gateway<a name="tgw-sharing"></a>
 
-You can use AWS Resource Access Manager \(RAM\) to share a transit gateway across accounts or across your organization in AWS Organizations\. Use the following procedure to share a transit gateway that you own\.
+You can use AWS Resource Access Manager \(RAM\) to [share a transit gateway](transit-gateway-share.md) across accounts or across your organization in AWS Organizations\. Use the following procedure to share a transit gateway that you own\. 
+
+You must enable resource sharing from the master account for your organization\. For information about enabling resource sharing, see [Enable Sharing with AWS Organizations](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs) in the *AWS RAM User Guide*\.
 
 **To share a transit gateway**
 
