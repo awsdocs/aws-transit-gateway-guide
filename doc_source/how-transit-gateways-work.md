@@ -12,6 +12,8 @@ A transit gateway attachment is both a source and a destination of packets\. You
 
 If you attach a transit gateway peering connection, the transit gateway must be in a different Region\.
 
+Note: Transit Gateway currently do not support creating attachment to a VPC subnet that reside in a AWS Local Zone.
+
 ## Availability Zones<a name="tgw-az-overview"></a>
 
 When you attach a VPC to a transit gateway, you must enable one or more Availability Zones to be used by the transit gateway to route traffic to resources in the VPC subnets\. To enable each Availability Zone, you specify exactly one subnet\. The transit gateway places a network interface in that subnet using one IP address from the subnet\. After you enable an Availability Zone, traffic can be routed to all subnets in that Availability Zone, not just the specified subnet\. Resources that reside in Availability Zones where there is no transit gateway attachment will not be able to reach the transit gateway\.
