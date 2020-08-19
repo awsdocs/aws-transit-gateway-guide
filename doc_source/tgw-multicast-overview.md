@@ -18,4 +18,4 @@ The following are the key concepts for multicast:
 + A subnet can only be in one multicast domain\. 
 + If you use a non\-Nitro instance, you must disable the **Source/Dest** check\. For information about disabling the check, see [Changing the source or destination checking](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#change_source_dest_check) in the *Amazon EC2 User Guide for Linux Instances*\.
 + A non\-Nitro instance cannot be a multicast sender\.
-+ VPN and Direct Connect currently do not support multicast. There is no way to bring traffic over VPN or Direct Connect to the Transit Gateway and then forward it to multicast destinations inside your environments\. 
++ Multicast routing is not supported over AWS Direct Connect, Site-to-Site VPN, and peering attachments\. 
