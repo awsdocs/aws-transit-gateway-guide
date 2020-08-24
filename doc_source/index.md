@@ -29,6 +29,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Transit gateway VPN attachments](tgw-vpn-attachments.md)
    + [Transit gateway peering attachments](tgw-peering.md)
    + [Transit gateway route tables](tgw-route-tables.md)
+      + [Prefix list references](tgw-prefix-lists.md)
    + [Multicast on transit gateways](tgw-multicast-overview.md)
       + [Multicast routing](how-multicast-works.md)
       + [Working with multicast](working-with-multicast.md)

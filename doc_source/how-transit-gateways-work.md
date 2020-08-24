@@ -55,7 +55,7 @@ For more information, see [Example: Peered transit gateways](transit-gateway-pee
 ### Route evaluation order<a name="tgw-route-evaluation-overview"></a>
 
 Transit gateway routes are evaluated in the following order:
-+ The longest prefix route for the destination address\.
++ The most specific route for the destination address\.
 + If routes are the same with different targets:
   + Static routes have a higher precedence than propagated routes\.
   + Among propagated routes, VPC CIDRs have a higher precedence than Direct Connect gateways than Site\-to\-Site VPN\.

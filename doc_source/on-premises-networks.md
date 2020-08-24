@@ -2,7 +2,7 @@
 
 You can represent your on\-premises network in your global network through sites, devices, and links\. For more information, see [Defining and associating your on\-premises network](how-network-manager-works.md#nm-how-it-works-on-premises)\. You then associate a device with a site and one or more links\.
 
-To add your on\-premises network to your global network, you associate a customer gateway with your device\.
+To add your on\-premises network to your global network, you associate a customer gateway with your device\. For more information about viewing the topology of your on\-premises network in Network Manager, see [Topology](network-manager-monitor-console.md#network-manager-topology)\.
 
 All sites, devices, and links are created for a specific global network and cannot be shared with other global networks\.
 

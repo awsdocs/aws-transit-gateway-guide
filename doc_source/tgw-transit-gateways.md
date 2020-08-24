@@ -16,6 +16,7 @@ Transit gateways support dynamic and static routing between attached VPCs and VP
 + [Create a transit gateway](#create-tgw)
 + [View your transit gateways](#view-tgws)
 + [Add or edit tags for a transit gateway](#tgw-tagging)
++ [Modify a transit gateway](#tgw-modifying)
 + [Share a transit gateway](#tgw-sharing)
 + [Accept a resource share](#tgw-share-accept)
 + [Accept a shared attachment](#tgw-accept-shared-attachment)
@@ -99,6 +100,27 @@ Add tags to your resources to help organize and identify them, such as by purpos
 
 1. Choose **Save**\.
 
+## Modify a transit gateway<a name="tgw-modifying"></a>
+
+You can modify the configuration options for your transit gateway\. When you modify a transit gateway, the modified options are applied to new transit gateway attachments only\. Your existing transit gateway attachments are not modified\.
+
+You cannot modify a transit gateway that has been shared with you\.
+
+**To modify a transit gateway**
+
+1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
+
+1. On the navigation pane, choose **Transit Gateways**\.
+
+1. Choose the transit gateway to modify\.
+
+1. Choose **Actions**, **Modify**\.
+
+1. Modify the options as needed, and choose **Modify transit gateway**\.
+
+**To modify your transit gateway using the AWS CLI**  
+Use the [modify\-transit\-gateway](https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-transit-gateway.html) command\.
+
 ## Share a transit gateway<a name="tgw-sharing"></a>
 
 You can use AWS Resource Access Manager \(RAM\) to [share a transit gateway](transit-gateway-share.md) across accounts or across your organization in AWS Organizations\. Use the following procedure to share a transit gateway that you own\. 
@@ -166,7 +188,7 @@ You can't delete a transit gateway with existing attachments\. You need to delet
 
 1. Choose the transit gateway to delete\.
 
-1. Choose **Actions**, **Delete**, then choose **Delete** to confirm the deltion\.
+1. Choose **Actions**, **Delete**, then choose **Delete** to confirm the deletion\.
 
 **To delete a transit gateway using the AWS CLI**  
 Use the [delete\-transit\-gateway](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-transit-gateway.html) command\.

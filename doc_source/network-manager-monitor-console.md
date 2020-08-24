@@ -45,7 +45,11 @@ On the **Geographic** page, you can view the locations of the resources that are
 
 ![\[Topology page in the Network Manager console\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/nm-topology.png)
 
-On the **Topology** page, you can view the network tree for your global network\. By default, the page displays all resources in your global network and the logical relationships between them\. You can filter the network tree by resource type, and you can choose any of the nodes to view information about the specific resource it represents\. The line colors represent the state of the relationships between AWS and the on\-premises resources\.
+On the **Topology** page, you can view the network tree for your global network\. By default, the page displays all resources in your global network and the logical relationships between them\. You can filter the network tree to show specific on\-premises resource types only, for example, the preceding image shows sites and devices, and excludes customer gateways\. You can choose any of the nodes to view information about the specific resource it represents\. The line colors represent the state of the relationships between AWS and the on\-premises resources\.
+
+Customer gateways are represented as the resource that you define in AWS\. They are displayed to the left of the VPN connection and tunnel endpoint IP addresses, as shown in the following example\.
+
+![\[Topology of a customer gateway\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/nm-topology-cgw.png)
 
 ## Events<a name="network-manager-events"></a>
 

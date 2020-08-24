@@ -33,7 +33,7 @@ Before you create a multicast domain, create a new transit gateway that has mult
 
 1. For **Transit Gateway ID**, select the transit gateway that processes the multicast traffic\.
 
-1. Choose **Create Transit Gateway multicast** domain\.
+1. Choose **Create Transit Gateway Multicast Domain**\.
 
 **To create a transit gateway multicast domain using the AWS CLI**  
 Use the [create\-transit\-gateway\-multicast\-domain](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-multicast-domain.html) command\.
@@ -41,6 +41,8 @@ Use the [create\-transit\-gateway\-multicast\-domain](https://docs.aws.amazon.co
 ## Associate VPC attachments and subnets with a transit gateway multicast domain<a name="associate-attachment-to-domain"></a>
 
 Use the following procedure to associate a VPC attachment with a multicast domain\. When you create an association, you can then select the subnets to include in the multicast domain\. 
+
+Before you begin, you must create a VPC attachment on your transit gateway\. For more information, see [Transit gateway attachments to a VPC](tgw-vpc-attachments.md)\.
 
 **To associate VPC attachments with a transit gateway multicast domain using the console**
 
