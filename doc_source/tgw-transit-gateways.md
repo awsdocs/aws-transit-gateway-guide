@@ -50,7 +50,7 @@ When you create a transit gateway, we create a default transit gateway route tab
 1. For **VPN ECMP support**, choose **enable** if you need Equal Cost Multipath \(ECMP\) routing support between VPN tunnels\. If connections advertise the same CIDRs, the traffic is distributed equally between them\.
 
    When you select this option, the advertised BGP ASN, the BGP attributes such as the AS\-path and the communities for preference must be the same\. 
-   Note: When you create your VPN, you must choose Dynamic for Routing options. Static routing does not support ECMP
+   Note: To use ECMP, you must create a VPN connection that uses dynamic routing. VPN connections that use static routing do not support ECMP.
 
 1. For **Default route table association**, choose **enable** to automatically associate transit gateway attachments with the default route table for the transit gateway\.
 
