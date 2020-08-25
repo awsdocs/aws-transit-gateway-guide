@@ -9,6 +9,8 @@ The resources in a VPC attached to a transit gateway cannot access the security 
 
 A transit gateway does not support DNS resolution for custom DNS names of attached VPCs set up using private hosted zones in Amazon Route 53\. To configure the name resolution for private hosted zones for all VPCs attached to a transit gateway, see [Centralized DNS management of hybrid cloud with Amazon Route 53 and AWS Transit Gateway](https://aws.amazon.com/blogs/networking-and-content-delivery/centralized-dns-management-of-hybrid-cloud-with-amazon-route-53-and-aws-transit-gateway/)\.
 
+You cannot create an attachment for a VPC subnet that resides in a AWS Local Zone\.
+
 ## Create a transit gateway attachment to a VPC<a name="create-vpc-attachment"></a>
 
 **To create a VPC attachment using the console**
