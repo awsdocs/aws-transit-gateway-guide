@@ -24,6 +24,7 @@ Your AWS account has the following service quotas \(previously referred to as *l
 + Maximum bandwidth per VPN tunnel: 1\.25 Gbps
 
   This is a hard value\. You can use ECMP to get higher VPN bandwidth by aggregating multiple VPN tunnels\.
+  Note: You must choose Dynamic (BGP) for Routing options. Static routing does not support ECMP.
 
 ## AWS Direct Connect gateways<a name="direct-connect-quota"></a>
 + Number of AWS Direct Connect gateways per transit gateway: 20
