@@ -13,10 +13,9 @@ Your AWS account has the following service quotas \(previously referred to as *l
 
 ## Transit gateway attachments<a name="attachments-quota"></a>
 + Total number of transit gateway attachments per transit gateway: 5,000
-+ Number of transit gateway attachments per VPC: 5
-Note: Single transit gateway can only have one attachment to the same VPC
-
-  This value cannot be increased\.
++ Number of unique transit gateway attachments per VPC: 5
+  
+  This value cannot be increased. A transit gateway cannot have more than one attachment to the same VPC\.
 + Number of transit gateway peering attachments per transit gateway: 50
 + Number of pending transit gateway peering attachments transit gateway:10
 
