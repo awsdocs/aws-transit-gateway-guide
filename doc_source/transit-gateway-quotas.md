@@ -14,17 +14,17 @@ Your AWS account has the following service quotas \(previously referred to as *l
 ## Transit gateway attachments<a name="attachments-quota"></a>
 + Total number of transit gateway attachments per transit gateway: 5,000
 + Number of unique transit gateway attachments per VPC: 5
-  
-  This value cannot be increased. A transit gateway cannot have more than one attachment to the same VPC\.
+
+  This value cannot be increased\. A transit gateway cannot have more than one attachment to the same VPC\.
 + Number of transit gateway peering attachments per transit gateway: 50
++ Number of transit gateway peering attachments between two transit gateways: 1
 + Number of pending transit gateway peering attachments transit gateway:10
 
 ## Bandwidth<a name="bandwidth-quota"></a>
 + Maximum bandwidth \(burst\) per VPC, Direct Connect gateway, or peered transit gateway connection: 50 Gbps
 + Maximum bandwidth per VPN tunnel: 1\.25 Gbps
 
-  This is a hard value\. You can use ECMP to get higher VPN bandwidth by aggregating multiple VPN tunnels\.
-  Note: To use ECMP, the VPN connection must be configured for dynamic routing. ECMP is not supported on VPN connections that use static routing\.
+  This is a hard value\. You can use ECMP to get higher VPN bandwidth by aggregating multiple VPN tunnels\. To use ECMP, the VPN connection must be configured for dynamic routing\. ECMP is not supported on VPN connections that use static routing\.
 
 ## AWS Direct Connect gateways<a name="direct-connect-quota"></a>
 + Number of AWS Direct Connect gateways per transit gateway: 20

@@ -8,7 +8,9 @@ We recommend using unique ASNs for the peered transit gateways to take advantage
 
 Transit gateway cross\-region peering does not support resolving public IPv4 DNS host names to private IPv4 addresses across VPCs on either side of the transit gateway peering attachment\.
 
-Transit gateway peering attachments are not supported in the following AWS Regions: Asia Pacific \(Hong Kong\), Asia Pacific \(Osaka\-Local\), and Middle East \(Bahrain\)\.
+Transit gateway peering uses the same network infrastructure as VPC peering and is therefore encrypted\. For more information about VPC encryption, [Encryption in transit ](https://docs.aws.amazon.com/vpc/latest/userguide/data-protection.html#encryption-transit) in the *Amazon VPC User Guide\.*
+
+For information about what Regions support transit gateway peering attachments, see [AWS Transit Gateways FAQs](https://aws.amazon.com/transit-gateway/faqs/)\.
 
 ## Create a peering attachment<a name="tgw-peering-create"></a>
 

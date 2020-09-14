@@ -33,7 +33,7 @@ The log files include events for all AWS API calls for your AWS account, not jus
 
 The following are example CloudTrail log records for the transit gateway API for a user who created a transit gateway using the console\. You can identify the console using the `userAgent` element\. You can identify the requested API call using the `eventName` elements\. Information about the user \(`Alice`\) can be found in the `userIdentity` element\.
 
-**Example Example: CreateTransitGateway**  
+**Example: CreateTransitGateway**  
 
 ```
 {
