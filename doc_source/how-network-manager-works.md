@@ -33,7 +33,7 @@ You can create a global network that includes transit gateways in multiple AWS R
 
 To represent your on\-premises network, you add *devices*, *links*, and *sites* to your global network\. A site represents the physical location of your branch, office, store, campus, data center, and so on\. When you add a site, you can specify the location information, including the physical address and coordinates\.
 
-A device represents the physical or virtual appliance that establishes connectivity with a transit gateway over an IPsec tunnel\. A link represents a single outbound internet connection used by a device, for example, a 20 Mbps broadband link\.
+A device represents the physical or virtual appliance that establishes connectivity with a transit gateway over an IPsec VPN tunnel\. A link represents a single outbound internet connection used by a device, for example, a 20 Mbps broadband link\.
 
 When you create a device, you can specify its physical location, and the site where it's located\. A device can have a more specific location than the site, for example, a building in a campus or a floor in a building\. When you create a link, you create it for a specific site\. You can then associate a device with a link\. 
 
@@ -43,7 +43,7 @@ To connect your on\-premises network to your AWS resources, associate a customer
 
 You can have multiple devices in a site, and you can associate a device with multiple links\. For examples, see [Scenarios for Transit Gateway Network Manager](network-manager-scenarios.md)\.
 
-You can work with one of our Partners in the AWS Partner Network \(APN\) to provision and connect your on\-premises networks\. For more information, see [Transit Gateway Network Manager](https://aws.amazon.com/transit-gateway/network-manager)\.
+You can work with one of our Partners in the AWS Partner Network \(APN\) to provision and connect your on\-premises networks\. For more information, see [AWS Partner Network \(APN\)](https://aws.amazon.com/partners/)\.
 
 ## Network Manager quotas<a name="network-manager-limits"></a>
 
