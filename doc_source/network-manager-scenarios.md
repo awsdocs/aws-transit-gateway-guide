@@ -70,4 +70,4 @@ Your on\-premises network is managed using SD\-WAN\. The SD\-WAN controller crea
 
 ![\[SD-WAN connecting to AWS\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/nm-sd-wan-aws.png)
 
-For more information about Partners who can help you set up your Site\-to\-Site VPN connections, see [Transit Gateway Network Manager](https://aws.amazon.com/transit-gateway/network-manager)\.
+For more information about AWS Partners who can help you set up your Site\-to\-Site VPN connections, see [AWS Partner Network \(APN)\](https://aws.amazon.com/partners/)\.
