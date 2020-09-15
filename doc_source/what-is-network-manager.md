@@ -12,4 +12,4 @@ The following are the key concepts for Network Manager:
 
 ## Pricing<a name="nm-pricing"></a>
 
-There are no additional fees for using Network Manager\. You are charged the standard fees for the network resources that you manage in your global network \(such as transit gateways\)\.
+There is no additional cost for using Network Manager. You pay for the network resources you use, like Transit Gateways, VPNs, and so on. Here you can find more information on [pricing for VPN](https://aws.amazon.com/vpn/pricing/) and [Transit Gateway](https://aws.amazon.com/transit-gateway/pricing/)\.
