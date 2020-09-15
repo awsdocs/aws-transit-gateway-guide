@@ -58,7 +58,7 @@ You associate the device with a specific site, and with one or more links\. For 
 
 Finally, create a Site\-to\-Site VPN connection attachment on your transit gateway, and associate the customer gateway with the device\. For more information, see [Customer gateway associations](on-premises-networks.md#cgw-association)\.
 
-You can also work with one of our Partners in the AWS Partner Network \(APN\) to provision and connect your on\-premises network\. For more information, see [Transit Gateway Network Manager](https://aws.amazon.com/transit-gateway/network-manager)\.
+You can also work with one of our Partners in the AWS Partner Network \(APN\) to provision and connect your on\-premises network\. For more information, see [AWS Partner Network \(APN\](https://aws.amazon.com/partners/)\.
 
 ## Step 4: View and monitor your global network<a name="getting-started-view-global-network"></a>
 
