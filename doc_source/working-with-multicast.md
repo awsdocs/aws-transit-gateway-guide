@@ -1,6 +1,6 @@
 # Working with multicast<a name="working-with-multicast"></a>
 
-You can configure multicast on transit gateways using the Amazon VPC console or the AWS CLI\.
+You can configure multicast on transit gateways using the Amazon VPC console or the AWS CLI\. Note: Currently multicast on transit gateways is only available in the following AWS regions: US East (N. Virginia), Europe (Frankfurt), South America (São Paulo), Middle East (Bahrain), Asia Pacific (Hong Kong) and Asia Pacific (Seoul). 
 
 **Topics**
 + [Create a transit gateway multicast domain](#create-tgw-domain)
