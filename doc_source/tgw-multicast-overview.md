@@ -11,10 +11,11 @@ The following are the key concepts for multicast:
 + **Multicast group member** — An elastic network interface associated with a supported EC2 instance that receives multicast traffic\. A multicast group has multiple group members\.
 
 ## Considerations<a name="limits"></a>
++ For information about supported Regions, see [AWS Transit Gateway FAQs](https://aws.amazon.com/transit-gateway/faqs)\.
 + You must create a new transit gateway to enable multicast\.
 + You cannot share multicast\-enabled transit gateways with other accounts \(using AWS Resource Access Manager\)\.
 + Multicast group membership is managed using Amazon VPC Console or the AWS CLI\. 
-+   [Internet Group Management Protocol \(IGMP\)](https://en.wikipedia.org/wiki/Internet_Group_Management_Protocol) \(IGMP\) support for managing group membership will come in the future\.
++   [Internet Group Management Protocol \(IGMP\)](https://en.wikipedia.org/wiki/Internet_Group_Management_Protocol) support for managing group membership will come in the future\.
 + A subnet can only be in one multicast domain\. 
 + If you use a non\-Nitro instance, you must disable the **Source/Dest** check\. For information about disabling the check, see [Changing the source or destination checking](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#change_source_dest_check) in the *Amazon EC2 User Guide for Linux Instances*\.
 + A non\-Nitro instance cannot be a multicast sender\.
