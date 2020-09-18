@@ -11,8 +11,7 @@ The following are the key concepts for multicast:
 + **Multicast group member** — An elastic network interface associated with a supported EC2 instance that receives multicast traffic\. A multicast group has multiple group members\.
 
 ## Considerations<a name="limits"></a>
-+ For information about supported Regions, see [AWS Transit Gateway FAQs](https://aws.amazon.com/transit-gateway/faqs)\.
-+ You must create a new transit gateway to enable multicast\.
++ + You must create a new transit gateway to enable multicast\.
 + You cannot share multicast\-enabled transit gateways with other accounts \(using AWS Resource Access Manager\)\.
 + Multicast group membership is managed using Amazon VPC Console or the AWS CLI\. 
 +   [Internet Group Management Protocol \(IGMP\)](https://en.wikipedia.org/wiki/Internet_Group_Management_Protocol) support for managing group membership will come in the future\.
