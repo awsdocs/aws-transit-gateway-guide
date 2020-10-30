@@ -127,7 +127,7 @@ Use the [modify\-transit\-gateway](https://docs.aws.amazon.com/cli/latest/refere
 
 You can use AWS Resource Access Manager \(RAM\) to [share a transit gateway](transit-gateway-share.md) across accounts or across your organization in AWS Organizations\. Use the following procedure to share a transit gateway that you own\. 
 
-You must enable resource sharing from the master account for your organization\. For information about enabling resource sharing, see [Enable Sharing with AWS Organizations](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs) in the *AWS RAM User Guide*\.
+You must enable resource sharing from the management account for your organization\. For information about enabling resource sharing, see [Enable Sharing with AWS Organizations](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs) in the *AWS RAM User Guide*\.
 
 **To share a transit gateway**
 

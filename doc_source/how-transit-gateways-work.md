@@ -18,6 +18,9 @@ When you attach a VPC to a transit gateway, you must enable one or more Availabi
 
 We recommend that you enable multiple Availability Zones to ensure availability\.
 
+**Using appliance mode support**  
+By default, when a transit gateway routes traffic between VPC attachments, it keeps traffic in the same Availability Zone that it originated from until it reaches its destination\. Traffic crosses Availability Zones between attachments only if there is an Availability Zone failure or if there are no subnets associated with a VPC attachment in that Availability Zone\. If you plan to configure a stateful network appliance in your VPC, you can enable appliance mode support for that VPC attachment\. This ensures that the transit gateway continues to use the same Availability Zone for that VPC attachment for the lifetime of a flow of traffic between source and destination\. It also allows the transit gateway to send traffic to any Availability Zone in the VPC, as long as there is a subnet association in that Availability Zone\. For more information and an example, see [Example: Appliance in a shared services VPC](transit-gateway-appliance-scenario.md)\.
+
 ## Routing<a name="tgw-routing-overview"></a>
 
 Your transit gateway routes IPv4 and IPv6 packets between attachments using transit gateway route tables\. You can configure these route tables to propagate routes from the route tables for the attached VPCs and VPN connections\. You can also add static routes to the transit gateway route tables\. When a packet comes from one attachment, it is routed to another attachment using the route that matches the destination IP address\.
@@ -58,7 +61,10 @@ Transit gateway routes are evaluated in the following order:
 + The most specific route for the destination address\.
 + If routes are the same with different targets:
   + Static routes have a higher precedence than propagated routes\.
-  + Among propagated routes, VPC CIDRs have a higher precedence than Direct Connect gateways than Site\-to\-Site VPN\.
+  + For propagated routes, the following order is used:
+    + VPCs have the highest precedence
+    + Direct Connect gateways have the second highest precedence
+    + Site\-to\-Site VPNs have the third highest precedence
 
 Consider the following VPC route table\. The VPC local route has the highest priority, followed by the routes that are the most specific\. When a static route and a propagated route have the same destination, the static route has a higher priority\.
 
