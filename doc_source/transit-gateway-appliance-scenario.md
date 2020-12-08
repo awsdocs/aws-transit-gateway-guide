@@ -37,6 +37,8 @@ Each VPC has one or more route tables and the transit gateway has two route tabl
 
 ### VPC route tables<a name="transit-gateway-appliance-vpc-route-table"></a>
 
+**VPC A and VPC B**
+
 VPCs A and B have route tables with 2 entries\. The first entry is the default entry for local IPv4 routing in the VPC\. This default entry enables the resources in this VPC to communicate with each other\. The second entry routes all other IPv4 subnet traffic to the transit gateway\. The following is the route table for VPC A\.
 
 
@@ -44,6 +46,8 @@ VPCs A and B have route tables with 2 entries\. The first entry is the default e
 | --- | --- | 
 |  10\.0\.0\.0/16  |  local  | 
 |  0\.0\.0\.0/0  |  *tgw\-id*  | 
+
+**VPC C**
 
 The shared services VPC \(VPC C\) has different route tables for each subnet\. Subnet A is used by the transit gateway \(you specify this subnet when you create the VPC attachment\)\. The route table for subnet A routes all traffic to the appliance in subnet B\.
 
