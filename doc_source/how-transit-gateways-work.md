@@ -1,6 +1,6 @@
 # How transit gateways work<a name="how-transit-gateways-work"></a>
 
-A *transit gateway* acts as a Regional virtual router for traffic flowing between your virtual private clouds \(VPC\) and VPN connections\. A transit gateway scales elastically based on the volume of network traffic\. Routing through a transit gateway operates at layer 3, where the packets are sent to a specific next\-hop attachment, based on their destination IP addresses\.
+A *transit gateway* acts as a Regional virtual router for traffic flowing between your virtual private clouds \(VPCs\) and on\-premises networks\. A transit gateway scales elastically based on the volume of network traffic\. Routing through a transit gateway operates at layer 3, where the packets are sent to a specific next\-hop attachment, based on their destination IP addresses\.
 
 ## Resource attachments<a name="tgw-attachments-overview"></a>
 
@@ -8,6 +8,7 @@ A transit gateway attachment is both a source and a destination of packets\. You
 + One or more VPCs
 + One or more VPN connections
 + One or more AWS Direct Connect gateways
++ One or more Transit Gateway Connect attachments
 + One or more transit gateway peering connections
 
 If you attach a transit gateway peering connection, the transit gateway must be in a different Region\.
@@ -18,25 +19,28 @@ When you attach a VPC to a transit gateway, you must enable one or more Availabi
 
 We recommend that you enable multiple Availability Zones to ensure availability\.
 
+**Using appliance mode support**  
+By default, when a transit gateway routes traffic between VPC attachments, it keeps traffic in the same Availability Zone that it originated from until it reaches its destination\. Traffic crosses Availability Zones between attachments only if there is an Availability Zone failure or if there are no subnets associated with a VPC attachment in that Availability Zone\. If you plan to configure a stateful network appliance in your VPC, you can enable appliance mode support for that VPC attachment\. This ensures that the transit gateway continues to use the same Availability Zone for that VPC attachment for the lifetime of a flow of traffic between source and destination\. It also allows the transit gateway to send traffic to any Availability Zone in the VPC, as long as there is a subnet association in that Availability Zone\. For more information and an example, see [Example: Appliance in a shared services VPC](transit-gateway-appliance-scenario.md)\.
+
 ## Routing<a name="tgw-routing-overview"></a>
 
-Your transit gateway routes IPv4 and IPv6 packets between attachments using transit gateway route tables\. You can configure these route tables to propagate routes from the route tables for the attached VPCs and VPN connections\. You can also add static routes to the transit gateway route tables\. When a packet comes from one attachment, it is routed to another attachment using the route that matches the destination IP address\.
+Your transit gateway routes IPv4 and IPv6 packets between attachments using transit gateway route tables\. You can configure these route tables to propagate routes from the route tables for the attached VPCs, VPN connections, and Direct Connect gateways\. You can also add static routes to the transit gateway route tables\. When a packet comes from one attachment, it is routed to another attachment using the route that matches the destination IP address\.
 
 For transit gateway peering attachments, only static routes are supported\.
 
 ### Route tables<a name="tgw-route-tables-overview"></a>
 
-Your transit gateway automatically comes with a default route table\. By default, this route table is the default association route table and the default propagation route table\. Alternatively, if you disable route propagation and route table association, we do not create a default route table for the transit gateway\.
+Your transit gateway automatically comes with a default route table\. By default, this route table is the default association route table and the default propagation route table\. Alternatively, if you disable route propagation and route table association, AWS does not create a default route table for the transit gateway\.
 
-You can create additional route tables for your transit gateway\. This enables you to isolate subnets of attachments\. Each attachment can be associated with one route table\. An attachment can propagate their routes to one or more route tables\.
+You can create additional route tables for your transit gateway\. This enables you to isolate subnets of attachments\. Each attachment can be associated with one route table\. An attachment can propagate its routes to one or more route tables\.
 
 You can create a blackhole route in your transit gateway route table that drops traffic that matches the route\.
 
-When you attach a VPC to a transit gateway, you must add a route to your subnet route table for traffic to route through the transit gateway\. For more information, see [Routing for a Transit Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/route-table-options.html#route-tables-tgw) in the *Amazon VPC User Guide*\.
+When you attach a VPC to a transit gateway, you must add a route to your subnet route table in order for traffic to route through the transit gateway\. For more information, see [Routing for a Transit Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/route-table-options.html#route-tables-tgw) in the *Amazon VPC User Guide*\.
 
 ### Route table association<a name="tgw-route-table-association-overview"></a>
 
-You can associate a transit gateway attachment with a single route table\. Each route table can be associated with zero to many attachments and forward packets to other attachments\.
+You can associate a transit gateway attachment with a single route table\. Each route table can be associated with zero to many attachments and can forward packets to other attachments\.
 
 ### Route propagation<a name="tgw-route-propagation-overview"></a>
 
@@ -44,7 +48,7 @@ Each attachment comes with routes that can be installed to one or more transit g
 
 For a VPC attachment, the CIDR blocks of the VPC are propagated to the transit gateway route table\. 
 
-For a VPN connection attachment, routes in the transit gateway route table propagate to and from the transit gateway and your on\-premises router using Border Gateway Protocol \(BGP\)\. The prefixes that are advertised over the BGP session are propagated to the transit gateway route table\.
+For a VPN connection attachment or a Direct Connect gateway attachment, routes in the transit gateway route table propagate to and from the transit gateway and your on\-premises router using Border Gateway Protocol \(BGP\)\.
 
 ### Routes for peering attachments<a name="tgw-route-table-peering"></a>
 
@@ -59,9 +63,10 @@ Transit gateway routes are evaluated in the following order:
 + If routes are the same with different targets:
   + Static routes have a higher precedence than propagated routes\.
   + For propagated routes, the following order is used:
-    + VPCs have the highest precedence
-    + Direct Connect gateways have the second highest precedence
-    + Site\-to\-Site VPNs have the third highest precedence
+    + VPCs have the highest precedence\.
+    + Direct Connect gateways have the second highest precedence\.
+    + Transit Gateway Connects have the third highest precedence\.
+    + Site\-to\-Site VPNs have the fourth highest precedence\.
 
 Consider the following VPC route table\. The VPC local route has the highest priority, followed by the routes that are the most specific\. When a static route and a propagated route have the same destination, the static route has a higher priority\.
 
@@ -82,4 +87,5 @@ Consider the following transit gateway route table\. When a static route and a p
 | 10\.0\.0\.0/16 | tgw\-attach\-123 \| vpc\-1234 | VPC | Static or propagated | 1 | 
 | 192\.168\.0\.0/16 | tgw\-attach\-789 \| vpn\-5678 | VPN | Static | 2 | 
 | 172\.31\.0\.0/16 | tgw\-attach\-456 \| dxgw\_id | AWS Direct Connect gateway | Propagated | 3 | 
-| 172\.31\.0\.0/16 | tgw\-attach\-789 \| vpn\-5678 | VPN | Propagated | 4 | 
+| 172\.31\.0\.0/16 | tgw\-attach\-789 \| tgw\-connect\-peer\-123 | VPN | Propagated | 4 | 
+| 172\.31\.0\.0/16 | tgw\-attach\-789 \| vpn\-5678 | VPN | Propagated | 5 | 

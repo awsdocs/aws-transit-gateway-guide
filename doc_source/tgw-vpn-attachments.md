@@ -26,7 +26,7 @@ For static VPNs, add the static routes to the transit gateway route table\.
 
      For **Routing options**, choose whether to use **Dynamic** or **Static**\. For more information, see [Site\-to\-Site VPN Routing Options](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNRoutingTypes.html) in the *AWS Site\-to\-Site VPN User Guide*\.
 
-1. For **Tunnel Options**, see [Site\-to\-Site VPN Tunnel Options for your Site\-to\-Site VPN Connection](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html) in the *AWS Site\-to\-Site VPN User Guide*\.
+1. For **Tunnel Options**, see [Site\-to\-Site VPN architectures](https://docs.aws.amazon.com/vpn/latest/s2svpn/site-site-architechtures.html) and [Site\-to\-Site VPN Tunnel Options for your Site\-to\-Site VPN Connection](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html) in the *AWS Site\-to\-Site VPN User Guide*\.
 
 1. Choose **Create attachment**\.
 

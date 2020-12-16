@@ -58,6 +58,7 @@ To see all AWS global condition keys, see [AWS Global Condition Context Keys](ht
 Network Manager also supports the following condition keys:
 + `networkmanager:tgwArn`—Controls which transit gateways can be registered or deregistered in your global network\.
 + `networkmanager:cgwArn`—Controls which customer gateways can be associated or disassociated from devices and links in your global network\.
++ `networkmanager:tgwConnectPeerArn`—Controls which Connect peers can be associated or disassociated from devices and links in your global network\.
 
 ## Example policies to manage Transit Gateway Network Manager<a name="nm-example-iam-policies"></a>
 

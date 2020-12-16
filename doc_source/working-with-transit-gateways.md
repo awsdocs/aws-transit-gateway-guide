@@ -8,5 +8,6 @@ You can work with transit gateways using the Amazon VPC console or the AWS CLI\.
 + [Transit gateway attachments to a Direct Connect gateway](tgw-dcg-attachments.md)
 + [Transit gateway VPN attachments](tgw-vpn-attachments.md)
 + [Transit gateway peering attachments](tgw-peering.md)
++ [Transit gateway Connect attachments and Connect peers](tgw-connect.md)
 + [Transit gateway route tables](tgw-route-tables.md)
 + [Multicast on transit gateways](tgw-multicast-overview.md)

@@ -60,6 +60,10 @@ Topology change events occur when there have been changes to the resources in yo
 + An AWS Direct Connect gateway was detached from a transit gateway
 + A transit gateway peering connection attachment was created
 + A transit gateway peering connection attachment was deleted
++ A transit gateway Connect attachment was created for the transit gateway
++ A transit gateway Connect attachment was deleted for the transit gateway
++ A transit gateway Connect peer was created in a Connect attachment
++ A transit gateway Connect peer was deleted in a Connect attachment
 
 The following is an example of an event where a transit gateway VPC attachment was deleted \(the VPC was detached from the transit gateway\)\.
 
@@ -127,6 +131,8 @@ Status update events occur when there have been changes to the status of the con
 + A VPN tunnel's IPsec session went up \(after being down\)
 + A VPN tunnel's BGP session went down
 + A VPN tunnel's BGP session went up \(after being down\)
++ A Connect peer \(GRE tunnel\) BGP session went down
++ A Connect peer \(GRE tunnel\) BGP session went up \(after being down\)
 
 The following is an example of an event where a VPN tunnel's IPsec session came up\.
 

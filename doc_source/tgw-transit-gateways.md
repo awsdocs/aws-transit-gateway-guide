@@ -12,6 +12,8 @@ You can create additional route tables inside the transit gateway, and change th
 
 Transit gateways support dynamic and static routing between attached VPCs and VPN connections\. You can enable or disable route propagation for each attachment\. Transit gateway peering attachments support static routing only\.
 
+You can optionally associate one or more IPv4 or IPv6 CIDR blocks with your transit gateway\. You specify an IP address from the CIDR block when you establish a Connect peer for a [transit gateway Connect attachment](tgw-connect.md)\. You can associate any public or private IP address range, except for addresses in the `169.254.0.0/16` range, and ranges that overlap with addresses for your VPC attachments and on\-premises networks\.
+
 **Topics**
 + [Create a transit gateway](#create-tgw)
 + [View your transit gateways](#view-tgws)
@@ -50,7 +52,7 @@ When you create a transit gateway, we create a default transit gateway route tab
 
 1. For **VPN ECMP support**, choose **enable** if you need Equal Cost Multipath \(ECMP\) routing support between VPN tunnels\. If connections advertise the same CIDRs, the traffic is distributed equally between them\.
 
-   When you select this option, the advertised BGP ASN, the BGP attributes such as the AS\-path and the communities for preference must be the same\.
+   When you select this option, the advertised BGP ASN, the BGP attributes such as the AS\-path, and the communities for preference must be the same\.
 **Note**  
 To use ECMP, you must create a VPN connection that uses dynamic routing\. VPN connections that use static routing do not support ECMP\.
 
@@ -61,6 +63,10 @@ To use ECMP, you must create a VPN connection that uses dynamic routing\. VPN co
 1. \(Optional\) To use the transit gateway as a router for multicast traffic, select **Multicast support**\.
 
 1. For **Auto accept shared attachments**, choose **enable** to automatically accept cross\-account attachments\.
+
+1. \(Optional\) For **Transit Gateway CIDR blocks**, choose **Add CIDR** and specify one or more IPv4 or IPv6 CIDR blocks for your transit gateway\. 
+
+   You can specify a size /24 CIDR block or larger \(for example, /23 or /22\) for IPv4, or a size /64 CIDR block or larger \(for example, /63 or /62\) for IPv6\. You can associate any public or private IP address range, except for addresses in the 169\.254\.0\.0/16 range, and ranges that overlap with the addresses for your VPC attachments and on\-premises networks\.
 
 1. Choose **Create Transit Gateway**\.
 
@@ -107,6 +113,8 @@ Add tags to your resources to help organize and identify them, such as by purpos
 You can modify the configuration options for your transit gateway\. When you modify a transit gateway, the modified options are applied to new transit gateway attachments only\. Your existing transit gateway attachments are not modified\.
 
 You cannot modify a transit gateway that has been shared with you\.
+
+You cannot remove a CIDR block for the transit gateway if any of the IP addresses are currently used for a [Connect peer](tgw-connect.md)\.
 
 **To modify a transit gateway**
 

@@ -5,4 +5,9 @@ You can work with Network Manager using the Network Manager console or the AWS C
 **Topics**
 + [Global networks](global-networks.md)
 + [Transit gateway registrations](tgw-registrations.md)
-+ [On\-premises network](on-premises-networks.md)
++ [Sites](sites.md)
++ [Links](links.md)
++ [Devices](devices.md)
++ [Connections](device-connections.md)
++ [Customer gateway associations](cgw-association.md)
++ [Transit gateway Connect peer associations](connect-peer-association.md)
