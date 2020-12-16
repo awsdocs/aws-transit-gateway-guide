@@ -12,18 +12,6 @@ Transit gateway peering uses the same network infrastructure as VPC peering and 
 
 For information about what Regions support transit gateway peering attachments, see [AWS Transit Gateways FAQs](https://aws.amazon.com/transit-gateway/faqs/)\.
 
-## Opt\-in AWS Region considerations<a name="opt-in-considerations"></a>
-
-You can peer transit gateways across opt\-in Region boundaries\. For information about the Regions, and how to opt in, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in the *Amazon Web Services General Reference*\. Take the following into consideration when you use transit gateway peering in these Regions:
-+ You can peer into an opt\-in Region as long as the account that accepts the peering attachment has opted into that Region\. 
-+ Regardless of the Region opt\-in status, AWS shares the following account data with the account that accepts the peering attachment:
-  + AWS account ID
-  + Transit gateway ID
-  + Region code
-+ When you delete the transit gateway attachment, the above account data is deleted\.
-+ AWS recommends that you delete the transit gateway peering attachment before you opt out of the Region\. If you do not delete the peering attachment, traffic might continue to go over the attachment and you continue to incur charges\. If you do not delete the attachment, you can opt back in, and then delete the attachment\.
-+ In general, the transit gateway has a sender pays model\. By using a transit gateway peering attachment across an opt in boundary, you might incur charges in a Region accepting the attachment, including those Regions you have not opted into\. For more information, see [AWS Transit Gateway Pricing](https://aws.amazon.com/transit-gateway/pricing/)\.
-
 ## Create a peering attachment<a name="tgw-peering-create"></a>
 
 Before you begin, ensure that you have the ID of the transit gateway that you want to attach\. If the transit gateway is in another AWS account, ensure that you have the AWS account ID of the owner of the transit gateway\.

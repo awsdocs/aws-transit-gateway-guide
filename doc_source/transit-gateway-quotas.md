@@ -4,9 +4,6 @@ Your AWS account has the following service quotas \(previously referred to as *l
 
 ## General<a name="general-quota"></a>
 + Number of transit gateways per Region per account: 5
-+ Number of transit gateways per VPC: 5
-
-  This limit cannot be increased\.
 
 ## Routing<a name="general-quota"></a>
 + Number of transit gateway route tables per transit gateway: 20

@@ -30,9 +30,9 @@ In the following scenario, your global network consists of a single site with a 
 For this scenario, do the following in Network Manager:
 + Create a global network\. For more information, see [Creating a global network](global-networks.md#global-networks-creating)\.
 + Register the transit gateway\. For more information, see [Registering a transit gateway](tgw-registrations.md#register-tgw)\.
-+ Create a site, device, and link\. For more information, see [Sites](sites.md), [Devices](devices.md), and [Links](links.md)\.
-+ Associate the device with the site and with the link\. For more information, see [Device associations](devices.md#device-associations)\.
-+ Associate the customer gateway \(for the transit gateway Site\-to\-Site VPN attachment\) with the device, and optionally, the link\. For more information, see [Customer gateway associations](cgw-association.md)\.
++ Create a site, device, and link\. For more information, see [Working with sites](on-premises-networks.md#working-with-sites), [Working with devices](on-premises-networks.md#working-with-devices), and [Working with links](on-premises-networks.md#working-with-links)\.
++ Associate the device with the site and with the link\. For more information, see [Device associations](on-premises-networks.md#device-associations)\.
++ Associate the customer gateway \(for the transit gateway Site\-to\-Site VPN attachment\) with the device, and optionally, the link\. For more information, see [Customer gateway associations](on-premises-networks.md#cgw-association)\.
 
 ## Device with multiple VPN connections<a name="scenario-device-multiple-vpns"></a>
 
@@ -43,9 +43,9 @@ In the following scenario, your on\-premises network consists of a device with t
 For this scenario, do the following in Network Manager:
 + Create a global network\. For more information, see [Creating a global network](global-networks.md#global-networks-creating)\.
 + Register the transit gateways\. For more information, see [Registering a transit gateway](tgw-registrations.md#register-tgw)\.
-+ Create a site, device, and link\. For more information, see [Sites](sites.md), [Devices](devices.md), and [Links](links.md)\.
-+ Associate the device with the site and both links\. For more information, see [Device associations](devices.md#device-associations)\.
-+ Associate each customer gateway with the device and the corresponding link\. For more information, see [Customer gateway associations](cgw-association.md)\.
++ Create a site, device, and link\. For more information, see [Working with sites](on-premises-networks.md#working-with-sites), [Working with devices](on-premises-networks.md#working-with-devices), and [Working with links](on-premises-networks.md#working-with-links)\.
++ Associate the device with the site and both links\. For more information, see [Device associations](on-premises-networks.md#device-associations)\.
++ Associate each customer gateway with the device and the corresponding link\. For more information, see [Customer gateway associations](on-premises-networks.md#cgw-association)\.
 
 ## Multi\-device and multi\-link site<a name="scenario-multi-device-site"></a>
 
@@ -58,9 +58,9 @@ Your AWS network is also connected to your on\-premises network though an AWS Di
 For this scenario, do the following in Network Manager:
 + Create a global network\. For more information, see [Creating a global network](global-networks.md#global-networks-creating)\.
 + Register the transit gateway\. For more information, see [Registering a transit gateway](tgw-registrations.md#register-tgw)\.
-+ Create one site, two devices, and two links\. For more information, see [Sites](sites.md), [Devices](devices.md), and [Links](links.md)\.
-+ Associate each device with the corresponding link\. For more information, see [Device associations](devices.md#device-associations)\.
-+ Associate each customer gateway with the corresponding device and link\. For more information, see [Customer gateway associations](cgw-association.md)\.
++ Create one site, two devices, and two links\. For more information, see [Working with sites](on-premises-networks.md#working-with-sites), [Working with devices](on-premises-networks.md#working-with-devices), and [Working with links](on-premises-networks.md#working-with-links)\.
++ Associate each device with the corresponding link\. For more information, see [Device associations](on-premises-networks.md#device-associations)\.
++ Associate each customer gateway with the corresponding device and link\. For more information, see [Customer gateway associations](on-premises-networks.md#cgw-association)\.
 
 ## SD\-WAN connecting to AWS<a name="scenario-wan-to-aws"></a>
 

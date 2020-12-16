@@ -50,13 +50,13 @@ Register your transit gateway in your global network\.
 ## Step 3: \(Optional\) Define and associate your on\-premises network resources<a name="getting-started-define-wan"></a>
 
 You can define your on\-premises network by creating sites, links, and devices to represent objects in your network\. For more information, see the following procedures:
-+ [Creating a site](sites.md#creating-a-site)
-+ [Creating a link](links.md#creating-a-link)
-+ [Creating a device](devices.md#creating-a-device)
++ [Creating a site](on-premises-networks.md#creating-a-site)
++ [Creating a link](on-premises-networks.md#creating-a-link)
++ [Creating a device](on-premises-networks.md#creating-a-device)
 
-You associate the device with a specific site, and with one or more links\. For more information, see [Device associations](devices.md#device-associations)\.
+You associate the device with a specific site, and with one or more links\. For more information, see [Device associations](on-premises-networks.md#device-associations)\.
 
-Finally, create a Site\-to\-Site VPN connection attachment on your transit gateway, and associate the customer gateway with the device\. For more information, see [Customer gateway associations](cgw-association.md)\.
+Finally, create a Site\-to\-Site VPN connection attachment on your transit gateway, and associate the customer gateway with the device\. For more information, see [Customer gateway associations](on-premises-networks.md#cgw-association)\.
 
 You can also work with one of our Partners in the AWS Partner Network \(APN\) to provision and connect your on\-premises network\. For more information, see [Transit Gateway Network Manager](https://aws.amazon.com/transit-gateway/network-manager)\.
 
