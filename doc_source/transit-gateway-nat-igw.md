@@ -49,7 +49,7 @@ The subnet which contains the IP address of the NAT gateway, has a route table w
 
 | Destination | Target | 
 | --- | --- | 
-|  10\.\.0\.0\.0/16  |  *tgw\-id*  | 
+|  10\.0\.0\.0/16  |  *tgw\-id*  | 
 | 0\.0\.0\.0/0 | igw\-id | 
 
 ### Internet gateway subnet route table<a name="transit-gateway-nat-igw-igw-route-table"></a>
@@ -59,4 +59,4 @@ The subnet which contains the IP address of the internet gateway, has a route ta
 
 | Destination | Target | 
 | --- | --- | 
-|  10\.\.0\.0\.0/16  |  *nat\-gateway\-id*  | 
+|  10\.0\.0\.0/16  |  *nat\-gateway\-id*  | 
