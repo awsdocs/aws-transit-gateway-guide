@@ -61,7 +61,8 @@ For more information, see [Example: Peered transit gateways](transit-gateway-pee
 Transit gateway routes are evaluated in the following order:
 + The most specific route for the destination address\.
 + If routes are the same with different targets:
-  + Static routes have a higher precedence than propagated routes\.
+
+  + Static routes including static Site-to-Site VPN routes, have a higher precedence than propagated routes\.
   + For propagated routes, the following order is used:
     + VPCs have the highest precedence\.
     + Direct Connect gateways have the second highest precedence\.
