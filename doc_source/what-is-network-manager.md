@@ -6,7 +6,8 @@ Transit Gateway Network Manager \(Network Manager\) enables you to centrally man
 
 The following are the key concepts for Network Manager:
 + ****global network**** — A single, private network that acts as the high\-level container for your network objects\.
-+ ****device**** — Represents a physical or a virtual appliance that connects to a transit gateway over an IPsec tunnel \(a VPN connection\)\.
++ ****device**** — Represents a physical or a virtual appliance in an on\-premises network, data center, AWS could, or other cloud providers\.
++ ****connection**** — Represents connectivity between two devices\. The connection can be between a physical or virtual appliance and a third\-party virtual appliance inside a VPC, or it can be between physical appliances in an on\-premises network\.
 + ****link**** — Represents a single internet connection from a site\.
 + ****site**** — Represents a physical on\-premises location\. It could be a branch, office, store, campus, or a data center\.
 

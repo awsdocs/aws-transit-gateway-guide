@@ -17,6 +17,7 @@ You can register transit gateways that are in the same AWS account as your globa
 + VPCs
 + Site\-to\-Site VPN connections
 + AWS Direct Connect gateways
++ Transit Gateway Connect
 + Transit gateway peering connections
 
 When you register a transit gateway that has a peering attachment, you can view the peer transit gateway in your global network, but you cannot view its attachments\. If you own the peer transit gateway, you can register it in your global network to view its attachments\. 
@@ -52,6 +53,7 @@ Your AWS account has the following quotas related to Network Manager:
 + Devices per global network: 200
 + Links per global network: 200
 + Sites per global network: 200
++ Connections per global network: 500
 
 The Service Quotas console provides information about Network Manager quotas\. You can use the Service Quotas console to view default quotas and [request quota increases](https://console.aws.amazon.com/servicequotas/home?) for adjustable quotas\.
 
