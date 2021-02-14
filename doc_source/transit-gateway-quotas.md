@@ -7,7 +7,7 @@ Your AWS account has the following service quotas \(previously referred to as *l
 + Number of transit gateways per VPC: 5
 
   This limit cannot be increased\.
-+ Number of Transit Gateway CIDR blocks per Transit Gateway: 5
++ Number of Transit Gateway CIDR blocks per Transit Gateway: 5. This is in relation to [Transit Gateway Connect attachments](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html)
 
   This limit cannot be increased\.
 
