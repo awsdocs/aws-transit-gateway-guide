@@ -40,32 +40,6 @@ The following metrics are available for transit gateway attachments\. Most [atta
 | PacketDropCountBlackhole |  The number of packets dropped because they matched a `blackhole` route on the transit gateway attachment\.  | 
 | PacketDropCountNoRoute |  The number of packets dropped because they did not match a route on the transit gateway attachment\.  | 
 
-### Transit gateway multicast metrics<a name="transit-gateway-multicast-metrics"></a>
-
-The following metrics for multicast traffic on transit gateways\.
-
-
-| Metric | Description | 
-| --- | --- | 
-| NumberofMulticastDomains |  The number of multicast domains configured on the transit gateway\.  | 
-| NumberofMulticastGroupMembers |  The number of multicast group members configured onthe transit gateway\.  | 
-
-### Multicast attachment\-level metrics<a name="transit-gateway-multicast-metrics"></a>
-
-The following multicast metrics are available for transit gateway VPC attachments\. All multicast attachment metrics are published to the transit gateway owner's account\. Individual multicast attachment metrics are also published to the attachment owner's account \(the attachment owner can only view metrics for their own attachment\)\.
-
-
-| Metric | Description | 
-| --- | --- | 
-| MulticastBytesIn |  The number of multicast bytes received by the transit gateway\.  | 
-| MulticastBytesOut |  The number of multicast bytes sent from the transit gateway\.  | 
-| MulticastPacketsIn |  The number of multicast packets received by the transit gateway\.  | 
-| MulticastPacketsOut |  The number of multicast packets sent by the transit gateway\.  | 
-| MulticastPacketDropCount |  The number of multicast packets dropped\.  | 
-| IGMPJoins | The number of IGMP Join messages received by the transit gateway\. | 
-| IGMPReceives | The number of IGMP Leave messages received by the transit gateway\. | 
-| IGMPQueries | The number of IGMP Query messages received by the transit gateway\. | 
-
 ## Metric dimensions for transit gateways<a name="transit-gateway-dimensions"></a>
 
 To filter the metrics for your transit gateways, use the following dimensions\.

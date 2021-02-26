@@ -24,6 +24,7 @@ Your AWS account has the following service quotas \(previously referred to as *l
   Advertised routes come from the route table that's associated with the Connect attachment\.
 
   This quota cannot be increased\.
++ Number of static route for a prefix to a single attachment: 1
 
 ## Transit gateway attachments<a name="attachments-quota"></a>
 + Total number of transit gateway attachments per transit gateway: 5,000
@@ -32,7 +33,7 @@ Your AWS account has the following service quotas \(previously referred to as *l
   This value cannot be increased\. A transit gateway cannot have more than one attachment to the same VPC\.
 + Number of transit gateway peering attachments per transit gateway: 50
 + Number of transit gateway peering attachments between two transit gateways: 1
-+ Number of pending transit gateway peering attachments per transit gateway:10
++ Number of pending transit gateway peering attachments per transit gateway: 10
 + Number of Connect peers \(GRE tunnels\) per transit gateway Connect attachment: 4
 
   This value cannot be increased\.
@@ -59,7 +60,7 @@ Your AWS account has the following service quotas \(previously referred to as *l
 ## MTU<a name="mtu-quota"></a>
 + The maximum transmission unit \(MTU\) of a network connection is the size, in bytes, of the largest permissible packet that can be passed over the connection\. The larger the MTU of a connection, the more data that can be passed in a single packet\. A transit gateway supports an MTU of 8500 bytes for traffic between VPCs, Direct Connect and peering attachments\. Traffic over VPN connections can have an MTU of 1500 bytes\. 
 + Packets with a size larger than 8500 bytes that arrive at the transit gateway are dropped\.
-+ The transit gateway does not generate either the FRAG\_NEEDED ICMPv4 packet or the Packet Too Big (PTB) ICMPv6 packet, so Path MTU Discovery \(PMTUD, [RFC1191](https://tools.ietf.org/html/rfc1191) and [RFC8201](https://tools.ietf.org/html/rfc8201)\) is not supported\.
++ The transit gateway does not generate the FRAG\_NEEDED for ICMPv4 packet, or the Packet Too Big \(PTB\) for ICMPv6 packet\. Therefore, the Path MTU Discovery \(PMTUD\) is not supported\.
 + The transit gateway enforces Maximum Segment Size \(MSS\) clamping for all packets\. For more information, see [RFC879](https://tools.ietf.org/html/rfc879)\.
 
 ## Multicast<a name="multicast-quota"></a>

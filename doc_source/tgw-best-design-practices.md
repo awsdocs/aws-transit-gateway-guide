@@ -10,4 +10,4 @@ The following are best practices for your transit gateway design:
 + Enable route propagation for AWS Direct Connect gateway attachments and BGP Site\-to\-Site VPN attachments\.
 + You do not need additional transit gateways for high availability, because transit gateways are highly available by design\.
 + Limit the number of transit gateway route tables unless your design requires multiple transit gateway route tables\.
-+ For multiple Region deployments, we recommend that you use a unique Autonomous System Number \(Amazon\-side ASN\) for each of your transit gateways\. 
++ For multiple Region deployments, we recommend that you use a unique Autonomous System Number \(Amazon\-side ASN\) for each of your transit gateways\. For redundancy, use multiple transit gateways in your DR Region\. For more information, see [Building a global network using AWS Transit Gateway Inter\-Region peering](https://aws.amazon.com/blogs/networking-and-content-delivery/building-a-global-network-using-aws-transit-gateway-inter-region-peering/)\.

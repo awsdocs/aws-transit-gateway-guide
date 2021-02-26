@@ -3,13 +3,44 @@
 When you attach a VPC to a transit gateway, you must specify one subnet from each Availability Zone to be used by the transit gateway to route traffic\. Specifying one subnet from an Availability Zone enables traffic to reach resources in every subnet in that Availability Zone\.
 
 **Limits**  
-When you attach a VPC to a transit gateway, resources in Availability Zones where there is no transit gateway attachment cannot reach the transit gateway\. If there is a route to the transit gateway in a subnet route table, traffic is only forwarded to the transit gateway when the transit gateway has an attachment in a subnet in the same Availability Zone\. 
+When you attach a VPC to a transit gateway, any resources in Availability Zones where there is no transit gateway attachment cannot reach the transit gateway\. If there is a route to the transit gateway in a subnet route table, traffic is forwarded to the transit gateway only when the transit gateway has an attachment in a subnet in the same Availability Zone\. 
 
 The resources in a VPC attached to a transit gateway cannot access the security groups of a different VPC that is also attached to the same transit gateway\.
 
 A transit gateway does not support DNS resolution for custom DNS names of attached VPCs set up using private hosted zones in Amazon Route 53\. To configure the name resolution for private hosted zones for all VPCs attached to a transit gateway, see [Centralized DNS management of hybrid cloud with Amazon Route 53 and AWS Transit Gateway](https://aws.amazon.com/blogs/networking-and-content-delivery/centralized-dns-management-of-hybrid-cloud-with-amazon-route-53-and-aws-transit-gateway/)\.
 
 You cannot create an attachment for a VPC subnet that resides in a AWS Local Zone\.
+
+## VPC attachment lifecycle<a name="vpc-attachment-lifecycle"></a>
+
+A VPC attachment goes through various stages, starting when the request is initiated\. At each stage, there may be actions that you can take, and at the end of its lifecycle, the VPC attachment remains visible in the Amazon VPC Console and in API or command line output, for a period of time\. 
+
+The following diagram shows the states an attachment can go through in a single account configuration, or a cross\-account configuration that has **Auto accept shared attachments** turned on\.
+
+![\[VPC attachment lifecycle\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/vpc-attachment-lifecycle.png)
++ **Pending**: A request for a VPC attachment has been initiated and is in the provisioning process\. At this stage, the attachment can fail, or can go to `available`\.
++ **Failing**: A request for a VPC attachment is failing\. At this stage, the VPC attachment goes to `failed`\.
++ **Failed**: The request for the VPC attachment has failed\. While in this state, it cannot be deleted\. The failed VPC attachment remains visible for 2 hours, and then is no longer visible\.
++ **Available**: The VPC attachment is available, and traffic can flow between the VPC and the transit gateway\. At this stage, the attachment can go to `modifying`, or go to `deleting`\.
++ **Deleting**: A VPC attachment that is in the process of being deleted\. At this stage, the attachment can go to `deleted`\.
++ **Deleted**: An `available` VPC attachment has been deleted\. While in this state, the VPC attachment cannot be modified\. The VPC attachment remains visible for 2 hours, and then is no longer visible\.
++ **Modifying**: A request has been made to modify the properties of the VPC attachment\. At this stage, the attachment can go to `available`, or go to `rolling back`\.
++ **Rolling back**: The VPC attachment modification request cannot be completed, and the system is undoing any changes that were made\. At this stage, the attachment can go to `available`\.
+
+The following diagram shows the states an attachment can go through in a cross\-account configuration that has **Auto accept shared attachments** turned off\.
+
+![\[Cross-account VPC attachment lifecycle that has Auto accept shared attachments turned off\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/vpc-attachment-lifecycle-cross-account.png)
++ **Pending\-acceptance**: The VPC attachment request is awaiting acceptance\. At this stage, the attachment can go to `pending`, to `rejecting`, or to `deleting`\.
++ **Rejecting**: A VPC attachment that is in the process of being rejected\. At this stage, the attachment can go to `rejected`\.
++ **Rejected**: A `pending acceptance` VPC attachment has been rejected\. While in this state, the VPC attachment cannot be modified\. The VPC attachment remains visible for 2 hours, and then is no longer visible\.
++ **Pending**: The VPC attachment has been accepted and is in the provisioning process\. At this stage, the attachment can fail, or can go to `available`\.
++ **Failing**: A request for a VPC attachment is failing\. At this stage, the VPC attachment goes to `failed`\.
++ **Failed**: The request for the VPC attachment has failed\. While in this state, it cannot be deleted\. The failed VPC attachment remains visible for 2 hours, and then is no longer visible\.
++ **Available**: The VPC attachment is available, and traffic can flow between the VPC and the transit gateway\. At this stage, the attachment can go to `modifying`, or go to `deleting`\.
++ **Deleting**: A VPC attachment that is in the process of being deleted\. At this stage, the attachment can go to `deleted`\.
++ **Deleted**: An `available` or `pending acceptance` VPC attachment has been deleted\. While in this state, the VPC attachment cannot be modified\. The VPC attachment remains visible 2 hours, and then is no longer visible\.
++ **Modifying**: A request has been made to modify the properties of the VPC attachment\. At this stage, the attachment can go to `available`, or go to `rolling back`\.
++ **Rolling back**: The VPC attachment modification request cannot be completed, and the system is undoing any changes that were made\. At this stage, the attachment can go to `available`\.
 
 ## Create a transit gateway attachment to a VPC<a name="create-vpc-attachment"></a>
 
@@ -25,7 +56,7 @@ You cannot create an attachment for a VPC subnet that resides in a AWS Local Zon
 
 1. For **Attachment type**, choose **VPC**\.
 
-1. Under **VPC Attachment**, optionally type a name for **Attachment name tag**\.
+1. Under **VPC Attachment**, optionally enter a name for **Attachment name tag**\.
 
 1. Choose whether to enable **DNS Support** and **IPv6 Support**\.
 

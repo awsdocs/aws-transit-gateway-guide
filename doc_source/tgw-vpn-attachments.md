@@ -24,9 +24,11 @@ For static VPNs, add the static routes to the transit gateway route table\.
      If your customer gateway is behind a network address translation \(NAT\) device that's enabled for NAT traversal \(NAT\-T\), use the public IP address of your NAT device, and adjust your firewall rules to unblock UDP port 4500\.
    + To create a customer gateway, choose **New**, then for **IP Address**, type a static public IP address and **BGP ASN**\.
 
+     For **Routing options**, choose whether to use **Dynamic** or **Static**\.
+
      For **Routing options**, choose whether to use **Dynamic** or **Static**\. For more information, see [Site\-to\-Site VPN Routing Options](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNRoutingTypes.html) in the *AWS Site\-to\-Site VPN User Guide*\.
 
-1. For **Tunnel Options**, see [Site\-to\-Site VPN architectures](https://docs.aws.amazon.com/vpn/latest/s2svpn/site-site-architechtures.html) and [Site\-to\-Site VPN Tunnel Options for your Site\-to\-Site VPN Connection](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html) in the *AWS Site\-to\-Site VPN User Guide*\.
+1. For **Tunnel Options**, enter the CIDR ranges and pre\-shared keys for you tunnel\. For more information, see [Site\-to\-Site VPN architectures](https://docs.aws.amazon.com/vpn/latest/s2svpn/site-site-architechtures.html)\.
 
 1. Choose **Create attachment**\.
 

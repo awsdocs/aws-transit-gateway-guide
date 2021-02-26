@@ -8,6 +8,7 @@ In this scenario, you create the following entities for this scenario::
 + Three VPCs\. For information about creating a VPC, see [Creating a VPC](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#Create-VPC) in the *Amazon Virtual Private Cloud User Guide*\.
 + A transit gateway\. For more information, see [Create a transit gateway](tgw-transit-gateways.md#create-tgw)\.
 + Three VPC attachments on the transit gateway\. For more information, see [Create a transit gateway attachment to a VPC](tgw-vpc-attachments.md#create-vpc-attachment)\.
++ Two subnets in VPC C\. One subnet is to route traffic to the NAT gateway, and the other is the subnet for the NAT gateway\.
 + A NAT gateway\. For information about creating a NAT gateway, see [Creating a NAT gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating) in the *Amazon Virtual Private Cloud User Guide*\.
 + An internet gateway\. For information about creating an internet gateway, see [Creating and attaching an internet gateway](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html#Add_IGW_Attach_Gateway) in the *Amazon Virtual Private Cloud User Guide*\.
 
@@ -40,7 +41,7 @@ The following is an example of a default route table for the attachments shown i
 |  10\.1\.0\.0/16  |  *Attachment for VPC A*  |  propagated  | 
 |  10\.2\.0\.0/16  |  *Attachment for VPC B*  |  propagated  | 
 |  10\.3\.0\.0/16  |  *Attachment for VPC C*  |  propagated  | 
-| 0\.0\.0\.0/0 | Attachment for VPC C |  propagated  | 
+| 0\.0\.0\.0/0 |  *Attachment for VPC C*  | static | 
 
 ### NAT gateway subnet route table<a name="transit-gateway-nat-igw-nat-route-table"></a>
 
@@ -49,14 +50,6 @@ The subnet which contains the IP address of the NAT gateway, has a route table w
 
 | Destination | Target | 
 | --- | --- | 
-|  10\.0\.0\.0/16  |  *tgw\-id*  | 
+|  10\.0\.1\.0/16  |  *tgw\-id*  | 
+| 10\.0\.2\.0/16 | itw\-id | 
 | 0\.0\.0\.0/0 | igw\-id | 
-
-### Internet gateway subnet route table<a name="transit-gateway-nat-igw-igw-route-table"></a>
-
-The subnet which contains the IP address of the internet gateway, has a route table with the following entry\.
-
-
-| Destination | Target | 
-| --- | --- | 
-|  10\.0\.0\.0/16  |  *nat\-gateway\-id*  | 

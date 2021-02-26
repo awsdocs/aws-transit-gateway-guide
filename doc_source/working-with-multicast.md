@@ -42,6 +42,12 @@ When you have at least one host that uses the IGMP protocol for multicast traffi
 
 1. Create an association between subnets in the transit gateway VPC attachment and the multicast domain\. For more information see [Associating VPC attachments and subnets with a multicast domain](manage-domain.md#associate-attachment-to-domain)\. 
 
+1. The default IGMP version for EC2 is IGMPv3\. You need to change the version for all IGMP group members\. You can run the following command:
+
+   ```
+   sudo sysctl net.ipv4.conf.eth0.force_igmp_version=2
+   ```
+
 1. Add the members that do not use the IGMP protocol to the multicast group\. For more information, see [Registering members with a multicast group](manage-multicast-group.md#add-members-multicast-group)\.
 
 ## Managing static source configurations<a name="multicast-configurations-no-igmp"></a>

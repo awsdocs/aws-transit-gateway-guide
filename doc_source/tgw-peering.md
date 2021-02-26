@@ -111,6 +111,7 @@ To route traffic between the peered transit gateways, you must add a static rout
 **To create a static route using the AWS CLI**  
 Use the [create\-transit\-gateway\-route](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-route.html) command\.
 
+**Important**  
 After you create the route, associate the transit gateway route table with the transit gateway peering attachment\. For more information, see [Associate a transit gateway route table](tgw-route-tables.md#associate-tgw-route-table)\.
 
 ## View your transit gateway peering connection attachments<a name="tgw-peering-view-attachments"></a>

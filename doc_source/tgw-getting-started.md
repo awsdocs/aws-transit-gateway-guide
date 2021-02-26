@@ -79,7 +79,7 @@ Each attachment is always associated with exactly one route table\. Route tables
 
 ## Step 3: Add routes between the transit gateway and your VPCs<a name="step-add-routes"></a>
 
-A route table includes dynamic and static routes that determine the next hop for associated VPCs based on the destination IP address of the packet\.
+A route table includes dynamic and static routes that determine the next hop for associated VPCs based on the destination IP address of the packet\. Configure a route that has a destination for non\-local routes and the target of the transit gateway attachment ID\. For more information, see [Routing for a transit gateway](https://docs.aws.amazon.com/vpc/latest/userguide/route-table-options.html#route-tables-tgw) in the *Amazon VPC User Guide*\.
 
 **To add a route to a VPC route table**
 
@@ -93,7 +93,7 @@ A route table includes dynamic and static routes that determine the next hop for
 
 1. Choose **Add route**\.
 
-1. In the **Destination** column, enter the destination IP address range\. For **Target**, choose the transit gateway that you used to create the transit gateway attachment\.
+1. In the **Destination** column, enter the destination IP address range\. For **Target**, choose the transit gateway attachment ID\.
 
 1. Choose **Save routes**, then choose **Close**\.
 

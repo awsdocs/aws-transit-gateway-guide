@@ -6,28 +6,44 @@ When you enable multicast on a transit gateway, it acts as a multicast router\. 
 
 Network ACL rules operate at the subnet level and apply to multicast traffic, because transit gateways reside outside of the subnet\. For information about network ACLs, see [Network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html) in the * Amazon VPC User Guide*\.
 
-To control multicast traffic, you can create allow and deny rules\. For example, to allow outbound multicast traffic, create the following outbound rule using the console or CLI:
-+ Rule number \- A rule number, for example 100\.
-+ CIDR block \- The CIDR block of the multicast group, for example 224\.0\.0\.0/24\.
-+ Protocol \- The protocol that your multicast applications use\.
-+ Action \- Set this to Allow\.
-+ Description \- A description for the rule, for example, "Allow all outbound multicast traffic"\.
+You must have the following inbound rules at a minimum for IGMP multicast traffic\.
+
+
+|  |  |  |  |  | 
+| --- |--- |--- |--- |--- |
+|  Type  | Protocol  | Source | Destination |  Description  | 
+|  Custom Protocol  | IGMP\(2\) | 0\.0\.0\.0/32 | 224\.0\.0\.1/32 |  IGMP query   | 
+| Custom UDP Protocol | UDP | The remote host IP addressThis is the IP address of the host that sends the multicast traffic\. | Multicast group IP address | Inbound multicast traffic | 
+
+You must have the following outbound rules at a minimum for IGMP multicast traffic\.
+
+
+|  |  |  |  |  | 
+| --- |--- |--- |--- |--- |
+|  Type  | Protocol  | Source | Destination |  Description  | 
+|  Custom Protocol  | IGMP\(2\) | Host IP address | 224\.0\.0\.2/32 |  IGMP leave  | 
+| Custom Protocol | IGMP\(2\) | Host IP address | Multicast group IP address | IGMP join | 
+| Custom UDP Protocol | UDP | Host IP address | Multicast group IP address | Outbound multicast traffic | 
 
 ## Security groups<a name="mulicast-security-group"></a>
 
 Security group rules operate at the instance level and can be applied to both inbound and outbound multicast traffic\. The behavior is the same as with unicast traffic\. For all group member instances, you must allow inbound traffic from the group source\. For information about security groups, see [Security groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html) in the *Amazon VPC User Guide*\.
 
-You can control the traffic that multicast sources can send by adding inbound rules to the security group for the multicast traffic\. Use the following values for the parameters:
-+ Type \- The traffic type that your multicast applications use\.
-+ Port range \- The ports that your multicast applications use\.
-+ Protocol \- The protocol that your multicast applications use\.
-+ Source \- The multicast sender's IP address, or CIDR\. You cannot use a security group for the source\.
-+ Description \- A description for the rule, for example, "Allow all inbound multicast traffic"\.
-
-For example, to allow receipt of multicast UDP traffic on port 143 from any multicast sender in a VPC with a CIDR of 10\.0\.0\.0/16, create a security group, and then add the following inbound rule:
+You must have the following inbound rules at a minimum for IGMP multicast traffic\.
 
 
-|  |  |  |  |  | 
-| --- |--- |--- |--- |--- |
-|  Type  | Protocol  | Source | Port Range |  Description  | 
-|  Custom UDP Rule  |  UDP  | Custom 10\.0\.0\.0/16 | 143 |  UDP port 143 rule   | 
+|  |  |  |  | 
+| --- |--- |--- |--- |
+|  Type  | Protocol  | Source |  Description  | 
+|  Custom Protocol  | 2 | Custom/0\.0\.0\.0/32 |  IGMP query   | 
+| Custom UDP Protocol | UDP | Custom/Remote host IP addressThis is the IP address of the host that sends the multicast traffic\. | Inbound multicast traffic | 
+
+You must have the following outbound rules at a minimum for IGMP multicast traffic\.
+
+
+|  |  |  |  | 
+| --- |--- |--- |--- |
+|  Type  | Protocol  | Destination |  Description  | 
+|  Custom Protocol  | 2 | Custom/224\.0\.0\.2/32 |  IGMP leave  | 
+| Custom Protocol | 2 | Custom/Multicast group IP address | IGMP join | 
+| CustomUDP Protocol | UDP | Custom/Multicast group IP address | Outbound multicast traffic | 

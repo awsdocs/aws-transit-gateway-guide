@@ -71,12 +71,13 @@ The following are the requirements and considerations for a Connect attachment\.
 + The third\-party appliance must be configured to use BGP for dynamic route updates and health checks\.
 + The following types of BGP are supported: 
   + Exterior BGP \(eBGP\): Used for connecting to routers that are in a different autonomous system than the transit gateway\. If you use eBGP, you must configure ebgp\-multihop with a time\-to\-live \(TTL\) value of 2\.
-  + Interior BGP \(iBGP\): Used for connecting to routers that are in the same autonomous system as the transit gateway\.
+  + Interior BGP \(iBGP\): Used for connecting to routers that are in the same autonomous system as the transit gateway\. The transit gateway will not install routes from an iBGP peer \(third\-party appliance\), unless the routes are originated from an eBGP peer\. The routes advertised by third\-party appliance over the iBGP peering must have an ASN\.
   + MP\-BGP \(multiprotocol extensions for BGP\): Used for supporting multiple protocol types, such as IPv4 and IPv6 address families\.
 + When you create a transit gateway peer, if you do not specify a peer ASN number, we pick the transit gateway ASN number\. This means that your appliance and transit gateway will be in the same autonomous system doing iBGP\.
 + To use equal\-cost multi\-path \(ECMP\) routing between multiple appliances, you must configure the appliance to advertise the same prefixes to the transit gateway with the same BGP AS\-PATH attribute\. For the transit gateway to choose all of the available ECMP paths, the AS\-PATH and Autonomous System Number \(ASN\) must match\. The transit gateway can use ECMP between Connect peers for the same Connect attachment or between Connect attachments on the same transit gateway\. The transit gateway cannot use ECMP between the BGP peerings of the same Connect peer\.
 + Static routes are not supported\.
 + Connect attachments are currently supported in the following AWS Regions: US East \(N\. Virginia\), US West \(N\. California\), US West \(Oregon\), and Europe \(Ireland\)\.
++ With a Connect attachment, the routes are propagated to a transit gateway route table by default\.
 
 ## Create a transit gateway Connect attachment<a name="create-tgw-connect-attachment"></a>
 
