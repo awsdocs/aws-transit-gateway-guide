@@ -71,7 +71,7 @@ Your AWS account has the following service quotas \(previously referred to as *l
 + Number of sources per transit gateway multicast group: 1
 + Number of static multicast group and IGMPv2 multicast group members and sources per transit gateway: 10,000 
 + Number of static multicast group and IGMPv2 multicast group members per transit gateway multicast group: 100
-+ Maximum multicast throughput per flow \(in packets per seconds\): 1 Gbps 
++ Maximum multicast throughput per flow: 1 Gbps 
 + Maximum aggregate multicast throughput per subnet: 4 Gbps 
 + Maximum aggregate multicast throughput per subnet including unicast traffic: 50 Gbps 
 
