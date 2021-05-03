@@ -1,6 +1,6 @@
 # Example: Centralized outbound routing to the internet<a name="transit-gateway-nat-igw"></a>
 
-Consider the scenario where you have applications in multiple VPCs \(VPC A and VPC B\) which need outbound only internet access\. You connect all your VPCs to a transit gateway, and configure one VPC \(VPC C\) with a NAT gateway and an internet gateway Configure the VPC A and VPC B route tables to route outbound internet traffic to go through the transit gateway, which then routes the traffic to VPC C\. The NAT gateway in VPC C routes the traffic to the internet gateway\. 
+Consider the scenario where you have applications in multiple VPCs \(VPC A and VPC B\) which need outbound only internet access\. You connect all your VPCs to a transit gateway, and configure one VPC \(VPC C\) with a NAT gateway and an internet gateway Configure the VPC A and VPC B route tables to route outbound internet traffic through the transit gateway, which then routes the traffic to VPC C\. The NAT gateway in VPC C routes the traffic to the internet gateway\. 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/tgw-nat-igw.png)
 
@@ -12,7 +12,7 @@ In this scenario, you create the following entities for this scenario::
 + A NAT gateway\. For information about creating a NAT gateway, see [Creating a NAT gateway](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating) in the *Amazon Virtual Private Cloud User Guide*\.
 + An internet gateway\. For information about creating an internet gateway, see [Creating and attaching an internet gateway](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html#Add_IGW_Attach_Gateway) in the *Amazon Virtual Private Cloud User Guide*\.
 
-When you create the VPC attachments, the CIDR blocks for each VPC propagate to the transit gateway route table\.
+When you create the VPC attachments, the CIDR blocks for each VPC propagate to the transit gateway route table\. 
 
 **Topics**
 + [Routing](#transit-gateway-nat-igw-routing)
@@ -28,7 +28,7 @@ Each VPC has a route table with 2 entries\. The first entry is the default entry
 
 | Destination | Target | 
 | --- | --- | 
-|  10\.2\.0\.0/16  |  local  | 
+|  10\.0\.0\.0/16  |  local  | 
 |  0\.0\.0\.0/0  |  *tgw\-id*  | 
 
 ### Transit gateway route table<a name="transit-gateway-nat-igw-tgw-route-table"></a>
@@ -51,5 +51,5 @@ The subnet which contains the IP address of the NAT gateway, has a route table w
 | Destination | Target | 
 | --- | --- | 
 |  10\.0\.1\.0/16  |  *tgw\-id*  | 
-| 10\.0\.2\.0/16 | itw\-id | 
+| 10\.0\.2\.0/16 | tgw\-id | 
 | 0\.0\.0\.0/0 | igw\-id | 

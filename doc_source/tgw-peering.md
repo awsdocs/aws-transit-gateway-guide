@@ -1,6 +1,6 @@
 # Transit gateway peering attachments<a name="tgw-peering"></a>
 
-You can peer two transit gateways and route traffic between them, which includes IPv4 and IPv6 traffic\. To do this, create a peering attachment on your transit gateway, and specify a transit gateway in another AWS Region\. The peer transit gateway can be in your account or a different AWS account\. 
+You can peer two transit gateways and route traffic between them, which includes IPv4 and IPv6 traffic\. To do this, create a peering attachment on your transit gateway, and specify a transit gateway in another Region\. The peer transit gateway can be in your account or a different AWS account\. 
 
 After you create a peering attachment request, the owner of the peer transit gateway \(also referred to as the *accepter transit gateway*\) must accept the request\. To route traffic between the transit gateways, add a static route to the transit gateway route table that points to the transit gateway peering attachment\.
 
@@ -21,7 +21,7 @@ You can peer transit gateways across opt\-in Region boundaries\. For information
   + Transit gateway ID
   + Region code
 + When you delete the transit gateway attachment, the above account data is deleted\.
-+ AWS recommends that you delete the transit gateway peering attachment before you opt out of the Region\. If you do not delete the peering attachment, traffic might continue to go over the attachment and you continue to incur charges\. If you do not delete the attachment, you can opt back in, and then delete the attachment\.
++ We recommend that you delete the transit gateway peering attachment before you opt out of the Region\. If you do not delete the peering attachment, traffic might continue to go over the attachment and you continue to incur charges\. If you do not delete the attachment, you can opt back in, and then delete the attachment\.
 + In general, the transit gateway has a sender pays model\. By using a transit gateway peering attachment across an opt in boundary, you might incur charges in a Region accepting the attachment, including those Regions you have not opted into\. For more information, see [AWS Transit Gateway Pricing](https://aws.amazon.com/transit-gateway/pricing/)\.
 
 ## Create a peering attachment<a name="tgw-peering-create"></a>

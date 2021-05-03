@@ -10,4 +10,4 @@ You can work with Network Manager using the Network Manager console or the AWS C
 + [Devices](devices.md)
 + [Connections](device-connections.md)
 + [Customer gateway associations](cgw-association.md)
-+ [Transit gateway Connect peer associations](connect-peer-association.md)
++ [Transit Gateway Connect peer associations](connect-peer-association.md)

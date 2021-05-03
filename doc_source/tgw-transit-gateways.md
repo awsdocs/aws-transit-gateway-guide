@@ -1,6 +1,6 @@
 # Transit gateways<a name="tgw-transit-gateways"></a>
 
-A transit gateway enables you to attach VPCs and VPN connections in the same Region and route traffic between them\. A transit gateway works across AWS accounts, and you can use AWS Resource Access Manager to share your transit gateway with other accounts\. After you share a transit gateway with another AWS account, the account owner can attach their VPCs to your transit gateway\. A user from either account can delete the attachment at any time\.
+A transit gateway enables you to attach VPCs and VPN connections in the same Region and route traffic between them\. A transit gateway works across AWS accounts, and you can use AWS RAM to share your transit gateway with other accounts\. After you share a transit gateway with another AWS account, the account owner can attach their VPCs to your transit gateway\. A user from either account can delete the attachment at any time\.
 
 You can enable multicast on a transit gateway, and then create a transit gateway multicast domain that allows multicast traffic to be sent from your multicast source to multicast group members over VPC attachments that you associate with the domain\.
 
@@ -12,7 +12,7 @@ You can create additional route tables inside the transit gateway, and change th
 
 Transit gateways support dynamic and static routing between attached VPCs and VPN connections\. You can enable or disable route propagation for each attachment\. Transit gateway peering attachments support static routing only\.
 
-You can optionally associate one or more IPv4 or IPv6 CIDR blocks with your transit gateway\. You specify an IP address from the CIDR block when you establish a Connect peer for a [transit gateway Connect attachment](tgw-connect.md)\. You can associate any public or private IP address range, except for addresses in the `169.254.0.0/16` range, and ranges that overlap with addresses for your VPC attachments and on\-premises networks\.
+You can optionally associate one or more IPv4 or IPv6 CIDR blocks with your transit gateway\. You specify an IP address from the CIDR block when you establish a Transit Gateway Connect peer for a [transit gateway Connect attachment](tgw-connect.md)\. You can associate any public or private IP address range, except for addresses in the `169.254.0.0/16` range, and ranges that overlap with addresses for your VPC attachments and on\-premises networks\.
 
 **Topics**
 + [Create a transit gateway](#create-tgw)
@@ -114,7 +114,7 @@ You can modify the configuration options for your transit gateway\. When you mod
 
 You cannot modify a transit gateway that has been shared with you\.
 
-You cannot remove a CIDR block for the transit gateway if any of the IP addresses are currently used for a [Connect peer](tgw-connect.md)\.
+You cannot remove a CIDR block for the transit gateway if any of the IP addresses are currently used for a [Transit Gateway Connect peer](tgw-connect.md)\.
 
 **To modify a transit gateway**
 
@@ -133,13 +133,13 @@ Use the [modify\-transit\-gateway](https://docs.aws.amazon.com/cli/latest/refere
 
 ## Share a transit gateway<a name="tgw-sharing"></a>
 
-You can use AWS Resource Access Manager \(RAM\) to [share a transit gateway](transit-gateway-share.md) across accounts or across your organization in AWS Organizations\. Use the following procedure to share a transit gateway that you own\. 
+You can use AWS RAM to [share a transit gateway](transit-gateway-share.md) across accounts or across your organization in AWS Organizations\. Use the following procedure to share a transit gateway that you own\. 
 
 You must enable resource sharing from the management account for your organization\. For information about enabling resource sharing, see [Enable Sharing with AWS Organizations](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs) in the *AWS RAM User Guide*\.
 
 **To share a transit gateway**
 
-1. Open the AWS Resource Access Manager console at [https://console\.aws\.amazon\.com/ram/](https://console.aws.amazon.com/ram/)\.
+1. Open the AWS RAM console at [https://console\.aws\.amazon\.com/ram/](https://console.aws.amazon.com/ram/)\.
 
 1. Choose **Create a resource share**\.
 
@@ -161,7 +161,7 @@ If you were added to a resource share, you receive an invitation to join the res
 
 **To accept a resource share**
 
-1. Open the AWS Resource Access Manager console at [https://console\.aws\.amazon\.com/ram/](https://console.aws.amazon.com/ram/)\.
+1. Open the AWS RAM console at [https://console\.aws\.amazon\.com/ram/](https://console.aws.amazon.com/ram/)\.
 
 1. On the navigation pane, choose **Shared with me**, **Resource shares**\.
 

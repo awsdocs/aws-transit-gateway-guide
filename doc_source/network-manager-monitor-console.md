@@ -24,7 +24,7 @@ The Network Manager console provides a dashboard that enables you to visualize a
 On the **Overview** page, you can view the following information:
 + The inventory of your global network\.
 + A list of the transit gateways that are registered in your global network, and the overall status of the VPN connection attachments for those transit gateways\. To visualize and monitor an individual transit gateway, choose the transit gateway ID, or choose **Transit gateways** in the navigation pane\.
-+ A list of the transit gateways that are registered in your global network, and the overall status of the Connect peers for those transit gateways\. To visualize and monitor an individual transit gateway, choose the transit gateway ID, or choose **Transit gateways** in the navigation pane\.
++ A list of the transit gateways that are registered in your global network, and the overall status of the Transit Gateway Connect peers for those transit gateways\. To visualize and monitor an individual transit gateway, choose the transit gateway ID, or choose **Transit gateways** in the navigation pane\.
 + A summary of network events, for example, topology changes in your global network\.
 
 ## Details<a name="network-manager-view-details"></a>

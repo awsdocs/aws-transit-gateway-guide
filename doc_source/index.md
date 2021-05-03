@@ -1,7 +1,7 @@
 # Amazon Virtual Private Cloud Transit Gateways
 
 -----
-*****Copyright &copy; 2021 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy;  Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -30,7 +30,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Transit gateway attachments to a Direct Connect gateway](tgw-dcg-attachments.md)
    + [Transit gateway VPN attachments](tgw-vpn-attachments.md)
    + [Transit gateway peering attachments](tgw-peering.md)
-   + [Transit gateway Connect attachments and Connect peers](tgw-connect.md)
+   + [Transit gateway Connect attachments and Transit Gateway Connect peers](tgw-connect.md)
    + [Transit gateway route tables](tgw-route-tables.md)
       + [Prefix list references](tgw-prefix-lists.md)
    + [Multicast on transit gateways](tgw-multicast-overview.md)
@@ -60,7 +60,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Devices](devices.md)
       + [Connections](device-connections.md)
       + [Customer gateway associations](cgw-association.md)
-      + [Transit gateway Connect peer associations](connect-peer-association.md)
+      + [Transit Gateway Connect peer associations](connect-peer-association.md)
    + [Visualizing and monitoring your global network using the Network Manager console](network-manager-monitor-console.md)
    + [Using Amazon CloudWatch metrics and events with your global network](monitoring-overview.md)
       + [Monitoring your global network with Amazon CloudWatch metrics](monitoring-cloudwatch-metrics.md)

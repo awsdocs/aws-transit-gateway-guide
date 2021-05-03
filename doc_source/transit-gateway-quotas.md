@@ -1,29 +1,25 @@
 # Quotas for your transit gateways<a name="transit-gateway-quotas"></a>
 
-Your AWS account has the following service quotas \(previously referred to as *limits*\) related to transit gateways\. Unless indicated otherwise, you can [request an increase](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=vpc) for a quota\. For more information about service quotas, see [AWS Service Quotas](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) in the *Amazon Web Services General Reference*\.
+Your AWS account has the following service quotas \(previously referred to as *quotas*\) related to transit gateways\. Unless indicated otherwise, you can [request an increase](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=vpc) for a quota\. For more information about service quotas, see [AWS Service Quotas](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) in the *Amazon Web Services General Reference*\.
 
 ## General<a name="general-quota"></a>
 + Number of transit gateways per Region per account: 5
 + Number of transit gateways per VPC: 5
 
-  This limit cannot be increased\.
-+ Number of Transit Gateway CIDR blocks per Transit Gateway: 5. This is in relation to [Transit Gateway Connect attachments](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html)
+  This quota cannot be increased\.
++ Number of transit gateway CIDR blocks per transit gateway: 5
 
-  This limit cannot be increased\.
+  The transit gateway CIDR blocks are used in the [Transit gateway Connect attachments and Transit Gateway Connect peers](tgw-connect.md) feature\. This quota cannot be increased\.
 
 ## Routing<a name="general-quota"></a>
 + Number of transit gateway route tables per transit gateway: 20
 + Number of routes per transit gateway: 10,000
 
   For VPC route table quotas, see [Amazon VPC quotas](https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html) in the *Amazon VPC User Guide*\.
-+ Dynamic routes advertised from a virtual router appliance to a Connect peer: 100
-
-  This quota cannot be increased\.
-+ Routes advertised from a Connect peer on a transit gateway to a virtual router appliance: 1,000
++ Dynamic routes advertised from a virtual router appliance to a Transit Gateway Connect peer: 1,000
++ Routes advertised from a Transit Gateway Connect peer on a transit gateway to a virtual router appliance: 5,000
 
   Advertised routes come from the route table that's associated with the Connect attachment\.
-
-  This quota cannot be increased\.
 + Number of static route for a prefix to a single attachment: 1
 
 ## Transit gateway attachments<a name="attachments-quota"></a>
@@ -34,7 +30,7 @@ Your AWS account has the following service quotas \(previously referred to as *l
 + Number of transit gateway peering attachments per transit gateway: 50
 + Number of transit gateway peering attachments between two transit gateways: 1
 + Number of pending transit gateway peering attachments per transit gateway: 10
-+ Number of Connect peers \(GRE tunnels\) per transit gateway Connect attachment: 4
++ Number of Transit Gateway Connect peers \(GRE tunnels\) per transit gateway Connect attachment: 4
 
   This value cannot be increased\.
 
@@ -43,11 +39,9 @@ Your AWS account has the following service quotas \(previously referred to as *l
 + Maximum bandwidth per VPN tunnel: 1\.25 Gbps
 
   This is a hard value\. You can use ECMP to get higher VPN bandwidth by aggregating multiple VPN tunnels\. To use ECMP, the VPN connection must be configured for dynamic routing\. ECMP is not supported on VPN connections that use static routing\.
-+ Maximum bandwidth \(burst\) per Connect peer \(GRE tunnel\) per Connect attachment: 5 Gbps 
++ Maximum bandwidth \(burst\) per Transit Gateway Connect peer \(GRE tunnel\) per Connect attachment: 5 Gbps 
 
-  You can get up to 20 Gbps in total per Connect attachment as long as the underlying transport \(VPC or AWS Direct Connect\) attachment supports the required bandwidth\. 
-
-  The transit gateway can use ECMP between Connect peers of the same Connect attachment, or between Connect attachments on the same transit gateway\. The transit gateway cannot use ECMP between the BGP peerings of the same Connect peer\.
+  This is a hard value\. You can create up to 4 Transit Gateway Connect peers per Connect attachment \(up to 20 Gbps in total bandwidth per Connect attachment\), as long as the underlying transport \(VPC or AWS Direct Connect\) attachment supports the required bandwidth\. You can use equal\-cost multi\-path routing \(ECMP\) to get higher bandwidth by scaling horizontally across multiple Transit Gateway Connect peers of the same Connect attachment or across multiple Connect attachments on the same transit gateway\. The transit gateway cannot use ECMP between the BGP peerings of the same Transit Gateway Connect peer\. 
 
 ## AWS Direct Connect gateways<a name="direct-connect-quota"></a>
 + Number of AWS Direct Connect gateways per transit gateway: 20
@@ -58,7 +52,7 @@ Your AWS account has the following service quotas \(previously referred to as *l
   This value cannot be increased\.
 
 ## MTU<a name="mtu-quota"></a>
-+ The maximum transmission unit \(MTU\) of a network connection is the size, in bytes, of the largest permissible packet that can be passed over the connection\. The larger the MTU of a connection, the more data that can be passed in a single packet\. A transit gateway supports an MTU of 8500 bytes for traffic between VPCs, Direct Connect and peering attachments\. Traffic over VPN connections can have an MTU of 1500 bytes\. 
++ The maximum transmission unit \(MTU\) of a network connection is the size, in bytes, of the largest permissible packet that can be passed over the connection\. The larger the MTU of a connection, the more data that can be passed in a single packet\. A transit gateway supports an MTU of 8500 bytes for traffic between VPCs, Direct Connect gateway and peering attachments\. Traffic over VPN connections can have an MTU of 1500 bytes\. 
 + Packets with a size larger than 8500 bytes that arrive at the transit gateway are dropped\.
 + The transit gateway does not generate the FRAG\_NEEDED for ICMPv4 packet, or the Packet Too Big \(PTB\) for ICMPv6 packet\. Therefore, the Path MTU Discovery \(PMTUD\) is not supported\.
 + The transit gateway enforces Maximum Segment Size \(MSS\) clamping for all packets\. For more information, see [RFC879](https://tools.ietf.org/html/rfc879)\.

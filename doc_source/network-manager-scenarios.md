@@ -75,7 +75,7 @@ For more information about Partners who can help you set up your Site\-to\-Site 
 
 ## Connection between devices<a name="scenario-tgw-connect"></a>
 
-In the following scenario, your AWS network consists of a transit gateway with a [Connect attachment](tgw-connect.md) to a VPC that contains a virtual appliance on an EC2 instance\. A Connect peer \(GRE tunnel\) is established between the transit gateway and the appliance\. The appliance is connected to a physical device in your on\-premises network through a connection\.
+In the following scenario, your AWS network consists of a transit gateway with a [Connect attachment](tgw-connect.md) to a VPC that contains a virtual appliance on an EC2 instance\. A Transit Gateway Connect peer \(GRE tunnel\) is established between the transit gateway and the appliance\. The appliance is connected to a physical device in your on\-premises network through a connection\.
 
 ![\[Connection between devices\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/nm-tgw-connect.png)
 
@@ -86,4 +86,4 @@ For this scenario, do the following in Network Manager:
 + Associate the device with the site and with the link\. For more information, see [Device associations](devices.md#device-associations)\.
 + Create a device for the EC2 virtual device\. For visualization in the Network Manager console, specify the AWS location of the device \(for example, the Availability Zone\)\. For more information, see [Devices](devices.md)\.
 + Create a connection between the on\-premises device and the virtual device\. For more information, see [Connections](device-connections.md)\.
-+ Associate the Connect peer with the on\-premises device\. For more information, see [Transit gateway Connect peer associations](connect-peer-association.md)\.
++ Associate the Transit Gateway Connect peer with the on\-premises device\. For more information, see [Transit Gateway Connect peer associations](connect-peer-association.md)\.
