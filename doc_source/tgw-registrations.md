@@ -17,7 +17,7 @@ Register a transit gateway with a global network\. You cannot register a transit
 
 **To register a transit gateway**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -36,7 +36,7 @@ View the registered transit gateways in your global network\.
 
 **To view your registered transit gateways**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -55,7 +55,7 @@ Deregister a transit gateway from a global network\.
 
 **To deregister a transit gateway**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 

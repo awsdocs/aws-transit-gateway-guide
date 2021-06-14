@@ -4,6 +4,7 @@ You can configure an appliance \(such as a security appliance\) in a shared serv
 
 **Topics**
 + [Overview](#transit-gateway-appliance-overview)
++ [Stateful appliances and appliance mode](#transit-gateway-appliance-support)
 + [Routing](#transit-gateway-appliance-routing)
 
 ## Overview<a name="transit-gateway-appliance-overview"></a>
@@ -12,7 +13,7 @@ The following diagram shows the key components of the configuration for this sce
 
 ![\[An appliance in a shared services VPC\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/transit-gateway-appliance.png)
 
-You create the following entities for this scenario:
+You create the following resources for this scenario:
 + Three VPCs\. For information about creating a VPC, see [Creating a VPC](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#Create-VPC) in the *Amazon Virtual Private Cloud User Guide*\.
 + A transit gateway\. For more information, see [Create a transit gateway](tgw-transit-gateways.md#create-tgw)\.
 + Three VPC attachments \- one for each of the VPCs\. For more information, see [Create a transit gateway attachment to a VPC](tgw-vpc-attachments.md#create-vpc-attachment)\.
@@ -20,12 +21,19 @@ You create the following entities for this scenario:
   For each VPC attachment, specify a subnet in each Availability Zone\. For the shared services VPC, these are the subnets where traffic is routed to the VPC from the transit gateway\. In the preceding example, these are subnets A and C\.
 
   For the VPC attachment for VPC C, enable appliance mode support so that response traffic is routed to the same Availability Zone in VPC C as the source traffic\.
-**Note**  
-You currently cannot use the Amazon VPC console to enable appliance mode support\. Instead, you can use the [create\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-vpc-attachment.html) and [modify\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-transit-gateway-vpc-attachment.html) commands\.
 
-### Enabling appliance mode support for stateful appliances<a name="transit-gateway-appliance-support"></a>
+  The Amazon VPC console does not support appliance mode\. You can use the Amazon VPC API, an AWS SDK, or the AWS CLI to enable appliance mode\. For example, add `--options ApplianceModeSupport=enable` to the [create\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-vpc-attachment.html) or [modify\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-transit-gateway-vpc-attachment.html) command\.
 
-By default, when routing traffic between VPC attachments, a transit gateway keeps traffic in the same Availability Zone that it originated from until it reaches its destination\. Traffic crosses Availability Zones between attachments only if there is an Availability Zone failure or if there are no subnets associated with a VPC attachment in that Availability Zone\. If your VPC attachments span multiple Availability Zones and you require traffic between source and destination hosts to be routed through the same appliance for stateful inspection, enable appliance mode support for the VPC attachment in which the appliance is located\. This ensures that bidirectional traffic is routed symmetrically—it's routed through the same Availability Zone in the VPC attachment for the lifetime of the traffic flow\.
+## Stateful appliances and appliance mode<a name="transit-gateway-appliance-support"></a>
+
+When appliance mode is enabled, a transit gateway selects a single network interface in the appliance VPC, using a flow hash algorithm, to send traffic to for the life of the flow\. The transit gateway uses the same network interface for the return traffic\. This ensures that bidirectional traffic is routed symmetrically—it's routed through the same Availability Zone in the VPC attachment for the life of the flow\. If you have multiple transit gateways in your architecture, each transit gateway maintains its own session affinity, and each transit gateway can select a different network interface\. 
+
+If your VPC attachments span multiple Availability Zones and you require traffic between source and destination hosts to be routed through the same appliance for stateful inspection, enable appliance mode support for the VPC attachment in which the appliance is located\.
+
+For more information, see [Centralized inspection architecture](http://aws.amazon.com/blogs/networking-and-content-delivery/centralized-inspection-architecture-with-aws-gateway-load-balancer-and-aws-transit-gateway/) in the AWS blog\.
+
+**Behavior when appliance mode is not enabled**  
+When appliance mode is not enabled, a transit gateway attempts to keep traffic routed between VPC attachments in the originating Availability Zone until it reaches its destination\. Traffic crosses Availability Zones between attachments only if there is an Availability Zone failure or if there are no subnets associated with a VPC attachment in that Availability Zone\.
 
 The following diagram shows a traffic flow when appliance mode support is not enabled\. The response traffic that originates from Availability Zone 2 in VPC B is routed by the transit gateway to the same Availability Zone in VPC C\. The traffic is therefore dropped, because the appliance in Availability Zone 2 is not aware of the original request from the source in VPC A\.
 

@@ -1,4 +1,4 @@
-# Working with Network Manager resources<a name="working-with-network-manager"></a>
+# Work with Network Manager<a name="working-with-network-manager"></a>
 
 You can work with Network Manager using the Network Manager console or the AWS CLI\.
 

@@ -10,7 +10,7 @@ Transit gateway cross\-region peering does not support resolving public IPv4 DNS
 
 Transit gateway peering uses the same network infrastructure as VPC peering and is therefore encrypted\. For more information about VPC encryption, [Encryption in transit ](https://docs.aws.amazon.com/vpc/latest/userguide/data-protection.html#encryption-transit) in the *Amazon VPC User Guide\.*
 
-For information about what Regions support transit gateway peering attachments, see [AWS Transit Gateways FAQs](https://aws.amazon.com/transit-gateway/faqs/)\.
+For information about what Regions support transit gateway peering attachments, see [AWS Transit Gateways FAQs](http://aws.amazon.com/transit-gateway/faqs/)\.
 
 ## Opt\-in AWS Region considerations<a name="opt-in-considerations"></a>
 
@@ -22,7 +22,7 @@ You can peer transit gateways across opt\-in Region boundaries\. For information
   + Region code
 + When you delete the transit gateway attachment, the above account data is deleted\.
 + We recommend that you delete the transit gateway peering attachment before you opt out of the Region\. If you do not delete the peering attachment, traffic might continue to go over the attachment and you continue to incur charges\. If you do not delete the attachment, you can opt back in, and then delete the attachment\.
-+ In general, the transit gateway has a sender pays model\. By using a transit gateway peering attachment across an opt in boundary, you might incur charges in a Region accepting the attachment, including those Regions you have not opted into\. For more information, see [AWS Transit Gateway Pricing](https://aws.amazon.com/transit-gateway/pricing/)\.
++ In general, the transit gateway has a sender pays model\. By using a transit gateway peering attachment across an opt in boundary, you might incur charges in a Region accepting the attachment, including those Regions you have not opted into\. For more information, see [AWS Transit Gateway Pricing](http://aws.amazon.com/transit-gateway/pricing/)\.
 
 ## Create a peering attachment<a name="tgw-peering-create"></a>
 

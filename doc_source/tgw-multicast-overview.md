@@ -16,12 +16,13 @@ The following are the key concepts for multicast:
 ## Considerations<a name="limits"></a>
 + For information about supported Regions, see [AWS Transit Gateway FAQs](https://aws.amazon.com/transit-gateway/faqs)\.
 + You must create a new transit gateway to support multicast\.
-+ Multicast group membership is managed using the Amazon VPC Console or the AWS CLI, or IGMP\. 
++ Multicast group membership is managed using the Amazon Virtual Private Cloud Console or the AWS CLI, or IGMP\. 
 + A subnet can only be in one multicast domain\. 
 + If you use a non\-Nitro instance, you must disable the **Source/Dest** check\. For information about disabling the check, see [Changing the source or destination checking](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#change_source_dest_check) in the *Amazon EC2 User Guide for Linux Instances*\.
 + A non\-Nitro instance cannot be a multicast sender\.
 + Multicast routing is not supported over AWS Direct Connect, Site\-to\-Site VPN, or peering attachments\.
-+ A transit gateway does not support fragmentation of multicast packets\. Fragmented multicast packets will get dropped\. For more information, see [MTU](transit-gateway-quotas.md#mtu-quota)\.
++ A transit gateway does not support fragmentation of multicast packets\. Fragmented multicast packets are dropped\. For more information, see [MTU](transit-gateway-quotas.md#mtu-quotas)\.
 + At startup, an IGMP host sends multiple IGMP `JOIN` messages to join a multicast group \(typically 2 to 3 retries\)\. In the unlikely event that all the IGMP `JOIN` messages get lost, the host will not become part of transit gateway multicast group\. In such a scenario you will need to re\-trigger the IGMP `JOIN` message from the host using application specific methods\.
 + The transit gateway keeps track of hosts that successfully joined the group\. In the event of a transit gateway outage, the transit gateway continues to send multicast data to the host for 7 minutes \(420 seconds\) after the last successful IGMP `JOIN` message\. The transit gateway continues to send membership queries to the host for up to 12 hours or until it receives a IGMP `LEAVE` message from the host\.
 + The transit gateway sends membership query packets to all the IGMP members so that it can track multicast group membership\. The source IP of these IGMP query packets is 0\.0\.0\.0/32, and the destination IP is 224\.0\.0\.1/32 and the protocol is 2\. Your security group configuration on the IGMP hosts \(instances\), and any ACLs configuration on the host subnets must allow these IGMP protocol messages\. 
++  • When the multicast source and destination are in the same VPC, you cannot use security group referencing to set the destination security group to accept traffic from the source's security group\.

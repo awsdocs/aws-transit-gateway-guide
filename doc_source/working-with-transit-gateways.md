@@ -1,4 +1,4 @@
-# Working with transit gateways<a name="working-with-transit-gateways"></a>
+# Work with transit gateways<a name="working-with-transit-gateways"></a>
 
 You can work with transit gateways using the Amazon VPC console or the AWS CLI\.
 

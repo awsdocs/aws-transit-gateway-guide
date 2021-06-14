@@ -1,8 +1,10 @@
 # Quotas for your transit gateways<a name="transit-gateway-quotas"></a>
 
-Your AWS account has the following service quotas \(previously referred to as *quotas*\) related to transit gateways\. Unless indicated otherwise, you can [request an increase](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=vpc) for a quota\. For more information about service quotas, see [AWS Service Quotas](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) in the *Amazon Web Services General Reference*\.
+Your AWS account has the following service quotas \(previously referred to as *quotas*\) related to transit gateways\. Unless indicated otherwise, you can request an increase for a quota\.
 
-## General<a name="general-quota"></a>
+The Service Quotas console provides information about Network Manager quotas\. You can use the Service Quotas console to view default quotas and [request quota increases](https://console.aws.amazon.com/servicequotas/home?) for adjustable quotas\. For more information, see [AWS service quotas](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) in the *Amazon Web Services General Reference*\.
+
+## General<a name="general-quotas"></a>
 + Number of transit gateways per Region per account: 5
 + Number of transit gateways per VPC: 5
 
@@ -11,7 +13,7 @@ Your AWS account has the following service quotas \(previously referred to as *q
 
   The transit gateway CIDR blocks are used in the [Transit gateway Connect attachments and Transit Gateway Connect peers](tgw-connect.md) feature\. This quota cannot be increased\.
 
-## Routing<a name="general-quota"></a>
+## Routing<a name="routing-quotas"></a>
 + Number of transit gateway route tables per transit gateway: 20
 + Number of routes per transit gateway: 10,000
 
@@ -22,7 +24,7 @@ Your AWS account has the following service quotas \(previously referred to as *q
   Advertised routes come from the route table that's associated with the Connect attachment\.
 + Number of static route for a prefix to a single attachment: 1
 
-## Transit gateway attachments<a name="attachments-quota"></a>
+## Transit gateway attachments<a name="attachments-quotas"></a>
 + Total number of transit gateway attachments per transit gateway: 5,000
 + Number of unique transit gateway attachments per VPC: 5
 
@@ -34,7 +36,7 @@ Your AWS account has the following service quotas \(previously referred to as *q
 
   This value cannot be increased\.
 
-## Bandwidth<a name="bandwidth-quota"></a>
+## Bandwidth<a name="bandwidth-quotas"></a>
 + Maximum bandwidth \(burst\) per VPC, Direct Connect gateway, or peered transit gateway connection: 50 Gbps
 + Maximum bandwidth per VPN tunnel: 1\.25 Gbps
 
@@ -43,7 +45,7 @@ Your AWS account has the following service quotas \(previously referred to as *q
 
   This is a hard value\. You can create up to 4 Transit Gateway Connect peers per Connect attachment \(up to 20 Gbps in total bandwidth per Connect attachment\), as long as the underlying transport \(VPC or AWS Direct Connect\) attachment supports the required bandwidth\. You can use equal\-cost multi\-path routing \(ECMP\) to get higher bandwidth by scaling horizontally across multiple Transit Gateway Connect peers of the same Connect attachment or across multiple Connect attachments on the same transit gateway\. The transit gateway cannot use ECMP between the BGP peerings of the same Transit Gateway Connect peer\. 
 
-## AWS Direct Connect gateways<a name="direct-connect-quota"></a>
+## AWS Direct Connect gateways<a name="direct-connect-quotas"></a>
 + Number of AWS Direct Connect gateways per transit gateway: 20
 
   This value cannot be increased\.
@@ -51,13 +53,13 @@ Your AWS account has the following service quotas \(previously referred to as *q
 
   This value cannot be increased\.
 
-## MTU<a name="mtu-quota"></a>
+## MTU<a name="mtu-quotas"></a>
 + The maximum transmission unit \(MTU\) of a network connection is the size, in bytes, of the largest permissible packet that can be passed over the connection\. The larger the MTU of a connection, the more data that can be passed in a single packet\. A transit gateway supports an MTU of 8500 bytes for traffic between VPCs, Direct Connect gateway and peering attachments\. Traffic over VPN connections can have an MTU of 1500 bytes\. 
 + Packets with a size larger than 8500 bytes that arrive at the transit gateway are dropped\.
 + The transit gateway does not generate the FRAG\_NEEDED for ICMPv4 packet, or the Packet Too Big \(PTB\) for ICMPv6 packet\. Therefore, the Path MTU Discovery \(PMTUD\) is not supported\.
 + The transit gateway enforces Maximum Segment Size \(MSS\) clamping for all packets\. For more information, see [RFC879](https://tools.ietf.org/html/rfc879)\.
 
-## Multicast<a name="multicast-quota"></a>
+## Multicast<a name="multicast-quotas"></a>
 + Number of multicast domains per transit gateway: 20
 + Number of multicast group members and sources per transit gateway: 1000
 + Number of multicast group members per transit gateway multicast group: 100
@@ -69,12 +71,16 @@ Your AWS account has the following service quotas \(previously referred to as *q
 + Maximum aggregate multicast throughput per subnet: 4 Gbps 
 + Maximum aggregate multicast throughput per subnet including unicast traffic: 50 Gbps 
 
-## Additional quota resources<a name="additional-quota"></a>
+## Transit Gateway Network Manager<a name="network-manager-quotas"></a>
++ Global networks per AWS account: 5
++ Devices per global network: 200
++ Links per global network: 200
++ Sites per global network: 200
++ Connections per global network: 500
 
-For information about quotas that apply to Site\-to\-Site VPN connections, see [Site\-to\-Site VPN Quotas](https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-limits.html) in the *AWS Site\-to\-Site VPN User Guide*\.
+## Additional quota resources<a name="additional-quotas"></a>
 
-For information about quotas that apply to VPC attachments, see [Amazon VPC Quotas](https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html) in the *Amazon VPC User Guide*\.
-
-For information about quotas that apply to Direct Connect gateway attachments, see [AWS Direct Connect Quotas](https://docs.aws.amazon.com/directconnect/latest/UserGuide/limits.html) in the* AWS Direct Connect User Guide*\.
-
-For more information about service quotas for Transit Gateway Network Manager, see [Network Manager quotas](how-network-manager-works.md#network-manager-limits)\.
+For more information, see the following:
++ [Site\-to\-Site VPN quotas](https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-limits.html) in the *AWS Site\-to\-Site VPN User Guide*
++ [Amazon VPC quotas](https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html) in the *Amazon VPC User Guide*
++ [AWS Direct Connect quotas](https://docs.aws.amazon.com/directconnect/latest/UserGuide/limits.html) in the *AWS Direct Connect User Guide*

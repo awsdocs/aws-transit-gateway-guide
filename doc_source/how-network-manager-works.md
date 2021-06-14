@@ -7,11 +7,10 @@ After you create your global network, you can monitor your networks through a da
 Network Manager does not create, modify, or delete your transit gateways and their attachments\. To work with transit gateways, use the Amazon VPC console and the Amazon EC2 APIs\.
 
 **Topics**
-+ [Registering transit gateways](#nm-how-it-works-tgws)
-+ [Defining and associating your on\-premises network](#nm-how-it-works-on-premises)
-+ [Network Manager quotas](#network-manager-limits)
++ [Register transit gateways](#nm-how-it-works-tgws)
++ [Define and associate your on\-premises network](#nm-how-it-works-on-premises)
 
-## Registering transit gateways<a name="nm-how-it-works-tgws"></a>
+## Register transit gateways<a name="nm-how-it-works-tgws"></a>
 
 You can register transit gateways that are in the same AWS account as your global network\. When you register a transit gateway, the following transit gateway attachments are automatically included in your global network:
 + VPCs
@@ -30,7 +29,7 @@ You can create a global network that includes transit gateways in multiple AWS R
 
 ![\[Multi-Region global network\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/nm-multi-region-tgw.png)
 
-## Defining and associating your on\-premises network<a name="nm-how-it-works-on-premises"></a>
+## Define and associate your on\-premises network<a name="nm-how-it-works-on-premises"></a>
 
 To represent your on\-premises network, you add *devices*, *links*, and *sites* to your global network\. A site represents the physical location of your branch, office, store, campus, data center, and so on\. When you add a site, you can specify the location information, including the physical address and coordinates\.
 
@@ -45,16 +44,3 @@ To connect your on\-premises network to your AWS resources, associate a customer
 You can have multiple devices in a site, and you can associate a device with multiple links\. For examples, see [Scenarios for Transit Gateway Network Manager](network-manager-scenarios.md)\.
 
 You can work with one of our Partners in the AWS Partner Network \(APN\) to provision and connect your on\-premises networks\. For more information, see [Transit Gateway Network Manager](https://aws.amazon.com/transit-gateway/network-manager)\.
-
-## Network Manager quotas<a name="network-manager-limits"></a>
-
-Your AWS account has the following quotas related to Network Manager:
-+ Global networks per AWS account: 5
-+ Devices per global network: 200
-+ Links per global network: 200
-+ Sites per global network: 200
-+ Connections per global network: 500
-
-The Service Quotas console provides information about Network Manager quotas\. You can use the Service Quotas console to view default quotas and [request quota increases](https://console.aws.amazon.com/servicequotas/home?) for adjustable quotas\.
-
-For more information about Site\-to\-Site VPN quotas, see [Site\-to\-Site VPN Quotas](https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-limits.html) in the *AWS Site\-to\-Site VPN User Guide*\.

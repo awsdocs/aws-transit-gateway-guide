@@ -48,13 +48,13 @@ When an owner shares a multicast domain with a consumer, the consumer can do the
 + Register and deregister group members or group sources
 + Associate and disassociate subnets
 
-To share a multicast domain, you must add it to a resource share\. A resource share is an AWS RAM resource that lets you share your resources across AWS accounts\. A resource share specifies the resources to share, and the consumers with whom they are shared\. When you share a multicast domain using the Amazon VPC Console, you add it to an existing resource share\. To add the multicast domain to a new resource share, you must first create the resource share using the [AWS RAM console](https://console.aws.amazon.com/ram)\.
+To share a multicast domain, you must add it to a resource share\. A resource share is an AWS RAM resource that lets you share your resources across AWS accounts\. A resource share specifies the resources to share, and the consumers with whom they are shared\. When you share a multicast domain using the Amazon Virtual Private Cloud Console, you add it to an existing resource share\. To add the multicast domain to a new resource share, you must first create the resource share using the [AWS RAM console](https://console.aws.amazon.com/ram)\.
 
 If you are part of an organization in AWS Organizations and sharing within your organization is enabled, consumers in your organization are automatically granted access to the shared multicast domain\. Otherwise, consumers receive an invitation to join the resource share and are granted access to the shared multicast domain after accepting the invitation\.
 
-You can share a multicast domain that you own using the \*Amazon VPC Console console, AWS RAM console, or the AWS CLI\.
+You can share a multicast domain that you own using the \*Amazon Virtual Private Cloud Console console, AWS RAM console, or the AWS CLI\.
 
-**To share a multicast domain that you own using the \*Amazon VPC Console**
+**To share a multicast domain that you own using the \*Amazon Virtual Private Cloud Console**
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
@@ -78,9 +78,9 @@ When a shared multicast domain is unshared, the following happens to consumer mu
 
  To unshare a multicast domain, you must remove it from the resource share\. You can do this from the AWS RAM console or the AWS CLI\.
 
-To unshare a shared multicast domain that you own, you must remove it from the resource share\. You can do this using the \*Amazon VPC Console, AWS RAM console, or the AWS CLI\.
+To unshare a shared multicast domain that you own, you must remove it from the resource share\. You can do this using the \*Amazon Virtual Private Cloud Console, AWS RAM console, or the AWS CLI\.
 
-**To unshare a shared multicast domain that you own using the \*Amazon VPC Console**
+**To unshare a shared multicast domain that you own using the \*Amazon Virtual Private Cloud Console**
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
@@ -96,9 +96,9 @@ Use the [disassociate\-resource\-share](https://docs.aws.amazon.com/cli/latest/r
 
 ## Identifying a shared multicast domain<a name="sharing-identify"></a>
 
-Owners and consumers can identify shared multicast domains using the \*Amazon VPC Console and AWS CLI
+Owners and consumers can identify shared multicast domains using the \*Amazon Virtual Private Cloud Console and AWS CLI
 
-**To identify a shared multicast domain using the \*Amazon VPC Console**
+**To identify a shared multicast domain using the \*Amazon Virtual Private Cloud Console**
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 

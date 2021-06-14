@@ -1,12 +1,8 @@
-# Visualizing and monitoring your global network using the Network Manager console<a name="network-manager-monitor-console"></a>
+# Visualize and monitor your global network using the Network Manager console<a name="network-manager-monitor-console"></a>
 
 The Network Manager console provides a dashboard that enables you to visualize and monitor your global network\. It includes information about the resources in your global network, their geographic location, the network topology, Amazon CloudWatch metrics and events, and enables you to perform route analysis\.
 
-**To access the dashboard for your global network**
-
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
-
-1. Choose the ID for your global network\.
+To access the dashboard for your global network, open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 **Topics**
 + [Overview](#network-manager-main-dashboard)

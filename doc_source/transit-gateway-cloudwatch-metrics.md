@@ -19,6 +19,8 @@ The `AWS/TransitGateway` namespace includes the following metrics\.
 
 | Metric | Description | 
 | --- | --- | 
+| BytesDropCountBlackhole |  The number of bytes dropped because they matched a `blackhole` route\.  | 
+| BytesDropCountNoRoute |  The number of bytes dropped because they did not match a route\.  | 
 | BytesIn |  The number of bytes received by the transit gateway\.  | 
 | BytesOut |  The number of bytes sent from the transit gateway\.  | 
 | PacketsIn |  The number of packets received by the transit gateway\.  | 
@@ -28,11 +30,13 @@ The `AWS/TransitGateway` namespace includes the following metrics\.
 
 ### Attachment\-level metrics<a name="transit-gateway-attachment-metrics"></a>
 
-The following metrics are available for transit gateway attachments\. Most [attachment types](how-transit-gateways-work.md#tgw-attachments-overview) are supported\. All attachment metrics are published to the transit gateway owner's account\. Individual attachment metrics are also published to the attachment owner's account \(the attachment owner can only view metrics for their own attachment\)\.
+The following metrics are available for transit gateway attachments\. Most [attachment types](how-transit-gateways-work.md#tgw-attachments-overview) are supported\. All attachment metrics are published to the transit gateway owner's account\. Individual attachment metrics are also published to the attachment owner's account \(the attachment owner can view only the metrics for their own attachment\)\.
 
 
 | Metric | Description | 
 | --- | --- | 
+| BytesDropCountBlackhole |  The number of bytes dropped because they matched a `blackhole` route on the transit gateway attachment\.  | 
+| BytesDropCountNoRoute |  The number of bytes dropped because they did not match a route on the transit gateway attachment\.  | 
 | BytesIn |  The number of bytes received by the transit gateway from the attachment\.  | 
 | BytesOut |  The number of bytes sent from the transit gateway to the attachment\.  | 
 | PacketsIn |  The number of packets received by the transit gateway from the attachment\.  | 

@@ -13,7 +13,7 @@ You can create a transit gateway Transit Gateway Connect peer association in one
 
 **To associate a Transit Gateway Connect peer using the Transit gateways page**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -34,7 +34,7 @@ You can create a transit gateway Transit Gateway Connect peer association in one
 
 **To associate a Transit Gateway Connect peer using the Devices page**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -63,7 +63,7 @@ You can disassociate a Transit Gateway Connect peer from a device in one of the 
 
 **To disassociate a Transit Gateway Connect peer using the Transit gateways page**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -78,7 +78,7 @@ You can disassociate a Transit Gateway Connect peer from a device in one of the 
 
 **To disassociate a Transit Gateway Connect peer using the Devices page**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 

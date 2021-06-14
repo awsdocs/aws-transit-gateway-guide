@@ -18,7 +18,14 @@ The following are the key concepts for transit gateways:
 + **Associations** — Each attachment is associated with exactly one route table\. Each route table can be associated with zero to many attachments\.
 + **Route propagation** — A VPC, VPN connection, or Direct Connect gateway can dynamically propagate routes to a transit gateway route table\. With a Connect attachment, the routes are propagated to a transit gateway route table by default\. With a VPC, you must create static routes to send traffic to the transit gateway \. With a VPN connection or a Direct Connect gateway, routes are propagated from the transit gateway to your on\-premises router using Border Gateway Protocol \(BGP\)\. With a peering attachment, you must create a static route in the transit gateway route table to point to the peering attachment\.
 
-## Working with transit gateways<a name="tgw-interfaces"></a>
+## How to get started with transit gateways<a name="how-to-get-started"></a>
+
+Use the following resources to help you create and use a transit gateway\.
++ [How transit gateways work](how-transit-gateways-work.md)
++ [Getting started](tgw-getting-started.md)
++ [Design best practices](tgw-best-design-practices.md)
+
+## Work with transit gateways<a name="tgw-interfaces"></a>
 
 You can create, access, and manage your transit gateways using any of the following interfaces:
 + **AWS Management Console** — Provides a web interface that you can use to access your transit gateways\.

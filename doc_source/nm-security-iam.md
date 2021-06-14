@@ -11,7 +11,6 @@ When you attach a policy to a user or group of users, it allows or denies the us
 **Topics**
 + [How Network Manager works with IAM](#nm-with-iam)
 + [Example policies to manage Transit Gateway Network Manager](#nm-example-iam-policies)
-+ [Transit Gateway Network Manager service\-linked role](nm-service-linked-roles.md)
 
 ## How Network Manager works with IAM<a name="nm-with-iam"></a>
 
@@ -41,7 +40,7 @@ For example, to specify the `global-network-1122334455aabbccd` global network in
 "Resource": "arn:aws:networkmanager::123456789012:global-network/global-network-1122334455aabbccd"
 ```
 
-For more information about the format of ARNs, see [Amazon Resource Names \(ARNs\) and AWS Service Namespaces](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\.
+For more information about the format of ARNs, see [Amazon Resource Names \(ARNs\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\.
 
 ### Condition keys<a name="nm-iam-condition-keys"></a>
 

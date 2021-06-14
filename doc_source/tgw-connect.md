@@ -76,7 +76,7 @@ The following are the requirements and considerations for a Connect attachment\.
 + When you create a transit gateway peer, if you do not specify a peer ASN number, we pick the transit gateway ASN number\. This means that your appliance and transit gateway will be in the same autonomous system doing iBGP\.
 + To use equal\-cost multi\-path \(ECMP\) routing between multiple appliances, you must configure the appliance to advertise the same prefixes to the transit gateway with the same BGP AS\-PATH attribute\. For the transit gateway to choose all of the available ECMP paths, the AS\-PATH and Autonomous System Number \(ASN\) must match\. The transit gateway can use ECMP between Transit Gateway Connect peers for the same Connect attachment or between Connect attachments on the same transit gateway\. The transit gateway cannot use ECMP between the BGP peerings of the same Transit Gateway Connect peer\.
 + Static routes are not supported\.
-+ Connect attachments are currently supported in the following AWS Regions: US East \(N\. Virginia\), US West \(N\. California\), US West \(Oregon\), and Europe \(Ireland\)\.
++ For information about what Regions support Connect attachments, see [AWS Transit Gateways FAQs](http://aws.amazon.com/transit-gateway/faqs/)\.
 + With a Connect attachment, the routes are propagated to a transit gateway route table by default\.
 
 ## Create a transit gateway Connect attachment<a name="create-tgw-connect-attachment"></a>

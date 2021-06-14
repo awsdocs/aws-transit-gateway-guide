@@ -1,10 +1,10 @@
-# Tagging your Network Manager resources<a name="network-manager-tagging"></a>
+# Tag your Network Manager resources<a name="network-manager-tagging"></a>
 
 A *tag* is a metadata label that either you or AWS assigns to an AWS resource\. Each tag consists of a *key* and a *value*\. For tags that you assign, you define the key and the value\. For example, you might define the key as `purpose` and the value as `test` for one resource\.
 
 Tags help you do the following:
 + Identify and organize your AWS resources\. Many AWS services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related\.
-+ Control access to your AWS resources\. For more information, see [Controlling Access Using Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html) in the [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/)\.
++ Control access to your AWS resources\. For more information, see [Controlling access to AWS resources using tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html) in the *IAM User Guide*\.
 
 ## Supported resources<a name="network-manager-tagging-resources"></a>
 

@@ -1,6 +1,6 @@
 # Sites<a name="sites"></a>
 
-You can represent your on\-premises network in your global network through sites, devices, and links\. For more information, see [Defining and associating your on\-premises network](how-network-manager-works.md#nm-how-it-works-on-premises)\. You then associate a device with a site and one or more links\.
+You can represent your on\-premises network in your global network through sites, devices, and links\. For more information, see [Define and associate your on\-premises network](how-network-manager-works.md#nm-how-it-works-on-premises)\. You then associate a device with a site and one or more links\.
 
 A site is created for a specific global network and cannot be shared with other global networks\.
 
@@ -15,7 +15,7 @@ Create a site to represent the physical location of your network\. The location 
 
 **To create a site**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -44,7 +44,7 @@ You can update the details of your site, including the description, address, lat
 
 **To update your site**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -67,7 +67,7 @@ If you no longer need a site, you can delete it\. You must first disassociate th
 
 **To delete a site**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 

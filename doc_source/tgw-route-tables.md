@@ -80,7 +80,7 @@ Use the [describe\-transit\-gateway\-route\-tables](https://docs.aws.amazon.com/
 
 ## Propagate a route to a transit gateway route table<a name="enable-tgw-route-propagation"></a>
 
-Use route propagation to add a route from a route table to an attachment\.
+Use route propagation to add a route from an attachment to a route table\.
 
 **To propagate a route to a transit gateway attachment route table**
 

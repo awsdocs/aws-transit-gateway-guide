@@ -5,11 +5,18 @@ Transit Gateway Network Manager \(Network Manager\) enables you to centrally man
 ## Network Manager concepts<a name="concepts"></a>
 
 The following are the key concepts for Network Manager:
-+ ****global network**** — A single, private network that acts as the high\-level container for your network objects\.
-+ ****device**** — Represents a physical or a virtual appliance in an on\-premises network, data center, AWS Cloud, or other cloud providers\.
-+ ****connection**** — Represents connectivity between two devices\. The connection can be between a physical or virtual appliance and a third\-party virtual appliance inside a VPC, or it can be between physical appliances in an on\-premises network\.
-+ ****link**** — Represents a single internet connection from a site\.
-+ ****site**** — Represents a physical on\-premises location\. It could be a branch, office, store, campus, or a data center\.
++ **global network** — A single, private network that acts as the high\-level container for your network objects\.
++ **device** — Represents a physical or a virtual appliance in an on\-premises network, data center, AWS Cloud, or other cloud providers\.
++ **connection** — Represents connectivity between two devices\. The connection can be between a physical or virtual appliance and a third\-party virtual appliance inside a VPC, or it can be between physical appliances in an on\-premises network\.
++ **link** — Represents a single internet connection from a site\.
++ **site** — Represents a physical on\-premises location\. It could be a branch, office, store, campus, or a data center\.
+
+## How to get started with Network Manager<a name="nm-how-to-get-started"></a>
+
+Use the following resources to help you use Network Manager\.
++ [How Transit Gateway Network Manager works](how-network-manager-works.md)
++ [Getting started](network-manager-getting-started.md)
++ [Visualize and monitor your global network](network-manager-monitor-console.md)
 
 ## Pricing<a name="nm-pricing"></a>
 

@@ -23,7 +23,7 @@ Create a global network as a container for your transit gateway\.
 
 **To create a global network**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -37,7 +37,7 @@ Register your transit gateway in your global network\.
 
 **To register the transit gateway**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -66,10 +66,10 @@ The Network Manager console provides a dashboard for you to view and monitor the
 
 **To access the dashboard for your global network**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
 1. Choose the ID of your global network\.
 
-1. The **Overview** page provides an inventory of the objects in your global network\. For more information about the pages in the dashboard, see [Visualizing and monitoring your global network using the Network Manager console](network-manager-monitor-console.md)\.
+1. The **Overview** page provides an inventory of the objects in your global network\. For more information about the pages in the dashboard, see [Visualize and monitor your global network using the Network Manager console](network-manager-monitor-console.md)\.

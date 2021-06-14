@@ -15,12 +15,12 @@ If you attach a transit gateway peering connection, the transit gateway must be 
 
 ## Availability Zones<a name="tgw-az-overview"></a>
 
-When you attach a VPC to a transit gateway, you must enable one or more Availability Zones to be used by the transit gateway to route traffic to resources in the VPC subnets\. To enable each Availability Zone, you specify exactly one subnet\. The transit gateway places a network interface in that subnet using one IP address from the subnet\. After you enable an Availability Zone, traffic can be routed to all subnets in that Availability Zone, not just the specified subnet\. Resources that reside in Availability Zones where there is no transit gateway attachment will not be able to reach the transit gateway\.
+When you attach a VPC to a transit gateway, you must enable one or more Availability Zones to be used by the transit gateway to route traffic to resources in the VPC subnets\. To enable each Availability Zone, you specify exactly one subnet\. The transit gateway places a network interface in that subnet using one IP address from the subnet\. After you enable an Availability Zone, traffic can be routed to all subnets in that Availability Zone, not just the specified subnet\. Resources that reside in Availability Zones where there is no transit gateway attachment cannot reach the transit gateway\.
 
 We recommend that you enable multiple Availability Zones to ensure availability\.
 
 **Using appliance mode support**  
-By default, when a transit gateway routes traffic between VPC attachments, it keeps traffic in the same Availability Zone that it originated from until it reaches its destination\. Traffic crosses Availability Zones between attachments only if there is an Availability Zone failure or if there are no subnets associated with a VPC attachment in that Availability Zone\. If you plan to configure a stateful network appliance in your VPC, you can enable appliance mode support for that VPC attachment\. This ensures that the transit gateway continues to use the same Availability Zone for that VPC attachment for the lifetime of a flow of traffic between source and destination\. It also allows the transit gateway to send traffic to any Availability Zone in the VPC, as long as there is a subnet association in that Availability Zone\. For more information and an example, see [Example: Appliance in a shared services VPC](transit-gateway-appliance-scenario.md)\.
+If you plan to configure a stateful network appliance in your VPC, you can enable appliance mode support for the VPC attachment in which the appliance is located\. This ensures that the transit gateway uses the same Availability Zone for that VPC attachment for the lifetime of a flow of traffic between source and destination\. It also allows the transit gateway to send traffic to any Availability Zone in the VPC, as long as there is a subnet association in that Availability Zone\. For more information, see [Example: Appliance in a shared services VPC](transit-gateway-appliance-scenario.md)\.
 
 ## Routing<a name="tgw-routing-overview"></a>
 
@@ -50,6 +50,8 @@ For a VPC attachment, the CIDR blocks of the VPC are propagated to the transit g
 
 For a VPN connection attachment or a Direct Connect gateway attachment, routes in the transit gateway route table propagate to and from the transit gateway and your on\-premises router using Border Gateway Protocol \(BGP\)\.
 
+When a static route and a propagated route have the same destination, the static route has the higher priority, so the propagated route is not included in the route table\. If you remove the static route, the overlapping propagated route is included in the route table\.
+
 ### Routes for peering attachments<a name="tgw-route-table-peering"></a>
 
 You can peer two transit gateways and route traffic between them\. To do this, you create a peering attachment on your transit gateway, and specify the peer transit gateway with which to create the peering connection\. You then create a static route in your transit gateway route table to route traffic to the transit gateway peering attachment\. Traffic that's routed to the peer transit gateway can then be routed to the VPC and VPN attachments for the peer transit gateway\.
@@ -60,13 +62,12 @@ For more information, see [Example: Peered transit gateways](transit-gateway-pee
 
 Transit gateway routes are evaluated in the following order:
 + The most specific route for the destination address\.
-+ If routes are the same with different targets:
-  + Static routes, including static Site\-to\-Site VPN routes, have a higher precedence than propagated routes\.
-  + For propagated routes, the following order is used:
-    + VPCs have the highest precedence\.
-    + Direct Connect gateways have the second highest precedence\.
-    + Transit Gateway Connects have the third highest precedence\.
-    + Site\-to\-Site VPNs have the fourth highest precedence\.
++ If routes have the same destinations but different targets, the route priority is as follows:
+  + Static routes \(for example, Site\-to\-Site VPN static routes\)
+  + VPC propagated routes
+  + Direct Connect gateway propagated routes
+  + Transit Gateway Connect propagated routes
+  + Site\-to\-Site VPN propagated routes
 
 Consider the following VPC route table\. The VPC local route has the highest priority, followed by the routes that are the most specific\. When a static route and a propagated route have the same destination, the static route has a higher priority\.
 
@@ -79,7 +80,7 @@ Consider the following VPC route table\. The VPC local route has the highest pri
 | 172\.31\.0\.0/16 | vgw\-12345 \(propagated\) | 3 | 
 | 0\.0\.0\.0/0 | igw\-12345 | 4 | 
 
-Consider the following transit gateway route table\. When a static route and a propagated route have the same destination, the static route has a higher priority\. If you want to use the AWS Direct Connect gateway attachment over the VPN attachment, then use a BGP VPN connection and propagate the routes in the transit gateway route table\.
+Consider the following transit gateway route table\. If you prefer the AWS Direct Connect gateway attachment to the VPN attachment, use a BGP VPN connection and propagate the routes in the transit gateway route table\.
 
 
 | Destination | Attachment \(Target\) | Resource type | Route type | Priority | 

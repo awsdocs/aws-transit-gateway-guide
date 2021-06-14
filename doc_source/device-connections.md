@@ -15,7 +15,7 @@ Create a connection between two existing devices in your global network\.
 
 **To create a connection**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -44,7 +44,7 @@ You can update the information for an existing connection\.
 
 **To update a connection**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -67,7 +67,7 @@ If you no longer need a connection, you can delete it\.
 
 **To delete a connection**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 

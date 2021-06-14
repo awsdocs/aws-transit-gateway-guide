@@ -1,6 +1,6 @@
 # Devices<a name="devices"></a>
 
-You can represent your on\-premises network in your global network through sites, devices, and links\. For more information, see [Defining and associating your on\-premises network](how-network-manager-works.md#nm-how-it-works-on-premises)\. You can then associate a device with a site and one or more links\.
+You can represent your on\-premises network in your global network through sites, devices, and links\. For more information, see [Define and associate your on\-premises network](how-network-manager-works.md#nm-how-it-works-on-premises)\. You can then associate a device with a site and one or more links\.
 
 You can also create a device to represent a virtual appliance in your AWS network\. For more information, see [Connection between devices](network-manager-scenarios.md#scenario-tgw-connect)\.
 
@@ -19,7 +19,7 @@ Create a device to represent a physical or virtual appliance\.
 
 **To create a device**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -37,7 +37,7 @@ Create a device to represent a physical or virtual appliance\.
 
 1. For **Vendor**, enter the name of the vendor, for example, `Cisco`\.
 
-1. For **Location type**, specify whether the device is located in a remote location \(on\-premises network, data center, or other cloud provider\) or in AWS\. 
+1. For **Location type**, specify whether the device is located in a remote location \(on\-premises network, data center, or other cloud provider\) or in AWS\.
 
    If you choose **AWS Cloud**, specify the location of the device within AWS\. For **Zone**, specify the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost\. For **Subnet**, specify the Amazon Resource Name \(ARN\) of a subnet \(**arn:aws:ec2:us\-east\-1:111111111111:subnet/subnet\-abcd1234**\)\.
 
@@ -60,7 +60,7 @@ You can update the details of your device, including the description, model, ser
 
 **To update a device**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -81,7 +81,7 @@ If you no longer need a device, you can delete it\. You must first disassociate 
 
 **To delete a device**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -109,7 +109,7 @@ You can associate a device with a site, and a device with one or more links\.
 
 **To associate a device and site**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -127,7 +127,7 @@ You can remove the association between a device and a site\.
 
 **To disassociate a device and site**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -146,7 +146,7 @@ A link can be associated with more than one device\. The device must be associat
 
 **To associate a link and a device**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -164,7 +164,7 @@ You can remove the association between a link and a device\.
 
 **To disassociate a link and a device**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 

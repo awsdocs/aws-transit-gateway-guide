@@ -31,7 +31,7 @@ To use the Route Analyzer, you must use the Network Manager console\.
 
 **To analyze your routes**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. Choose the ID for your global network, and then choose **Route Analyzer**\.
 

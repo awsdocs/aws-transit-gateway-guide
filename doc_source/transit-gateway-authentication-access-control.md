@@ -16,8 +16,8 @@ For more information, see [IAM policies for Amazon EC2](https://docs.aws.amazon.
 
 The following are example IAM policies for working with transit gateways\.
 
-**Creating a tagged transit gateway**  
-The following example enables users to create transit gateways\. The `aws:RequestTag` condition key requires users to tag the transit gateway with the tag `stack=prod`\. The `aws:TagKeys` condition key uses the `ForAllValues` modifier to indicate that only the key `stack` is allowed in the request \(no other tags can be specified\)\. If users don't pass this specific tag when they create the transit gateway, or if they don't specify tags at all, the request fails\. 
+**Create a transit gateway with required tags**  
+The following example enables users to create transit gateway\. The `aws:RequestTag` condition key requires users to tag the transit gateway with the tag `stack=prod`\. The `aws:TagKeys` condition key uses the `ForAllValues` modifier to indicate that only the key `stack` is allowed in the request \(no other tags can be specified\)\. If users don't pass this specific tag when they create the transit gateway, or if they don't specify tags at all, the request fails\.
 
 The second statement uses the `ec2:CreateAction` condition key to allow users to create tags only in the context of `CreateTransitGateway`\. 
 
@@ -99,3 +99,7 @@ The following example enables users to create and delete transit gateway route t
     ]
 }
 ```
+
+## Example policies to manage Transit Gateway Network Manager<a name="tgw-nm-example-iam-policies"></a>
+
+For example policies, see [Example policies to manage Transit Gateway Network Manager](nm-security-iam.md#nm-example-iam-policies)\.

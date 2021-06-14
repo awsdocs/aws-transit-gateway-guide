@@ -5,7 +5,7 @@ The following tasks help you become familiar with transit gateways\. You will cr
 **Topics**
 + [Prerequisites](#tgw-prerequisites)
 + [Step 1: Create the transit gateway](#step-create-tgw)
-+ [Step 2: Attach your VPCs to your transit gateways](#step-attach-vpcs)
++ [Step 2: Attach your VPCs to your transit gateway](#step-attach-vpcs)
 + [Step 3: Add routes between the transit gateway and your VPCs](#step-add-routes)
 + [Step 4: Testing the transit gateway](#step-test-tgw)
 + [Step 5: Delete the transit gateway](#step-delete-tgw)
@@ -47,7 +47,7 @@ When you create a transit gateway, we create a default transit gateway route tab
 
 1. After you see the message **Create Transit Gateway request succeeded**, choose **Close**\. The initial state of the transit gateway is `pending`\.
 
-## Step 2: Attach your VPCs to your transit gateways<a name="step-attach-vpcs"></a>
+## Step 2: Attach your VPCs to your transit gateway<a name="step-attach-vpcs"></a>
 
 Wait until the transit gateway you created in the previous section shows as available before proceeding with creating an attachment\. Create an attachment for each VPC\.
 

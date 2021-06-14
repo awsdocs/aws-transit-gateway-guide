@@ -7,7 +7,7 @@ When you attach a VPC to a transit gateway, any resources in Availability Zones 
 
 The resources in a VPC attached to a transit gateway cannot access the security groups of a different VPC that is also attached to the same transit gateway\.
 
-A transit gateway does not support DNS resolution for custom DNS names of attached VPCs set up using private hosted zones in Amazon Route 53\. To configure the name resolution for private hosted zones for all VPCs attached to a transit gateway, see [Centralized DNS management of hybrid cloud with Amazon Route 53 and AWS Transit Gateway](https://aws.amazon.com/blogs/networking-and-content-delivery/centralized-dns-management-of-hybrid-cloud-with-amazon-route-53-and-aws-transit-gateway/)\.
+A transit gateway does not support DNS resolution for custom DNS names of attached VPCs set up using private hosted zones in Amazon Route 53\. To configure the name resolution for private hosted zones for all VPCs attached to a transit gateway, see [Centralized DNS management of hybrid cloud with Amazon Route 53 and AWS Transit Gateway](http://aws.amazon.com/blogs/networking-and-content-delivery/centralized-dns-management-of-hybrid-cloud-with-amazon-route-53-and-aws-transit-gateway/)\.
 
 You cannot create an attachment for a VPC subnet that resides in a Local Zone\.
 
@@ -22,7 +22,7 @@ You cannot create an attachment for a VPC subnet that resides in a Local Zone\.
 
 ## VPC attachment lifecycle<a name="vpc-attachment-lifecycle"></a>
 
-A VPC attachment goes through various stages, starting when the request is initiated\. At each stage, there may be actions that you can take, and at the end of its lifecycle, the VPC attachment remains visible in the Amazon VPC Console and in API or command line output, for a period of time\. 
+A VPC attachment goes through various stages, starting when the request is initiated\. At each stage, there may be actions that you can take, and at the end of its lifecycle, the VPC attachment remains visible in the Amazon Virtual Private Cloud Console and in API or command line output, for a period of time\. 
 
 The following diagram shows the states an attachment can go through in a single account configuration, or a cross\-account configuration that has **Auto accept shared attachments** turned on\.
 

@@ -1,6 +1,6 @@
 # Transit gateway service\-linked role<a name="tgw-service-linked-roles"></a>
 
-Amazon VPC uses service\-linked roles for the permissions that it requires to call other AWS services on your behalf\. For more information, see [Using service\-linked roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html) in the *IAM User Guide*\.
+Amazon VPC uses service\-linked roles for the permissions that it requires to call other AWS services on your behalf when you work with a transit gateway\.
 
 ## Permissions granted by the service\-linked role<a name="service-linked-role-permissions"></a>
 
@@ -10,6 +10,8 @@ Amazon VPC uses the service\-linked role named **AWSServiceRoleForVPCTransitGate
 + `ec2:ModifyNetworkInterfaceAttribute`
 + `ec2:DeleteNetworkInterface`
 + `ec2:CreateNetworkInterfacePermission`
++ `ec2:AssignIpv6Addresses`
++ `ec2:UnAssignIpv6Addresses`
 
 **AWSServiceRoleForVPCTransitGateway** trusts the `transitgateway.amazonaws.com` service to assume the role\.
 

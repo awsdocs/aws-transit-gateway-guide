@@ -1,17 +1,25 @@
 # Transit Gateway Network Manager service\-linked role<a name="nm-service-linked-roles"></a>
 
-Network Manager uses service\-linked roles for the permissions that it requires to call other AWS services on your behalf\. For more information about service\-linked roles, see [Using Service\-Linked Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html) in the *IAM User Guide*\.
+Transit Gateway Network Manager uses service\-linked roles for the permissions that it requires to call other AWS services on your behalf\.
 
 ## Permissions granted by the service\-linked role<a name="service-linked-role-permissions"></a>
 
-Network Manager uses the service\-linked role named **AWSServiceRoleForNetworkManager** to call the actions on your behalf when you work with global networks\. The following IAM policy is attached to the role\.
+Network Manager uses the service\-linked role named **AWSServiceRoleForNetworkManager** to call the actions on your behalf when you work with global networks\. 
+
+The **AWSServiceRoleForNetworkManager** service\-linked role trusts the following services to assume the role: 
++ `directconnect.amazonaws.com`
++ `ec2.amazon.aws.com`
+
+The following IAM policy is attached to the role\.
 
 ```
 {
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Effect": "Allow",
             "Action": [
+                "directconnect:DescribeDirectConnectGateways",
                 "directconnect:DescribeConnections",
                 "directconnect:DescribeDirectConnectGatewayAttachments",
                 "directconnect:DescribeLocations",
@@ -21,10 +29,13 @@ Network Manager uses the service\-linked role named **AWSServiceRoleForNetworkMa
                 "ec2:DescribeTransitGatewayRouteTables",
                 "ec2:DescribeTransitGateways",
                 "ec2:DescribeVpnConnections",
+                "ec2:DescribeVpcs",
                 "ec2:GetTransitGatewayRouteTableAssociations",
-                "ec2:SearchTransitGatewayRoutes"
+                "ec2:SearchTransitGatewayRoutes",
+                "ec2:DescribeTransitGatewayPeeringAttachments",
+                "ec2:DescribeTransitGatewayConnects",
+                "ec2:DescribeTransitGatewayConnectPeers"
             ],
-            "Effect": "Allow",
             "Resource": "*"
         }
     ]
@@ -45,8 +56,12 @@ You can edit the description of **AWSServiceRoleForNetworkManager** using IAM\. 
 
 If you no longer need to use Network Manager, we recommend that you delete the **AWSServiceRoleForNetworkManager** role\.
 
-You can delete this service\-linked role only after you delete your global network\.
+You can delete this service\-linked role only after you delete your global network\. For information about how to delete your global network, see [Deleting a global network](global-networks.md#global-networks-deleting)\.
 
 You can use the IAM console, the IAM CLI, or the IAM API to delete service\-linked roles\. For more information, see [Deleting a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role) in the *IAM User Guide*\.
 
 After you delete **AWSServiceRoleForNetworkManager**, Network Manager will create the role again when you create a new global network\.
+
+## Supported Regions for Network Manager Service\-Linked Roles<a name="slr-regions"></a>
+
+Network Manager supports using service\-linked roles in all of the regions where the service is available\. For more information, see [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html)\.

@@ -14,7 +14,7 @@ Create a global network\.
 
 **To create a global network**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -35,13 +35,13 @@ You can view the details of your global network and information about the networ
 
 **To view your global network information**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
 1. Choose the ID of your global network\.
 
-1. The **Overview** page contains information about the network objects in your global network\. To view details about the global network resource \(such as its ARN\), choose **Details**\. For more information about the other pages on the dashboard, see [Visualizing and monitoring your global network using the Network Manager console](network-manager-monitor-console.md)\.
+1. The **Overview** page contains information about the network objects in your global network\. To view details about the global network resource \(such as its ARN\), choose **Details**\. For more information about the other pages on the dashboard, see [Visualize and monitor your global network using the Network Manager console](network-manager-monitor-console.md)\.
 
 **To view global network details using the AWS CLI**  
 Use the [describe\-global\-networks](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/describe-global-networks.html) command\.
@@ -52,7 +52,7 @@ You can modify the description or tags for a global network\.
 
 **To update your global network**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 
@@ -73,7 +73,7 @@ You cannot delete a global network if there are any network objects in the globa
 
 **To delete your global network**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**\.
 

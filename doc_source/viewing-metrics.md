@@ -6,7 +6,7 @@ There are various options for viewing CloudWatch metrics for your global network
 
 **To view metrics for your global network and filter by transit gateway**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**, and choose the ID for your global network\.
 
@@ -14,7 +14,7 @@ There are various options for viewing CloudWatch metrics for your global network
 
 **To view metrics for a specific transit gateway and its attachments**
 
-1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/](https://console.aws.amazon.com/networkmanager/)\. 
+1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
 1. In the navigation pane, choose **Global networks**, and choose the ID for your global network\.
 
