@@ -54,7 +54,7 @@ The following is an example of the default route table for transit gateway 2, wi
 
 | Destination | Target | Route type | 
 | --- | --- | --- | 
-|  172\.31\.0\.0/16  | Attachment ID for VPN connection  |  propagated  | 
+|  172\.31\.0\.0/24  | Attachment ID for VPN connection  |  propagated  | 
 |  10\.0\.0\.0/16  |  *Attachment ID for peering connection *  |  static  | 
 |  10\.2\.0\.0/16  | Attachment ID for peering connection  | static | 
 
