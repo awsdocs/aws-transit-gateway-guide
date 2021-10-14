@@ -67,17 +67,21 @@ The subnet route table for VPC C has a route that points traffic destined for th
 ## Requirements and considerations<a name="tgw-connect-requirements"></a>
 
 The following are the requirements and considerations for a Connect attachment\.
++ For information about what Regions support Connect attachments, see [AWS Transit Gateways FAQs](http://aws.amazon.com/transit-gateway/faqs/)\.
 + The third\-party appliance must be configured to send and receive traffic over a GRE tunnel to and from the transit gateway using the Connect attachment\.
 + The third\-party appliance must be configured to use BGP for dynamic route updates and health checks\.
-+ The following types of BGP are supported: 
++ The following types of BGP are supported:
   + Exterior BGP \(eBGP\): Used for connecting to routers that are in a different autonomous system than the transit gateway\. If you use eBGP, you must configure ebgp\-multihop with a time\-to\-live \(TTL\) value of 2\.
   + Interior BGP \(iBGP\): Used for connecting to routers that are in the same autonomous system as the transit gateway\. The transit gateway will not install routes from an iBGP peer \(third\-party appliance\), unless the routes are originated from an eBGP peer\. The routes advertised by third\-party appliance over the iBGP peering must have an ASN\.
   + MP\-BGP \(multiprotocol extensions for BGP\): Used for supporting multiple protocol types, such as IPv4 and IPv6 address families\.
++ The default BGP keep\-alive timeout is 30 seconds and the default hold timer is 90 seconds\.
++ IPv6 BGP peering is not supported; only IPv4\-based BGP peering is supported\. IPv6 prefixes are exchanged over IPv4 BGP peering using MP\-BGP\.
++ Bidirectional Forwarding Detection \(BFD\) is not supported\.
++ BGP graceful restart is supported\.
 + When you create a transit gateway peer, if you do not specify a peer ASN number, we pick the transit gateway ASN number\. This means that your appliance and transit gateway will be in the same autonomous system doing iBGP\.
 + To use equal\-cost multi\-path \(ECMP\) routing between multiple appliances, you must configure the appliance to advertise the same prefixes to the transit gateway with the same BGP AS\-PATH attribute\. For the transit gateway to choose all of the available ECMP paths, the AS\-PATH and Autonomous System Number \(ASN\) must match\. The transit gateway can use ECMP between Transit Gateway Connect peers for the same Connect attachment or between Connect attachments on the same transit gateway\. The transit gateway cannot use ECMP between the BGP peerings of the same Transit Gateway Connect peer\.
-+ Static routes are not supported\.
-+ For information about what Regions support Connect attachments, see [AWS Transit Gateways FAQs](http://aws.amazon.com/transit-gateway/faqs/)\.
 + With a Connect attachment, the routes are propagated to a transit gateway route table by default\.
++ Static routes are not supported\.
 
 ## Create a transit gateway Connect attachment<a name="create-tgw-connect-attachment"></a>
 
@@ -89,17 +93,17 @@ To create a Connect attachment, you must specify an existing attachment as the t
 
 1. In the navigation pane, choose **Transit Gateway Attachments**\.
 
-1. Choose **Create Transit Gateway Attachment**\.
+1. Choose **Create transit gateway attachment**\.
 
-1. For **Transit Gateway ID**, choose the transit gateway for the attachment\.
+1. \(Optional\) For **Name tag**, specify a name tag for the attachment\.
+
+1. For **Transit gateway ID**, choose the transit gateway for the attachment\.
 
 1. For **Attachment type**, choose **Connect**\.
 
-1. \(Optional\) For **Attachment name tag**, specify a name tag for the attachment\.
+1. For **Transport attachment ID**, choose the ID of an existing attachment \(the transport attachment\)\.
 
-1. For **Transport Attachment ID**, choose the ID of an existing attachment \(the transport attachment\)\.
-
-1. Choose **Create attachment**\.
+1. Choose **Create transit gateway attachment**\.
 
 **To create a Connect attachment using the AWS CLI**  
 Use the [create\-transit\-gateway\-connect](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-connect.html) command\.
@@ -116,13 +120,13 @@ When you create the Transit Gateway Connect peer, you must specify the GRE outer
 
 1. In the navigation pane, choose **Transit Gateway Attachments**\.
 
-1. Select the Connect attachment, and choose **Actions**, **Create Connect peer**\.
+1. Select the Connect attachment, and choose **Actions**, **Create connect peer**\.
 
-1. \(Optional\) For **Connect Peer name tag**, specify a name tag for the Transit Gateway Connect peer\.
+1. \(Optional\) For **Name tag**, specify a name tag for the Transit Gateway Connect peer\.
 
-1. \(Optional\) For **Transit Gateway GRE Address**, specify the GRE outer IP address for the transit gateway\. By default, the first available address from the transit gateway CIDR block is used\.
+1. \(Optional\) For **Transit gateway GRE Address**, specify the GRE outer IP address for the transit gateway\. By default, the first available address from the transit gateway CIDR block is used\.
 
-1. For **Peer GRE Address**, specify the GRE outer IP address for the appliance side of the Transit Gateway Connect peer\.
+1. For **Peer GRE address**, specify the GRE outer IP address for the appliance side of the Transit Gateway Connect peer\.
 
 1. For **BGP Inside CIDR blocks IPv4**, specify the range of inside IPv4 addresses that are used for BGP peering\. Specify a /29 CIDR block from the `169.254.0.0/16` range\.
 
@@ -132,7 +136,7 @@ When you create the Transit Gateway Connect peer, you must specify the GRE outer
 
    The default is the same ASN as the transit gateway\. If you configure the **Peer ASN** to be different than the transit gateway ASN \(eBGP\), you must configure ebgp\-multihop with a time\-to\-live \(TTL\) value of 2\.
 
-1. Choose **Create**\.
+1. Choose **Create connect peer**\.
 
 **To create a Transit Gateway Connect peer using the AWS CLI**  
 Use the [create\-transit\-gateway\-connect\-peer](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-connect-peer.html) command\.
@@ -164,11 +168,11 @@ You can modify the tags for your Connect attachment\.
 
 1. In the navigation pane, choose **Transit Gateway Attachments**\.
 
-1. Select the Connect attachment, and then choose **Actions**, **Add/Edit tags**\.
+1. Select the Connect attachment, and then choose **Actions**, **Manage tags**\.
 
-1. To add a tag, choose **Create tag** and specify the key name and key value\.
+1. To add a tag, choose **Add new tag** and specify the key name and key value\.
 
-1. To remove a tag, choose Delete \("X"\) for the tag\.
+1. To remove a tag, choose **Remove**\.
 
 1. Choose **Save**\. 
 
@@ -182,11 +186,11 @@ You can modify the tags for your Transit Gateway Connect peer\.
 
 1. Select the Connect attachment, and then choose **Connect peers**\.
 
-1. Select the Transit Gateway Connect peer and then choose **Actions**, **Add/Edit tags**\.
+1. Select the Transit Gateway Connect peer and then choose **Actions**, **Manage tags**\.
 
-1. To add a tag, choose **Create tag** and specify the key name and key value\.
+1. To add a tag, choose **Add new tag** and specify the key name and key value\.
 
-1. To remove a tag, choose Delete \("X"\) for the tag\.
+1. To remove a tag, choose **Remove**\.
 
 1. Choose **Save**\. 
 
@@ -205,7 +209,7 @@ If you no longer need a Transit Gateway Connect peer, you can delete it\.
 
 1. Select the Connect attachment\.
 
-1. In the **Connect Peers** tab, select the Transit Gateway Connect peer and choose **Actions**, **Delete Connect peer**\.
+1. In the **Connect Peers** tab, select the Transit Gateway Connect peer and choose **Actions**, **Delete connect peer**\.
 
 **To delete a Transit Gateway Connect peer using the AWS CLI**  
 Use the [delete\-transit\-gateway\-connect\-peer](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-transit-gateway-connect-peer.html) command\.
@@ -220,9 +224,9 @@ If you no longer need a transit gateway Connect attachment, you can delete it\. 
 
 1. In the navigation pane, choose **Transit Gateway Attachments**\.
 
-1. Select the Connect attachment, and choose **Actions**, **Delete**\.
+1. Select the Connect attachment, and choose **Actions**, **Delete transit gateway attachment**\.
 
-1. When prompted for confirmation, choose **Delete**\.
+1. Enter **delete** and choose **Delete**\.
 
 **To delete a Connect attachment using the AWS CLI**  
 Use the [delete\-transit\-gateway\-connect](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-transit-gateway-connect.html) command\.

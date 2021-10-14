@@ -4,6 +4,7 @@ The following table describes the releases for transit gateways\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Transit Gateway Connect](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html) | You can establish a connection between a transit gateway and third\-party virtual appliances running in a VPC\. | December 10, 2020 | 
 | [Appliance mode](https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-appliance-scenario.html) | You can enable appliance mode on a VPC attachment to ensure that bidirectional traffic flows through the same Availability Zone for the attachment\. | October 29, 2020 | 
 | [Prefix list references](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-prefix-lists.html) | You can reference a prefix list in your transit gateway route table\. | August 24, 2020 | 
 | [Modify transit gateway](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#tgw-modifying) | You can modify the configuration options for your transit gateway\. | August 24, 2020 | 

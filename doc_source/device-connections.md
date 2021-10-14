@@ -5,11 +5,11 @@ You can create a connection between two devices in your global network\. The con
 A connection is created for a specific global network and cannot be shared with other global networks\. 
 
 **Topics**
-+ [Creating a connection](#creating-a-connection)
-+ [Updating a connection](#updating-a-connection)
-+ [Deleting a connection](#deleting-a-connection)
++ [Create a connection](#creating-a-connection)
++ [Update a connection](#updating-a-connection)
++ [Delete a connection](#deleting-a-connection)
 
-## Creating a connection<a name="creating-a-connection"></a>
+## Create a connection<a name="creating-a-connection"></a>
 
 Create a connection between two existing devices in your global network\.
 
@@ -38,7 +38,7 @@ Create a connection between two existing devices in your global network\.
 **To create a connection using the AWS CLI**  
 Use the [create\-connection](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/create-connection.html) command\.
 
-## Updating a connection<a name="updating-a-connection"></a>
+## Update a connection<a name="updating-a-connection"></a>
 
 You can update the information for an existing connection\.
 
@@ -61,7 +61,7 @@ You can update the information for an existing connection\.
 **To update a connection using the AWS CLI**  
 Use the [update\-connection](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/update-connection.html) command\.
 
-## Deleting a connection<a name="deleting-a-connection"></a>
+## Delete a connection<a name="deleting-a-connection"></a>
 
 If you no longer need a connection, you can delete it\.
 

@@ -1,6 +1,6 @@
 # What is a transit gateway?<a name="what-is-transit-gateway"></a>
 
-A *transit gateway* is a network transit hub that you can use to interconnect your virtual private clouds \(VPCs\) and on\-premises networks\.
+A *transit gateway* is a network transit hub that you can use to interconnect your virtual private clouds \(VPCs\) and on\-premises networks\. As your cloud infrastructure expands globally, inter\-Region peering connects transit gateways together using the AWS Global Infrastructure\. Your data is automatically encrypted and never travels over the public internet\.
 
 For more information, see [AWS Transit Gateway](https://aws.amazon.com/transit-gateway)\.
 
@@ -16,7 +16,7 @@ The following are the key concepts for transit gateways:
 + **Transit gateway Maximum Transmission Unit \(MTU\)** — The maximum transmission unit \(MTU\) of a network connection is the size, in bytes, of the largest permissible packet that can be passed over the connection\. The larger the MTU of a connection, the more data that can be passed in a single packet\. A transit gateway supports an MTU of 8500 bytes for traffic between VPCs, AWS Direct Connect, Transit Gateway Connect, and peering attachments\. Traffic over VPN connections can have an MTU of 1500 bytes\.
 + **Transit gateway route table** — A transit gateway has a default route table and can optionally have additional route tables\. A route table includes dynamic and static routes that decide the next hop based on the destination IP address of the packet\. The target of these routes could be any transit gateway attachment\. By default, transit gateway attachments are associated with the default transit gateway route table\.
 + **Associations** — Each attachment is associated with exactly one route table\. Each route table can be associated with zero to many attachments\.
-+ **Route propagation** — A VPC, VPN connection, or Direct Connect gateway can dynamically propagate routes to a transit gateway route table\. With a Connect attachment, the routes are propagated to a transit gateway route table by default\. With a VPC, you must create static routes to send traffic to the transit gateway \. With a VPN connection or a Direct Connect gateway, routes are propagated from the transit gateway to your on\-premises router using Border Gateway Protocol \(BGP\)\. With a peering attachment, you must create a static route in the transit gateway route table to point to the peering attachment\.
++ **Route propagation** — A VPC, VPN connection, or Direct Connect gateway can dynamically propagate routes to a transit gateway route table\. With a Connect attachment, the routes are propagated to a transit gateway route table by default\. With a VPC, you must create static routes to send traffic to the transit gateway\. With a VPN connection or a Direct Connect gateway, routes are propagated from the transit gateway to your on\-premises router using Border Gateway Protocol \(BGP\)\. With a peering attachment, you must create a static route in the transit gateway route table to point to the peering attachment\.
 
 ## How to get started with transit gateways<a name="how-to-get-started"></a>
 

@@ -15,13 +15,13 @@ To access the dashboard for your global network, open the Network Manager consol
 
 ## Overview<a name="network-manager-main-dashboard"></a>
 
-![\[Overview page in the Network Manager console\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/nm-overview.png)
-
 On the **Overview** page, you can view the following information:
 + The inventory of your global network\.
 + A list of the transit gateways that are registered in your global network, and the overall status of the VPN connection attachments for those transit gateways\. To visualize and monitor an individual transit gateway, choose the transit gateway ID, or choose **Transit gateways** in the navigation pane\.
 + A list of the transit gateways that are registered in your global network, and the overall status of the Transit Gateway Connect peers for those transit gateways\. To visualize and monitor an individual transit gateway, choose the transit gateway ID, or choose **Transit gateways** in the navigation pane\.
 + A summary of network events, for example, topology changes in your global network\.
+
+![\[Overview page in the Network Manager console\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/nm-overview.png)
 
 ## Details<a name="network-manager-view-details"></a>
 
@@ -34,15 +34,17 @@ On the **Details** page, you can view information about the global network resou
 
 ## Geographic<a name="network-manager-geographic"></a>
 
-![\[Geographic page in the Network Manager console\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/nm-geographic.png)
+On the **Geographic** page, you can view the locations of the resources that are registered in your global network on a map\. You can choose any of the following location points to view information about the resources in that location and their connections:
++ Circles represent resource types, such as Transit Gateways, VPNs, VPCs, and on\-premises devices\. Numbers within circles represent the quantity of that resource in a specific Region of the global network\.
++ Lines represent connections between resources\. The color of the line represents the type and state of the connection, such as if a VPN connection to a device is up or down or if multiple TGWs have a peering connection\.
 
-On the **Geographic** page, you can view the locations of the resources that are registered in your global network on a map\. Lines on the map represent connections between the resources, and the line colors represent the type of connection and their state\. You can choose any of the location points to view information about the resources in that location\.
+![\[Geographic page in the Network Manager console\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/nm-geographic.png)
 
 ## Topology<a name="network-manager-topology"></a>
 
-![\[Topology page in the Network Manager console\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/nm-topology.png)
-
 On the **Topology** page, you can view the network tree for your global network\. By default, the page displays all resources in your global network and the logical relationships between them\. You can filter the network tree to show specific on\-premises resource types only, for example, the preceding image shows sites and devices, and excludes customer gateways\. You can choose any of the nodes to view information about the specific resource it represents\. The line colors represent the state of the relationships between AWS and the on\-premises resources\.
+
+![\[Topology page in the Network Manager console\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/nm-topology.png)
 
 Customer gateways are represented as the resource that you define in AWS\. They are displayed to the left of the VPN connection and tunnel endpoint IP addresses, as shown in the following example\.
 

@@ -7,11 +7,11 @@ You cannot create, delete, or modify your transit gateways and their attachments
 You can register a transit gateway with one global network only\. You can register transit gateways that are in the same AWS account as the global network\.
 
 **Topics**
-+ [Registering a transit gateway](#register-tgw)
-+ [Viewing your registered transit gateways](#view-registered-tgws)
-+ [Deregistering a transit gateway](#deregister-tgw)
++ [Register a transit gateway](#register-tgw)
++ [View your registered transit gateways](#view-registered-tgws)
++ [Deregister a transit gateway](#deregister-tgw)
 
-## Registering a transit gateway<a name="register-tgw"></a>
+## Register a transit gateway<a name="register-tgw"></a>
 
 Register a transit gateway with a global network\. You cannot register a transit gateway with more than one global network\.
 
@@ -30,7 +30,7 @@ Register a transit gateway with a global network\. You cannot register a transit
 **To register a transit gateway using the AWS CLI**  
 Use the [register\-transit\-gateway](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/register-transit-gateway.html) command\.
 
-## Viewing your registered transit gateways<a name="view-registered-tgws"></a>
+## View your registered transit gateways<a name="view-registered-tgws"></a>
 
 View the registered transit gateways in your global network\.
 
@@ -49,7 +49,7 @@ View the registered transit gateways in your global network\.
 **To view your registered transit gateways using the AWS CLI**  
 Use the [get\-transit\-gateway\-registrations](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/get-transit-gateway-registrations.html) command\.
 
-## Deregistering a transit gateway<a name="deregister-tgw"></a>
+## Deregister a transit gateway<a name="deregister-tgw"></a>
 
 Deregister a transit gateway from a global network\.
 

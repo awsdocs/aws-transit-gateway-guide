@@ -39,8 +39,8 @@ You need the following information before you add a source:
 ------
 #### [ Command line ]
 
-**To register sources using the AWS CLI**
-+ Use the [register\-transit\-gateway\-multicast\-group\-sources](https://docs.aws.amazon.com/cli/latest/reference/ec2/register-transit-gateway-multicast-group-sources.html) command\.
+**To register sources using the AWS CLI**  
+Use the [register\-transit\-gateway\-multicast\-group\-sources](https://docs.aws.amazon.com/cli/latest/reference/ec2/register-transit-gateway-multicast-group-sources.html) command\.
 
 ------
 
@@ -73,8 +73,8 @@ You need the following information before you add members:
 ------
 #### [ Command line ]
 
-**To register members using the AWS CLI**
-+ Use the [register\-transit\-gateway\-multicast\-group\-sources](https://docs.aws.amazon.com/cli/latest/reference/ec2/register-transit-gateway-multicast-group-sources.html) command\.
+**To register members using the AWS CLI**  
+Use the [register\-transit\-gateway\-multicast\-group\-members](https://docs.aws.amazon.com/cli/latest/reference/ec2/register-transit-gateway-multicast-group-members.html) command\.
 
 ------
 
@@ -100,8 +100,8 @@ You don't need to follow this procedure unless you manually added a source to th
 ------
 #### [ Command line ]
 
-**To remove a source using the AWS CLI**
-+ Use the [deregister\-transit\-gateway\-multicast\-group\-sources](https://docs.aws.amazon.com/cli/latest/reference/ec2/deregister-transit-gateway-multicast-group-sources.html) command\.
+**To remove a source using the AWS CLI**  
+Use the [deregister\-transit\-gateway\-multicast\-group\-sources](https://docs.aws.amazon.com/cli/latest/reference/ec2/deregister-transit-gateway-multicast-group-sources.html) command\.
 
 ------
 
@@ -127,8 +127,8 @@ You don't need to follow this procedure unless you manually added a member to th
 ------
 #### [ Command line ]
 
-**To deregister members using the AWS CLI**
-+ Use the [deregister\-transit\-gateway\-multicast\-group\-members](https://docs.aws.amazon.com/cli/latest/reference/ec2/deregister-transit-gateway-multicast-group-members.html) command\.
+**To deregister members using the AWS CLI**  
+Use the [deregister\-transit\-gateway\-multicast\-group\-members](https://docs.aws.amazon.com/cli/latest/reference/ec2/deregister-transit-gateway-multicast-group-members.html) command\.
 
 ------
 
@@ -152,26 +152,26 @@ You can view information about your multicast groups to verify that members were
 ------
 #### [ Command line ]
 
-**To view multicast groups using the AWS CLI**
-+ Use the [search\-transit\-gateway\-multicast\-groups](https://docs.aws.amazon.com/cli/latest/reference/ec2/search-transit-gateway-multicast-groups.html) command\.
+**To view multicast groups using the AWS CLI**  
+Use the [search\-transit\-gateway\-multicast\-groups](https://docs.aws.amazon.com/cli/latest/reference/ec2/search-transit-gateway-multicast-groups.html) command\.
 
-  The following example shows that the IGMP protocol discovered multicast group members\.
+The following example shows that the IGMP protocol discovered multicast group members\.
 
-  ```
-  aws ec2 search-transit-gateway-multicast-groups --transit-gateway-multicast-domain tgw-mcast-domain-000fb24d04EXAMPLE
-  {
-      "MulticastGroups": [
-          {
-              "GroupIpAddress": "224.0.1.0",
-              "TransitGatewayAttachmentId": "tgw-attach-0372e72386EXAMPLE",
-              "SubnetId": "subnet-0187aff814EXAMPLE",
-              "ResourceId": "vpc-0065acced4EXAMPLE",
-              "ResourceType": "vpc",
-              "NetworkInterfaceId": "eni-03847706f6EXAMPLE",
-              "MemberType": "igmp"
-          }
-      ]
-  }
-  ```
+```
+aws ec2 search-transit-gateway-multicast-groups --transit-gateway-multicast-domain tgw-mcast-domain-000fb24d04EXAMPLE
+{
+    "MulticastGroups": [
+        {
+            "GroupIpAddress": "224.0.1.0",
+            "TransitGatewayAttachmentId": "tgw-attach-0372e72386EXAMPLE",
+            "SubnetId": "subnet-0187aff814EXAMPLE",
+            "ResourceId": "vpc-0065acced4EXAMPLE",
+            "ResourceType": "vpc",
+            "NetworkInterfaceId": "eni-03847706f6EXAMPLE",
+            "MemberType": "igmp"
+        }
+    ]
+}
+```
 
 ------

@@ -50,11 +50,11 @@ Register your transit gateway in your global network\.
 ## Step 3: \(Optional\) Define and associate your on\-premises network resources<a name="getting-started-define-wan"></a>
 
 You can define your on\-premises network by creating sites, links, and devices to represent objects in your network\. For more information, see the following procedures:
-+ [Creating a site](sites.md#creating-a-site)
-+ [Creating a link](links.md#creating-a-link)
-+ [Creating a device](devices.md#creating-a-device)
++ [Create a site](sites.md#creating-a-site)
++ [Create a link](links.md#creating-a-link)
++ [Create a device](devices.md#creating-a-device)
 
-You associate the device with a specific site, and with one or more links\. For more information, see [Device associations](devices.md#device-associations)\.
+  You associate the device with a specific site, and with one or more links\. For more information, see [Associate a device](devices.md#device-associations)\.
 
 Finally, create a Site\-to\-Site VPN connection attachment on your transit gateway, and associate the customer gateway with the device\. For more information, see [Customer gateway associations](cgw-association.md)\.
 

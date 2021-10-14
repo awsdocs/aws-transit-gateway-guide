@@ -7,13 +7,12 @@ You can also create a device to represent a virtual appliance in your AWS networ
 A device is created for a specific global network and cannot be shared with other global networks\.
 
 **Topics**
-+ [Creating a device](#creating-a-device)
-+ [Updating a device](#updating-a-device)
-+ [Deleting a device](#deleting-a-device)
-+ [Device associations](#device-associations)
-+ [Device and link associations](#device-link-association)
++ [Create a device](#creating-a-device)
++ [Update a device](#updating-a-device)
++ [Delete a device](#deleting-a-device)
++ [Associate a device](#device-associations)
 
-## Creating a device<a name="creating-a-device"></a>
+## Create a device<a name="creating-a-device"></a>
 
 Create a device to represent a physical or virtual appliance\.
 
@@ -39,7 +38,7 @@ Create a device to represent a physical or virtual appliance\.
 
 1. For **Location type**, specify whether the device is located in a remote location \(on\-premises network, data center, or other cloud provider\) or in AWS\.
 
-   If you choose **AWS Cloud**, specify the location of the device within AWS\. For **Zone**, specify the ID of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost\. For **Subnet**, specify the Amazon Resource Name \(ARN\) of a subnet \(**arn:aws:ec2:us\-east\-1:111111111111:subnet/subnet\-abcd1234**\)\.
+   If you choose **AWS Cloud**, specify the location of the device within AWS\. For **Zone**, specify the name of an Availability Zone, Local Zone, Wavelength Zone, or an Outpost\. For **Subnet**, specify the Amazon Resource Name \(ARN\) of a subnet \(for example, arn:aws:ec2:us\-east\-1:111111111111:subnet/subnet\-abcd1234\)\.
 
 1. For **Address**, enter the physical address of the site, for example, `New York, NY 10004`\.
 
@@ -54,7 +53,7 @@ Use the following commands:
 + To create a device: [create\-device](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/create-device.html)
 + To view your devices: [get\-devices](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/get-devices.html)
 
-## Updating a device<a name="updating-a-device"></a>
+## Update a device<a name="updating-a-device"></a>
 
 You can update the details of your device, including the description, model, serial number, type, vendor, and location information\.
 
@@ -75,7 +74,7 @@ You can update the details of your device, including the description, model, ser
 **Updating a device using the AWS CLI**  
 Use the [update\-device](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/update-device.html) command\.
 
-## Deleting a device<a name="deleting-a-device"></a>
+## Delete a device<a name="deleting-a-device"></a>
 
 If you no longer need a device, you can delete it\. You must first disassociate the device from any sites, links, and customer gateways\.
 
@@ -96,12 +95,13 @@ If you no longer need a device, you can delete it\. You must first disassociate 
 **Deleting a device using the AWS CLI**  
 Use the [delete\-device](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/delete-device.html) command\.
 
-## Device associations<a name="device-associations"></a>
+## Associate a device<a name="device-associations"></a>
 
 You can associate a device with a site, and a device with one or more links\.
 
 **Topics**
 + [Device and site associations](#device-site-association)
++ [Device and link associations](#device-link-association)
 
 ### Device and site associations<a name="device-site-association"></a>
 
@@ -140,7 +140,7 @@ You can remove the association between a device and a site\.
 **Working with device and site associations using the AWS CLI**  
 When you create a new device using the [create\-device](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/create-device.html) AWS CLI command, you can specify the site to associate with the device\. For an existing device, you can use the [update\-device](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/update-device.html) AWS CLI command to associate or disassociate a site\.
 
-## Device and link associations<a name="device-link-association"></a>
+### Device and link associations<a name="device-link-association"></a>
 
 A link can be associated with more than one device\. The device must be associated with a site\.
 

@@ -5,11 +5,11 @@ You can represent your on\-premises network in your global network through sites
 A link is created for a specific global network and cannot be shared with other global networks\.
 
 **Topics**
-+ [Creating a link](#creating-a-link)
-+ [Updating a link](#updating-a-link)
-+ [Deleting a link](#deleting-a-link)
++ [Create a link](#creating-a-link)
++ [Update a link](#updating-a-link)
++ [Delete a link](#deleting-a-link)
 
-## Creating a link<a name="creating-a-link"></a>
+## Create a link<a name="creating-a-link"></a>
 
 Create a link to represent an internet connection from a device\. A link is created for a specific site, therefore you must create a site before you create a link\.
 
@@ -42,7 +42,7 @@ Use the following commands:
 + To create a link: [create\-link](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/create-link.html)
 + To view your links: [get\-links](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/get-links.html)
 
-## Updating a link<a name="updating-a-link"></a>
+## Update a link<a name="updating-a-link"></a>
 
 You can update the details of your link, including the bandwidth information, description, provider, and type\.
 
@@ -63,7 +63,7 @@ You can update the details of your link, including the bandwidth information, de
 **Updating a link using the AWS CLI**  
 Use the [update\-link](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/update-link.html) command\.
 
-## Deleting a link<a name="deleting-a-link"></a>
+## Delete a link<a name="deleting-a-link"></a>
 
 If you no longer need a link, you can delete it\. You must first disassociate the link from any devices and customer gateways\.
 

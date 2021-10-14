@@ -30,7 +30,7 @@ The `AWS/TransitGateway` namespace includes the following metrics\.
 
 ### Attachment\-level metrics<a name="transit-gateway-attachment-metrics"></a>
 
-The following metrics are available for transit gateway attachments\. Most [attachment types](how-transit-gateways-work.md#tgw-attachments-overview) are supported\. All attachment metrics are published to the transit gateway owner's account\. Individual attachment metrics are also published to the attachment owner's account \(the attachment owner can view only the metrics for their own attachment\)\.
+The following metrics are available for transit gateway attachments\. Most [attachment types](how-transit-gateways-work.md#tgw-attachments-overview) are supported\. All attachment metrics are published to the transit gateway owner's account\. Individual attachment metrics are also published to the attachment owner's account\. The attachment owner can view only the metrics for their own attachment\.
 
 
 | Metric | Description | 

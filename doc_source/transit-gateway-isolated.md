@@ -4,6 +4,7 @@ You can configure your transit gateway as multiple isolated routers\. This is si
 
 **Topics**
 + [Overview](#transit-gateway-isolated-overview)
++ [Resources](#transit-gateway-isolated-resources)
 + [Routing](#transit-gateway-isolated-routes)
 
 ## Overview<a name="transit-gateway-isolated-overview"></a>
@@ -12,8 +13,10 @@ The following diagram shows the key components of the configuration for this sce
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/transit-gateway-centralized.png)
 
-In this scenario, you create the following entities:
-+ Three VPCs\. For information about creating a VPC, see [Creating a VPC](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#Create-VPC) in the *Amazon Virtual Private Cloud User Guide*\.
+## Resources<a name="transit-gateway-isolated-resources"></a>
+
+Create the following resources for this scenario:
++ Three VPCs\. For information about creating a VPC, see [Create a VPC](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#Create-VPC) in the *Amazon VPC User Guide*\.
 + A transit gateway\. For more information, see [Create a transit gateway](tgw-transit-gateways.md#create-tgw)\.
 + Three attachments on the transit gateway for the three VPCs\. For more information, see [Create a transit gateway attachment to a VPC](tgw-vpc-attachments.md#create-vpc-attachment)\.
 + A Site\-to\-Site VPN attachment on the transit gateway\. For more information, see [Create a transit gateway attachment to a VPN](tgw-vpn-attachments.md#create-vpn-attachment)\. Ensure that you review the [requirements for your customer gateway device](https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html#CGRequirements) in the *AWS Site\-to\-Site VPN User Guide*\.

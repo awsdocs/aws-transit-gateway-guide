@@ -14,7 +14,7 @@ You can create a reference to a prefix list in your transit gateway route table\
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
-1. In the navigation pane, choose **Transit Gateway Route tables**\.
+1. In the navigation pane, choose **Transit Gateway Route Tables**\.
 
 1. Select the transit gateway route table\.
 
@@ -22,9 +22,9 @@ You can create a reference to a prefix list in your transit gateway route table\
 
 1. For **Prefix list ID**, choose the ID of the prefix list\.
 
-1. For **Attachment ID**, choose the ID of the attachment to which to route traffic\.
+1.  For **Type**, choose if traffic to this prefix list should be allowed \(**Active**\) or dropped \(**Blackhole**\)\. 
 
-   Alternatively, to drop the traffic that matches the route, choose **Blackhole**\.
+1. For **Transit gateway attachment ID**, choose the ID of the attachment to which to route traffic\.
 
 1. Choose **Create prefix list reference**\.
 
@@ -39,7 +39,7 @@ You can view the prefix list references in your transit gateway route table\. Yo
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
-1. In the navigation pane, choose **Transit Gateway Route tables**\.
+1. In the navigation pane, choose **Transit Gateway Route Tables**\.
 
 1. Select the transit gateway route table\.
 
@@ -60,17 +60,17 @@ You cannot modify the individual routes for a prefix list in the **Routes** tab\
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
-1. In the navigation pane, choose **Transit Gateway Route tables**\.
+1. In the navigation pane, choose **Transit Gateway Route Tables**\.
 
 1. Select the transit gateway route table\.
 
 1. In the lower pane, choose **Prefix list references**\.
 
-1. Choose the prefix list reference, and choose **Modify reference**\.
+1. Choose the prefix list reference, and choose **Modify references**\. 
 
-1. For **Attachment ID**, choose the ID of the attachment to which to route traffic\.
+1.  For **Type**, choose if traffic to this prefix list should be allowed \(**Active**\) or dropped \(**Blackhole**\)\. 
 
-   Alternatively, to drop the traffic that matches the route, choose **Blackhole**\.
+1. For **Transit gateway attachment ID**, choose the ID of the attachment to which to route traffic\.
 
 1. Choose **Modify prefix list reference**\.
 
@@ -85,13 +85,13 @@ If you no longer need a prefix list reference, you can delete it from your trans
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
-1. In the navigation pane, choose **Transit Gateway Route tables**\.
+1. In the navigation pane, choose **Transit Gateway Route Tables**\.
 
 1. Select the transit gateway route table\.
 
-1. Choose the prefix list reference, and choose **Delete reference**\.
+1. Choose the prefix list reference, and choose **Delete references**\.
 
-1. Choose **Delete reference**\.
+1. Choose **Delete references**\.
 
 **To delete a prefix list reference using the AWS CLI**  
 Use the [delete\-transit\-gateway\-prefix\-list\-reference](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-transit-gateway-prefix-list-reference.html) command\.

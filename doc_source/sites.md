@@ -5,11 +5,11 @@ You can represent your on\-premises network in your global network through sites
 A site is created for a specific global network and cannot be shared with other global networks\.
 
 **Topics**
-+ [Creating a site](#creating-a-site)
-+ [Updating a site](#updating-a-site)
-+ [Deleting a site](#deleting-a-site)
++ [Create a site](#creating-a-site)
++ [Update a site](#updating-a-site)
++ [Delete a site](#deleting-a-site)
 
-## Creating a site<a name="creating-a-site"></a>
+## Create a site<a name="creating-a-site"></a>
 
 Create a site to represent the physical location of your network\. The location information is used for visualization in the Network Manager console\.
 
@@ -38,7 +38,7 @@ Use the following commands:
 + To create a site: [create\-site](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/create-site.html)
 + To view your sites: [get\-sites](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/get-sites.html)
 
-## Updating a site<a name="updating-a-site"></a>
+## Update a site<a name="updating-a-site"></a>
 
 You can update the details of your site, including the description, address, latitude, and longitude\.
 
@@ -61,7 +61,7 @@ You can update the details of your site, including the description, address, lat
 **Updating a site using the AWS CLI**  
 Use the [update\-site](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/update-site.html) command\.
 
-## Deleting a site<a name="deleting-a-site"></a>
+## Delete a site<a name="deleting-a-site"></a>
 
 If you no longer need a site, you can delete it\. You must first disassociate the site from any devices and delete any links for the site\.
 

@@ -15,9 +15,9 @@ In your global network, you can use the Route Analyzer to perform an analysis of
 
 To use the Route Analyzer, you indicate the path for the traffic from a source to a destination\. For the source, you specify the transit gateway, the transit gateway attachment from which the traffic originates, and a source IPv4 or IPv6 address\. The Route Analyzer analyzes the routes in the associated transit gateway route table for the transit gateway attachment\. For the destination, you specify a target IPv4 or IPv6 address, and the destination transit gateway and transit gateway attachment\.
 
-If you've configured a middlebox appliance in your VPC, you can indicate the location of the appliance in the route analysis\. This enables you to specify multiple network hops in a route between a source and destination, to help you analyze the route of the traffic\.
+If you've configured a middlebox appliance in your VPC, you can indicate the location of the appliance in the route analysis\. This enables you to specify multiple network hops in a route between a source and destination, to help you analyze the route of the traffic\. We store this information for use in future analyses\. You can update your middlebox appliances later on as needed\.
 
-You can also analyze the return path for traffic from the specified destination back to the source\. 
+You can also analyze the return path for traffic from the specified destination back to the source\.
 
 The following rules apply when using the Route Analyzer:
 + The Route Analyzer analyzes routes in transit gateway route tables only\. It does not analyze routes in VPC route tables or in your customer gateway devices\. 
@@ -45,7 +45,7 @@ To use the Route Analyzer, you must use the Network Manager console\.
 
 1. \(Optional\) To analyze the return path, ensure that you enable **Include return path in results**\. If enabled, you must specify an IP address under **Source**\.
 
-1. To specify middlebox appliances in the routing path, choose **Middlebox appliance?**\.
+1. To specify middlebox appliances in the routing path, choose **Middlebox appliance?**\. We store this information for use in future analyses\. You can update your middlebox appliances later on as needed\.
 
 1. Choose **Run route analysis**\.
 

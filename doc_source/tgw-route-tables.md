@@ -10,13 +10,13 @@ Use transit gateway route tables to configure routing for your transit gateway a
 
 1. On the navigation pane, choose **Transit Gateway Route Tables**\.
 
-1. Choose **Create Transit Gateway Route Table**\.
+1. Choose **Create transit gateway route table**\.
 
 1. \(Optional\) For **Name tag**, type a name for the transit gateway route table\. This creates a tag with the tag key "Name", where the tag value is the name that you specify\.
 
-1. For **Transit Gateway ID**, select the transit gateway for the route table\.
+1. For **Transit gateway ID**, select the transit gateway for the route table\.
 
-1. Choose **Create Transit Gateway Route Table**\.
+1. Choose **Create transit gateway route table**\.
 
 **To create a transit gateway route table using the AWS CLI**  
 Use the [create\-transit\-gateway\-route\-table](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-route-table.html) command\.
@@ -96,8 +96,6 @@ Use route propagation to add a route from an attachment to a route table\.
 
 1. Choose **Create propagation**\.
 
-1. Choose **Close**\.
-
 **To enable route propagation using the AWS CLI**  
 Use the [enable\-transit\-gateway\-route\-table\-propagation](https://docs.aws.amazon.com/cli/latest/reference/ec2/enable-transit-gateway-route-table-propagation.html) command\.
 
@@ -141,6 +139,8 @@ Use the [get\-transit\-gateway\-route\-table\-propagations](https://docs.aws.ama
 
 You can create a static route for a VPC, VPN, or transit gateway peering attachment, or you can create a blackhole route that drops traffic that matches the route\.
 
+Static routes in a transit gateway route table that target a VPN attachment are not filtered by the Site\-to\-Site VPN\. This might allow unintended outbound traffic flow when using a BGP\-based VPN\.
+
 **To create a static route using the console**
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
@@ -149,13 +149,13 @@ You can create a static route for a VPC, VPN, or transit gateway peering attachm
 
 1. Select the route table for which to create a route\.
 
-1. Choose **Actions**, **Create route**\.
+1. Choose **Actions**, **Create static route**\.
 
-1. On the **Create route** page, enter the CIDR block for which to create the route\.
+1. On the **Create static route** page, enter the CIDR block for which to create the route, and then choose **Active**\.
 
 1. Choose the attachment for the route\.
 
-1. Choose **Create route**\.
+1. Choose **Create static route**\.
 
 **To create a blackhole route using the console**
 
@@ -165,11 +165,11 @@ You can create a static route for a VPC, VPN, or transit gateway peering attachm
 
 1. Select the route table for which to create a route\.
 
-1. Choose **Actions**, **Create route**\.
+1. Choose **Actions**, **Create static route**\.
 
-1. On the **Create route** page, enter the CIDR block for which to create the route, and then choose **Blackhole**\.
+1. On the **Create static route** page, enter the CIDR block for which to create the route, and then choose **Blackhole**\.
 
-1. Choose **Create route**\.
+1. Choose **Create static route**\.
 
 **To create a static route or blackhole route using the AWS CLI**  
 Use the [create\-transit\-gateway\-route](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-route.html) command\.
@@ -188,9 +188,9 @@ You can create a static route for an attached VPC or VPN connection, or you can 
 
 1. Choose the route to delete\.
 
-1. Choose **Delete route**\.
+1. Choose **Delete static route**\.
 
-1. In the confirmation box, choose **Delete route**\.
+1. In the confirmation box, choose **Delete static route**\.
 
 **To delete a static route using the AWS CLI**  
 Use the [delete\-transit\-gateway\-route](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-transit-gateway-route.html) command\.
@@ -267,9 +267,9 @@ To access the exported routes, open the Amazon S3 console at [https://console\.a
 
 1. Select the route table to delete\.
 
-1. Choose **Actions**, **Delete route table**\.
+1. Choose **Actions**, **Delete transit gateway route table**\.
 
-1. Choose **Delete** again to confirm the deletion\.
+1. Enter **delete** and choose **Delete** to confirm the deletion\.
 
 **To delete a transit gateway route table using the AWS CLI**  
 Use the [delete\-transit\-gateway\-route\-table](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-transit-gateway-route-table.html) command\.

@@ -7,7 +7,7 @@ When you attach a VPC to a transit gateway, any resources in Availability Zones 
 
 The resources in a VPC attached to a transit gateway cannot access the security groups of a different VPC that is also attached to the same transit gateway\.
 
-A transit gateway does not support DNS resolution for custom DNS names of attached VPCs set up using private hosted zones in Amazon Route 53\. To configure the name resolution for private hosted zones for all VPCs attached to a transit gateway, see [Centralized DNS management of hybrid cloud with Amazon Route 53 and AWS Transit Gateway](http://aws.amazon.com/blogs/networking-and-content-delivery/centralized-dns-management-of-hybrid-cloud-with-amazon-route-53-and-aws-transit-gateway/)\.
+A transit gateway does not support DNS resolution for custom DNS names of attached VPCs set up using private hosted zones in Amazon Route 53\. To configure the name resolution for private hosted zones for all VPCs attached to a transit gateway, see [Centralized DNS management of hybrid cloud with Amazon Route 53 and AWS Transit Gateway](http://aws.amazon.com/blogs/networking-and-content-delivery/centralized-dns-management-of-hybrid-cloud-with-amazon-route-53-and-aws-transit-gateway/)\.
 
 You cannot create an attachment for a VPC subnet that resides in a Local Zone\.
 
@@ -59,13 +59,13 @@ The following diagram shows the states an attachment can go through in a cross\-
 
 1. On the navigation pane, choose **Transit Gateway Attachments**\.
 
-1. Choose **Create Transit Gateway Attachment**\.
+1. Choose **Create transit gateway attachment**\.
 
-1. For **Transit Gateway ID**, choose the transit gateway for the attachment\. You can choose a transit gateway that you own or a transit gateway that was shared with you\.
+1. For **Name tag**, optionally enter a name for the transit gateway attachment\.
+
+1. For **Transit gateway ID**, choose the transit gateway for the attachment\. You can choose a transit gateway that you own or a transit gateway that was shared with you\.
 
 1. For **Attachment type**, choose **VPC**\.
-
-1. Under **VPC Attachment**, optionally enter a name for **Attachment name tag**\.
 
 1. Choose whether to enable **DNS Support** and **IPv6 Support**\.
 
@@ -75,7 +75,7 @@ The following diagram shows the states an attachment can go through in a cross\-
 
 1. For **Subnet IDs**, select one subnet for each Availability Zone to be used by the transit gateway to route traffic\. You must select at least one subnet\. You can select only one subnet per Availability Zone\.
 
-1. Choose **Create attachment**\.
+1. Choose **Create transit gateway attachment**\.
 
 **To create a VPC attachment using the AWS CLI**  
 Use the [create\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-vpc-attachment.html) command\.
@@ -88,13 +88,13 @@ Use the [create\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/
 
 1. On the navigation pane, choose **Transit Gateway Attachments**\.
 
-1. Select the VPC attachment, and then choose **Actions**, **Modify**\.
+1. Select the VPC attachment, and then choose **Actions**, **Modify transit gateway attachment**\.
 
 1. To enable DNS support, select **DNS support**\.
 
 1. To add a subnet to the attachment, next to the subnet, select the box\. 
 
-1. Choose **Modify attachment**\. 
+1. Choose **Modify transit gateway attachment**\. 
 
 **To modify your VPC attachments using the AWS CLI**  
 Use the [modify\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-transit-gateway-vpc-attachment.html) command\.
@@ -107,15 +107,15 @@ Use the [modify\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/
 
 1. On the navigation pane, choose **Transit Gateway Attachments**\.
 
-1. Select the VPC attachment, and then choose **Actions**, **Add/Edit tags**\.
+1. Select the VPC attachment, and then choose **Actions**, **Manage tags**\.
 
-1. \[Add a tag\] Choose **Add tag** and do the following:
+1. \[Add a tag\] Choose **Add new tag** and do the following:
    + For **Key**, enter the key name\.
    + For **Value**, enter the key value\.
 
-1. \[Remove a tag\] Next to the tag, choose Delete \("X"\)\.
+1. \[Remove a tag\] Next to the tag, choose **Remove**\.
 
-1. Choose **Modify attachment**\. 
+1. Choose **Save**\. 
 
 ## View your VPC attachments<a name="view-vpc-attachment"></a>
 
@@ -125,9 +125,9 @@ Use the [modify\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/
 
 1. On the navigation pane, choose **Transit Gateway Attachments**\.
 
-1. Choose the search bar, select **Resource type** from the menu, and then select **VPC**\.
+1. In the **Resource type** column, look for **VPC**\. These are the VPC attachments\. 
 
-1. The VPC attachments are displayed\. Choose an attachment to view its details\.
+1. Choose an attachment to view its details\.
 
 **To view your VPC attachments using the AWS CLI**  
 Use the [describe\-transit\-gateway\-vpc\-attachments](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-transit-gateway-vpc-attachments.html) command\.
@@ -142,9 +142,9 @@ Use the [describe\-transit\-gateway\-vpc\-attachments](https://docs.aws.amazon.c
 
 1. Select the VPC attachment\.
 
-1. Choose **Actions**, **Delete**\.
+1. Choose **Actions**, **Delete transit gateway attachment**\.
 
-1. When prompted for confirmation, choose **Delete**\.
+1. When prompted, enter **delete** and choose **Delete**\.
 
 **To delete a VPC attachment using the AWS CLI**  
 Use the [delete\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-transit-gateway-vpc-attachment.html) command\.

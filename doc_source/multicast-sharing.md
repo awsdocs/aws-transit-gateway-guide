@@ -5,7 +5,7 @@ With multicast domain sharing, multicast domain owners can share the domain with
 + Associate a subnet with the multicast domain, and disassociate subnets from the multicast domain
 
 A multicast domain owner can share a multicast domain with:
-+ Specific AWS accounts inside its organization in AWS Organizations
++ AWS accounts inside its organization or across organizations in AWS Organizations
 + An organizational unit inside its organization in AWS Organizations
 + Its entire organization in AWS Organizations
 

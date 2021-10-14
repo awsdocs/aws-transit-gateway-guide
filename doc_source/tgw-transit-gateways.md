@@ -34,43 +34,41 @@ When you create a transit gateway, we create a default transit gateway route tab
 
 1. On the navigation pane, choose **Transit Gateways**\.
 
-1. Choose **Create Transit Gateway**\.
+1. Choose **Create transit gateway**\.
 
 1. For **Name tag**, optionally enter a name for the transit gateway\. A name tag can make it easier to identify a specific gateway from the list of gateways\. When you add a **Name tag**, a tag is created with a key of **Name** and with a value equal to the value you enter\.
 
 1. For **Description**, optionally enter a description for the transit gateway\.
 
-1. For **Amazon side ASN**, either leave the default value to use the default Autonomous System Number \(ASN\), or enter the private ASN for your transit gateway\. This should be the ASN for the AWS side of a Border Gateway Protocol \(BGP\) session\.
+1. For **Amazon side Autonomous System Number \(ASN\)**, either leave the default value to use the default ASN or enter the private ASN for your transit gateway\. This should be the ASN for the AWS side of a Border Gateway Protocol \(BGP\) session\.
 
    The range is 64512 to 65534 for 16\-bit ASNs\.
 
    The range is 4200000000 to 4294967294 for 32\-bit ASNs\.
 
-   If you have a multi\-region deployment, we recommend that you use a unique ASN for each of your transit gateways\.
+   If you have a multi\-Region deployment, we recommend that you use a unique ASN for each of your transit gateways\.
 
-1. For **DNS support**, choose **enable** if you need the VPC to resolve public IPv4 DNS host names to private IPv4 addresses when queried from instances in another VPC attached to the transit gateway\.
+1. For **DNS support**, select this option if you need the VPC to resolve public IPv4 DNS host names to private IPv4 addresses when queried from instances in another VPC attached to the transit gateway\.
 
-1. For **VPN ECMP support**, choose **enable** if you need Equal Cost Multipath \(ECMP\) routing support between VPN tunnels\. If connections advertise the same CIDRs, the traffic is distributed equally between them\.
+1. For **VPN ECMP support**, select this option if you need Equal Cost Multipath \(ECMP\) routing support between VPN tunnels\. If connections advertise the same CIDRs, the traffic is distributed equally between them\.
 
    When you select this option, the advertised BGP ASN, the BGP attributes such as the AS\-path, and the communities for preference must be the same\.
 **Note**  
 To use ECMP, you must create a VPN connection that uses dynamic routing\. VPN connections that use static routing do not support ECMP\.
 
-1. For **Default route table association**, choose **enable** to automatically associate transit gateway attachments with the default route table for the transit gateway\.
+1. For **Default route table association**, select this option to automatically associate transit gateway attachments with the default route table for the transit gateway\.
 
-1. For **Default route table propagation**, choose **enable** to automatically propagate transit gateway attachments to the default route table for the transit gateway\.
+1. For **Default route table propagation**, select this option to automatically propagate transit gateway attachments to the default route table for the transit gateway\.
 
 1. \(Optional\) To use the transit gateway as a router for multicast traffic, select **Multicast support**\.
 
-1. For **Auto accept shared attachments**, choose **enable** to automatically accept cross\-account attachments\.
+1. For **Auto accept shared attachments**, select this option to automatically accept cross\-account attachments\.
 
-1. \(Optional\) For **Transit Gateway CIDR blocks**, choose **Add CIDR** and specify one or more IPv4 or IPv6 CIDR blocks for your transit gateway\. 
+1. \(Optional\) For **Transit gateway CIDR blocks**, specify one or more IPv4 or IPv6 CIDR blocks for your transit gateway\. 
 
    You can specify a size /24 CIDR block or larger \(for example, /23 or /22\) for IPv4, or a size /64 CIDR block or larger \(for example, /63 or /62\) for IPv6\. You can associate any public or private IP address range, except for addresses in the 169\.254\.0\.0/16 range, and ranges that overlap with the addresses for your VPC attachments and on\-premises networks\.
 
-1. Choose **Create Transit Gateway**\.
-
-1. After you see the message **Create Transit Gateway request succeeded**, choose **Close**\.
+1. Choose **Create transit gateway**\.
 
 **To create a transit gateway using the AWS CLI**  
 Use the [create\-transit\-gateway](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway.html) command\.
@@ -100,9 +98,9 @@ Add tags to your resources to help organize and identify them, such as by purpos
 
 1. Choose the **Tags** tab in the lower part of the page\.
 
-1. Choose **Add/Edit Tags**\.
+1. Choose **Manage tags**\.
 
-1. Choose **Create Tag**\.
+1. Choose **Add new tag**\.
 
 1. Enter a **Key** and **Value** for the tag\.
 
@@ -124,7 +122,7 @@ You cannot remove a CIDR block for the transit gateway if any of the IP addresse
 
 1. Choose the transit gateway to modify\.
 
-1. Choose **Actions**, **Modify**\.
+1. Choose **Actions**, **Modify transit gateway**\.
 
 1. Modify the options as needed, and choose **Modify transit gateway**\.
 
@@ -143,7 +141,7 @@ You must enable resource sharing from the management account for your organizati
 
 1. Choose **Create a resource share**\.
 
-1. Under **Description**, for **Name**, type a descriptive name for the resource share\.
+1. Under **Name**, type a descriptive name for the resource share\.
 
 1. For **Select resource type**, choose **Transit Gateways**\. Select the transit gateway\.
 
@@ -183,7 +181,7 @@ If you didn't enable the **Auto accept shared attachments** functionality when y
 
 1. Select the transit gateway attachment that's pending acceptance\.
 
-1. Choose **Actions**, **Accept**\.
+1. Choose **Actions**, **Accept transit gateway attachment**\.
 
 **To accept a shared attachment using the AWS CLI**  
 Use the [accept\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/accept-transit-gateway-vpc-attachment.html) command\.
@@ -198,7 +196,7 @@ You can't delete a transit gateway with existing attachments\. You need to delet
 
 1. Choose the transit gateway to delete\.
 
-1. Choose **Actions**, **Delete**, then choose **Delete** to confirm the deletion\.
+1. Choose **Actions**, **Delete transit gateway**\. Enter **delete** and choose **Delete** to confirm the deletion\.
 
 **To delete a transit gateway using the AWS CLI**  
 Use the [delete\-transit\-gateway](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-transit-gateway.html) command\.

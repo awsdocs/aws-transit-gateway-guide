@@ -56,7 +56,7 @@ You can edit the description of **AWSServiceRoleForNetworkManager** using IAM\. 
 
 If you no longer need to use Network Manager, we recommend that you delete the **AWSServiceRoleForNetworkManager** role\.
 
-You can delete this service\-linked role only after you delete your global network\. For information about how to delete your global network, see [Deleting a global network](global-networks.md#global-networks-deleting)\.
+You can delete this service\-linked role only after you delete your global network\. For information about how to delete your global network, see [Delete a global network](global-networks.md#global-networks-deleting)\.
 
 You can use the IAM console, the IAM CLI, or the IAM API to delete service\-linked roles\. For more information, see [Deleting a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role) in the *IAM User Guide*\.
 

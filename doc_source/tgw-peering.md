@@ -6,7 +6,7 @@ After you create a peering attachment request, the owner of the peer transit gat
 
 We recommend using unique ASNs for the peered transit gateways to take advantage of future route propagation capabilities\.
 
-Transit gateway cross\-region peering does not support resolving public IPv4 DNS host names to private IPv4 addresses across VPCs on either side of the transit gateway peering attachment\.
+Transit gateway cross\-Region peering does not support resolving public or private IPv4 DNS host names to private IPv4 addresses across VPCs on either side of the transit gateway peering attachment\.
 
 Transit gateway peering uses the same network infrastructure as VPC peering and is therefore encrypted\. For more information about VPC encryption, [Encryption in transit ](https://docs.aws.amazon.com/vpc/latest/userguide/data-protection.html#encryption-transit) in the *Amazon VPC User Guide\.*
 
@@ -36,9 +36,9 @@ After you create the peering attachment, the owner of the accepter transit gatew
 
 1. On the navigation pane, choose **Transit Gateway Attachments**\.
 
-1. Choose **Create Transit Gateway Attachment**\.
+1. Choose **Create transit gateway attachment**\.
 
-1. For **Transit Gateway ID**, choose the transit gateway for the attachment\. You can choose a transit gateway that you own or a transit gateway that was shared with you\.
+1. For **Transit gateway ID**, choose the transit gateway for the attachment\. You can choose a transit gateway that you own or a transit gateway that was shared with you\.
 
 1. For **Attachment type**, choose **Peering Connection**\.
 
@@ -50,9 +50,9 @@ After you create the peering attachment, the owner of the accepter transit gatew
 
 1. For **Region**, choose the Region that the transit gateway is located in\.
 
-1. For **Transit gateway ID \(accepter\)**, enter the ID of the transit gateway that you want to attach\.
+1. For **Transit gateway \(accepter\)**, enter the ID of the transit gateway that you want to attach\.
 
-1. Choose **Create attachment**\.
+1. Choose **Create transit gateway attachment**\.
 
 **To create a peering attachment using the AWS CLI**  
 Use the [create\-transit\-gateway\-peering\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-peering-attachment.html) command\.
@@ -71,7 +71,7 @@ Alternatively, you can reject any peering connection request that you've receive
 
 1. Select the transit gateway peering attachment that's pending acceptance\.
 
-1. Choose **Actions**, **Accept**\.
+1. Choose **Actions**, **Accept transit gateway attachment**\.
 
 1. Add the static route to the transit gateway route table\. For more information, see [Create a static route](tgw-route-tables.md#tgw-create-static-route)\.
 
@@ -83,7 +83,7 @@ Alternatively, you can reject any peering connection request that you've receive
 
 1. Select the transit gateway peering attachment that's pending acceptance\.
 
-1. Choose **Actions**, **Reject**\.
+1. Choose **Actions**, **Reject transit gateway attachment**\.
 
 **To accept or reject a peering attachment using the AWS CLI**  
 Use the [accept\-transit\-gateway\-peering\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/accept-transit-gateway-peering-attachment.html) and [reject\-transit\-gateway\-peering\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/reject-transit-gateway-peering-attachment.html) commands\.
@@ -100,13 +100,13 @@ To route traffic between the peered transit gateways, you must add a static rout
 
 1. Select the route table for which to create a route\.
 
-1. Choose **Actions**, **Create route**\.
+1. Choose **Actions**, **Create static route**\.
 
-1. On the **Create route** page, enter the CIDR block for which to create the route\. For example, specify the CIDR block of a VPC that's attached to the peer transit gateway\.
+1. On the **Create static route** page, enter the CIDR block for which to create the route\. For example, specify the CIDR block of a VPC that's attached to the peer transit gateway\.
 
 1. Choose the peering attachment for the route\.
 
-1. Choose **Create route**\.
+1. Choose **Create static route**\.
 
 **To create a static route using the AWS CLI**  
 Use the [create\-transit\-gateway\-route](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-route.html) command\.
@@ -124,9 +124,9 @@ You can view your transit gateway peering attachments and information about them
 
 1. On the navigation pane, choose **Transit Gateway Attachments**\.
 
-1. Choose the search bar, select **Resource type** from the menu, and then select **peering**\.
+1. In the **Resource type** column, look for **Peering**\. These are the peering attachments\. 
 
-1. The peering attachments are displayed\. Choose an attachment to view its details\.
+1. Choose an attachment to view its details\.
 
 **To view your transit gateway peering attachments using the AWS CLI**  
 Use the [describe\-transit\-gateway\-peering\-attachments](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-transit-gateway-peering-attachments.html) command\.
@@ -143,9 +143,9 @@ You can delete a transit gateway peering attachment\. The owner of either of the
 
 1. Select the transit gateway peering attachment\.
 
-1. Choose **Actions**, **Delete**\.
+1. Choose **Actions**, **Delete transit gateway attachment**\.
 
-1. When prompted for confirmation, choose **Delete**\.
+1. Enter **delete** and choose **Delete**\.
 
 **To delete a peering attachment using the AWS CLI**  
 Use the [delete\-transit\-gateway\-peering\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/delete-transit-gateway-peering-attachment.html) command\.

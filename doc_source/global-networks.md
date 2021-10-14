@@ -3,12 +3,12 @@
 A global network is a container for your network objects\. When you create a global network, it's empty\. After you create it, you can register your transit gateways and define your on\-premises networks in the global network\.
 
 **Topics**
-+ [Creating a global network](#global-networks-creating)
-+ [Viewing a global network](#global-networks-viewing)
-+ [Updating a global network](#global-networks-updating)
-+ [Deleting a global network](#global-networks-deleting)
++ [Create a global network](#global-networks-creating)
++ [View a global network](#global-networks-viewing)
++ [Update a global network](#global-networks-updating)
++ [Delete a global network](#global-networks-deleting)
 
-## Creating a global network<a name="global-networks-creating"></a>
+## Create a global network<a name="global-networks-creating"></a>
 
 Create a global network\.
 
@@ -29,7 +29,7 @@ Create a global network\.
 **To create a global network using the AWS CLI**  
 Use the [create\-global\-network](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/create-global-network.html) command\.
 
-## Viewing a global network<a name="global-networks-viewing"></a>
+## View a global network<a name="global-networks-viewing"></a>
 
 You can view the details of your global network and information about the network objects in your global network\.
 
@@ -46,7 +46,7 @@ You can view the details of your global network and information about the networ
 **To view global network details using the AWS CLI**  
 Use the [describe\-global\-networks](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/describe-global-networks.html) command\.
 
-## Updating a global network<a name="global-networks-updating"></a>
+## Update a global network<a name="global-networks-updating"></a>
 
 You can modify the description or tags for a global network\.
 
@@ -67,7 +67,7 @@ You can modify the description or tags for a global network\.
 **To update a global network using the AWS CLI**  
 Use the [update\-global\-network](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/update-global-network.html) command to update the description\. Use the [tag\-resource](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/tag-resource.html) and [untag\-resource](https://docs.aws.amazon.com/cli/latest/reference/networkmanager/untag-resource.html) commands to update the tags\.
 
-## Deleting a global network<a name="global-networks-deleting"></a>
+## Delete a global network<a name="global-networks-deleting"></a>
 
 You cannot delete a global network if there are any network objects in the global network, including transit gateways, links, devices, and sites\. You must first deregister or delete the network objects\.
 

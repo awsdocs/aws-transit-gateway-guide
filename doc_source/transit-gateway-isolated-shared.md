@@ -4,6 +4,7 @@ You can configure your transit gateway as multiple isolated routers that use a s
 
 **Topics**
 + [Overview](#Ttransit-gateway-isolated-shared-overview)
++ [Resources](#transit-gateway-isolated-shared-resources)
 + [Routing](#transit-gateway-isolated-shared-routes)
 
 ## Overview<a name="Ttransit-gateway-isolated-shared-overview"></a>
@@ -12,11 +13,15 @@ The following diagram shows the key components of the configuration for this sce
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/transit-gateway-isolated_shared.png)
 
-In this scenario, you create the following entities:
-+ Four VPCs\. For information about creating a VPC, see [Creating a VPC](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#Create-VPC) in the *Amazon Virtual Private Cloud User Guide*\.
+## Resources<a name="transit-gateway-isolated-shared-resources"></a>
+
+Create the following resources for this scenario:
++ Four VPCs\. For information about creating a VPC, see [Create a VPC](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#Create-VPC) in the *Amazon VPC User Guide*\.
 + A transit gateway\. For more information, see [Create a transit gateway](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html)\.
 + Four attachments on the transit gateway for the four VPCs\. For more information, see [Create a transit gateway attachment to a VPC](tgw-vpc-attachments.md#create-vpc-attachment)\.
-+ A Site\-to\-Site VPN attachment on the transit gateway\. For more information, see [Create a transit gateway attachment to a VPN](tgw-vpn-attachments.md#create-vpn-attachment)\. Ensure that you review the [requirements for your customer gateway device](https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html#CGRequirements) in the *AWS Site\-to\-Site VPN User Guide*\.
++ A Site\-to\-Site VPN attachment on the transit gateway\. For more information, see [Create a transit gateway attachment to a VPN](tgw-vpn-attachments.md#create-vpn-attachment)\.
+
+  Ensure that you review the [requirements for your customer gateway device](https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html#CGRequirements) in the *AWS Site\-to\-Site VPN User Guide*\.
 
 When the VPN connection is up, the BGP session is established and the VPN CIDR propagates to the transit gateway route table and the VPC CIDRs are added to the customer gateway BGP table\.
 

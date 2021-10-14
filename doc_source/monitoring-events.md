@@ -47,8 +47,6 @@ To view events for your global network in the Network Manager console, choose th
 ## Topology change events<a name="network-topology-events"></a>
 
 Topology change events occur when there have been changes to the resources in your global network\. These events include the following:
-+ A transit gateway was registered in the global network
-+ A transit gateway was deregistered from the global network
 + A transit gateway in the global network was deleted
 + A VPN connection was created for a transit gateway
 + A VPN connection was deleted on a transit gateway

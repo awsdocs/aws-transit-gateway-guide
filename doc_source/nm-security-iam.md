@@ -8,6 +8,9 @@ By default, IAM users don't have permission to create, view, or modify AWS resou
 
 When you attach a policy to a user or group of users, it allows or denies the user permissions to perform the specified tasks on the specified resources\.
 
+**Important**  
+If you grant access to a global network in Network Manager, you grant access to all AWS service data associated with the registered transit gateways across all Regions\.
+
 **Topics**
 + [How Network Manager works with IAM](#nm-with-iam)
 + [Example policies to manage Transit Gateway Network Manager](#nm-example-iam-policies)
@@ -198,7 +201,7 @@ The policy uses the `networkmanager:tgwArn` and `networkmanager:cgwArn` conditio
             ],
             "Condition": {
                 "StringEquals": {
-                    "networkmanager:tgwArn": "arn:aws:ec2:<region>:<account-id>:transit-gateway/tgw-aabbccdd112233445"
+                    "networkmanager:tgwArn": "arn:aws:ec2:region:account-id:transit-gateway/tgw-aabbccdd112233445"
                 }
             }
         },
@@ -213,7 +216,7 @@ The policy uses the `networkmanager:tgwArn` and `networkmanager:cgwArn` conditio
             ],
             "Condition": {
                 "StringEquals": {
-                    "networkmanager:cgwArn": "arn:aws:ec2:<region>:<account-id>:customer-gateway/cgw-11223344556677abc"
+                    "networkmanager:cgwArn": "arn:aws:ec2:region:account-id:customer-gateway/cgw-11223344556677abc"
                 }
             }
         }
