@@ -2,14 +2,12 @@
 
 When you attach a VPC to a transit gateway, you must specify one subnet from each Availability Zone to be used by the transit gateway to route traffic\. Specifying one subnet from an Availability Zone enables traffic to reach resources in every subnet in that Availability Zone\.
 
-**Limits**  
-When you attach a VPC to a transit gateway, any resources in Availability Zones where there is no transit gateway attachment cannot reach the transit gateway\. If there is a route to the transit gateway in a subnet route table, traffic is forwarded to the transit gateway only when the transit gateway has an attachment in a subnet in the same Availability Zone\. 
-
-The resources in a VPC attached to a transit gateway cannot access the security groups of a different VPC that is also attached to the same transit gateway\.
-
-A transit gateway does not support DNS resolution for custom DNS names of attached VPCs set up using private hosted zones in Amazon Route 53\. To configure the name resolution for private hosted zones for all VPCs attached to a transit gateway, see [Centralized DNS management of hybrid cloud with Amazon Route 53 and AWS Transit Gateway](http://aws.amazon.com/blogs/networking-and-content-delivery/centralized-dns-management-of-hybrid-cloud-with-amazon-route-53-and-aws-transit-gateway/)\.
-
-You cannot create an attachment for a VPC subnet that resides in a Local Zone\.
+**Limits**
++ When you attach a VPC to a transit gateway, any resources in Availability Zones where there is no transit gateway attachment cannot reach the transit gateway\. If there is a route to the transit gateway in a subnet route table, traffic is forwarded to the transit gateway only when the transit gateway has an attachment in a subnet in the same Availability Zone\.
++ The resources in a VPC attached to a transit gateway cannot access the security groups of a different VPC that is also attached to the same transit gateway\.
++ A transit gateway does not support DNS resolution for custom DNS names of attached VPCs set up using private hosted zones in Amazon Route 53\. To configure name resolution for private hosted zones for all VPCs attached to a transit gateway, see [Centralized DNS management of hybrid cloud with Amazon Route 53 and AWS Transit Gateway](http://aws.amazon.com/blogs/networking-and-content-delivery/centralized-dns-management-of-hybrid-cloud-with-amazon-route-53-and-aws-transit-gateway/)\.
++ A transit gateway doesn't support routing between VPCs with identical CIDRs\. If you attach a VPC to a transit gateway and its CIDR is identical to the CIDR of another VPC that's already attached to the transit gateway, the routes for the newly attached VPC aren't propagated to the transit gateway route table\.
++ You cannot create an attachment for a VPC subnet that resides in a Local Zone\. However, you configure your network to that subnets in the Local Zone can connect to a transit gateway through the parent Availability Zone\. For more information, see [Connect Local Zone subnets to a transit gateway](https://docs.aws.amazon.com/vpc/latest/userguide/Extend_VPCs.html#connect-local-zone-tgw)\.
 
 **Topics**
 + [VPC attachment lifecycle](#vpc-attachment-lifecycle)
