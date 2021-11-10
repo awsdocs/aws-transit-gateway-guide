@@ -100,5 +100,5 @@ Consider the following transit gateway route table\. If you prefer the AWS Direc
 | 10\.0\.0\.0/16 | tgw\-attach\-123 \| vpc\-1234 | VPC | Static or propagated | 1 | 
 | 192\.168\.0\.0/16 | tgw\-attach\-789 \| vpn\-5678 | VPN | Static | 2 | 
 | 172\.31\.0\.0/16 | tgw\-attach\-456 \| dxgw\_id | AWS Direct Connect gateway | Propagated | 3 | 
-| 172\.31\.0\.0/16 | tgw\-attach\-789 \| tgw\-connect\-peer\-123 | VPN | Propagated | 4 | 
+| 172\.31\.0\.0/16 | tgw\-attach\-789 \| tgw\-connect\-peer\-123 | Connect | Propagated | 4 |
 | 172\.31\.0\.0/16 | tgw\-attach\-789 \| vpn\-5678 | VPN | Propagated | 5 | 
