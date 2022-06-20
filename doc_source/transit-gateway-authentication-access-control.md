@@ -100,6 +100,6 @@ The following example enables users to create and delete transit gateway route t
 }
 ```
 
-## Example policies to manage Transit Gateway Network Manager<a name="tgw-nm-example-iam-policies"></a>
+## Example policies to manage AWS Network Manager<a name="tgw-nm-example-iam-policies"></a>
 
-For example policies, see [Example policies to manage Transit Gateway Network Manager](nm-security-iam.md#nm-example-iam-policies)\.
+For example policies, see [Example policies to manage Network Manager](https://docs.aws.amazon.com/vpc/latest/tgwnm/nm-security-iam.html#nm-example-iam-policies)\.

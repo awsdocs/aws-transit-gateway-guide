@@ -12,7 +12,7 @@ If an adjustable quota is not yet available in Service Quotas, you can open a su
 | Name | Default | Adjustable | 
 | --- | --- | --- | 
 | Transit gateways per account | 5 | [Yes](https://console.aws.amazon.com/servicequotas/home/services/ec2/quotas/L-A2478D36) | 
-| Transit gateways per VPC | 5 | No | 
+| Transit gateways per VPC | 5 | [Yes](https://console.aws.amazon.com/servicequotas/home/services/ec2/quotas/L-A2478D36) | 
 | CIDR blocks per transit gateway | 5 | No | 
 
 The CIDR blocks are used in the [Transit gateway Connect attachments and Transit Gateway Connect peers](tgw-connect.md) feature\.
@@ -32,12 +32,12 @@ Advertised routes come from the route table that's associated with the Connect a
 
 ## Transit gateway attachments<a name="attachments-quotas"></a>
 
-A transit gateway cannot have more than one attachment to the same VPC\.
+A transit gateway cannot have more than one VPC attachment to the same VPC\.
 
 
 | Name | Default | Adjustable | 
 | --- | --- | --- | 
-| Attachments per transit gateway | 5,000 | [Yes](https://console.aws.amazon.com/servicequotas/home/services/ec2/quotas/L-E0233F82) | 
+| Attachments per transit gateway | 5,000 | No | 
 | Unique transit gateway attachments per VPC | 5 | No | 
 | Peering attachments per transit gateway | 50 | [Yes](https://console.aws.amazon.com/servicequotas/home/services/ec2/quotas/L-A1B5A36F) | 
 | Pending peering attachments per transit gateway | 10 | [Yes](https://console.aws.amazon.com/servicequotas/home/services/ec2/quotas/L-62499967) | 
@@ -51,7 +51,7 @@ There are many factors that can affect realized bandwidth through a Site\-to\-Si
 
 | Name | Default | Adjustable | 
 | --- | --- | --- | 
-| Maximum bandwidth per VPC, AWS Direct Connect gateway, or peered transit gateway connection | Up to 50 Gbps | No | 
+| Maximum bandwidth per VPC attachment, AWS Direct Connect gateway, or peered transit gateway connection | Up to 50 Gbps | No | 
 | Maximum packets per second per transit gateway attachment \(VPC, VPN, Direct Connect, and peering attachments\) | Up to 5,000,000 | No | 
 | Maximum bandwidth per VPN tunnel | Up to 1\.25 Gbps | No | 
 | Maximum packets per second per VPN tunnel | Up to 140,000 | No | 
@@ -72,9 +72,11 @@ You can create up to 4 Transit Gateway Connect peers per Connect attachment \(up
 
 ## MTU<a name="mtu-quotas"></a>
 + The maximum transmission unit \(MTU\) of a network connection is the size, in bytes, of the largest permissible packet that can be passed over the connection\. The larger the MTU of a connection, the more data that can be passed in a single packet\. A transit gateway supports an MTU of 8500 bytes for traffic between VPCs, Direct Connect gateway, and peering attachments\. Traffic over VPN connections can have an MTU of 1500 bytes\. 
++ When migrating from VPC peering to use a transit gateway, an MTU size mismatch between VPC peering and the transit gateway might result in some asymmetric traffic packets dropping\. Update both VPCs at the same time to avoid jumbo packets dropping due to a size mismatch\.
 + Packets with a size larger than 8500 bytes that arrive at the transit gateway are dropped\.
 + The transit gateway does not generate the FRAG\_NEEDED for ICMPv4 packet, or the Packet Too Big \(PTB\) for ICMPv6 packet\. Therefore, the Path MTU Discovery \(PMTUD\) is not supported\.
 + The transit gateway enforces Maximum Segment Size \(MSS\) clamping for all packets\. For more information, see [RFC879](https://tools.ietf.org/html/rfc879)\.
++ Note the following when migrating from VPC peering to use AWS Transit Gateway, transit gateway doesn't support Security Group referencing\.
 
 ## Multicast<a name="multicast-quotas"></a>
 
@@ -89,9 +91,9 @@ You can create up to 4 Transit Gateway Connect peers per Connect attachment \(up
 |  Static and IGMPv2 multicast group members and sources per transit gateway  | 10,000 | No | 
 | Static and IGMPv2 multicast group members per transit gateway multicast group | 100 | No | 
 | Maximum multicast throughput per flow | 1 Gbps | No | 
-| Maximum aggregate multicast throughput per Availability Zone | 4 Gbps | No | 
+| Maximum aggregate multicast throughput per Availability Zone | 20 Gbps | No | 
 
-## Transit Gateway Network Manager<a name="network-manager-quotas"></a>
+## AWS Network Manager<a name="network-manager-quotas"></a>
 
 
 | Name | Default | Adjustable | 

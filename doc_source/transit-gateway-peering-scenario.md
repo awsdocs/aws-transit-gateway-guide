@@ -1,6 +1,6 @@
 # Example: Peered transit gateways<a name="transit-gateway-peering-scenario"></a>
 
-You can create a transit gateway peering connection between transit gateways in different Regions\. You can then route traffic between the attachments for each of the transit gateways\. In this scenario, VPC and VPN attachments are associated with the transit gateway default route tables, and they propagate to the transit gateway default route tables\. Each transit gateway route table has a static route that points to the transit gateway peering attachment\.
+You can create a transit gateway peering connection between transit gateways\. You can then route traffic between the attachments for each of the transit gateways\. In this scenario, VPC and VPN attachments are associated with the transit gateway default route tables, and they propagate to the transit gateway default route tables\. Each transit gateway route table has a static route that points to the transit gateway peering attachment\.
 
 **Topics**
 + [Overview](#transit-gateway-peering-overview)
@@ -17,7 +17,7 @@ The following diagram shows the key components of the configuration for this sce
 
 Create the following resources for this scenario:
 + Two VPCs\. For information about creating a VPC, see [Create a VPC](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#Create-VPC) in the *Amazon VPC User Guide*\.
-+ Two transit gateways in different Regions\. For more information, see [Create a transit gateway](tgw-transit-gateways.md#create-tgw)\.
++ Two transit gateways\. They can be in the same Region or in different Regions\. For more information, see [Create a transit gateway](tgw-transit-gateways.md#create-tgw)\.
 + Two VPC attachments on the first transit gateway\. For more information, see [Create a transit gateway attachment to a VPC](tgw-vpc-attachments.md#create-vpc-attachment)\.
 + A Site\-to\-Site VPN attachment on the transit gateway\. For more information, see [Create a transit gateway attachment to a VPN](tgw-vpn-attachments.md#create-vpn-attachment)\. Ensure that you review the [requirements for your customer gateway device](https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html#CGRequirements) in the *AWS Site\-to\-Site VPN User Guide*\.
 + A transit gateway peering attachment between the two transit gateways\. For more information, see [Transit gateway peering attachments](tgw-peering.md)\.

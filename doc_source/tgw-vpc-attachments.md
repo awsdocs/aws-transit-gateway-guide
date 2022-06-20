@@ -7,7 +7,7 @@ When you attach a VPC to a transit gateway, you must specify one subnet from eac
 + The resources in a VPC attached to a transit gateway cannot access the security groups of a different VPC that is also attached to the same transit gateway\.
 + A transit gateway does not support DNS resolution for custom DNS names of attached VPCs set up using private hosted zones in Amazon Route 53\. To configure name resolution for private hosted zones for all VPCs attached to a transit gateway, see [Centralized DNS management of hybrid cloud with Amazon Route 53 and AWS Transit Gateway](http://aws.amazon.com/blogs/networking-and-content-delivery/centralized-dns-management-of-hybrid-cloud-with-amazon-route-53-and-aws-transit-gateway/)\.
 + A transit gateway doesn't support routing between VPCs with identical CIDRs\. If you attach a VPC to a transit gateway and its CIDR is identical to the CIDR of another VPC that's already attached to the transit gateway, the routes for the newly attached VPC aren't propagated to the transit gateway route table\.
-+ You cannot create an attachment for a VPC subnet that resides in a Local Zone\. However, you configure your network so that subnets in the Local Zone can connect to a transit gateway through the parent Availability Zone\. For more information, see [Connect Local Zone subnets to a transit gateway](https://docs.aws.amazon.com/vpc/latest/userguide/Extend_VPCs.html#connect-local-zone-tgw)\.
++ You cannot create an attachment for a VPC subnet that resides in a Local Zone\. However, you can configure your network so that subnets in the Local Zone can connect to a transit gateway through the parent Availability Zone\. For more information, see [Connect Local Zone subnets to a transit gateway](https://docs.aws.amazon.com/vpc/latest/userguide/Extend_VPCs.html#connect-local-zone-tgw)\.
 
 **Topics**
 + [VPC attachment lifecycle](#vpc-attachment-lifecycle)
@@ -92,6 +92,8 @@ Use the [create\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/
 
 1. To add a subnet to the attachment, next to the subnet, select the box\. 
 
+   Adding or modifying a VPC attachment subnet might impact data traffic while the attachment is in a modifying state\.
+
 1. Choose **Modify transit gateway attachment**\. 
 
 **To modify your VPC attachments using the AWS CLI**  
@@ -114,6 +116,8 @@ Use the [modify\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/
 1. \[Remove a tag\] Next to the tag, choose **Remove**\.
 
 1. Choose **Save**\. 
+
+   VPC attachment tags can only be modified using the console\. 
 
 ## View your VPC attachments<a name="view-vpc-attachment"></a>
 
@@ -172,6 +176,6 @@ Depending on the cause, try the following:
 
 1. Create the VPC attachment manually through the console or API\. For more information, see [Create a transit gateway attachment to a VPC](#create-vpc-attachment)\.
 
-1. Verify that the service\-linked role has the correct permissions\. For more information, see [Transit gateway service\-linked role](tgw-service-linked-roles.md)\.
+1. Verify that the service\-linked role has the correct permissions\. For more information, see [Transit gateway service\-linked role](service-linked-roles.md#tgw-service-linked-roles)\.
 
 1. Verify that the transit gateway is in the `available` state\. For more information, see [View your transit gateways](tgw-transit-gateways.md#view-tgws)\.

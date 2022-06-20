@@ -2,7 +2,7 @@
 
 AWS CloudTrail is a service that provides a record of actions taken by a user, role, or an AWS service\. CloudTrail captures all transit gateway API calls as events\. The calls captured include calls from the AWS Management Console and code calls to the transit gateway API operations\. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for transit gateways\. If you don't configure a trail, you can still view the most recent events in the CloudTrail console in **Event history**\. Using the information collected by CloudTrail, you can determine what request was made to the transit gateway API, the IP address from which the request was made, who made the request, when it was made, and additional details\.
 
-For more information about transit gateway APIs, see the [Transit Gateways](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/OperationList-query-vpc.html) section in the *Amazon EC2 API Reference*\.
+For more information about transit gateway APIs, see [AWS Transit Gateway actionss](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/operation-list-tgw.html) in the *Amazon EC2 API Reference*\.
 
 For more information about CloudTrail, see the [AWS CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
 

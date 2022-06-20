@@ -14,6 +14,7 @@ The following tasks help you become familiar with transit gateways\. You will cr
 + To demonstrate a simple example of using a transit gateway, create two VPCs in the same Region\. The VPCs cannot have overlapping CIDRs\. Launch one Amazon EC2 instance in each VPC\. For more information, see [Get started with Amazon VPC](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-getting-started.html) in the *Amazon VPC User Guide*\.
 + You cannot have identical routes pointing to two different VPCs\. A transit gateway does not propagate the CIDRs of a newly attached VPC if an identical route exists in the transit gateway route tables\.
 + Verify that you have the permissions required to work with transit gateways\. For more information, see [Authentication and access control for your transit gateways](transit-gateway-authentication-access-control.md)\.
++ You can't ping between hosts if you haven't added an ICMP rule to each of the host security groups\. For more information, see [Work with security groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups#working-with-security-groups) in the *Amazon VPC User Guide*\.
 
 ## Step 1: Create the transit gateway<a name="step-create-tgw"></a>
 
@@ -91,7 +92,7 @@ A route table includes dynamic and static routes that determine the next hop for
 
 1. Choose **Add route**\.
 
-1. In the **Destination** column, enter the destination IP address range\. For **Target**, choose the transit gateway attachment ID\.
+1. In the **Destination** column, enter the destination IP address range\. For **Target**, choose **Transit Gateway**, and then choose the transit gateway ID\.
 
 1. Choose **Save changes**\.
 

@@ -4,15 +4,13 @@ A transit gateway enables you to attach VPCs and VPN connections in the same Reg
 
 You can enable multicast on a transit gateway, and then create a transit gateway multicast domain that allows multicast traffic to be sent from your multicast source to multicast group members over VPC attachments that you associate with the domain\.
 
-You can also create a peering connection attachment between transit gateways in different AWS Regions\. This enables you to route traffic between the transit gateways' attachments across different Regions\.
-
 Each VPC or VPN attachment is associated with a single route table\. That route table decides the next hop for the traffic coming from that resource attachment\. A route table inside the transit gateway allows for both IPv4 or IPv6 CIDRs and targets\. The targets are VPCs and VPN connections\. When you attach a VPC or create a VPN connection on a transit gateway, the attachment is associated with the default route table of the transit gateway\.
 
 You can create additional route tables inside the transit gateway, and change the VPC or VPN association to these route tables\. This enables you to segment your network\. For example, you can associate development VPCs with one route table and production VPCs with a different route table\. This enables you to create isolated networks inside a transit gateway similar to virtual routing and forwarding \(VRFs\) in traditional networks\.
 
 Transit gateways support dynamic and static routing between attached VPCs and VPN connections\. You can enable or disable route propagation for each attachment\. Transit gateway peering attachments support static routing only\.
 
-You can optionally associate one or more IPv4 or IPv6 CIDR blocks with your transit gateway\. You specify an IP address from the CIDR block when you establish a Transit Gateway Connect peer for a [transit gateway Connect attachment](tgw-connect.md)\. You can associate any public or private IP address range, except for addresses in the `169.254.0.0/16` range, and ranges that overlap with addresses for your VPC attachments and on\-premises networks\.
+You can optionally associate one or more IPv4 or IPv6 CIDR blocks with your transit gateway\. You specify an IP address from the CIDR block when you establish a Transit Gateway Connect peer for a [transit gateway Connect attachment](tgw-connect.md)\. You can associate any public or private IP address range, except for addresses in the `169.254.0.0/16` range, and ranges that overlap with addresses for your VPC attachments and on\-premises networks\. For more information about IPv4 and IPv6 CIDR blocks, see [VPCs and subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing) in the Amazon VPC User Guide\.
 
 **Topics**
 + [Create a transit gateway](#create-tgw)
@@ -26,7 +24,7 @@ You can optionally associate one or more IPv4 or IPv6 CIDR blocks with your tran
 
 ## Create a transit gateway<a name="create-tgw"></a>
 
-When you create a transit gateway, we create a default transit gateway route table and use it as the default association route table and the default propagation route table\.
+When you create a transit gateway, we create a default transit gateway route table and use it as the default association route table and the default propagation route table\. If you choose not to create the default transit gateway route table, you can create one later on\. For more information about routes and route tables, see [Routing](how-transit-gateways-work.md#tgw-routing-overview)\.
 
 **To create a transit gateway using the console**
 

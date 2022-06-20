@@ -35,4 +35,4 @@ You can create, access, and manage your transit gateways using any of the follow
 
 ## Pricing<a name="pricing"></a>
 
-You are charged hourly for each attachment on a transit gateway, and you are charged for the amount of traffic processed on the transit gateway\. For more information, see [AWS Transit Gateway pricing](https://aws.amazon.com/transit-gateway)\.
+You are charged hourly for each attachment on a transit gateway, and you are charged for the amount of traffic processed on the transit gateway\. For more information, see [AWS Transit Gateway pricing](https://aws.amazon.com/transit-gateway/pricing)\.

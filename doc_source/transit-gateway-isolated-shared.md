@@ -9,7 +9,7 @@ You can configure your transit gateway as multiple isolated routers that use a s
 
 ## Overview<a name="Ttransit-gateway-isolated-shared-overview"></a>
 
-The following diagram shows the key components of the configuration for this scenario\. Packets from the subnets in VPC A, VPC B, and VPC C that have the internet as a destination, first route through the transit gateway and then route to the Site\-to\-Site VPN\. Packets from subnets in VPC A, VPC B, or VPC C that have a destination of a subnet in VPC A, VPC B, or VPC C \(for example from 10\.1\.0\.0 to 10\.2\.0\.0\) route through the transit gateway, where they are blocked because there is no route for them in the transit gateway route table\. Packets from VPC A, VPC B, and VPC C that have VPC D as the destination route through the transit gateway and then to VPC D\.
+The following diagram shows the key components of the configuration for this scenario\. Packets from the subnets in VPC A, VPC B, and VPC C that have the internet as a destination, first route through the transit gateway and then route to the customer gateway for Site\-to\-Site VPN\. Packets from subnets in VPC A, VPC B, or VPC C that have a destination of a subnet in VPC A, VPC B, or VPC C route through the transit gateway, where they are blocked because there is no route for them in the transit gateway route table\. Packets from VPC A, VPC B, and VPC C that have VPC D as the destination route through the transit gateway and then to VPC D\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/transit-gateway-isolated_shared.png)
 
@@ -18,7 +18,7 @@ The following diagram shows the key components of the configuration for this sce
 Create the following resources for this scenario:
 + Four VPCs\. For information about creating a VPC, see [Create a VPC](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#Create-VPC) in the *Amazon VPC User Guide*\.
 + A transit gateway\. For more information, see [Create a transit gateway](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html)\.
-+ Four attachments on the transit gateway for the four VPCs\. For more information, see [Create a transit gateway attachment to a VPC](tgw-vpc-attachments.md#create-vpc-attachment)\.
++ Four attachments on the transit gateway, one per VPC\. For more information, see [Create a transit gateway attachment to a VPC](tgw-vpc-attachments.md#create-vpc-attachment)\.
 + A Site\-to\-Site VPN attachment on the transit gateway\. For more information, see [Create a transit gateway attachment to a VPN](tgw-vpn-attachments.md#create-vpn-attachment)\.
 
   Ensure that you review the [requirements for your customer gateway device](https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html#CGRequirements) in the *AWS Site\-to\-Site VPN User Guide*\.
@@ -31,13 +31,13 @@ Each VPC has a route table, and the transit gateway has two route tables—one f
 
 ### VPC A, VPC B, VPC C, and VPC D route tables<a name="transit-gateway-isolated-shared-route-tables"></a>
 
-Each VPC has a route table with 2 entries\. The first entry is the default entry for local IPv4 routing in the VPC; this entry enables the instances in this VPC to communicate with each other\. The second entry routes all other IPv4 subnet traffic to the transit gateway\. The following table shows the VPC A routes\.
+Each VPC has a route table with two entries\. The first entry is the default entry for local routing in the VPC; this entry enables the instances in this VPC to communicate with each other\. The second entry routes all other IPv4 subnet traffic to the transit gateway\.
 
 
 | Destination | Target | 
 | --- | --- | 
-|  10\.1\.0\.0/16  |  local  | 
-| 0\.0\.0\.0/0 |  *tgw\-id*  | 
+| VPC CIDR | local | 
+| 0\.0\.0\.0/0 | transit gateway ID | 
 
 ### Transit gateway route tables<a name="transit-gateway-isolated-shared-route-table-tgw-route-table"></a>
 
@@ -48,25 +48,20 @@ The VPC A, B, and C attachments are associated with the following route table, w
 
 | Destination | Target | Route type | 
 | --- | --- | --- | 
-| 10\.99\.99\.0/24 | *Attachment for VPN connection* |  propagated  | 
-| 10\.4\.0\.0/16 |  *Attachment for VPC D*  |  propagated  | 
+| Customer gateway IP address | Attachment for VPN connection | propagated | 
+| VPC D CIDR | Attachment for VPC D | propagated | 
 
-The VPN attachment and shared services VPC \(VPC D\) attachment are associated with the following route table, which has entries that point to each of the VPC attachments\. This enables communication to the VPCs from the VPN connection and the shared services VPC\.
+The VPN attachment and shared services VPC \(VPC D\) attachments are associated with the following route table, which has entries that point to each of the VPC attachments\. This enables communication to the VPCs from the VPN connection and the shared services VPC\.
 
 
 | Destination | Target | Route type | 
 | --- | --- | --- | 
-|  10\.1\.0\.0/16  |  *Attachment for VPC A*  |  propagated  | 
-|  10\.2\.0\.0/16  |  *Attachment for VPC B*  |  propagated  | 
-|  10\.3\.0\.0/16  |  *Attachment for VPC C*  |  propagated  | 
-| 10\.4\.0\.0/16 | *Attachment for VPC D* | propagated | 
+| VPC A CIDR | Attachment for VPC A | propagated | 
+| VPC B CIDR | Attachment for VPC B | propagated | 
+| VPC C CIDR | Attachment for VPC C | propagated | 
 
-For more information about propagating routes in a transit gateway route table, see [Propagate a route to a transit gateway route table](tgw-route-tables.md#enable-tgw-route-propagation)\.
+For more information, see [Propagate a route to a transit gateway route table](tgw-route-tables.md#enable-tgw-route-propagation)\.
 
 ### Customer gateway BGP table<a name="transit-gateway-isolated-shared-route-table-bgp-table"></a>
 
-The customer gateway BGP table contains the following VPC CIDRs\.
-+ 10\.1\.0\.0/16
-+ 10\.2\.0\.0/16
-+ 10\.3\.0\.0/16
-+ 10\.4\.0\.0/16
+The customer gateway BGP table contains the CIDRs for all four VPCs\.

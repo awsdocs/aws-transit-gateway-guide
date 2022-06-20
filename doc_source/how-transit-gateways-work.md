@@ -2,16 +2,37 @@
 
 A *transit gateway* acts as a Regional virtual router for traffic flowing between your virtual private clouds \(VPCs\) and on\-premises networks\. A transit gateway scales elastically based on the volume of network traffic\. Routing through a transit gateway operates at layer 3, where the packets are sent to a specific next\-hop attachment, based on their destination IP addresses\.
 
+**Topics**
++ [Architecture diagram](#architecture-diagram)
++ [Resource attachments](#tgw-attachments-overview)
++ [Availability Zones](#tgw-az-overview)
++ [Routing](#tgw-routing-overview)
+
+## Architecture diagram<a name="architecture-diagram"></a>
+
+The following diagram shows a transit gateway with three VPC attachments\. The route table for each of these VPCs includes the local route and routes that send traffic destined for the other two VPCs to the transit gateway\.
+
+![\[VPC connectivity options\]](http://docs.aws.amazon.com/vpc/latest/tgw/images/transit-gateway-overview.png)
+
+The following is an example of a default transit gateway route table for the attachments shown in the previous diagram\. The CIDR blocks for each VPC propagate to the route table\. Therefore, each attachment can route packets to the other two attachments\.
+
+
+| Destination | Target | Route type | 
+| --- | --- | --- | 
+|  VPC A CIDR  |  Attachment for VPC A  | propagated | 
+|  VPC B CIDR  |  Attachment for VPC B  | propagated | 
+|  VPC C CIDR  |  Attachment for VPC C  | propagated | 
+
 ## Resource attachments<a name="tgw-attachments-overview"></a>
 
 A transit gateway attachment is both a source and a destination of packets\. You can attach the following resources to your transit gateway:
-+ One or more VPCs
++ One or more VPCs\. AWS Transit Gateway deploys an elastic network interface within VPC subnets, which is then used by the transit gateway to route traffic to and from the chosen subnets\. You must have at least one subnet for each Availability Zone, which then enables traffic to reach resources in every subnet of that zone\. During attachment creation, resources within a particular Availability Zone can reach a transit gateway only if a subnet is enabled within the same zone\. If a subnet route table includes a route to the transit gateway, traffic is only forwarded to the transit gateway if the transit gateway has an attachment in the subnet of the same Availability Zone\.
 + One or more VPN connections
 + One or more AWS Direct Connect gateways
 + One or more Transit Gateway Connect attachments
 + One or more transit gateway peering connections
 
-If you attach a transit gateway peering connection, the transit gateway must be in a different Region\.
+  Intra\-region peering connections are supported\. You can have different transit gateways in different Regions\.
 
 ## Availability Zones<a name="tgw-az-overview"></a>
 
@@ -59,6 +80,8 @@ When dynamic routing is used with a VPN attachment or a Direct Connect gateway a
 
 When dynamic routing is used with a VPN attachment, the routes in the route table associated with the VPN attachment are advertised to the customer gateway through BGP\.
 
+For a Connect attachment, routes in the route table associated with the Connect attachment are advertised to the third\-party virtual appliances, such as SD\-WAN appliances, running in a VPC through BGP\.
+
 For a Direct Connect gateway attachment, [allowed prefixes interactions](https://docs.aws.amazon.com/directconnect/latest/UserGuide/allowed-to-prefixes.html) control which routes are advertised to the customer network from AWS\.
 
 When a static route and a propagated route have the same destination, the static route has the higher priority, so the propagated route is not included in the route table\. If you remove the static route, the overlapping propagated route is included in the route table\.
@@ -75,11 +98,13 @@ Transit gateway routes are evaluated in the following order:
 + The most specific route for the destination address\.
 + For routes with the same destination IP address but different targets, the route priority is as follows:
   + Static routes \(for example, Site\-to\-Site VPN static routes\)
-  + Prefix list referenced routes
+  + Prefix list referenced routes 
   + VPC propagated routes
-  + Direct Connect gateway propagated routes
+  + Direct Connect gateway propagated routes 
   + Transit Gateway Connect propagated routes
   + Site\-to\-Site VPN propagated routes
+
+Transit Gateway only shows a preferred route\. A backup route will only appear in the Transit Gateway route table if that route is no longer advertised\. For example, if you are advertising the same routes over the Direct Connect gateway and over Site\-to\-Site VPN\. AWS Transit Gateway will only shows the routes received from the Direct Connect gateway route, which is the preferred route\. The Site\-to\-Site VPN, which is the backup route, will only display when the Direct Connect gateway is no longer advertised\. 
 
 Consider the following VPC route table\. The VPC local route has the highest priority, followed by the routes that are the most specific\. When a static route and a propagated route have the same destination, the static route has a higher priority\.
 
@@ -100,5 +125,5 @@ Consider the following transit gateway route table\. If you prefer the AWS Direc
 | 10\.0\.0\.0/16 | tgw\-attach\-123 \| vpc\-1234 | VPC | Static or propagated | 1 | 
 | 192\.168\.0\.0/16 | tgw\-attach\-789 \| vpn\-5678 | VPN | Static | 2 | 
 | 172\.31\.0\.0/16 | tgw\-attach\-456 \| dxgw\_id | AWS Direct Connect gateway | Propagated | 3 | 
-| 172\.31\.0\.0/16 | tgw\-attach\-789 \| tgw\-connect\-peer\-123 | Connect | Propagated | 4 |
+| 172\.31\.0\.0/16 | tgw\-attach\-789 \| tgw\-connect\-peer\-123 | Connect | Propagated | 4 | 
 | 172\.31\.0\.0/16 | tgw\-attach\-789 \| vpn\-5678 | VPN | Propagated | 5 | 

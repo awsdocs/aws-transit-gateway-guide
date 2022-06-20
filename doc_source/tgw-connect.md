@@ -28,7 +28,7 @@ The inside IP addresses that are used for BGP peering\. You must specify a /29 C
 + 169\.254\.5\.0/29
 + 169\.254\.169\.248/29
 You must configure the first address from the IPv4 range on the appliance as the BGP IP address\. When you use IPv6, if your inside CIDR block is fd00::/125, then you must configure the first address in this range \(fd00::1\) on the tunnel interface of the appliance\.   
-The BGP addresses must be unique across all tunnels on a transit gateway\.
+The BGP addresses must be unique across all tunnels on a transit gateway\. 
 
 **Peer IP address**  
 The peer IP address \(GRE outer IP address\) on the appliance side of the Transit Gateway Connect peer\. This can be any IP address\. The IP address can be an IPv4 or IPv6 address, but it must be the same IP address family as the transit gateway address\.
@@ -40,7 +40,7 @@ The IP address can be an IPv4 or IPv6 address, but it must be the same IP addres
 
 The peer IP address and transit gateway address are used to uniquely identify the GRE tunnel\. You can reuse either address across multiple tunnels, but not both in the same tunnel\.
 
-You can use different IP address families for the BGP addresses and the GRE outer IP addresses\. For example, you can configure IPv4 addresses for the GRE outer IP addresses, and an IPv6 CIDR block for the BGP addresses\.
+You can use different IPv4 address families for BGP peering, but IPv6 is not supported\. You can use both IPv4 and IPv6 addresses for the GRE outer IP addresses\. 
 
 The following example shows a Connect attachment between a transit gateway and an appliance in a VPC\.
 
@@ -79,7 +79,7 @@ The following are the requirements and considerations for a Connect attachment\.
 + Bidirectional Forwarding Detection \(BFD\) is not supported\.
 + BGP graceful restart is supported\.
 + When you create a transit gateway peer, if you do not specify a peer ASN number, we pick the transit gateway ASN number\. This means that your appliance and transit gateway will be in the same autonomous system doing iBGP\.
-+ To use equal\-cost multi\-path \(ECMP\) routing between multiple appliances, you must configure the appliance to advertise the same prefixes to the transit gateway with the same BGP AS\-PATH attribute\. For the transit gateway to choose all of the available ECMP paths, the AS\-PATH and Autonomous System Number \(ASN\) must match\. The transit gateway can use ECMP between Transit Gateway Connect peers for the same Connect attachment or between Connect attachments on the same transit gateway\. The transit gateway cannot use ECMP between the BGP peerings of the same Transit Gateway Connect peer\.
++ To use equal\-cost multi\-path \(ECMP\) routing between multiple appliances, you must configure the appliance to advertise the same prefixes to the transit gateway with the same BGP AS\-PATH attribute\. For the transit gateway to choose all of the available ECMP paths, the AS\-PATH and Autonomous System Number \(ASN\) must match\. The transit gateway can use ECMP between Transit Gateway Connect peers for the same Connect attachment or between Connect attachments on the same transit gateway\. The transit gateway cannot use ECMP between both of the redundant BGP peerings a single peer establishes to it\.
 + With a Connect attachment, the routes are propagated to a transit gateway route table by default\.
 + Static routes are not supported\.
 
@@ -132,7 +132,7 @@ When you create the Transit Gateway Connect peer, you must specify the GRE outer
 
 1. \(Optional\) For **BGP Inside CIDR blocks IPv6**, specify the range of inside IPv6 addresses that are used for BGP peering\. Specify a /125 CIDR block from the `fd00::/8` range\.
 
-1. \(Optional\) For **Peer ASN**, specify the Border Gateway Protocol \(BGP\) Autonomous System Number \(ASN\) for the appliance\. You can use an existing ASN assigned to your network\. If you do not have one, you can use a private ASN in the 64512–65534 range\. 
+1. \(Optional\) For **Peer ASN**, specify the Border Gateway Protocol \(BGP\) Autonomous System Number \(ASN\) for the appliance\. You can use an existing ASN assigned to your network\. If you do not have one, you can use a private ASN in the 64512–65534 \(16\-bit ASN\) or 4200000000–4294967294 \(32\-bit ASN\) range\. 
 
    The default is the same ASN as the transit gateway\. If you configure the **Peer ASN** to be different than the transit gateway ASN \(eBGP\), you must configure ebgp\-multihop with a time\-to\-live \(TTL\) value of 2\.
 

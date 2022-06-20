@@ -1,8 +1,11 @@
 # Example: Appliance in a shared services VPC<a name="transit-gateway-appliance-scenario"></a>
 
-You can configure an appliance \(such as a security appliance\) in a shared services VPC\. All traffic that's routed between transit gateway attachments is first inspected by the appliance in the shared services VPC\.
+You can configure an appliance \(such as a security appliance\) in a shared services VPC\. All traffic that's routed between transit gateway attachments is first inspected by the appliance in the shared services VPC\. 
 
 You must connect exactly one transit gateway to the appliance VPC to guarantee flow stickiness\. Connecting multiple transit gateways to a single appliance VPC does not guarantee flow stickiness because the transit gateways do not share flow state information with each other\.
+
+**Note**  
+Traffic in appliance mode is routed correctly as long as the source and destination traffic are coming to a centralized VPC \(Inspection VPC\) from the same transit gateway attachment\. Traffic can drop if the source and destination are entering from two different transit gateway attachments\. Appliance mode does not apply to traffic entering the network through a VPN\.
 
 **Topics**
 + [Overview](#transit-gateway-appliance-overview)
