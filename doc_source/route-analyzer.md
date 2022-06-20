@@ -33,7 +33,13 @@ To use the Route Analyzer, you must use the Network Manager console\.
 
 1. Open the Network Manager console at [https://console\.aws\.amazon\.com/networkmanager/home](https://console.aws.amazon.com/networkmanager/home)\.
 
-1. Choose the ID for your global network, and then choose **Route Analyzer**\.
+1. Choose **Get started**\. 
+ 
+1. In the navigation pane, choose **Global networks**, and then choose the global network ID\.
+
+1. In the navigation pane, choose **Transit gateway network**\. 
+
+1. Choose the **Route Analyzer** tab\.
 
 1. Under **Source**, do the following:
    + Choose the transit gateway and the transit gateway attachment\.
