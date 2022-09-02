@@ -1,6 +1,6 @@
 # Transit gateway peering attachments<a name="tgw-peering"></a>
 
-You can peer two transit gateways and route traffic between them, which includes IPv4 and IPv6 traffic\. To do this, create a peering attachment on your transit gateway, and specify a transit gateway\. The peer transit gateway can be in your account or a different AWS account\.
+You can peer both Intra\-Region and Inter\-Region transit gateways, and route traffic between them, which includes IPv4 and IPv6 traffic\. To do this, create a peering attachment on your transit gateway, and specify a transit gateway\. The peer transit gateway can be in your account or a different AWS account\.
 
 After you create a peering attachment request, the owner of the peer transit gateway \(also referred to as the *accepter transit gateway*\) must accept the request\. To route traffic between the transit gateways, add a static route to the transit gateway route table that points to the transit gateway peering attachment\.
 

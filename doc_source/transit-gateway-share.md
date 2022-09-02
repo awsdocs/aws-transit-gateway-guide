@@ -36,3 +36,5 @@ When the share owner unshares the transit gateway, the following rules apply:
 + The transit gateway attachment remains functional\.
 + The shared account can not describe the transit gateway\.
 + The transit gateway owner, and the share owner can delete the transit gateway attachment\.
+
+When a transit gateway is unshared with another AWS account, or if the AWS account that the transit gateway is shared with is removed from the organization, the transit gateway itself won't be impacted\.

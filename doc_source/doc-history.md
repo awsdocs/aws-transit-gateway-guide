@@ -4,6 +4,8 @@ The following table describes the releases for transit gateways\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [AWS Transit Gateway Flow Logs](https://docs.aws.amazon.com/vpc/latest/tgw/logging-tgws.html) | Transit Gateways now support Transit Gateway Flow Logs, allowing you to monitor and log network traffic between transit gateways\. | July 14, 2022 | 
+| [Transit gateway policy tables](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-policy-tables.html) | Use policy tables to set up dynamic routing for transit gateways for automatically exchanging routing and reachability information with peered transit gateway types\. | July 13, 2022 | 
 | [Network Manager User Guide](https://docs.aws.amazon.com/vpc/latest/tgwnm/what-is-network-manager.html) | Network Manager was created as a standalone guide, and is no longer included as part of the *AWS Transit Gateway User Guide*\. | December 2, 2021 | 
 | [Peering attachments](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-peering.html) | You can create a peering connection with a transit gateway in the same Region\. | December 1, 2021 | 
 | [Transit Gateway Connect](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html) | You can establish a connection between a transit gateway and third\-party virtual appliances running in a VPC\. | December 10, 2020 | 

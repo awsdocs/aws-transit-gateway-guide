@@ -31,7 +31,7 @@ Use the [create\-transit\-gateway\-route\-table](https://docs.aws.amazon.com/cli
 
 1. \(Optional\) To find a specific route table or set of tables, enter all or part of the name, keyword, or attribute in the filter field\.
 
-1. Select the checkbox for a route table, or choose its ID, to display information about its associations, propagations, routes, and tags\.
+1. Select the check box for a route table, or choose its ID, to display information about its associations, propagations, routes, and tags\.
 
 **To view your transit gateway route tables using the AWS CLI**  
 Use the [describe\-transit\-gateway\-route\-tables](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-transit-gateway-route-tables.html) command\.

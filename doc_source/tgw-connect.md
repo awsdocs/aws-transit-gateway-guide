@@ -1,6 +1,9 @@
 # Transit gateway Connect attachments and Transit Gateway Connect peers<a name="tgw-connect"></a>
 
-You can create a *transit gateway Connect attachment* to establish a connection between a transit gateway and third\-party virtual appliances \(such as SD\-WAN appliances\) running in a VPC\. A Connect attachment supports the Generic Routing Encapsulation \(GRE\) tunnel protocol for high performance, and Border Gateway Protocol \(BGP\) for dynamic routing\. After you create a Connect attachment, you can create one or more GRE tunnels \(also referred to as *Transit Gateway Connect peers*\) on the Connect attachment to connect the transit gateway and the third\-party appliance\. You establish two BGP sessions over the GRE tunnel to exchange routing information\. The two BGP sessions are for redundancy\.
+You can create a *transit gateway Connect attachment* to establish a connection between a transit gateway and third\-party virtual appliances \(such as SD\-WAN appliances\) running in a VPC\. A Connect attachment supports the Generic Routing Encapsulation \(GRE\) tunnel protocol for high performance, and Border Gateway Protocol \(BGP\) for dynamic routing\. After you create a Connect attachment, you can create one or more GRE tunnels \(also referred to as *Transit Gateway Connect peers*\) on the Connect attachment to connect the transit gateway and the third\-party appliance\. You establish two BGP sessions over the GRE tunnel to exchange routing information\. 
+
+**Important**  
+A Transit Gateway Connect peer consists of two BGP peering sessions terminating on AWS\-managed infrastructure\. The two BGP peering sessions provide routing plane redundancy, ensuring that losing one BGP peering session does not impact your routing operation\. The routing information received from both BGP sessions is accumulated for the given Connect peer\. The two BGP peering sessions also protect against any AWS infrastructure operations such as routine maintenance, patching, hardware upgrades, and replacements\. If your Connect peer is operating without the recommended dual BGP peering session configured for redundancy, it might experience a momentary loss of connectivity during AWS infrastructure operations\. We strongly recommend that you configure both the BGP peering sessions on your Connect peer\. If you have configured multiple Connect peers to support high availability on the appliance side, we strongly recommend that you configure both the BGP peering sessions on each of your Connect peers\.
 
 A Connect attachment uses an existing VPC or AWS Direct Connect attachment as the underlying transport mechanism\. This is referred to as the *transport attachment*\. The transit gateway identifies matched GRE packets from the third\-party appliance as traffic from the Connect attachment\. It treats any other packets, including GRE packets with incorrect source or destination information, as traffic from the transport attachment\. 
 
@@ -40,7 +43,7 @@ The IP address can be an IPv4 or IPv6 address, but it must be the same IP addres
 
 The peer IP address and transit gateway address are used to uniquely identify the GRE tunnel\. You can reuse either address across multiple tunnels, but not both in the same tunnel\.
 
-You can use different IPv4 address families for BGP peering, but IPv6 is not supported\. You can use both IPv4 and IPv6 addresses for the GRE outer IP addresses\. 
+Transit Gateway Connect for the BGP peering only supports Multiprotocol BGP \(MP\-BGP\), where IPv4 Unicast addressing is required to also establish a BGP session for IPv6 Unicast\. You can use both IPv4 and IPv6 addresses for the GRE outer IP addresses\. 
 
 The following example shows a Connect attachment between a transit gateway and an appliance in a VPC\.
 
@@ -74,7 +77,7 @@ The following are the requirements and considerations for a Connect attachment\.
   + Exterior BGP \(eBGP\): Used for connecting to routers that are in a different autonomous system than the transit gateway\. If you use eBGP, you must configure ebgp\-multihop with a time\-to\-live \(TTL\) value of 2\.
   + Interior BGP \(iBGP\): Used for connecting to routers that are in the same autonomous system as the transit gateway\. The transit gateway will not install routes from an iBGP peer \(third\-party appliance\), unless the routes are originated from an eBGP peer\. The routes advertised by third\-party appliance over the iBGP peering must have an ASN\.
   + MP\-BGP \(multiprotocol extensions for BGP\): Used for supporting multiple protocol types, such as IPv4 and IPv6 address families\.
-+ The default BGP keep\-alive timeout is 30 seconds and the default hold timer is 90 seconds\.
++ The default BGP keep\-alive timeout is 10 seconds and the default hold timer is 30 seconds\.
 + IPv6 BGP peering is not supported; only IPv4\-based BGP peering is supported\. IPv6 prefixes are exchanged over IPv4 BGP peering using MP\-BGP\.
 + Bidirectional Forwarding Detection \(BFD\) is not supported\.
 + BGP graceful restart is supported\.

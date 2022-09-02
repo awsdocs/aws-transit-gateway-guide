@@ -5,6 +5,9 @@ You can use the following features to monitor your transit gateways, analyze tra
 **CloudWatch metrics**  
 You can use Amazon CloudWatch to retrieve statistics about data points for your transit gateways as an ordered set of time series data, known as *metrics*\. You can use these metrics to verify that your system is performing as expected\. For more information, see [CloudWatch metrics for your transit gateways](transit-gateway-cloudwatch-metrics.md)\.
 
+**Transit Gateway Flow Logs**  
+You can use Transit Gateway Flow Logs to capture detailed information about the network traffic on your transit gateways\. For more information, see [Transit Gateway Flow Logs](tgw-flow-logs.md)\.
+
 **VPC Flow Logs**  
 You can use VPC Flow Logs to capture detailed information about the traffic going to and from the VPCs that are attached to your transit gateways\. For more information, see [VPC Flow Logs](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html) in the *Amazon VPC User Guide*\.
 

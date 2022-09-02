@@ -8,11 +8,13 @@ If an adjustable quota is not yet available in Service Quotas, you can open a su
 
 ## General<a name="general-quotas"></a>
 
+**Note**  
+AWS Transit Gateway doesn't support Security Group referencing when migrating from VPC peering to use transit gateways\.
+
 
 | Name | Default | Adjustable | 
 | --- | --- | --- | 
 | Transit gateways per account | 5 | [Yes](https://console.aws.amazon.com/servicequotas/home/services/ec2/quotas/L-A2478D36) | 
-| Transit gateways per VPC | 5 | [Yes](https://console.aws.amazon.com/servicequotas/home/services/ec2/quotas/L-A2478D36) | 
 | CIDR blocks per transit gateway | 5 | No | 
 
 The CIDR blocks are used in the [Transit gateway Connect attachments and Transit Gateway Connect peers](tgw-connect.md) feature\.
@@ -38,7 +40,7 @@ A transit gateway cannot have more than one VPC attachment to the same VPC\.
 | Name | Default | Adjustable | 
 | --- | --- | --- | 
 | Attachments per transit gateway | 5,000 | No | 
-| Unique transit gateway attachments per VPC | 5 | No | 
+| Transit gateways per VPC | 5 | No | 
 | Peering attachments per transit gateway | 50 | [Yes](https://console.aws.amazon.com/servicequotas/home/services/ec2/quotas/L-A1B5A36F) | 
 | Pending peering attachments per transit gateway | 10 | [Yes](https://console.aws.amazon.com/servicequotas/home/services/ec2/quotas/L-62499967) | 
 | Peering attachments between two transit gateways | 1 | No | 
@@ -76,7 +78,6 @@ You can create up to 4 Transit Gateway Connect peers per Connect attachment \(up
 + Packets with a size larger than 8500 bytes that arrive at the transit gateway are dropped\.
 + The transit gateway does not generate the FRAG\_NEEDED for ICMPv4 packet, or the Packet Too Big \(PTB\) for ICMPv6 packet\. Therefore, the Path MTU Discovery \(PMTUD\) is not supported\.
 + The transit gateway enforces Maximum Segment Size \(MSS\) clamping for all packets\. For more information, see [RFC879](https://tools.ietf.org/html/rfc879)\.
-+ Note the following when migrating from VPC peering to use AWS Transit Gateway, transit gateway doesn't support Security Group referencing\.
 
 ## Multicast<a name="multicast-quotas"></a>
 

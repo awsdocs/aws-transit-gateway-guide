@@ -60,7 +60,7 @@ For transit gateway peering attachments, only static routes are supported\.
 
 Your transit gateway automatically comes with a default route table\. By default, this route table is the default association route table and the default propagation route table\. Alternatively, if you disable route propagation and route table association, AWS does not create a default route table for the transit gateway\.
 
-You can create additional route tables for your transit gateway\. This enables you to isolate subnets of attachments\. Each attachment can be associated with one route table\. An attachment can propagate its routes to one or more route tables\.
+You can create additional route tables for your transit gateway\. This enables you to isolate subsets of attachments\. Each attachment can be associated with one route table\. An attachment can propagate its routes to one or more route tables\.
 
 You can create a blackhole route in your transit gateway route table that drops traffic that matches the route\.
 

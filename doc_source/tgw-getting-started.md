@@ -102,20 +102,18 @@ You can confirm that the transit gateway was successfully created by connecting 
 
 ## Step 5: Delete the transit gateway<a name="step-delete-tgw"></a>
 
-When you no longer need a transit gateway, you can delete it\. You cannot delete a transit gateway that has resource attachments\. As soon as the transit gateway is deleted, you stop incurring charges for it\.
+When you no longer need a transit gateway, you can delete it\. 
+
+You cannot delete a transit gateway that has resource attachments\. If you try to delete a transit gateway with attachments, you'll be prompted to first delete those attachments before you can delete the transit gateway\. As soon as the transit gateway is deleted, you stop incurring charges for it\.
 
 **To delete your transit gateway**
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
-1. On the navigation pane, choose **Transit Gateway Attachments**\.
-
-1. Select the attachments and then choose **Actions**, **Delete transit gateway attachment**\. 
-
-1. Enter **delete** and choose **Delete**\.
-
 1. On the navigation pane, choose **Transit Gateways**\.
 
-1. Select the transit gateway and then choose **Actions**, **Delete transit gateway**\. 
+1. Select the transit gateway, and then choose **Actions**, **Delete transit gateway**\. 
 
 1. Enter **delete** and choose **Delete**\.
+
+   The **State** of the transit gateway on the **Transit gateways** page is **Deleting**\. Once deleted the transit gateway is removed from the page\. 

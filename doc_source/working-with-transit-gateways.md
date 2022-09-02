@@ -10,4 +10,5 @@ You can work with transit gateways using the Amazon VPC console or the AWS CLI\.
 + [Transit gateway peering attachments](tgw-peering.md)
 + [Transit gateway Connect attachments and Transit Gateway Connect peers](tgw-connect.md)
 + [Transit gateway route tables](tgw-route-tables.md)
++ [Transit gateway policy tables](tgw-policy-tables.md)
 + [Multicast on transit gateways](tgw-multicast-overview.md)

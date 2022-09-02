@@ -27,7 +27,7 @@ You create the following resources for this scenario:
 
   For the VPC attachment for VPC C, enable appliance mode support so that response traffic is routed to the same Availability Zone in VPC C as the source traffic\.
 
-  The Amazon VPC console does not support appliance mode\. You can use the Amazon VPC API, an AWS SDK, or the AWS CLI to enable appliance mode\. For example, add `--options ApplianceModeSupport=enable` to the [create\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-vpc-attachment.html) or [modify\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-transit-gateway-vpc-attachment.html) command\.
+  The Amazon VPC console does not support appliance mode\. You can use the Amazon VPC API, an AWS SDK, the AWS CLI to enable appliance mode, or AWS CloudFormation\. For example, add `--options ApplianceModeSupport=enable` to the [create\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/create-transit-gateway-vpc-attachment.html) or [modify\-transit\-gateway\-vpc\-attachment](https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-transit-gateway-vpc-attachment.html) command\.
 
 ## Stateful appliances and appliance mode<a name="transit-gateway-appliance-support"></a>
 

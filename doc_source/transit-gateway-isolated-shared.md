@@ -24,6 +24,8 @@ Create the following resources for this scenario:
   Ensure that you review the [requirements for your customer gateway device](https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html#CGRequirements) in the *AWS Site\-to\-Site VPN User Guide*\.
 
 When the VPN connection is up, the BGP session is established and the VPN CIDR propagates to the transit gateway route table and the VPC CIDRs are added to the customer gateway BGP table\.
++ Each isolated VPC is associated with the isolated route table and propagated to the shared route table\.
++ Each shared services VPC is associated with the shared route table and propagated to both route tables\.
 
 ## Routing<a name="transit-gateway-isolated-shared-routes"></a>
 

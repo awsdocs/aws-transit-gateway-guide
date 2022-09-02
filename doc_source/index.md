@@ -4,13 +4,13 @@
 *****Copyright &copy; Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
-Amazon's trademarks and trade dress may not be used in 
-     connection with any product or service that is not Amazon's, 
-     in any manner that is likely to cause confusion among customers, 
-     or in any manner that disparages or discredits Amazon. All other 
-     trademarks not owned by Amazon are the property of their respective
-     owners, who may or may not be affiliated with, connected to, or 
-     sponsored by Amazon.
+Amazon's trademarks and trade dress may not be used in
+connection with any product or service that is not Amazon's,
+in any manner that is likely to cause confusion among customers,
+or in any manner that disparages or discredits Amazon. All other
+trademarks not owned by Amazon are the property of their respective
+owners, who may or may not be affiliated with, connected to, or
+sponsored by Amazon.
 
 -----
 ## Contents
@@ -34,6 +34,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Transit gateway Connect attachments and Transit Gateway Connect peers](tgw-connect.md)
    + [Transit gateway route tables](tgw-route-tables.md)
       + [Prefix list references](tgw-prefix-lists.md)
+   + [Transit gateway policy tables](tgw-policy-tables.md)
    + [Multicast on transit gateways](tgw-multicast-overview.md)
       + [Multicast routing](how-multicast-works.md)
       + [Working with multicast](working-with-multicast.md)
@@ -41,6 +42,10 @@ Amazon's trademarks and trade dress may not be used in
          + [Managing multicast groups](manage-multicast-group.md)
          + [Working with shared multicast domains](multicast-sharing.md)
 + [Transit gateway sharing considerations](transit-gateway-share.md)
++ [Logging network traffic using Transit Gateway Flow Logs](tgw-flow-logs.md)
+   + [Publish flow logs to CloudWatch Logs](flow-logs-cwl.md)
+   + [Publish flow logs to Amazon S3](flow-logs-s3.md)
+   + [Work with Transit Gateway Flow Logs](working-with-flow-logs.md)
 + [Monitor your transit gateways](transit-gateway-monitoring.md)
    + [CloudWatch metrics for your transit gateways](transit-gateway-cloudwatch-metrics.md)
    + [Logging API calls for your transit gateway using AWS CloudTrail](transit-gateway-cloudtrail-logs.md)
